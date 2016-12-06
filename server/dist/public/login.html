@@ -1,22 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>login</title>
+    <meta charset="UTF-8">
+    <title>在线考试系统</title>
+    <link rel="stylesheet" href="/css/login.css">
 </head>
+
 <body>
-  <form action="/login" method="post">
-    <div>
-        <label>Username:</label>
-        <input type="text" name="username"/>
-    </div>
-    <div>
-        <label>Password:</label>
-        <input type="password" name="password"/>
-    </div>
-    <div>
-        <input type="submit" value="Log In"/>
-    </div>
-</form>
+
+    <body>
+        <div class="container">
+            <h1 style="color:black;font-size:3em;text-align:center;margin-bottom:80px;">实验考试管理系统</h1>
+            <section id="content">
+                <form action="/login" method="post">
+                    <h1>管理员登录</h1>
+                    <div>
+                        <input type="text" placeholder="用户名" required autofocus name="username" id="username" />
+                    </div>
+                    <div>
+                        <input type="password" placeholder="密码" required name="password" id="password" />
+                    </div>
+                    <div>
+                        <input type="submit" value="管理员登录" />
+                    </div>
+                </form>
+                <!-- form -->
+            </section>
+            <!-- content -->
+            <section style="text-align:center;padding-top:50px">
+                <img src='/img/banner_w_xy.png' width="400px" />
+            </section>
+        </div>
+        <!-- container -->
+    </body>
 </body>
+
 </html>
