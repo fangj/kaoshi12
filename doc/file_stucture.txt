@@ -1,6 +1,7 @@
 服务器部分： server
 server/src 服务端源代码
 server/dist 服务端经过babel编译的代码
+使用server/build.sh进行babel编译
 
 客户端部分： client
 客户端生成的代码放在server/dist/public中
