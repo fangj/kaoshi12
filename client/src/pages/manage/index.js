@@ -19,3 +19,14 @@ export default class Manage extends React.Component {
 
 ReactDOM.render(<Manage/>, document.getElementById('App'));
 
+var p1 = new Promise((resolve, reject) => { 
+  setTimeout(resolve, 1000, "one"); 
+}); 
+
+async function u(){
+  var a=await p1;
+  console.log(a);
+}
+
+u();
+
