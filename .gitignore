@@ -58,3 +58,4 @@ test/tmp
 example/public/lib/*
 playground
 tmp
+server/db
