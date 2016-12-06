@@ -18,7 +18,7 @@ class PaperUpdater extends React.Component {
         const {node}=this.props;
         return (
             <div className="paper_updater">
-                <TreePathReader view={Nav} from="0/menu" to={node._gid}/>
+                <TreePathReader view={Nav} from="0/menu" to={node._id}/>
                 <Writer node={node} view={PaperForm} publish={{update:"updated",remove:"removed"}}/>
             </div>
         );

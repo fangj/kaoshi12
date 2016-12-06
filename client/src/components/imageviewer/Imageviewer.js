@@ -18,7 +18,7 @@ class Imageviewer extends React.Component {
         for (var i = node._children.length - 1; i >= 0; i--) {
             var child=node._children[i];
             if(child._data.type=='tn/nfile/url'){
-                urls.push({gid:child._gid,url:child._data.data});
+                urls.push({gid:child._id,url:child._data.data});
             }
         }
         return (

@@ -27,6 +27,29 @@ var tree=require('./tree/middleware/tree.js');
 var config={nedb:treeDb};
 app.use('/_api', tree(config));
 
+//rest db
+var expressRestResource = require('express-rest-resource');
+var nedb = require('nedb');
+var classDb = require('./db/class');
+var roomDb = require('./db/room');
+var examDb = require('./db/exam');
+var teacherDb = require('./db/teacher');
+var answersheetDb = require('./db/answersheet');
+
+app.use('/api/exam', expressRestResource({ db: examDb }));
+app.use('/api/teacher', expressRestResource({ db: teacherDb }));
+app.use('/api/class', expressRestResource({ db: classDb }));
+app.use('/api/room', expressRestResource({ db: roomDb }));
+app.use('/api/answersheet', expressRestResource({ db: answersheetDb }));
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
+
+
 app.listen(3000, function () {
   console.log('Kaoshi app listening on port 3000!');
 });

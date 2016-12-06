@@ -19,8 +19,8 @@ class PaperCreater extends React.Component {
         const {node}=this.state;
         return (
             <div className="paper_creater">
-                <TreePathReader view={Nav} from="0/menu" to={node._gid}/>
-                <Writer pgid={node._gid} view={PaperForm} publish="saved"/>
+                <TreePathReader view={Nav} from="0/menu" to={node._id}/>
+                <Writer pgid={node._id} view={PaperForm} publish="saved"/>
 
             </div>
         );

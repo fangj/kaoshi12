@@ -17,8 +17,8 @@ class PaperPreviewQuestions extends React.Component {
         return (
           <div>{
             nodes.map(node=>
-               <Row key={node._gid} className='no-gutter'>
-                {this.showTopic(node,scores[node._gid])}
+               <Row key={node._id} className='no-gutter'>
+                {this.showTopic(node,scores[node._id])}
                </Row>)
             }
           </div>
@@ -27,7 +27,7 @@ class PaperPreviewQuestions extends React.Component {
 
     showTopic(node,score){
         return <div style={{paddingTop:"20px"}}>
-          <Col xs={1}><Button bsStyle='danger' onClick={()=>{PubSub.publish('topic.toggle',node._gid)}}><Glyphicon glyph="remove" /></Button></Col>
+          <Col xs={1}><Button bsStyle='danger' onClick={()=>{PubSub.publish('topic.toggle',node._id)}}><Glyphicon glyph="remove" /></Button></Col>
           <Col xs={10}>{m(node)}</Col>
           <Col xs={1}><input type="number"  min="1" max="100" step="1" 
           placeholder="分值" value={score} onChange={e=>this.changeScore(node,e.target.value)}
@@ -36,8 +36,8 @@ class PaperPreviewQuestions extends React.Component {
     }
 
     changeScore(node,score){
-        console.log('changeScore',node._gid,score);
-        PubSub.publish('topic.score',{gid:node._gid,score:score});
+        console.log('changeScore',node._id,score);
+        PubSub.publish('topic.score',{gid:node._id,score:score});
     }
 
 

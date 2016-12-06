@@ -63,7 +63,7 @@ class Writer extends React.Component {
         if(gid){
             return tree.update(gid,data);
         }else if(node){
-            return tree.update(node._gid,data);
+            return tree.update(node._id,data);
         }else if(path){
             return tree.lidpath2gid(path)
                         .then(gid=>tree.update(gid,data));
@@ -89,7 +89,7 @@ class Writer extends React.Component {
         if(gid){
             return tree.remove(gid);
         }else if(node){
-            return tree.remove(node._gid);
+            return tree.remove(node._id);
         }else if(path){
             return tree.remove_by_path(path);
         }else{

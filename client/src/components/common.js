@@ -95,5 +95,5 @@ export const m=(node)=>{
     "ks1/revise":vm_revise
   }
   const fn= vm[node_type]||(()=>null);
-  return fn(node._data.data,node._gid);
+  return fn(node._data.data,node._id);
 }

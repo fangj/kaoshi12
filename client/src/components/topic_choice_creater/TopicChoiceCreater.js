@@ -64,8 +64,8 @@ class TopicChoiceCreater extends React.Component {
                     type:node_type,
                     data:{}
                 };
-        tree.mk_son_by_data(node._gid,data).then(new_node=>{
-                location.href="#/manage/"+new_node._gid
+        tree.mk_son_by_data(node._id,data).then(new_node=>{
+                location.href="#/manage/"+new_node._id
             });
     }
 

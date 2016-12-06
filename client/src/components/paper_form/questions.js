@@ -16,7 +16,7 @@ export class Questions extends Component {
     return (
       <div className='paper-questions'>
       <Grid fluid>{nodes.map(node=>
-       <Row key={node._gid} className='no-gutter'>
+       <Row key={node._id} className='no-gutter'>
         {this.wrapNode(node)}
        </Row>)}
       </Grid>
@@ -37,7 +37,7 @@ export class Questions extends Component {
   }
 
   questionStyle(node){
-    if(this.props.selected_questions[node._gid]){
+    if(this.props.selected_questions[node._id]){
       return 'success';
     }else{
       return 'default';

@@ -20,12 +20,12 @@ class Summary extends React.Component {
     return (
       <div className='children-grid'>
        <div className='cells'>
-          <div className='cell' onClick={()=>goto('/manage/'+node._gid+'/son_editor')}>
+          <div className='cell' onClick={()=>goto('/manage/'+node._id+'/son_editor')}>
              <i className='fa fa-plus fa-4x'/>
           </div>
         {
           node._children.map(node=>
-            <div key={node._gid} className='cell' onClick={()=>goto(node._gid)}>
+            <div key={node._id} className='cell' onClick={()=>goto(node._id)}>
               v(node,'icon')
               <div>v(node,'name')</div>
             </div>)

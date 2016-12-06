@@ -26,7 +26,7 @@ class SonEditor extends React.Component {
         }
         return (
             <div className="soneditor">
-                 <TreePathReader view={Nav} from="0/menu" to={node._gid}/>
+                 <TreePathReader view={Nav} from="0/menu" to={node._id}/>
                  {components[node._lid]}
             </div>
         );

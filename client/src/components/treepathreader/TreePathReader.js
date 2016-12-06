@@ -53,7 +53,7 @@ class TreePathReader extends React.Component {
         var mySubscriber = function( msg, data ){
             console.log( msg, data );
             // me.forceUpdate();
-            me.fetchData();
+            me.fetchData(me.props);
         };
         const subscribe=this.props.subscribe||[];
         this.tokens=subscribe.map(msg=>{
@@ -73,6 +73,7 @@ class TreePathReader extends React.Component {
         this.cancelablePromise
           .promise
           .then(nodes=>{
+            console.log('fetchData',nodes)
             this.setState({nodes});
             })
           .catch((reason) => {
@@ -141,7 +142,7 @@ class TreePathReader extends React.Component {
         if(from===to){
             return [to];
         }else{  
-            return treetool.expandToRoot([to],from)
+            return treetool.expandToRoot([to],from).then(tree.read_nodes);
         }
     }
 

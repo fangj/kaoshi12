@@ -55,12 +55,12 @@ const QS=(props)=><div style={{paddingTop:"20px"}}>
         <Q {...props}/>
         <textarea className="form-control" rows="3" placeholder="批注"
         defaultValue={props.comment||''}
-        onChange={(e)=>{PubSub.publish('comment.change',{gid:props.node._gid,comment:e.target.value})}}
+        onChange={(e)=>{PubSub.publish('comment.change',{gid:props.node._id,comment:e.target.value})}}
          />
       </Col>
       <Col xs={1}><input type="number"  min="0" max="100" step="1" 
       placeholder="得分" value={props.score} 
-      onChange={(e)=>{PubSub.publish('score.change',{gid:props.node._gid,score:Number(e.target.value)})}}
+      onChange={(e)=>{PubSub.publish('score.change',{gid:props.node._id,score:Number(e.target.value)})}}
       style={{padding:"8px",width:"50px"}}/></Col>
       </div>;
 
@@ -81,7 +81,7 @@ const Qchoice=({node,answer})=>{
     const correct=isCorrectChoice(data,answer);
     return <Panel header={"[选择题] "+data.question}  collapsible  defaultExpanded
             bsStyle={correct?"success":"danger"}>
-            <Reader view={Imageviewer} gid={node._gid} level={1}/>
+            <Reader view={Imageviewer} gid={node._id} level={1}/>
       <ListGroup fill>
       {data.answers.map((ans,idx)=><ListGroupItem key={idx} >
         <div>{"ABCDEFGHI"[idx]+". "+ans.answer+"  "+
@@ -103,7 +103,7 @@ const Qqa=({node,answer})=>{
   const data=node._data.data;
   var ans=answer||"";
   return <Panel header={"[问答题] "+data.question}  collapsible  defaultExpanded>
-          <Reader view={Imageviewer} gid={node._gid} level={1}/>
+          <Reader view={Imageviewer} gid={node._id} level={1}/>
               <div style={{fontSize:"1.4em",color:"SteelBlue"}}>{ans}</div>
       </Panel>
 }
@@ -114,7 +114,7 @@ const Qtf=({node,answer})=>{
   const correct=isCorrectTf(data,answer);
   return <Panel collapsible  defaultExpanded
       header={"[判断题] "+data.question+" "+(data.ok?" ( ✓ )":" ( ✗ )")} bsStyle={correct?"success":"danger"}>
-      <Reader view={Imageviewer} gid={node._gid} level={1}/>
+      <Reader view={Imageviewer} gid={node._id} level={1}/>
       {answer===undefined?null:(answer?<CheckSign/>:<CrossSign/>)}
       </Panel>;
 };
@@ -153,7 +153,7 @@ function convert2txt(exam,questions,scores,comments,answers,totalScore){
   contents.push(exam.name);
   contents.push("总分："+totalScore);
   questions.map(question=>{
-    var qid=question._gid;
+    var qid=question._id;
     var score=scores[qid]||0;
     var comment=comments[qid]||"";
     var answer=answers[qid];
@@ -228,7 +228,7 @@ function convert2json(exam,questions,scores,comments,answers,totalScore){
 }
 
 function QJson(qnode,questions,scores,comments,answers){
-  var qid=qnode._gid;
+  var qid=qnode._id;
   var score=scores[qid]||0;
   var comment=comments[qid]||"";
   var answer=answers[qid];
@@ -354,8 +354,8 @@ class AnswersheetForm extends React.Component {
                     <div style={{float:"right"}}>总分 {totalScore}</div>
                     </Panel>
                     <Grid fluid>{_.map(questions,(node=>
-                      <Row key={node._gid} className='no-gutter'>
-                        <QS node={node} score={scores[node._gid]||0} comment={comments[node._gid]||''} answer={answers[node._gid]}/>
+                      <Row key={node._id} className='no-gutter'>
+                        <QS node={node} score={scores[node._id]||0} comment={comments[node._id]||''} answer={answers[node._id]}/>
                       </Row>))}
                     </Grid>
                   </div>

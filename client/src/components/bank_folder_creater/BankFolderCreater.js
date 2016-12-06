@@ -43,8 +43,8 @@ class FolderCreater extends React.Component {
         console.log('folderCreater render ',node)
         return (
             <div className="folder_creater">
-                <TreePathReader view={Nav} from="0/menu" to={node._gid}/>
-                <Writer pgid={node._gid} view={FolderForm} publish="saved"/>
+                <TreePathReader view={Nav} from="0/menu" to={node._id}/>
+                <Writer pgid={node._id} view={FolderForm} publish="saved"/>
             </div>
         );
     }
@@ -55,7 +55,7 @@ class FolderCreater extends React.Component {
     componentDidMount() {
         const {node}=this.props;
         this.token=PubSub.subscribe( "saved",(msg,new_node)=>{
-        location.href="#/manage/"+new_node._gid}  );//保存数据后到新节点
+        location.href="#/manage/"+new_node._id}  );//保存数据后到新节点
     }
 
     componentWillReceiveProps(nextProps) {

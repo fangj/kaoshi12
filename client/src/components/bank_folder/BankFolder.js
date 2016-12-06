@@ -19,9 +19,9 @@ class BankFolder extends React.Component {
         console.log('BankFolder render ',node)
         return (
             <div>
-                <TreePathReader view={Nav} from="0/menu" to={node._gid}/>
+                <TreePathReader view={Nav} from="0/menu" to={node._id}/>
                 <BankFolderUpdater node={node}/>
-                <Reader view={BankSummary} gid={node._gid} level={1}/>
+                <Reader view={BankSummary} gid={node._id} level={1}/>
             </div>
         );
     }

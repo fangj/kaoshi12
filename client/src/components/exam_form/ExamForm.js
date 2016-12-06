@@ -21,7 +21,7 @@ class ExamForm extends React.Component {
         const {save,update,remove}=this.props;
         const {room_id,paper_gid,room_name,paper_name,duration,start,end,_id}=this.state;
         // const paper_name=paper&&paper._data.data.name;
-        // const paper=paper&&paper._gid;
+        // const paper=paper&&paper._id;
         // const room_name=room&&room.name;
         // const room_id=room&&room._id;
         return (
@@ -86,7 +86,7 @@ class ExamForm extends React.Component {
     componentDidMount() {
         this.token_choose_paper=PubSub.subscribe( "paper.choose",(msg,node)=>{
             console.log('paper.choose',node);
-            this.setState({paper_gid:node._gid,paper_name:node._data.data.name});
+            this.setState({paper_gid:node._id,paper_name:node._data.data.name});
         });
         this.token_choose_room=PubSub.subscribe( "room.choose",(msg,data)=>{
             console.log('room.choose',data);

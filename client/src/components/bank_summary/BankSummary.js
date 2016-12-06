@@ -16,23 +16,23 @@ class BankSummary extends React.Component {
     return (
       <div className='children-grid bank_summary'>
        <div className='cells clearfix'>
-          <div className='cell create' onClick={()=>goto('/manage/'+node._gid+'/son_editor_bank_folder')}>
+          <div className='cell create' onClick={()=>goto('/manage/'+node._id+'/son_editor_bank_folder')}>
              <i className='fa fa-plus fa-3x'/>
              <div>文件夹</div>
           </div>
-          <div className='cell create' onClick={()=>goto('/manage/'+node._gid+'/son_editor_choice')}>
+          <div className='cell create' onClick={()=>goto('/manage/'+node._id+'/son_editor_choice')}>
              <i className='fa fa-plus fa-3x'/>
              <div>选择题</div>
           </div>
-          <div className='cell create' onClick={()=>goto('/manage/'+node._gid+'/son_editor_tf')}>
+          <div className='cell create' onClick={()=>goto('/manage/'+node._id+'/son_editor_tf')}>
              <i className='fa fa-plus fa-3x'/>
              <div>判断题</div>
           </div>
-          <div className='cell create' onClick={()=>goto('/manage/'+node._gid+'/son_editor_qa')}>
+          <div className='cell create' onClick={()=>goto('/manage/'+node._id+'/son_editor_qa')}>
              <i className='fa fa-plus fa-3x'/>
              <div>问答题</div>
           </div>
-          <div className='cell create' onClick={()=>goto('/manage/'+node._gid+'/son_editor_revise')}>
+          <div className='cell create' onClick={()=>goto('/manage/'+node._id+'/son_editor_revise')}>
              <i className='fa fa-plus fa-3x'/>
              <div>改错题</div>
           </div>
@@ -41,7 +41,7 @@ class BankSummary extends React.Component {
        <div className='cells clearfix'>
         {
           node._children.map(node=>{console.log(node);
-            return <div key={node._gid} className='cell' onClick={()=>goto("/manage/"+node._gid)}>
+            return <div key={node._id} className='cell' onClick={()=>goto("/manage/"+node._id)}>
               {common.icon(node)} 
               <div>{common.name(node)}</div>
             </div>

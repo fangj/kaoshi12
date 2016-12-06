@@ -8,8 +8,8 @@ import NavView from "../navview";
 
 
 function name(node){
-  var d=node._data;
-  return d.title || d.data && (d.data.name ||d.data.question)||lid2name(node._lid)||node._lid||"noname";
+  var d=node._data||{};
+  return d.title || d.data && (d.data.name ||d.data.question)||lid2name(node._name)||node._name||"noname";
 }
 
 function lid2name(lid) {
@@ -29,15 +29,15 @@ class ExamFormPaperChooserNav extends React.Component {
 
 
     render() {
-        const items=this.state.nodes.map(node=>({title:name(node),onClick:()=>this.onClick(node),key:node._gid}))
+        const items=this.state.nodes.map(node=>({title:name(node),onClick:()=>this.onClick(node),key:node._id}))
         return (
             <NavView items={items}/>
         );
     }
 
     onClick(node){
-        console.log('nav onClick',node._gid);
-        PubSub.publish('paper.goto',node._gid);
+        console.log('nav onClick',node._id);
+        PubSub.publish('paper.goto',node._id);
     }
 
     componentWillMount() {

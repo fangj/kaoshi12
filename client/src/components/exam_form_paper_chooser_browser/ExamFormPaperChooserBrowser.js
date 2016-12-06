@@ -26,9 +26,9 @@ class ExamFormPaperChooserBrowser extends React.Component {
     wrapNode(node){
          const {v}=this.props;
          if(node._data.type=='ks1/paper/folder'){
-            return <div  className='cell' key={node._gid} onClick={()=>this.choosePaperFolder(node)}>{icon(node)}<div>{name(node)}</div></div>;
+            return <div  className='cell' key={node._id} onClick={()=>this.choosePaperFolder(node)}>{icon(node)}<div>{name(node)}</div></div>;
          }else{
-            return <div  className={cx('cell',{selected:this.isChoosen(node)})} key={node._gid} onClick={()=>this.choosePaper(node)}>
+            return <div  className={cx('cell',{selected:this.isChoosen(node)})} key={node._id} onClick={()=>this.choosePaper(node)}>
                        {icon(node)}
                        {this.isChoosen(node)?<Glyphicon glyph="ok" style={{float:"right"}} />:""}
                        <div>{name(node)}</div>
@@ -38,14 +38,14 @@ class ExamFormPaperChooserBrowser extends React.Component {
 
     isChoosen(node){
         const {choosen}=this.state;
-        return choosen===node._gid;
+        return choosen===node._id;
     }
     choosePaper(node){
         PubSub.publish('paper.choose',node);
         console.log('paper.choose',node)
     }
     choosePaperFolder(node){
-        PubSub.publish('paper.goto',node._gid);
+        PubSub.publish('paper.goto',node._id);
     }
 
     componentWillMount() {

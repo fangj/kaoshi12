@@ -115,8 +115,8 @@ class QuestionsView extends React.Component {
     return (
       <div>
           {questions.map((node,idx)=>
-            <div id={"q-"+node._gid} key={node._gid} >
-                <Q node={node} prefix={idx+1+". "} answer={answers[node._gid]}/>
+            <div id={"q-"+node._id} key={node._id} >
+                <Q node={node} prefix={idx+1+". "} answer={answers[node._id]}/>
             </div>)}
       </div>
     );
@@ -141,12 +141,12 @@ const Qchoice=({node,prefix,answer})=>{
     var {question,answers}=node._data.data;
     answers=answers||[];
     return <Panel header={prefix+"[选择题] "+question}>
-        <Reader view={Imageviewer} gid={node._gid} level={1}/>
+        <Reader view={Imageviewer} gid={node._id} level={1}/>
       <ListGroup fill>
       {answers.map((ans,idx)=><ListGroupItem 
         key={idx} 
         bsStyle={answer===idx?"info":null}
-        ><div onClick={()=>PubSub.publish('answer',{gid:node._gid,answer:idx})}>{"ABCDEFGHI"[idx]+". "+ans.answer}</div>
+        ><div onClick={()=>PubSub.publish('answer',{gid:node._id,answer:idx})}>{"ABCDEFGHI"[idx]+". "+ans.answer}</div>
         </ListGroupItem>)}
       </ListGroup>
     </Panel>
@@ -155,9 +155,9 @@ const Qchoice=({node,prefix,answer})=>{
 //问答题
 const Qqa=({node,prefix,answer})=>{
     const {question}=node._data.data;
-    const onChange=(e)=>PubSub.publish('answer',{gid:node._gid,answer:e.target.value});
+    const onChange=(e)=>PubSub.publish('answer',{gid:node._id,answer:e.target.value});
     return <Panel header={prefix+"[问答题] "+question} >
-        <Reader view={Imageviewer} gid={node._gid} level={1}/>
+        <Reader view={Imageviewer} gid={node._id} level={1}/>
         <textarea className="form-control answer" style={{width:"100%"}}
          rows="5" placeholder="答案写在这里" onChange={onChange} defaultValue={answer} />
       </Panel>
@@ -166,20 +166,20 @@ const Qqa=({node,prefix,answer})=>{
 //判断题
 const Qtf=({node,prefix,answer})=>{
     const {question}=node._data.data;
-    const onClick=(e)=>{PubSub.publish('answer',{gid:node._gid,answer:!answer})};
+    const onClick=(e)=>{PubSub.publish('answer',{gid:node._id,answer:!answer})};
     return <Panel onClick={onClick}>
       {prefix+"[判断题] "+question+"   "} 
       (<span className="answer">{answer===undefined?" ":(answer?"✓":"✗")}</span>)
-        <Reader view={Imageviewer} gid={node._gid} level={1}/>
+        <Reader view={Imageviewer} gid={node._id} level={1}/>
       </Panel>
 }
 
 //改错题
 const Qrevise=({node,prefix,answer})=>{
     const {question,content}=node._data.data;
-    const onChange=(e)=>PubSub.publish('answer',{gid:node._gid,answer:e.target.value});
+    const onChange=(e)=>PubSub.publish('answer',{gid:node._id,answer:e.target.value});
     return <Panel header={prefix+"[改错题] "+question} >
-        <Reader view={Imageviewer} gid={node._gid} level={1}/>
+        <Reader view={Imageviewer} gid={node._id} level={1}/>
         <textarea className="form-control answer" style={{width:"100%"}} defaultValue={answer||content}
          rows="5" placeholder="答案写在这里" onChange={onChange} value={answer} />
       </Panel>

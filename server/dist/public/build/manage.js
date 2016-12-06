@@ -1917,8 +1917,8 @@ webpackJsonp([0],[
 
 
 	function name(node) {
-	    var d = node._data;
-	    return d.title || d.data && (d.data.name || d.data.question) || lid2name(node._lid) || node._lid || "noname";
+	    var d = node._data || {};
+	    return d.title || d.data && (d.data.name || d.data.question) || lid2name(node._name) || node._name || "noname";
 	}
 
 	function lid2name(lid) {
@@ -1944,7 +1944,7 @@ webpackJsonp([0],[
 	        key: 'render',
 	        value: function render() {
 	            var items = this.state.nodes.map(function (node) {
-	                return { title: name(node), href: "#/manage/" + node._gid };
+	                return { title: name(node), href: "#/manage/" + node._id };
 	            });
 	            return React.createElement(_navview2.default, { items: items });
 	        }
@@ -2339,7 +2339,7 @@ webpackJsonp([0],[
 	               React.createElement(
 	                  'div',
 	                  { className: 'cell create', onClick: function onClick() {
-	                        return goto('/manage/' + node._gid + '/son_editor_bank_folder');
+	                        return goto('/manage/' + node._id + '/son_editor_bank_folder');
 	                     } },
 	                  React.createElement('i', { className: 'fa fa-plus fa-3x' }),
 	                  React.createElement(
@@ -2351,7 +2351,7 @@ webpackJsonp([0],[
 	               React.createElement(
 	                  'div',
 	                  { className: 'cell create', onClick: function onClick() {
-	                        return goto('/manage/' + node._gid + '/son_editor_choice');
+	                        return goto('/manage/' + node._id + '/son_editor_choice');
 	                     } },
 	                  React.createElement('i', { className: 'fa fa-plus fa-3x' }),
 	                  React.createElement(
@@ -2363,7 +2363,7 @@ webpackJsonp([0],[
 	               React.createElement(
 	                  'div',
 	                  { className: 'cell create', onClick: function onClick() {
-	                        return goto('/manage/' + node._gid + '/son_editor_tf');
+	                        return goto('/manage/' + node._id + '/son_editor_tf');
 	                     } },
 	                  React.createElement('i', { className: 'fa fa-plus fa-3x' }),
 	                  React.createElement(
@@ -2375,7 +2375,7 @@ webpackJsonp([0],[
 	               React.createElement(
 	                  'div',
 	                  { className: 'cell create', onClick: function onClick() {
-	                        return goto('/manage/' + node._gid + '/son_editor_qa');
+	                        return goto('/manage/' + node._id + '/son_editor_qa');
 	                     } },
 	                  React.createElement('i', { className: 'fa fa-plus fa-3x' }),
 	                  React.createElement(
@@ -2387,7 +2387,7 @@ webpackJsonp([0],[
 	               React.createElement(
 	                  'div',
 	                  { className: 'cell create', onClick: function onClick() {
-	                        return goto('/manage/' + node._gid + '/son_editor_revise');
+	                        return goto('/manage/' + node._id + '/son_editor_revise');
 	                     } },
 	                  React.createElement('i', { className: 'fa fa-plus fa-3x' }),
 	                  React.createElement(
@@ -2405,8 +2405,8 @@ webpackJsonp([0],[
 	                  console.log(node);
 	                  return React.createElement(
 	                     'div',
-	                     { key: node._gid, className: 'cell', onClick: function onClick() {
-	                           return goto("/manage/" + node._gid);
+	                     { key: node._id, className: 'cell', onClick: function onClick() {
+	                           return goto("/manage/" + node._id);
 	                        } },
 	                     common.icon(node),
 	                     React.createElement(
@@ -2625,7 +2625,7 @@ webpackJsonp([0],[
 	  var fn = vm[node_type] || function () {
 	    return null;
 	  };
-	  return fn(node._data.data, node._gid);
+	  return fn(node._data.data, node._id);
 	};
 
 /***/ },
@@ -2857,7 +2857,7 @@ webpackJsonp([0],[
 	            for (var i = node._children.length - 1; i >= 0; i--) {
 	                var child = node._children[i];
 	                if (child._data.type == 'tn/nfile/url') {
-	                    urls.push({ gid: child._gid, url: child._data.data });
+	                    urls.push({ gid: child._id, url: child._data.data });
 	                }
 	            }
 	            return React.createElement(
@@ -3109,7 +3109,7 @@ webpackJsonp([0],[
 	            var mySubscriber = function mySubscriber(msg, data) {
 	                console.log(msg, data);
 	                // me.forceUpdate();
-	                me.fetchData();
+	                me.fetchData(me.props);
 	            };
 	            var subscribe = this.props.subscribe || [];
 	            this.tokens = subscribe.map(function (msg) {
@@ -3127,6 +3127,7 @@ webpackJsonp([0],[
 	            }
 	            this.cancelablePromise = util.makeCancelable(this._fetchData(props));
 	            this.cancelablePromise.promise.then(function (nodes) {
+	                console.log('fetchData', nodes);
 	                _this2.setState({ nodes: nodes });
 	            }).catch(function (reason) {
 	                if (!reason.isCanceled) {
@@ -3227,7 +3228,7 @@ webpackJsonp([0],[
 	                            return _context.abrupt('return', [to]);
 
 	                        case 14:
-	                            return _context.abrupt('return', treetool.expandToRoot([to], from));
+	                            return _context.abrupt('return', treetool.expandToRoot([to], from).then(tree.read_nodes));
 
 	                        case 15:
 	                        case 'end':
@@ -3402,7 +3403,7 @@ webpackJsonp([0],[
 	          React.createElement(
 	            'div',
 	            { className: 'cell create', onClick: function onClick() {
-	                return goto('/manage/' + node._gid + '/son_editor_paper_folder');
+	                return goto('/manage/' + node._id + '/son_editor_paper_folder');
 	              } },
 	            React.createElement('i', { className: 'fa fa-plus fa-3x' }),
 	            React.createElement(
@@ -3414,7 +3415,7 @@ webpackJsonp([0],[
 	          React.createElement(
 	            'div',
 	            { className: 'cell create', onClick: function onClick() {
-	                return goto('/manage/' + node._gid + '/son_editor_paper');
+	                return goto('/manage/' + node._id + '/son_editor_paper');
 	              } },
 	            React.createElement('i', { className: 'fa fa-plus fa-3x' }),
 	            React.createElement(
@@ -3432,8 +3433,8 @@ webpackJsonp([0],[
 	            console.log(node);
 	            return React.createElement(
 	              'div',
-	              { key: node._gid, className: 'cell', onClick: function onClick() {
-	                  return goto("/manage/" + node._gid);
+	              { key: node._id, className: 'cell', onClick: function onClick() {
+	                  return goto("/manage/" + node._id);
 	                } },
 	              common.icon(node),
 	              React.createElement(
@@ -4272,7 +4273,7 @@ webpackJsonp([0],[
 	            return React.createElement(
 	                'div',
 	                { className: 'soneditor' },
-	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._gid }),
+	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._id }),
 	                components[node._lid]
 	            );
 	        }
@@ -4435,8 +4436,8 @@ webpackJsonp([0],[
 	                type: node_type,
 	                data: {}
 	            };
-	            tree.mk_son_by_data(node._gid, data).then(function (new_node) {
-	                location.href = "#/manage/" + new_node._gid;
+	            tree.mk_son_by_data(node._id, data).then(function (new_node) {
+	                location.href = "#/manage/" + new_node._id;
 	            });
 	        }
 	    }, {
@@ -4568,7 +4569,7 @@ webpackJsonp([0],[
 	            if (gid) {
 	                return tree.update(gid, data);
 	            } else if (node) {
-	                return tree.update(node._gid, data);
+	                return tree.update(node._id, data);
 	            } else if (path) {
 	                return tree.lidpath2gid(path).then(function (gid) {
 	                    return tree.update(gid, data);
@@ -4605,7 +4606,7 @@ webpackJsonp([0],[
 	            if (gid) {
 	                return tree.remove(gid);
 	            } else if (node) {
-	                return tree.remove(node._gid);
+	                return tree.remove(node._id);
 	            } else if (path) {
 	                return tree.remove_by_path(path);
 	            } else {
@@ -4885,8 +4886,8 @@ webpackJsonp([0],[
 	                type: node_type,
 	                data: {}
 	            };
-	            tree.mk_son_by_data(node._gid, data).then(function (new_node) {
-	                location.href = "#/manage/" + new_node._gid;
+	            tree.mk_son_by_data(node._id, data).then(function (new_node) {
+	                location.href = "#/manage/" + new_node._id;
 	            });
 	        }
 	    }, {
@@ -5030,8 +5031,8 @@ webpackJsonp([0],[
 	                type: node_type,
 	                data: {}
 	            };
-	            tree.mk_son_by_data(node._gid, data).then(function (new_node) {
-	                location.href = "#/manage/" + new_node._gid;
+	            tree.mk_son_by_data(node._id, data).then(function (new_node) {
+	                location.href = "#/manage/" + new_node._id;
 	            });
 	        }
 	    }, {
@@ -5117,8 +5118,8 @@ webpackJsonp([0],[
 	                type: node_type,
 	                data: {}
 	            };
-	            tree.mk_son_by_data(node._gid, data).then(function (new_node) {
-	                location.href = "#/manage/" + new_node._gid;
+	            tree.mk_son_by_data(node._id, data).then(function (new_node) {
+	                location.href = "#/manage/" + new_node._id;
 	            });
 	        }
 	    }]);
@@ -5203,9 +5204,9 @@ webpackJsonp([0],[
 	            return React.createElement(
 	                'div',
 	                null,
-	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._gid }),
+	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._id }),
 	                React.createElement(_bank_folder_updater2.default, { node: node }),
-	                React.createElement(_reader2.default, { view: _bank_summary2.default, gid: node._gid, level: 1 })
+	                React.createElement(_reader2.default, { view: _bank_summary2.default, gid: node._id, level: 1 })
 	            );
 	        }
 	    }, {
@@ -5516,8 +5517,8 @@ webpackJsonp([0],[
 	            return React.createElement(
 	                'div',
 	                { className: 'folder_creater' },
-	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._gid }),
-	                React.createElement(_writer2.default, { pgid: node._gid, view: FolderForm, publish: 'saved' })
+	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._id }),
+	                React.createElement(_writer2.default, { pgid: node._id, view: FolderForm, publish: 'saved' })
 	            );
 	        }
 	    }, {
@@ -5529,7 +5530,7 @@ webpackJsonp([0],[
 	            var node = this.props.node;
 
 	            this.token = PubSub.subscribe("saved", function (msg, new_node) {
-	                location.href = "#/manage/" + new_node._gid;
+	                location.href = "#/manage/" + new_node._id;
 	            }); //保存数据后到新节点
 	        }
 	    }, {
@@ -5635,9 +5636,9 @@ webpackJsonp([0],[
 	            return React.createElement(
 	                'div',
 	                null,
-	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._gid }),
+	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._id }),
 	                React.createElement(_paper_folder_updater2.default, { node: node }),
-	                React.createElement(_reader2.default, { view: _paper_summary2.default, gid: node._gid, level: 1 })
+	                React.createElement(_reader2.default, { view: _paper_summary2.default, gid: node._id, level: 1 })
 	            );
 	        }
 	    }, {
@@ -5947,8 +5948,8 @@ webpackJsonp([0],[
 	            return React.createElement(
 	                'div',
 	                { className: 'folder_creater' },
-	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._gid }),
-	                React.createElement(_writer2.default, { pgid: node._gid, view: FolderForm, publish: 'saved' })
+	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._id }),
+	                React.createElement(_writer2.default, { pgid: node._id, view: FolderForm, publish: 'saved' })
 	            );
 	        }
 	    }, {
@@ -5960,7 +5961,7 @@ webpackJsonp([0],[
 	            var node = this.props.node;
 
 	            this.token = PubSub.subscribe("saved", function (msg, new_node) {
-	                location.href = "#/manage/" + new_node._gid;
+	                location.href = "#/manage/" + new_node._id;
 	            }); //保存数据后到新节点
 	        }
 	    }, {
@@ -6063,8 +6064,8 @@ webpackJsonp([0],[
 	            return React.createElement(
 	                'div',
 	                { className: 'paper_creater' },
-	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._gid }),
-	                React.createElement(_writer2.default, { pgid: node._gid, view: _paper_form2.default, publish: 'saved' })
+	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._id }),
+	                React.createElement(_writer2.default, { pgid: node._id, view: _paper_form2.default, publish: 'saved' })
 	            );
 	        }
 	    }, {
@@ -6498,8 +6499,8 @@ webpackJsonp([0],[
 	                nodes.map(function (node) {
 	                    return React.createElement(
 	                        _reactBootstrap.Row,
-	                        { key: node._gid, className: 'no-gutter' },
-	                        _this2.showTopic(node, scores[node._gid])
+	                        { key: node._id, className: 'no-gutter' },
+	                        _this2.showTopic(node, scores[node._id])
 	                    );
 	                })
 	            );
@@ -6518,7 +6519,7 @@ webpackJsonp([0],[
 	                    React.createElement(
 	                        _reactBootstrap.Button,
 	                        { bsStyle: 'danger', onClick: function onClick() {
-	                                PubSub.publish('topic.toggle', node._gid);
+	                                PubSub.publish('topic.toggle', node._id);
 	                            } },
 	                        React.createElement(_reactBootstrap.Glyphicon, { glyph: 'remove' })
 	                    )
@@ -6542,8 +6543,8 @@ webpackJsonp([0],[
 	    }, {
 	        key: 'changeScore',
 	        value: function changeScore(node, score) {
-	            console.log('changeScore', node._gid, score);
-	            PubSub.publish('topic.score', { gid: node._gid, score: score });
+	            console.log('changeScore', node._id, score);
+	            PubSub.publish('topic.score', { gid: node._id, score: score });
 	        }
 	    }, {
 	        key: 'componentWillMount',
@@ -6878,8 +6879,8 @@ webpackJsonp([0],[
 
 
 	function name(node) {
-	    var d = node._data;
-	    return d.title || d.data && (d.data.name || d.data.question) || lid2name(node._lid) || node._lid || "noname";
+	    var d = node._data || {};
+	    return d.title || d.data && (d.data.name || d.data.question) || lid2name(node._name) || node._name || "noname";
 	}
 
 	function lid2name(lid) {
@@ -6909,15 +6910,15 @@ webpackJsonp([0],[
 	            var items = this.state.nodes.map(function (node) {
 	                return { title: name(node), onClick: function onClick() {
 	                        return _this2.onClick(node);
-	                    }, key: node._gid };
+	                    }, key: node._id };
 	            });
 	            return React.createElement(_navview2.default, { items: items });
 	        }
 	    }, {
 	        key: 'onClick',
 	        value: function onClick(node) {
-	            console.log('nav onClick', node._gid);
-	            PubSub.publish('topic.goto', node._gid);
+	            console.log('nav onClick', node._id);
+	            PubSub.publish('topic.goto', node._id);
 	        }
 	    }, {
 	        key: 'componentWillMount',
@@ -7020,7 +7021,7 @@ webpackJsonp([0],[
 	                nodes.filter(isFolderOrTopic).map(function (node) {
 	                    return React.createElement(
 	                        _reactBootstrap.Row,
-	                        { key: node._gid, className: 'no-gutter' },
+	                        { key: node._id, className: 'no-gutter' },
 	                        _this2.wrapNode(node)
 	                    );
 	                })
@@ -7040,7 +7041,7 @@ webpackJsonp([0],[
 	                        React.createElement(
 	                            _reactBootstrap.Button,
 	                            { bsStyle: 'default', onClick: function onClick() {
-	                                    PubSub.publish('topic.goto', node._gid);
+	                                    PubSub.publish('topic.goto', node._id);
 	                                } },
 	                            React.createElement(_reactBootstrap.Glyphicon, { glyph: 'folder-open' })
 	                        )
@@ -7051,7 +7052,7 @@ webpackJsonp([0],[
 	                        React.createElement(
 	                            _reactBootstrap.Well,
 	                            { onClick: function onClick() {
-	                                    PubSub.publish('topic.goto', node._gid);
+	                                    PubSub.publish('topic.goto', node._id);
 	                                } },
 	                            (0, _common.name)(node)
 	                        )
@@ -7069,9 +7070,9 @@ webpackJsonp([0],[
 	                        React.createElement(
 	                            _reactBootstrap.Button,
 	                            { bsStyle: this.questionStyle(node), onClick: function onClick() {
-	                                    PubSub.publish('topic.toggle', node._gid);
+	                                    PubSub.publish('topic.toggle', node._id);
 	                                } },
-	                            this.props.selected_questions.indexOf(node._gid) > -1 ? React.createElement(_reactBootstrap.Glyphicon, { glyph: 'ok' }) : "__"
+	                            this.props.selected_questions.indexOf(node._id) > -1 ? React.createElement(_reactBootstrap.Glyphicon, { glyph: 'ok' }) : "__"
 	                        )
 	                    ),
 	                    React.createElement(
@@ -7085,8 +7086,8 @@ webpackJsonp([0],[
 	    }, {
 	        key: 'questionStyle',
 	        value: function questionStyle(node) {
-	            // console.log("questionStyle",this.props.selected_questions,node._gid,this.props.selected_questions.indexOf(node._gid))
-	            if (this.props.selected_questions.indexOf(node._gid) > -1) {
+	            // console.log("questionStyle",this.props.selected_questions,node._id,this.props.selected_questions.indexOf(node._id))
+	            if (this.props.selected_questions.indexOf(node._id) > -1) {
 	                return 'success';
 	            } else {
 	                return 'default';
@@ -7213,7 +7214,7 @@ webpackJsonp([0],[
 	            return React.createElement(
 	                'div',
 	                { className: 'paper_updater' },
-	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._gid }),
+	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._id }),
 	                React.createElement(_writer2.default, { node: node, view: _paper_form2.default, publish: { update: "updated", remove: "removed" } })
 	            );
 	        }
@@ -7353,7 +7354,7 @@ webpackJsonp([0],[
 	                        data: obj.formData
 	                    });
 	                } },
-	            React.createElement(_upload2.default, { pgid: props.node._gid }),
+	            React.createElement(_upload2.default, { pgid: props.node._id }),
 	            React.createElement(
 	                'div',
 	                { className: 'btn-toolbar' },
@@ -7400,7 +7401,7 @@ webpackJsonp([0],[
 	            return React.createElement(
 	                'div',
 	                { className: 'topic_choice_updater' },
-	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._gid }),
+	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._id }),
 	                React.createElement(_writer2.default, { node: node, view: ChoiceForm, publish: { update: "updated", remove: "removed" } })
 	            );
 	        }
@@ -7882,7 +7883,7 @@ webpackJsonp([0],[
 	                        data: obj.formData
 	                    });
 	                } },
-	            React.createElement(_upload2.default, { pgid: props.node._gid }),
+	            React.createElement(_upload2.default, { pgid: props.node._id }),
 	            React.createElement(
 	                'div',
 	                { className: 'btn-toolbar' },
@@ -7929,7 +7930,7 @@ webpackJsonp([0],[
 	            return React.createElement(
 	                'div',
 	                { className: 'topic_choice_updater' },
-	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._gid }),
+	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._id }),
 	                React.createElement(_writer2.default, { node: node, view: QaForm, publish: { update: "updated", remove: "removed" } })
 	            );
 	        }
@@ -8059,7 +8060,7 @@ webpackJsonp([0],[
 	                        data: obj.formData
 	                    });
 	                } },
-	            React.createElement(_upload2.default, { pgid: props.node._gid }),
+	            React.createElement(_upload2.default, { pgid: props.node._id }),
 	            React.createElement(
 	                'div',
 	                { className: 'btn-toolbar' },
@@ -8106,7 +8107,7 @@ webpackJsonp([0],[
 	            return React.createElement(
 	                'div',
 	                { className: 'topic_choice_updater' },
-	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._gid }),
+	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._id }),
 	                React.createElement(_writer2.default, { node: node, view: TfForm, publish: { update: "updated", remove: "removed" } })
 	            );
 	        }
@@ -8239,7 +8240,7 @@ webpackJsonp([0],[
 	                        data: obj.formData
 	                    });
 	                } },
-	            React.createElement(_upload2.default, { pgid: props.node._gid }),
+	            React.createElement(_upload2.default, { pgid: props.node._id }),
 	            React.createElement(
 	                'div',
 	                { className: 'btn-toolbar' },
@@ -8286,7 +8287,7 @@ webpackJsonp([0],[
 	            return React.createElement(
 	                'div',
 	                { className: 'topic_choice_updater' },
-	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._gid }),
+	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._id }),
 	                React.createElement(_writer2.default, { node: node, view: ReviseForm, publish: { update: "updated", remove: "removed" } })
 	            );
 	        }
@@ -9056,7 +9057,7 @@ webpackJsonp([0],[
 	                end = _state.end,
 	                _id = _state._id;
 	            // const paper_name=paper&&paper._data.data.name;
-	            // const paper=paper&&paper._gid;
+	            // const paper=paper&&paper._id;
 	            // const room_name=room&&room.name;
 	            // const room_id=room&&room._id;
 
@@ -9182,7 +9183,7 @@ webpackJsonp([0],[
 
 	            this.token_choose_paper = PubSub.subscribe("paper.choose", function (msg, node) {
 	                console.log('paper.choose', node);
-	                _this2.setState({ paper_gid: node._gid, paper_name: node._data.data.name });
+	                _this2.setState({ paper_gid: node._id, paper_name: node._data.data.name });
 	            });
 	            this.token_choose_room = PubSub.subscribe("room.choose", function (msg, data) {
 	                console.log('room.choose', data);
@@ -9563,8 +9564,8 @@ webpackJsonp([0],[
 
 
 	function name(node) {
-	    var d = node._data;
-	    return d.title || d.data && (d.data.name || d.data.question) || lid2name(node._lid) || node._lid || "noname";
+	    var d = node._data || {};
+	    return d.title || d.data && (d.data.name || d.data.question) || lid2name(node._name) || node._name || "noname";
 	}
 
 	function lid2name(lid) {
@@ -9594,15 +9595,15 @@ webpackJsonp([0],[
 	            var items = this.state.nodes.map(function (node) {
 	                return { title: name(node), onClick: function onClick() {
 	                        return _this2.onClick(node);
-	                    }, key: node._gid };
+	                    }, key: node._id };
 	            });
 	            return React.createElement(_navview2.default, { items: items });
 	        }
 	    }, {
 	        key: 'onClick',
 	        value: function onClick(node) {
-	            console.log('nav onClick', node._gid);
-	            PubSub.publish('paper.goto', node._gid);
+	            console.log('nav onClick', node._id);
+	            PubSub.publish('paper.goto', node._id);
 	        }
 	    }, {
 	        key: 'componentWillMount',
@@ -9718,7 +9719,7 @@ webpackJsonp([0],[
 	            if (node._data.type == 'ks1/paper/folder') {
 	                return React.createElement(
 	                    'div',
-	                    { className: 'cell', key: node._gid, onClick: function onClick() {
+	                    { className: 'cell', key: node._id, onClick: function onClick() {
 	                            return _this3.choosePaperFolder(node);
 	                        } },
 	                    (0, _common.icon)(node),
@@ -9731,7 +9732,7 @@ webpackJsonp([0],[
 	            } else {
 	                return React.createElement(
 	                    'div',
-	                    { className: (0, _classnames2.default)('cell', { selected: this.isChoosen(node) }), key: node._gid, onClick: function onClick() {
+	                    { className: (0, _classnames2.default)('cell', { selected: this.isChoosen(node) }), key: node._id, onClick: function onClick() {
 	                            return _this3.choosePaper(node);
 	                        } },
 	                    (0, _common.icon)(node),
@@ -9749,7 +9750,7 @@ webpackJsonp([0],[
 	        value: function isChoosen(node) {
 	            var choosen = this.state.choosen;
 
-	            return choosen === node._gid;
+	            return choosen === node._id;
 	        }
 	    }, {
 	        key: 'choosePaper',
@@ -9760,7 +9761,7 @@ webpackJsonp([0],[
 	    }, {
 	        key: 'choosePaperFolder',
 	        value: function choosePaperFolder(node) {
-	            PubSub.publish('paper.goto', node._gid);
+	            PubSub.publish('paper.goto', node._id);
 	        }
 	    }, {
 	        key: 'componentWillMount',
@@ -11323,7 +11324,7 @@ webpackJsonp([0],[
 	      React.createElement('textarea', { className: 'form-control', rows: '3', placeholder: '\u6279\u6CE8',
 	        defaultValue: props.comment || '',
 	        onChange: function onChange(e) {
-	          PubSub.publish('comment.change', { gid: props.node._gid, comment: e.target.value });
+	          PubSub.publish('comment.change', { gid: props.node._id, comment: e.target.value });
 	        }
 	      })
 	    ),
@@ -11333,7 +11334,7 @@ webpackJsonp([0],[
 	      React.createElement('input', { type: 'number', min: '0', max: '100', step: '1',
 	        placeholder: '\u5F97\u5206', value: props.score,
 	        onChange: function onChange(e) {
-	          PubSub.publish('score.change', { gid: props.node._gid, score: Number(e.target.value) });
+	          PubSub.publish('score.change', { gid: props.node._id, score: Number(e.target.value) });
 	        },
 	        style: { padding: "8px", width: "50px" } })
 	    )
@@ -11367,7 +11368,7 @@ webpackJsonp([0],[
 	    _reactBootstrap.Panel,
 	    { header: "[选择题] " + data.question, collapsible: true, defaultExpanded: true,
 	      bsStyle: correct ? "success" : "danger" },
-	    React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._gid, level: 1 }),
+	    React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._id, level: 1 }),
 	    React.createElement(
 	      _reactBootstrap.ListGroup,
 	      { fill: true },
@@ -11410,7 +11411,7 @@ webpackJsonp([0],[
 	  return React.createElement(
 	    _reactBootstrap.Panel,
 	    { header: "[问答题] " + data.question, collapsible: true, defaultExpanded: true },
-	    React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._gid, level: 1 }),
+	    React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._id, level: 1 }),
 	    React.createElement(
 	      'div',
 	      { style: { fontSize: "1.4em", color: "SteelBlue" } },
@@ -11430,7 +11431,7 @@ webpackJsonp([0],[
 	    _reactBootstrap.Panel,
 	    { collapsible: true, defaultExpanded: true,
 	      header: "[判断题] " + data.question + " " + (data.ok ? " ( ✓ )" : " ( ✗ )"), bsStyle: correct ? "success" : "danger" },
-	    React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._gid, level: 1 }),
+	    React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._id, level: 1 }),
 	    answer === undefined ? null : answer ? React.createElement(CheckSign, null) : React.createElement(CrossSign, null)
 	  );
 	};
@@ -11486,7 +11487,7 @@ webpackJsonp([0],[
 	  contents.push(exam.name);
 	  contents.push("总分：" + totalScore);
 	  questions.map(function (question) {
-	    var qid = question._gid;
+	    var qid = question._id;
 	    var score = scores[qid] || 0;
 	    var comment = comments[qid] || "";
 	    var answer = answers[qid];
@@ -11570,7 +11571,7 @@ webpackJsonp([0],[
 	}
 
 	function QJson(qnode, questions, scores, comments, answers) {
-	  var qid = qnode._gid;
+	  var qid = qnode._id;
 	  var score = scores[qid] || 0;
 	  var comment = comments[qid] || "";
 	  var answer = answers[qid];
@@ -11760,8 +11761,8 @@ webpackJsonp([0],[
 	              _.map(questions, function (node) {
 	                return React.createElement(
 	                  _reactBootstrap.Row,
-	                  { key: node._gid, className: 'no-gutter' },
-	                  React.createElement(QS, { node: node, score: scores[node._gid] || 0, comment: comments[node._gid] || '', answer: answers[node._gid] })
+	                  { key: node._id, className: 'no-gutter' },
+	                  React.createElement(QS, { node: node, score: scores[node._id] || 0, comment: comments[node._id] || '', answer: answers[node._id] })
 	                );
 	              })
 	            )

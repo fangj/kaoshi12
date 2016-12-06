@@ -19,7 +19,7 @@ export class Preview extends Component {
     return (
       <div className='paper-preview'>
       <Grid fluid>{_.map(selected_questions,(node=>
-       <Row key={node._gid} className='no-gutter'>
+       <Row key={node._id} className='no-gutter'>
         {this.wrapNode(node)}
        </Row>))}
       </Grid>

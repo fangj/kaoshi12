@@ -26,7 +26,7 @@ class PaperTopicChooserBrowser extends React.Component {
         return (
             <div className='paper-questions'>
               {nodes.filter(isFolderOrTopic).map(node=>
-               <Row key={node._gid} className='no-gutter'>
+               <Row key={node._id} className='no-gutter'>
                 {this.wrapNode(node)}
                </Row>)}
               </div>
@@ -37,21 +37,21 @@ class PaperTopicChooserBrowser extends React.Component {
         // console.log(node);
         if(node._data.type=='ks1/bank/folder'){
           return <div>
-          <Col xs={1}><Button bsStyle="default" onClick={()=>{PubSub.publish('topic.goto',node._gid)}}><Glyphicon glyph="folder-open" /></Button></Col>
-          <Col xs={11}><Well onClick={()=>{PubSub.publish('topic.goto',node._gid)}}>{name(node)}</Well></Col>;
+          <Col xs={1}><Button bsStyle="default" onClick={()=>{PubSub.publish('topic.goto',node._id)}}><Glyphicon glyph="folder-open" /></Button></Col>
+          <Col xs={11}><Well onClick={()=>{PubSub.publish('topic.goto',node._id)}}>{name(node)}</Well></Col>;
           </div>;
       }else{
           // console.log(node,v);
           return <div>
-          <Col xs={1}><Button bsStyle={this.questionStyle(node)} onClick={()=>{PubSub.publish('topic.toggle',node._gid)}}>{(this.props.selected_questions.indexOf(node._gid)>-1)?<Glyphicon glyph="ok" />:"__"}</Button></Col>
+          <Col xs={1}><Button bsStyle={this.questionStyle(node)} onClick={()=>{PubSub.publish('topic.toggle',node._id)}}>{(this.props.selected_questions.indexOf(node._id)>-1)?<Glyphicon glyph="ok" />:"__"}</Button></Col>
           <Col xs={11}>{m(node)}</Col>
           </div>;
         }
       }
 
     questionStyle(node){
-        // console.log("questionStyle",this.props.selected_questions,node._gid,this.props.selected_questions.indexOf(node._gid))
-        if(this.props.selected_questions.indexOf(node._gid)>-1){
+        // console.log("questionStyle",this.props.selected_questions,node._id,this.props.selected_questions.indexOf(node._id))
+        if(this.props.selected_questions.indexOf(node._id)>-1){
           return 'success';
         }else{
           return 'default';

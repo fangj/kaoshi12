@@ -44,7 +44,7 @@ const ChoiceForm=(props)=>{
                     data:obj.formData
                 })
             }>
-        <ImageUploader pgid={props.node._gid}/>
+        <ImageUploader pgid={props.node._id}/>
         <div className="btn-toolbar">
             <button type="submit" className="btn btn-success">保存</button>
             {!isAdmin?null:<button className="btn btn-danger" onClick={(e)=>{e.preventDefault();//不知为何submit会被调用，人为阻止
@@ -68,7 +68,7 @@ class TopicChoiceUpdater extends React.Component {
         const {node}=this.props;
         return (
             <div className="topic_choice_updater">
-                <TreePathReader view={Nav} from="0/menu" to={node._gid}/>
+                <TreePathReader view={Nav} from="0/menu" to={node._id}/>
                 <Writer node={node} view={ChoiceForm} publish={{update:"updated",remove:"removed"}}/>
             </div>
         );

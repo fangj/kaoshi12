@@ -7,8 +7,8 @@ import NavView from "../navview";
 
 
 function name(node){
-  var d=node._data;
-  return d.title || d.data && (d.data.name ||d.data.question)||lid2name(node._lid)||node._lid||"noname";
+  var d=node._data||{};
+  return d.title || d.data && (d.data.name ||d.data.question)||lid2name(node._name)||node._name||"noname";
 }
 
 function lid2name(lid) {
@@ -28,7 +28,7 @@ class Nav extends React.Component {
 
 
     render() {
-        const items=this.state.nodes.map(node=>({title:name(node),href:"#/manage/"+node._gid}))
+        const items=this.state.nodes.map(node=>({title:name(node),href:"#/manage/"+node._id}))
         return (
             <NavView items={items}/>
         );
