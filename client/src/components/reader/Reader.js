@@ -87,7 +87,7 @@ class Reader extends React.Component {
 
     fetchDataByGid(gid,level){ //客户端展开，可利用缓存
         // debugger;
-        return tree.read(Number(gid)).then(node=>{
+        return tree.read(gid).then(node=>{
                 if(!level){
                     return node;
                 }else{

@@ -115,9 +115,9 @@ class Writer extends React.Component {
         console.log('save',data);
         const {bgid,pgid,ppath}=this.props;
         if(bgid){
-            return tree.mk_brother_by_data(Number(bgid),data,lid);
+            return tree.mk_brother_by_data(bgid,data,lid);
         }else if(pgid!=undefined){
-            return tree.mk_son_by_data(Number(pgid),data,lid);
+            return tree.mk_son_by_data(pgid,data,lid);
         }else if(ppath){
             return this.createDataNodeByPath(ppath,data,lid);
         }else{

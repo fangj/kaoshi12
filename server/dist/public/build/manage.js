@@ -1700,7 +1700,7 @@ webpackJsonp([0],[
 	        classes: React.createElement(_classes2.default, null),
 	        rooms: React.createElement(_rooms2.default, null)
 	    };
-	    return components[node._lid] || null;
+	    return components[node._name] || null;
 	}
 
 	function vByType(type, node) {
@@ -1782,8 +1782,9 @@ webpackJsonp([0],[
 	        value: function refresh(props) {
 	            var _this2 = this;
 
-	            var gid = Number(props.params.gid);
+	            var gid = props.params.gid;
 	            var vtype = props.params.vtype;
+	            // debugger;
 	            tree.read(gid).then(function (node) {
 	                _this2.setState({ node: node, vtype: vtype });
 	            });
@@ -2756,7 +2757,7 @@ webpackJsonp([0],[
 	        value: function fetchDataByGid(gid, level) {
 	            //客户端展开，可利用缓存
 	            // debugger;
-	            return tree.read(Number(gid)).then(function (node) {
+	            return tree.read(gid).then(function (node) {
 	                if (!level) {
 	                    return node;
 	                } else {
@@ -4274,7 +4275,7 @@ webpackJsonp([0],[
 	                'div',
 	                { className: 'soneditor' },
 	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._id }),
-	                components[node._lid]
+	                components[node._name]
 	            );
 	        }
 	    }, {
@@ -4642,9 +4643,9 @@ webpackJsonp([0],[
 	                ppath = _props5.ppath;
 
 	            if (bgid) {
-	                return tree.mk_brother_by_data(Number(bgid), data, lid);
+	                return tree.mk_brother_by_data(bgid, data, lid);
 	            } else if (pgid != undefined) {
-	                return tree.mk_son_by_data(Number(pgid), data, lid);
+	                return tree.mk_son_by_data(pgid, data, lid);
 	            } else if (ppath) {
 	                return this.createDataNodeByPath(ppath, data, lid);
 	            } else {

@@ -14,13 +14,6 @@ export default class Main extends React.Component {
   }
 
   async createPathIfNotExist(){
-    // tool.fetchOrCreatePath("0/menu")
-    // .then(tool.fetchOrCreatePath("0/menu/banks"))
-    // .then(tool.fetchOrCreatePath("0/menu/papers"))
-    // .then(tool.fetchOrCreatePath("0/menu/exams"))
-    // .then(tool.fetchOrCreatePath("0/menu/teachers"))
-    // .then(tool.fetchOrCreatePath("0/menu/classes"))
-    // .then(tool.fetchOrCreatePath("0/menu/rooms"));
     var menu_node=await tool.createNodeByPath("0/menu");
     var menu_gid=menu_node._id;
     await tool.createNodeByPath(menu_gid+"/banks");

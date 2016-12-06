@@ -42,7 +42,7 @@ function v(node){
         classes:<Classes/>,
         rooms:<Rooms/>
     }
-    return components[node._lid]||null;
+    return components[node._name]||null;
 }
 
 function vByType(type,node){
@@ -103,8 +103,9 @@ class Manage extends React.Component {
     }
 
     refresh(props){
-        const gid=Number(props.params.gid);
+        const gid=props.params.gid;
         const vtype=props.params.vtype;
+        // debugger;
         tree.read(gid).then(node=>{
             this.setState({node,vtype})
         })
