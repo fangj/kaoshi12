@@ -5,7 +5,8 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports={
   entry:{
     manage:'./src/pages/manage/index.js',
-    vendor:['frisbee']
+    vendor:['frisbee','superagent','superagent-promise','react-router','react-jsonschema-form','react-dropzone','react-bootstrap','moment','lodash',
+    'history','classnames','lru-cache','ramda']
   },
   output:{
     path: path.join(__dirname,"..","server","dist","public","build"),

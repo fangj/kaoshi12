@@ -70,8 +70,7 @@ module.exports=function(app){
 		if(!req.user){
 	    	res.redirect('/login.html');
 		}else{
-	    	  var p=path.join(__dirname, '..','nowa','dist','manage.html');
-	    	  res.sendfile(p);
+        next(); 
 		}
 	});
 

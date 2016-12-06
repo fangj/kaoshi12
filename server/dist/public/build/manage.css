@@ -1,1 +1,211 @@
-.exam_form_room_chooser_browser{background-color:#f60}.imageviewer img{max-width:800px;margin:5px}.exam_form_room_chooser,.login{background-color:#f60}.main{width:800px;margin:auto}.main a{display:block;width:100%;height:100%}.main a:hover{text-decoration:none}.main ul:after{content:'';display:block;clear:both}.main .pad,.main ul{padding:20px 40px}.main li{width:150px;height:150px;float:left;margin:20px;padding:5px;display:block;text-align:center;font-size:2em;background-color:skyblue}.main li a,.main li i{color:#fff}.main li i{padding-top:20px}.main li:hover{color:#fff;background-color:blue}.main li.selected{background-color:#5cb85c;color:#fff}.panel-purple{border-color:#9c27b0}.panel-purple>.panel-heading{border-color:#9c27b0;color:#fff;background-color:#9c27b0}.panel-purple>a{color:#9c27b0}.panel-purple>a:hover{color:#641971}.panel-teal{border-color:#009688}.panel-teal>.panel-heading{border-color:#009688;color:#fff;background-color:#009688}.panel-teal>a{color:#009688}.panel-teal>a:hover{color:#004a43}.bank_folder,.dropbox,.navview,.paper_folder,.paper_folder_creater,.paper_folder_updater,.paper_preview,.paper_preview_questions,.paper_topic_chooser_browser,.rest_summary,.soneditor,.topic_revise_creater,.uploader,.writer{background-color:#f60}.my-dropzone{border:2px dashed #000;border-radius:4px;margin:30px;padding:30px;width:300px;-webkit-transition:all .5s;transition:all .5s;text-align:center;font-size:20px}.upload{background-color:#fff}.class_creater,.exam_form_paper_chooser_browser,.exam_form_scores,.exam_form_summary,.exam_form_time_chooser,.manage,.rest_writer,.room_creater,.teacher_creater,.teacher_updater,.topic_revise_updater{background-color:#f60}.children-grid .cell{text-align:center;width:100px;height:100px;float:left;margin:20px;padding:5px;background-color:skyblue}.children-grid .cell i{margin-top:15px;color:#fff}.children-grid .cell:hover{background-color:blue;color:#fff}.children-grid .cell.selected{background-color:#5cb85c;color:#fff}.children-grid .cell,.children-grid .note{word-wrap:break-word;overflow:hidden;text-overflow:ellipsis}.children-grid .cell.create{background-color:#90ee90}.children-grid .cell.create:hover{background-color:#006400;color:#fff}
+.login {
+  background-color: #f60;
+}
+.main {
+  width: 800px;
+  margin: auto auto;
+}
+.main a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.main a:hover {
+  text-decoration: none;
+}
+.main ul:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.main ul,
+.main .pad {
+  padding: 20px 40px;
+}
+.main li {
+  width: 150px;
+  height: 150px;
+  float: left;
+  margin: 20px;
+  padding: 5px;
+  display: block;
+  text-align: center;
+  font-size: 2em;
+  background-color: skyblue;
+}
+.main li a,
+.main li i {
+  color: white;
+}
+.main li i {
+  padding-top: 20px;
+}
+.main li:hover {
+  color: white;
+  background-color: blue;
+}
+.main li.selected {
+  background-color: #5cb85c;
+  color: white;
+}
+.panel-purple {
+  border-color: #9C27B0;
+}
+.panel-purple > .panel-heading {
+  border-color: #9C27B0;
+  color: white;
+  background-color: #9C27B0;
+}
+.panel-purple > a {
+  color: #9C27B0;
+}
+.panel-purple > a:hover {
+  color: #641971;
+}
+.panel-teal {
+  border-color: #009688;
+}
+.panel-teal > .panel-heading {
+  border-color: #009688;
+  color: white;
+  background-color: #009688;
+}
+.panel-teal > a {
+  color: #009688;
+}
+.panel-teal > a:hover {
+  color: #004a43;
+}
+.navview {
+  background-color: #f60;
+}
+.imageviewer img {
+  max-width: 800px;
+  margin: 5px;
+}
+.rest_summary {
+  background-color: #f60;
+}
+.soneditor {
+  background-color: #f60;
+}
+.writer {
+  background-color: #f60;
+}
+.topic_revise_creater {
+  background-color: #f60;
+}
+.bank_folder {
+  background-color: #f60;
+}
+.paper_folder_updater {
+  background-color: #f60;
+}
+.paper_folder {
+  background-color: #f60;
+}
+.paper_folder_creater {
+  background-color: #f60;
+}
+.paper_preview_questions {
+  background-color: #f60;
+}
+.paper_preview {
+  background-color: #f60;
+}
+.paper_topic_chooser_browser {
+  background-color: #f60;
+}
+.uploader {
+  background-color: #f60;
+}
+.dropbox {
+  background-color: #f60;
+}
+.my-dropzone {
+  border: 2px dashed black;
+  border-radius: 4px;
+  margin: 30px;
+  padding: 30px;
+  width: 300px;
+  transition: all 0.5s;
+  text-align: center;
+  font-size: 20px;
+}
+.upload {
+  background-color: #fff;
+}
+.topic_revise_updater {
+  background-color: #f60;
+}
+.manage {
+  background-color: #f60;
+}
+.rest_writer {
+  background-color: #f60;
+}
+.room_creater {
+  background-color: #f60;
+}
+.class_creater {
+  background-color: #f60;
+}
+.exam_form_summary {
+  background-color: #f60;
+}
+.exam_form_paper_chooser_browser {
+  background-color: #f60;
+}
+.exam_form_room_chooser_browser {
+  background-color: #f60;
+}
+.exam_form_room_chooser {
+  background-color: #f60;
+}
+.exam_form_time_chooser {
+  background-color: #f60;
+}
+.exam_form_scores {
+  background-color: #f60;
+}
+.teacher_creater {
+  background-color: #f60;
+}
+.teacher_updater {
+  background-color: #f60;
+}
+.children-grid .cell {
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 20px;
+  padding: 5px;
+  background-color: skyblue;
+}
+.children-grid .cell i {
+  margin-top: 15px;
+  color: white;
+}
+.children-grid .cell:hover {
+  background-color: blue;
+  color: white;
+}
+.children-grid .cell.selected {
+  background-color: #5cb85c;
+  color: white;
+}
+.children-grid .cell,
+.children-grid .note {
+  word-wrap: break-word;
+  overflow: hidden;
+  /* "overflow" value must be different from "visible" */
+  text-overflow: ellipsis;
+}
+.children-grid .cell.create {
+  background-color: lightgreen;
+}
+.children-grid .cell.create:hover {
+  background-color: darkgreen;
+  color: white;
+}

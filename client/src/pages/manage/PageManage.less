@@ -1,0 +1,39 @@
+.children-grid{
+  // width:800px;
+  // margin:auto auto;
+  
+
+  .cell{
+    text-align: center;
+    i{
+      margin-top: 15px;
+      color:white;
+    }
+    width: 100px;
+    height: 100px;
+    float:left;
+    margin: 20px;
+    padding: 5px;
+    background-color: skyblue;
+  }
+  .cell:hover{
+    background-color: blue;
+    color:white;
+  }
+  .cell.selected{
+    background-color: #5cb85c;
+    color:white;
+  }
+  .cell, .note{
+    word-wrap: break-word;
+    overflow: hidden;              /* "overflow" value must be different from "visible" */ 
+    text-overflow: ellipsis;
+  }
+  .cell.create{
+    background-color: lightgreen;
+    &:hover{
+      background-color: darkgreen;
+      color:white;
+    }
+  }
+}

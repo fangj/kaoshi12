@@ -103,6 +103,7 @@ module.exports = function(_tree) {
         expand2,
         expandToRoot,
         createNodeByPath,
-        findLevel
+        findLevel,
+        // fetchOrCreatePath:createNodeByPath
     }
 }
