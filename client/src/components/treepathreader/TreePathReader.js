@@ -140,7 +140,7 @@ class TreePathReader extends React.Component {
             to =await _path2gid(to);
         }
         if(from===to){
-            return [to];
+            return tree.read_nodes([to]);
         }else{  
             return treetool.expandToRoot([to],from).then(tree.read_nodes);
         }

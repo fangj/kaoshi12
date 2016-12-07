@@ -3256,7 +3256,7 @@ webpackJsonp([0],[
 	                                break;
 	                            }
 
-	                            return _context.abrupt('return', [to]);
+	                            return _context.abrupt('return', tree.read_nodes([to]));
 
 	                        case 14:
 	                            return _context.abrupt('return', treetool.expandToRoot([to], from).then(tree.read_nodes));
