@@ -7,6 +7,7 @@ const api = {
   read_nodes,
   mk_son_by_data,
   mk_son_by_name,
+  namepath2node,
   mk_brother_by_data,
   remove,
   update,
@@ -148,4 +149,8 @@ function  mv_as_brother(sgid,dgid){
 //not cached
 function read_big_node(gid,level=0) {
   return _api.read_big_node(gid,level);
+}
+
+function namepath2node(namepath) {
+  return _api.namepath2node(namepath);
 }

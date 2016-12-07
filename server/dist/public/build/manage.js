@@ -796,6 +796,7 @@ webpackJsonp([0],[
 	  read_nodes: read_nodes,
 	  mk_son_by_data: mk_son_by_data,
 	  mk_son_by_name: mk_son_by_name,
+	  namepath2node: namepath2node,
 	  mk_brother_by_data: mk_brother_by_data,
 	  remove: remove,
 	  update: update,
@@ -969,6 +970,10 @@ webpackJsonp([0],[
 	  return _api.read_big_node(gid, level);
 	}
 
+	function namepath2node(namepath) {
+	  return _api.namepath2node(namepath);
+	}
+
 /***/ },
 /* 72 */,
 /* 73 */,
@@ -1007,6 +1012,7 @@ webpackJsonp([0],[
 	  read_nodes: read_nodes,
 	  mk_son_by_data: mk_son_by_data,
 	  mk_son_by_name: mk_son_by_name,
+	  namepath2node: namepath2node,
 	  mk_brother_by_data: mk_brother_by_data,
 	  remove: remove,
 	  update: update,
@@ -1045,6 +1051,12 @@ webpackJsonp([0],[
 
 	function mk_son_by_name(pgid, name) {
 	  return agent.post(prefix + '/mk/son_name/' + pgid, { body: { name: name } }).then(function (res) {
+	    return res.body;
+	  });
+	}
+
+	function namepath2node(namepath) {
+	  return agent.get(prefix + '/namepath/' + namepath).then(function (res) {
 	    return res.body;
 	  });
 	}
@@ -2741,8 +2753,8 @@ webpackJsonp([0],[
 	            if (gid !== undefined) {
 	                return this.fetchDataByGid(gid, level);
 	            } else if (path) {
-	                return tree.lidpath2gid(path).then(function (gid) {
-	                    return _this3.fetchDataByGid(gid, level);
+	                return tree.namepath2node(path).then(function (node) {
+	                    return _this3.fetchDataByGid(node, level);
 	                });
 	            }
 	        }
@@ -2750,20 +2762,29 @@ webpackJsonp([0],[
 	        key: '_fetchDataByGid',
 	        value: function _fetchDataByGid(gid, level) {
 	            //服务器端展开，没有缓存。未来可以拆解到缓存中
-	            return tree.read_big_node(Number(gid), level);
+	            return tree.read_big_node(gid, level);
 	        }
+
+	        // fetchDataByGid(gid,level){ //客户端展开，可利用缓存
+	        //     // debugger;
+	        //     return tree.read(gid).then(node=>{
+	        //             if(!level){
+	        //                 return node;
+	        //             }else{
+	        //                 return treetool.expand(node,level);
+	        //             }
+	        //         })
+	        // }
+
 	    }, {
 	        key: 'fetchDataByGid',
-	        value: function fetchDataByGid(gid, level) {
+	        value: function fetchDataByGid(node, level) {
 	            //客户端展开，可利用缓存
-	            // debugger;
-	            return tree.read(gid).then(function (node) {
-	                if (!level) {
-	                    return node;
-	                } else {
-	                    return treetool.expand(node, level);
-	                }
-	            });
+	            if (!level) {
+	                return node;
+	            } else {
+	                return treetool.expand(node, level);
+	            }
 	        }
 	    }, {
 	        key: 'componentWillReceiveProps',
@@ -4572,8 +4593,8 @@ webpackJsonp([0],[
 	            } else if (node) {
 	                return tree.update(node._id, data);
 	            } else if (path) {
-	                return tree.lidpath2gid(path).then(function (gid) {
-	                    return tree.update(gid, data);
+	                return tree.namepath2node(path).then(function (node) {
+	                    return tree.update(node._id, data);
 	                });
 	            } else {
 	                throw "update node needs gid or path or node";

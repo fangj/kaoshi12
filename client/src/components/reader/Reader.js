@@ -77,24 +77,31 @@ class Reader extends React.Component {
         if(gid!==undefined){
             return this.fetchDataByGid(gid,level);
         }else if(path){
-            return tree.lidpath2gid(path).then(gid=>this.fetchDataByGid(gid,level));
+            return tree.namepath2node(path).then(node=>this.fetchDataByGid(node,level));
         }   
     }
 
     _fetchDataByGid(gid,level){ //服务器端展开，没有缓存。未来可以拆解到缓存中
-        return tree.read_big_node(Number(gid),level);
+        return tree.read_big_node(gid,level);
     }
 
-    fetchDataByGid(gid,level){ //客户端展开，可利用缓存
-        // debugger;
-        return tree.read(gid).then(node=>{
-                if(!level){
-                    return node;
-                }else{
-                    return treetool.expand(node,level);
-                }
-                
-            })
+    // fetchDataByGid(gid,level){ //客户端展开，可利用缓存
+    //     // debugger;
+    //     return tree.read(gid).then(node=>{
+    //             if(!level){
+    //                 return node;
+    //             }else{
+    //                 return treetool.expand(node,level);
+    //             }
+    //         })
+    // }
+    
+    fetchDataByGid(node,level){ //客户端展开，可利用缓存
+        if(!level){
+            return node;
+        }else{
+            return treetool.expand(node,level);
+        }
     }
 
 

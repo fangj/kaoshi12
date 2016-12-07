@@ -65,8 +65,8 @@ class Writer extends React.Component {
         }else if(node){
             return tree.update(node._id,data);
         }else if(path){
-            return tree.lidpath2gid(path)
-                        .then(gid=>tree.update(gid,data));
+            return tree.namepath2node(path)
+                        .then(node=>tree.update(node._id,data));
         }else{
             throw "update node needs gid or path or node";
         }

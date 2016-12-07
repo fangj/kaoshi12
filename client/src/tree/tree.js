@@ -17,6 +17,7 @@ const api = {
   read_nodes,
   mk_son_by_data,
   mk_son_by_name,
+  namepath2node,
   mk_brother_by_data,
   remove,
   update,
@@ -49,6 +50,10 @@ function mk_son_by_data(pgid, data) {
 
 function mk_son_by_name(pgid, name) {
   return agent.post(prefix + '/mk/son_name/' + pgid, {body:{name}}).then(res => res.body);
+}
+
+function namepath2node(namepath){
+  return agent.get(prefix + '/namepath/' + namepath).then(res => res.body);
 }
 
 function mk_brother_by_data(bgid, data) {
