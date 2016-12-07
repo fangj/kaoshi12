@@ -5,7 +5,7 @@ function convert2json(exam,questions,scores,comments,answers,totalScore){
   var paper={};
   paper.name=exam.name;
   paper.totalScore=totalScore;
-  const group_questions=_.groupBy(nodes,function(obj){return obj._data.type});
+  const group_questions=_.groupBy(questions,function(obj){return obj._data.type});
   _.keys(group_questions).map(qtype=>{
     console.log('convert2json',qtype)
     paper[qtype.replace('/','_')]=group_questions[qtype].map(qnode=>QJson(qnode,questions,scores,comments,answers))

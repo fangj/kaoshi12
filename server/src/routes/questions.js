@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var config=require('../config');
-var tree=require('treenote/lib/server/tree-fs/tree')(config);
+var treeDb = require('../db/tree');
+var tree = require('../tree/tree-nedb')(treeDb);
 
 function remove_answer(node){
 	switch(node._data.type){
@@ -29,7 +29,7 @@ router.post('/', function(req, res, next) {
 	// console.log(qids);
 	tree.read_nodes(qids).then(nodes=>{
 		// console.log(nodes);
-		filtered_questions=nodes.map(node=>{
+		var filtered_questions=nodes.map(node=>{
 			var cloneNode=JSON.parse(JSON.stringify(node));
 			return remove_answer(cloneNode);
 		});

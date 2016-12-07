@@ -9546,7 +9546,7 @@ webpackJsonp([1],[
 	                totalScore = _state6.totalScore,
 	                comments = _state6.comments;
 
-	            var jcontent = convert2json(exam, questions, scores, comments, answers, totalScore);
+	            var jcontent = qjsonUtil.convert2json(exam, questions, scores, comments, answers, totalScore);
 	            var name = student.id + "_" + student.name + ".docx";
 	            saveAsDocx(jcontent, name);
 	            //saveAsDocx定义在manage.html中
@@ -9721,7 +9721,7 @@ webpackJsonp([1],[
 	  var paper = {};
 	  paper.name = exam.name;
 	  paper.totalScore = totalScore;
-	  var group_questions = _.groupBy(nodes, function (obj) {
+	  var group_questions = _.groupBy(questions, function (obj) {
 	    return obj._data.type;
 	  });
 	  _.keys(group_questions).map(function (qtype) {

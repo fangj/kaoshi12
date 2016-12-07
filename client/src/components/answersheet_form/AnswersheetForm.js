@@ -186,7 +186,7 @@ class AnswersheetForm extends React.Component {
       const answersheet=this.props.data;
       const {answers}=answersheet;
       const {scores,totalScore,comments}=this.state;
-      var jcontent=convert2json(exam,questions,scores,comments,answers,totalScore);
+      var jcontent=qjsonUtil.convert2json(exam,questions,scores,comments,answers,totalScore);
       var name=student.id+"_"+student.name+".docx";
       saveAsDocx(jcontent,name);
       //saveAsDocx定义在manage.html中

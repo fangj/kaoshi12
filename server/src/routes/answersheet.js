@@ -30,7 +30,7 @@ router.get('/:examID/:studentID', function(req, res, next) {
 				return;
 			}
 			//找到exam，根据paper_id找到paper数据
-			tree.read(exam.paper_id).then(node=>{
+			tree.read_node(exam.paper_gid).then(node=>{
 				const questions=node._data.data.questions;
 				const shuffled_questions=_.shuffle(questions);//乱序
 				console.log('group_questions',shuffled_questions)

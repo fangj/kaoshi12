@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var config=require('../config');
-var tree=require('treenote/lib/server/tree-fs/tree')(config);
+var treeDb = require('../db/tree');
+var tree = require('../tree/tree-nedb')(treeDb);
 var answersheetDb = require('../db/answersheet');
 var examDb = require('../db/exam');
 var _=require('lodash');
@@ -24,7 +24,7 @@ function score(answersheetID,cb){
 		examDb.findOne({_id:answersheet.examID},function(err,exam){
 			if(err||!exam){cb(err)}
 			tree.read_nodes(answersheet.questions).then(questions=>{
-				tree.read(exam.paper_gid).then(paperNode=>{
+				tree.read_node(exam.paper_gid).then(paperNode=>{
 					var scores=paperNode._data.data.scores;
 					var answers=answersheet.answers;
 					var answersheetScores=scoreAnswersheet(questions,answers,scores);
@@ -46,7 +46,7 @@ function scoreAnswersheet(questions,answers,scores){
 	var answersheetScores={};
 	for (var i = questions.length - 1; i >= 0; i--) {
 		var qnode=questions[i];
-		var qid=qnode._gid;
+		var qid=qnode._id;
 		var qscore=getNodeScore(qnode,answers[qid],scores[qid]);
 		answersheetScores[qid]=qscore;
 	}

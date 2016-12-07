@@ -1,0 +1,19 @@
+{
+    "msg":"exam",
+    "cardID": "bbbcc",
+    "browserIP": "192.168.3.125",
+    "exam": {
+        "_id": "eGbebdvlo56Bguyi",
+        "room_id": "oMR0FmDlCp1Mx5OI",
+        "paper_gid": 1008,
+        "room_name": "aaa",
+        "paper_name": "大数据",
+        "duration": 50,
+        "start": "2016-08-16T12:31:54",
+        "end": "2016-08-16T15:31:54"
+    }
+}
+
+{"cardID": "84757077", "readerID": "192.168.3.206"}
+
+PubSub.publish('card',{"cardID": "84757077", "readerID": "192.168.3.206"})
