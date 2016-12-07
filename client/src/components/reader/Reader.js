@@ -9,7 +9,7 @@ class Reader extends React.Component {
 
     static propTypes = {
         view: PropTypes.func.isRequired,
-        gid: PropTypes.number,
+        gid: PropTypes.string,
         path: PropTypes.string,
         level:PropTypes.number, //展开的层次，0为不展开
         subscribe: PropTypes.array
@@ -77,7 +77,7 @@ class Reader extends React.Component {
         if(gid!==undefined){
             return this.fetchDataByGid(gid,level);
         }else if(path){
-            return tree.namepath2node(path).then(node=>this.fetchDataByGid(node,level));
+            return tree.namepath2node(path).then(node=>this.fetchDataByNode(node,level));
         }   
     }
 
@@ -85,18 +85,12 @@ class Reader extends React.Component {
         return tree.read_big_node(gid,level);
     }
 
-    // fetchDataByGid(gid,level){ //客户端展开，可利用缓存
-    //     // debugger;
-    //     return tree.read(gid).then(node=>{
-    //             if(!level){
-    //                 return node;
-    //             }else{
-    //                 return treetool.expand(node,level);
-    //             }
-    //         })
-    // }
+    fetchDataByGid(gid,level){ //客户端展开，可利用缓存
+        // debugger;
+        return tree.read(gid).then(node=>this.fetchDataByNode(node,level))
+    }
     
-    fetchDataByGid(node,level){ //客户端展开，可利用缓存
+    fetchDataByNode(node,level){ //客户端展开，可利用缓存
         if(!level){
             return node;
         }else{

@@ -1,15 +1,5 @@
-// var agent = require('superagent-promise')(require('superagent'), Promise);
+var agent = require('superagent-promise')(require('superagent'), Promise);
 
-import Frisbee from 'frisbee';
-
-// create a new instance of Frisbee
-const agent = new Frisbee({
-  baseURI: '/',
-  headers: {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json'
-  }
-});
 
 var prefix;
 const api = {
@@ -24,6 +14,7 @@ const api = {
   mv_as_son,
   mv_as_brother,
   read_big_node,
+  mk_son_by_file, 
 };
 function factory(_prefix) {
   prefix = _prefix;
@@ -36,7 +27,7 @@ function read(gid) {
 }
 
 function read_nodes(gids) {
-  return agent.post(prefix + '/nodes/', {body:gids}).then(res => res.body);
+  return agent.post(prefix + '/nodes/', gids).then(res => res.body);
 }
 
 function mk_son_by_data(pgid, data) {
@@ -45,11 +36,11 @@ function mk_son_by_data(pgid, data) {
   }else if( typeof data!=="object"){
     data={data}
   }
-  return agent.post(prefix + '/mk/son/' + pgid, {body:data}).then(res => res.body);
+  return agent.post(prefix + '/mk/son/' + pgid, data).then(res => res.body);
 }
 
 function mk_son_by_name(pgid, name) {
-  return agent.post(prefix + '/mk/son_name/' + pgid, {body:{name}}).then(res => res.body);
+  return agent.post(prefix + '/mk/son_name/' + pgid, {name}).then(res => res.body);
 }
 
 function namepath2node(namepath){
@@ -57,7 +48,7 @@ function namepath2node(namepath){
 }
 
 function mk_brother_by_data(bgid, data) {
-  return agent.post(prefix + '/mk/brother/' + bgid, {body:data}).then(res => res.body);
+  return agent.post(prefix + '/mk/brother/' + bgid, data).then(res => res.body);
 }
 
 function remove(gid) {
@@ -70,7 +61,7 @@ function update(gid, data) {
   }else if( typeof data!=="object"){
     data={data}
   }
-  return agent.put(prefix + '/' + gid, {body:data}).then(res => res.body);
+  return agent.put(prefix + '/' + gid, data).then(res => res.body);
 }
 
 function  mv_as_son(sgid,dgid){
@@ -83,4 +74,19 @@ function  mv_as_brother(sgid,dgid){
 
 function read_big_node(gid,level=0) {
   return agent.get(prefix + '/bignode/' + gid+'/'+level).then(res => res.body);
+}
+function mk_son_by_file(pgid,file,filename,onProgress){
+  // console.log('mk_son_by_file',file);
+  if(!filename){
+    filename=file.name;
+  }
+  return agent.post(prefix + '/mk/son/file/'+pgid)
+  .attach('file',file,filename)
+  .on('progress', function(e) {
+      // console.log('Percentage done: ', e.percent);
+      if(typeof onProgress==='function'){
+        onProgress(e);
+      }
+   })
+  .then(res => res.body);
 }

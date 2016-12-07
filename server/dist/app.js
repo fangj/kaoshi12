@@ -5,6 +5,7 @@ require("babel-polyfill");
 var express = require('express');
 var app = express();
 
+var fs = require('bluebird').promisifyAll(require('fs-extra'));
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -26,7 +27,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 //树数据库
 var treeDb = require('./db/tree');
 var tree = require('./tree/middleware/tree.js');
-var config = { nedb: treeDb };
+var uploadPath = path.join(__dirname, '..', 'upload');
+fs.ensureDirSync(uploadPath);
+var config = { nedb: treeDb, upload: uploadPath };
 app.use('/_api', tree(config));
 
 //rest db

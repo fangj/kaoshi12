@@ -6,6 +6,8 @@ var path = require('path');
 var _ = require('lodash');
 var logger = require('log4js').getLogger('server');
 logger.setLevel('DEBUG'); //程序完成后注释掉。可以切换回默认等级，减少log
+var multer = require('multer');
+var fs = require('fs-extra');
 
 function factory(config) {
   var tree;
@@ -16,6 +18,7 @@ function factory(config) {
   } else if (config.leancloud) {
     tree = require('../tree-leancloud')(config.leancloud);
   }
+  var upload = multer({ dest: config.upload });
 
   router.post('/nodes', function (req, res, next) {
     tree.read_nodes(req.body).then(function (nodes) {
@@ -170,6 +173,14 @@ function factory(config) {
     }).catch(function (e) {
       logger.error(e);
       res.status(500).end();
+    });
+  });
+
+  router.post('/mk/son/file/:gid', upload.single('file'), function (req, res, next) {
+    // logger.debug("uploaded file",req.file);
+    var fpath = req.file.path + path.extname(req.file.originalname); //加上扩展名
+    fs.move(req.file.path, fpath, function () {
+      res.end();
     });
   });
 

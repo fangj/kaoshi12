@@ -802,7 +802,8 @@ webpackJsonp([0],[
 	  update: update,
 	  mv_as_son: mv_as_son,
 	  mv_as_brother: mv_as_brother,
-	  read_big_node: read_big_node
+	  read_big_node: read_big_node,
+	  mk_son_by_file: mk_son_by_file
 	};
 	function factory(_prefix) {
 	  _api = __webpack_require__(81)(_prefix);
@@ -974,6 +975,11 @@ webpackJsonp([0],[
 	  return _api.namepath2node(namepath);
 	}
 
+	function mk_son_by_file(pgid, file, filename, onProgress) {
+	  cache.del(pgid);
+	  return _api.mk_son_by_file(pgid, file, filename, onProgress);
+	}
+
 /***/ },
 /* 72 */,
 /* 73 */,
@@ -989,22 +995,9 @@ webpackJsonp([0],[
 
 	'use strict';
 
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; // var agent = require('superagent-promise')(require('superagent'), Promise);
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-	var _frisbee = __webpack_require__(82);
-
-	var _frisbee2 = _interopRequireDefault(_frisbee);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	// create a new instance of Frisbee
-	var agent = new _frisbee2.default({
-	  baseURI: '/',
-	  headers: {
-	    'Accept': 'application/json',
-	    'Content-Type': 'application/json'
-	  }
-	});
+	var agent = __webpack_require__(517)(__webpack_require__(518), Promise);
 
 	var prefix;
 	var api = {
@@ -1018,7 +1011,8 @@ webpackJsonp([0],[
 	  update: update,
 	  mv_as_son: mv_as_son,
 	  mv_as_brother: mv_as_brother,
-	  read_big_node: read_big_node
+	  read_big_node: read_big_node,
+	  mk_son_by_file: mk_son_by_file
 	};
 	function factory(_prefix) {
 	  prefix = _prefix;
@@ -1033,7 +1027,7 @@ webpackJsonp([0],[
 	}
 
 	function read_nodes(gids) {
-	  return agent.post(prefix + '/nodes/', { body: gids }).then(function (res) {
+	  return agent.post(prefix + '/nodes/', gids).then(function (res) {
 	    return res.body;
 	  });
 	}
@@ -1044,13 +1038,13 @@ webpackJsonp([0],[
 	  } else if ((typeof data === 'undefined' ? 'undefined' : _typeof(data)) !== "object") {
 	    data = { data: data };
 	  }
-	  return agent.post(prefix + '/mk/son/' + pgid, { body: data }).then(function (res) {
+	  return agent.post(prefix + '/mk/son/' + pgid, data).then(function (res) {
 	    return res.body;
 	  });
 	}
 
 	function mk_son_by_name(pgid, name) {
-	  return agent.post(prefix + '/mk/son_name/' + pgid, { body: { name: name } }).then(function (res) {
+	  return agent.post(prefix + '/mk/son_name/' + pgid, { name: name }).then(function (res) {
 	    return res.body;
 	  });
 	}
@@ -1062,7 +1056,7 @@ webpackJsonp([0],[
 	}
 
 	function mk_brother_by_data(bgid, data) {
-	  return agent.post(prefix + '/mk/brother/' + bgid, { body: data }).then(function (res) {
+	  return agent.post(prefix + '/mk/brother/' + bgid, data).then(function (res) {
 	    return res.body;
 	  });
 	}
@@ -1079,7 +1073,7 @@ webpackJsonp([0],[
 	  } else if ((typeof data === 'undefined' ? 'undefined' : _typeof(data)) !== "object") {
 	    data = { data: data };
 	  }
-	  return agent.put(prefix + '/' + gid, { body: data }).then(function (res) {
+	  return agent.put(prefix + '/' + gid, data).then(function (res) {
 	    return res.body;
 	  });
 	}
@@ -1100,6 +1094,20 @@ webpackJsonp([0],[
 	  var level = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
 
 	  return agent.get(prefix + '/bignode/' + gid + '/' + level).then(function (res) {
+	    return res.body;
+	  });
+	}
+	function mk_son_by_file(pgid, file, filename, onProgress) {
+	  // console.log('mk_son_by_file',file);
+	  if (!filename) {
+	    filename = file.name;
+	  }
+	  return agent.post(prefix + '/mk/son/file/' + pgid).attach('file', file, filename).on('progress', function (e) {
+	    // console.log('Percentage done: ', e.percent);
+	    if (typeof onProgress === 'function') {
+	      onProgress(e);
+	    }
+	  }).then(function (res) {
 	    return res.body;
 	  });
 	}
@@ -1231,9 +1239,11 @@ webpackJsonp([0],[
 	    return JSON.parse(JSON.stringify(obj));
 	}
 
+	var children_length = R.pathOr(0, ['_link', 'children', 'length']);
+
 	function expand(node, level) {
 	    //level用于控制展开的层级
-	    if (node._link.children.length == 0 || level <= 0) {
+	    if (children_length(node) == 0 || level <= 0) {
 	        //不做展开的2种情况。1.没有子节点。2，展开层级小于0
 	        var cloneNode = clone(node);
 	        cloneNode._children = [];
@@ -2754,7 +2764,7 @@ webpackJsonp([0],[
 	                return this.fetchDataByGid(gid, level);
 	            } else if (path) {
 	                return tree.namepath2node(path).then(function (node) {
-	                    return _this3.fetchDataByGid(node, level);
+	                    return _this3.fetchDataByNode(node, level);
 	                });
 	            }
 	        }
@@ -2764,21 +2774,20 @@ webpackJsonp([0],[
 	            //服务器端展开，没有缓存。未来可以拆解到缓存中
 	            return tree.read_big_node(gid, level);
 	        }
-
-	        // fetchDataByGid(gid,level){ //客户端展开，可利用缓存
-	        //     // debugger;
-	        //     return tree.read(gid).then(node=>{
-	        //             if(!level){
-	        //                 return node;
-	        //             }else{
-	        //                 return treetool.expand(node,level);
-	        //             }
-	        //         })
-	        // }
-
 	    }, {
 	        key: 'fetchDataByGid',
-	        value: function fetchDataByGid(node, level) {
+	        value: function fetchDataByGid(gid, level) {
+	            var _this4 = this;
+
+	            //客户端展开，可利用缓存
+	            // debugger;
+	            return tree.read(gid).then(function (node) {
+	                return _this4.fetchDataByNode(node, level);
+	            });
+	        }
+	    }, {
+	        key: 'fetchDataByNode',
+	        value: function fetchDataByNode(node, level) {
 	            //客户端展开，可利用缓存
 	            if (!level) {
 	                return node;
@@ -2818,7 +2827,7 @@ webpackJsonp([0],[
 
 	Reader.propTypes = {
 	    view: _react.PropTypes.func.isRequired,
-	    gid: _react.PropTypes.number,
+	    gid: _react.PropTypes.string,
 	    path: _react.PropTypes.string,
 	    level: _react.PropTypes.number, //展开的层次，0为不展开
 	    subscribe: _react.PropTypes.array
@@ -4729,10 +4738,10 @@ webpackJsonp([0],[
 	    node: _react.PropTypes.object,
 	    path: _react.PropTypes.string,
 	    ppath: _react.PropTypes.string,
-	    gid: _react.PropTypes.number,
-	    bgid: _react.PropTypes.number,
-	    pgid: _react.PropTypes.number,
-	    publish: _react.PropTypes.string
+	    gid: _react.PropTypes.string,
+	    bgid: _react.PropTypes.string,
+	    pgid: _react.PropTypes.string,
+	    publish: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.object])
 	};
 
 
@@ -7679,7 +7688,7 @@ webpackJsonp([0],[
 	}(React.Component);
 
 	Uploader.propTypes = {
-	    view: _react.PropTypes.object.isRequired,
+	    view: _react.PropTypes.func.isRequired,
 	    pgid: _react.PropTypes.string,
 	    ppath: _react.PropTypes.string
 	};

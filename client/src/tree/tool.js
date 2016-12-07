@@ -8,8 +8,10 @@ function clone(obj) {
     return JSON.parse(JSON.stringify(obj));
 }
 
+const children_length=R.pathOr(0,['_link','children','length']);
+
 function expand(node, level) { //level用于控制展开的层级
-    if (node._link.children.length == 0 || level <= 0) { //不做展开的2种情况。1.没有子节点。2，展开层级小于0
+    if (children_length(node) == 0 || level <= 0) { //不做展开的2种情况。1.没有子节点。2，展开层级小于0
         var cloneNode = clone(node);
         cloneNode._children = [];
         return Promise.resolve(cloneNode);

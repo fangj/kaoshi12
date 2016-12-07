@@ -14,6 +14,7 @@ const api = {
   mv_as_son,
   mv_as_brother,
   read_big_node,
+  mk_son_by_file
 };
 function factory(_prefix) {
   _api=require('./tree')(_prefix);
@@ -153,4 +154,9 @@ function read_big_node(gid,level=0) {
 
 function namepath2node(namepath) {
   return _api.namepath2node(namepath);
+}
+
+function mk_son_by_file(pgid, file,filename,onProgress) {
+  cache.del(pgid);
+  return _api.mk_son_by_file(pgid, file,filename,onProgress);
 }

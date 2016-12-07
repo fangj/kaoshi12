@@ -12,10 +12,13 @@ class Writer extends React.Component {
     node:PropTypes.object,
     path: PropTypes.string,
     ppath: PropTypes.string,
-    gid: PropTypes.number,
-    bgid: PropTypes.number,
-    pgid: PropTypes.number,
-    publish:PropTypes.string
+    gid: PropTypes.string,
+    bgid: PropTypes.string,
+    pgid: PropTypes.string,
+    publish:React.PropTypes.oneOfType([
+              React.PropTypes.string,
+              React.PropTypes.object
+            ])
    }
 
 

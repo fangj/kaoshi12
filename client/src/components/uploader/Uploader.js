@@ -7,7 +7,7 @@ class Uploader extends React.Component {
 
 
     static propTypes = {
-        view: PropTypes.object.isRequired,
+        view: PropTypes.func.isRequired,
         pgid: PropTypes.string,
         ppath: PropTypes.string
     }
