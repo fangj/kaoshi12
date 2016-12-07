@@ -75,6 +75,18 @@ var io = require('socket.io')(server);
 app.io=io;
 require('./socket_handle')(app);
 
+//读卡器
+var cardReader=require('./card-reader/card-reader');
+cardReader.on('card',function (msg){
+  console.log('received card',msg);
+  const rooms=io.sockets.adapter.rooms;
+  if(rooms && rooms[msg.readerID]){
+    io.to(msg.readerID).emit('card',msg); //定向发送到读卡器绑定的电脑
+  }else{
+    io.to('unbind').emit('card',msg); //广播到所有未绑定的电脑
+  }
+})
+
 //start
 server.listen(3000, function () {
   console.log('Kaoshi app listening on port 3000!');

@@ -47,6 +47,16 @@ webpackJsonp([0],{
 	__webpack_require__(483);
 	var agent = __webpack_require__(281)(__webpack_require__(282), Promise);
 
+	/**
+	 * 考试页面完全由card消息驱动
+	 * socket.io将card消息发给kaoshi.html页面
+	 * kaoshi.html页面收到后以pubsub转发
+	 *
+	 * Kaoshi组件接受card消息和refresh消息
+	 * refresh消息用于清除exam状态，刷新页面为提示页面
+	 * card消息将被用于发送给服务/exam,得到考试信息
+	 * 页面如何显示由exam决定
+	 */
 	var Kaoshi = function (_React$Component) {
 	    _inherits(Kaoshi, _React$Component);
 
@@ -69,15 +79,15 @@ webpackJsonp([0],{
 	            }
 	            switch (exam.msg) {
 	                case 'bindReader':
-	                    return React.createElement(_ks_bind_reader2.default, { msg: exam });
+	                    return React.createElement(_ks_bind_reader2.default, { msg: exam }); //绑定读卡器
 	                case 'bindStudent':
-	                    return React.createElement(_ks_bind_student2.default, { msg: exam });
+	                    return React.createElement(_ks_bind_student2.default, { msg: exam }); //绑定学生
 	                case 'noexam':
-	                    return React.createElement(_ks_noexam2.default, { msg: exam });
+	                    return React.createElement(_ks_noexam2.default, { msg: exam }); //没有考试
 	                case 'exam':
-	                    return React.createElement(_ks_exam2.default, { msg: exam });
+	                    return React.createElement(_ks_exam2.default, { msg: exam }); //考试信息
 	                default:
-	                    return React.createElement(_ks_prompt2.default, { msg: exam });
+	                    return React.createElement(_ks_prompt2.default, { msg: exam }); //提示信息
 	            }
 	        }
 	    }, {
@@ -87,9 +97,9 @@ webpackJsonp([0],{
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
 	            var me = this;
-	            var mySubscriber = function mySubscriber(msg, data) {
-	                console.log(msg, data);
-	                agent.post('/exam', data).then(function (resp) {
+	            var mySubscriber = function mySubscriber(msg, card) {
+	                console.log(msg, card);
+	                agent.post('/exam', card).then(function (resp) {
 	                    me.setState({ exam: resp.body });
 	                });
 	            };
@@ -1603,29 +1613,6 @@ webpackJsonp([0],{
 	                )
 	            );
 	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
 	    }]);
 
 	    return KsPrompt;
