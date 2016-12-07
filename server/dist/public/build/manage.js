@@ -6657,30 +6657,10 @@ webpackJsonp([0],[
 	            PubSub.publish('topic.goto', node._id);
 	        }
 	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
 	        key: 'componentWillReceiveProps',
 	        value: function componentWillReceiveProps(nextProps) {
 	            this.setState({ nodes: nextProps.nodes });
 	        }
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
 	    }]);
 
 	    return PaperTopicChooserNav;
@@ -9103,6 +9083,10 @@ webpackJsonp([0],[
 
 	__webpack_require__(720);
 
+	var hasSlash = function hasSlash(str) {
+	    return str.indexOf('/') > -1;
+	};
+
 	var ExamFormPaperChooser = function (_React$Component) {
 	    _inherits(ExamFormPaperChooser, _React$Component);
 
@@ -9129,7 +9113,7 @@ webpackJsonp([0],[
 	                'div',
 	                { className: 'exam_form_paper_chooser' },
 	                React.createElement(_treepathreader2.default, { view: _exam_form_paper_chooser_nav2.default, from: '0/menu/papers', to: to }),
-	                typeof to === 'number' ? React.createElement(_reader2.default, { view: _exam_form_paper_chooser_browser2.default, gid: to, level: 1, choosen: choosen }) : React.createElement(_reader2.default, { view: _exam_form_paper_chooser_browser2.default, path: to, level: 1, choosen: choosen })
+	                hasSlash(to) ? React.createElement(_reader2.default, { view: _exam_form_paper_chooser_browser2.default, path: to, level: 1, choosen: choosen }) : React.createElement(_reader2.default, { view: _exam_form_paper_chooser_browser2.default, gid: to, level: 1, choosen: choosen })
 	            );
 	        }
 	    }, {
@@ -9172,7 +9156,7 @@ webpackJsonp([0],[
 	}(React.Component);
 
 	ExamFormPaperChooser.propTypes = {
-	    choosen: React.PropTypes.number
+	    choosen: React.PropTypes.string
 	};
 
 
@@ -9733,10 +9717,6 @@ webpackJsonp([0],[
 	        var _this = _possibleConstructorReturn(this, (ExamFormTimeChooser.__proto__ || Object.getPrototypeOf(ExamFormTimeChooser)).call(this, props));
 
 	        _this.state = _extends({}, props);
-	        //保存默认值
-	        props.cbSetStart(props.start);
-	        props.cbSetEnd(props.end);
-	        props.cbSetDuration(props.duration);
 	        return _this;
 	    }
 
@@ -9804,7 +9784,13 @@ webpackJsonp([0],[
 	        }
 	    }, {
 	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
+	        value: function componentWillMount() {
+	            var props = this.props;
+	            //保存默认值
+	            props.cbSetStart(props.start);
+	            props.cbSetEnd(props.end);
+	            props.cbSetDuration(props.duration);
+	        }
 	    }, {
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {}

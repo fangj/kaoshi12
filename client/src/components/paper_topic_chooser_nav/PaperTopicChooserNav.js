@@ -26,8 +26,6 @@ class PaperTopicChooserNav extends React.Component {
         };
     }
 
-
-
     render() {
         const items=this.state.nodes.map(node=>({title:name(node),onClick:()=>this.onClick(node),key:node._id}))
         return (
@@ -40,28 +38,10 @@ class PaperTopicChooserNav extends React.Component {
         PubSub.publish('topic.goto',node._id);
     }
 
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
     componentWillReceiveProps(nextProps) {
         this.setState({nodes:nextProps.nodes})
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
-    componentWillUnmount() {
-    }
 }
 
 module.exports = PaperTopicChooserNav;

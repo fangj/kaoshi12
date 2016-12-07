@@ -18,10 +18,6 @@ class ExamFormTimeChooser extends React.Component {
         this.state = {
             ...props
         };
-        //保存默认值
-        props.cbSetStart(props.start);
-        props.cbSetEnd(props.end);
-        props.cbSetDuration(props.duration);
     }
 
     render() {
@@ -59,6 +55,11 @@ class ExamFormTimeChooser extends React.Component {
     }
 
     componentWillMount() {
+        const props=this.props;
+        //保存默认值
+        props.cbSetStart(props.start);
+        props.cbSetEnd(props.end);
+        props.cbSetDuration(props.duration);
     }
 
     componentDidMount() {

@@ -37,7 +37,7 @@ passport.serializeUser(function (user, done) {
 });
 
 passport.deserializeUser(function (id, done) {
-	console.log('deserializeUser', id);
+	// console.log('deserializeUser', id);
 
 	if (id == -1) {
 		done(null, { _id: -1, isAdmin: true });

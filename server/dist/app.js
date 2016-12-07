@@ -48,6 +48,19 @@ app.use('/api/class', expressRestResource({ db: classDb }));
 app.use('/api/room', expressRestResource({ db: roomDb }));
 app.use('/api/answersheet', expressRestResource({ db: answersheetDb }));
 
+//考试信息
+// app.use('/exam',require('./routes/exam'));
+//答题卡
+app.use('/answersheet', require('./routes/answersheet'));
+//过滤了答案的问题
+// app.use('/questions',require('./routes/questions'));
+// //根据学号查找学生
+// app.use('/student',require('./routes/student'));
+// //自动评分
+// app.use('/score',require('./routes/score'));
+// //查分
+// app.use('/queryscore',require('./routes/query_score'));
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   var err = new Error('Not Found');

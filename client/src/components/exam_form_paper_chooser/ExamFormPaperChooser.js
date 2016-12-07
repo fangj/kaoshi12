@@ -4,10 +4,11 @@ import Nav from '../exam_form_paper_chooser_nav';
 
 import PaperChooserBrowser from '../exam_form_paper_chooser_browser';
 import Reader from '../reader';
+const hasSlash=(str)=>str.indexOf('/')>-1;
 
 class ExamFormPaperChooser extends React.Component {
     static propTypes = {
-        choosen: React.PropTypes.number
+        choosen: React.PropTypes.string
     }; 
 
     constructor(props) {
@@ -24,8 +25,8 @@ class ExamFormPaperChooser extends React.Component {
         return (
             <div className="exam_form_paper_chooser">
                  <TreePathReader view={Nav} from="0/menu/papers" to={to}/>
-               { typeof to==='number'?<Reader view={PaperChooserBrowser} gid={to} level={1} choosen={choosen}/>:
-                <Reader view={PaperChooserBrowser} path={to} level={1} choosen={choosen}/>}
+               { hasSlash(to)?<Reader view={PaperChooserBrowser} path={to} level={1} choosen={choosen}/>:
+                <Reader view={PaperChooserBrowser} gid={to} level={1} choosen={choosen}/>}
             </div>
         );
     }
