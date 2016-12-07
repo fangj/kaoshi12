@@ -6,6 +6,10 @@ import ExamForm from '../exam_form';
 import RestWriter from '../rest_writer';
 
 
+/**
+ * 用ExamForm更新考试安排
+ * 数据保存到"/api/exam"
+ */
 class ExamUpdater extends React.Component {
 
     constructor(props) {
@@ -25,9 +29,6 @@ class ExamUpdater extends React.Component {
         );
     }
 
-    componentWillMount() {
-    }
-
     componentDidMount() {
         this.tokenUpdate=PubSub.subscribe( "updated",(msg,data)=>{
             location.href="#/exams";
@@ -35,19 +36,6 @@ class ExamUpdater extends React.Component {
         this.tokenRemove=PubSub.subscribe( "removed",(msg,data)=>{
             location.href="#/exams";
         });//删除数据后到父节点
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
     }
 
     componentWillUnmount() {

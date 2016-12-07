@@ -43,6 +43,9 @@ const ClassForm=(props)=>(
     </div>
   </div>);
 
+/**
+ * 用classForm修改班级，保存到"/api/class"
+ */
 class ClassUpdater extends React.Component {
 
     constructor(props) {
@@ -54,34 +57,12 @@ class ClassUpdater extends React.Component {
     render() {
         let me = this;
         const id=this.props.params.id;
-        console.log('id',id);
+        // console.log('id',id);
         return (
             <div className="class_updater">
                 <RestWriter url="/api/class" id={id} view={ClassForm}/>
             </div>
         );
-    }
-
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
-    componentWillUnmount() {
     }
 }
 

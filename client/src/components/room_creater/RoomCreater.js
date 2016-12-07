@@ -32,6 +32,9 @@ const roomForm=(props)=><div className="pad">
                     </Form>
                 </div>
 
+/**
+ * 用roomForm创建考场，保存到"/api/room"
+ */
 class RoomCreater extends React.Component {
 
     constructor(props) {
@@ -48,28 +51,6 @@ class RoomCreater extends React.Component {
                 <RestWriter url="/api/room" view={roomForm} />
             </div>
         );
-    }
-
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
-    componentWillUnmount() {
     }
 }
 

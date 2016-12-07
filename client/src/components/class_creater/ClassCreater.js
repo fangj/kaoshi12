@@ -33,8 +33,10 @@ const classForm=(props)=><div className="pad">
                     </Form>
                 </div>
 
+/**
+ * 用classForm创建班级，保存到"/api/class"
+ */
 class ClassCreater extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -49,28 +51,6 @@ class ClassCreater extends React.Component {
                 <RestWriter url="/api/class" view={classForm} />
             </div>
         );
-    }
-
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
-    componentWillUnmount() {
     }
 }
 

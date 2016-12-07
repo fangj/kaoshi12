@@ -2,6 +2,10 @@ require('./Imageviewer.less');
 const tree=require('../../tree/tree-cache')('_api');
 const treetool=require('../../tree/tool')(tree);
 
+/**
+ * 如果node的子节点中有'tn/nfile/url'类型节点，则作为图片显示
+ * 图片load成功时会发送'img-load'，通知AnswersheetForm去收集图片，以便进一步导出为docx
+ */
 class Imageviewer extends React.Component {
 
     constructor(props) {
@@ -28,7 +32,7 @@ class Imageviewer extends React.Component {
                         var img=e.target;
                         var obj={gid:url.gid,w:img.width,h:img.height}
                         PubSub.publish('img-load',obj);
-                        console.log('publish,img-load',obj)
+                        // console.log('publish,img-load',obj)
                 }}/>)}
             </div>
             //img-load：通知AnswersheetForm去收集图片
@@ -39,30 +43,6 @@ class Imageviewer extends React.Component {
         treetool.remove(gid).then(node=>{
             PubSub.publish('img.removed',node);
         })
-    }
-
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
-    componentWillUnmount() {
-         
     }
 }
 

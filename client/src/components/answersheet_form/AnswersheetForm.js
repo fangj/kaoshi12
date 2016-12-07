@@ -1,3 +1,6 @@
+/**
+ * 学生成绩批改以及试卷导出
+ */
 require('./AnswersheetForm.less');
 var agent = require('superagent-promise')(require('superagent'),Promise);
 const tree=require('../../tree/tree-cache')('_api');
@@ -5,51 +8,15 @@ import {Panel,Grid,Row,Col,Button,ButtonToolbar,ListGroup,ListGroupItem}from 're
 var _=require('lodash');
 import Reader from "../reader";
 import Imageviewer from "../imageviewer";
+var imgUtil=require('./img_util');
+var qjsonUtil=require('./qjson_util');
 
-function dataURItoBlob(dataURI) {
-    // convert base64/URLEncoded data component to raw binary data held in a string
-    var byteString;
-    if (dataURI.split(',')[0].indexOf('base64') >= 0)
-        byteString = atob(dataURI.split(',')[1]);
-    else
-        byteString = unescape(dataURI.split(',')[1]);
-
-    // separate out the mime component
-    var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
-
-    // write the bytes of the string to a typed array
-    var ia = new Uint8Array(byteString.length);
-    for (var i = 0; i < byteString.length; i++) {
-        ia[i] = byteString.charCodeAt(i);
-    }
-
-    // return new Blob([ia], {type:mimeString});
-    return ia;
-
-}
-
-window.imgs={};//暴露给全局
-window.imgsSize={};//暴露给全局
-function getImgBlob(obj){ //收集图片到imgs中
-  var imgID=obj.gid;
-  var img = document.getElementById(imgID),
-  canvas = document.createElement('canvas'),
-  ctx = canvas.getContext('2d');
-  var imgBlob;
-
-  canvas.width=img.width;
-  canvas.height=img.height;
-  ctx.drawImage(img,0,0,img.width,img.height);
-  var dataURL = canvas.toDataURL();
-  imgBlob=dataURItoBlob(dataURL);
-  imgs[imgID]=imgBlob;
-  imgsSize[imgID]=[obj.w,obj.h];
-  canvas=null;
-  console.log(imgs,imgsSize);
-}
-            
-
-
+/**
+ * 显示每道题目，包括问题Q,批注,得分
+ * 得分改变时发送'score.change'消息
+ * 批注改变时发送'comment.change'消息
+ * AnswersheetForm负责接收改变消息，并更新状态
+ */
 const QS=(props)=><div style={{paddingTop:"20px"}}>
       <Col xs={11}>
         <Q {...props}/>
@@ -147,164 +114,6 @@ function isCorrectTf(data,answer){
 }
 
 
-
-function convert2txt(exam,questions,scores,comments,answers,totalScore){
-  var contents=[];
-  contents.push(exam.name);
-  contents.push("总分："+totalScore);
-  questions.map(question=>{
-    var qid=question._id;
-    var score=scores[qid]||0;
-    var comment=comments[qid]||"";
-    var answer=answers[qid];
-    var qtxt=QTxt(question,answer,comment,score);
-    contents.push(qtxt+'\r\n得分：'+score+'\r\n批注：'+comment);
-  })
-  return contents.join("\r\n\r\n");
-}
-
-function QTxt(qnode,answer,comment,score){
-  // console.log('QTxt',qnode);
-
-  const {type}=qnode._data;
-    switch(type){
-        case "ks1/choice":return QTxtChoice(qnode._data,answer,comment,score);
-        case "ks1/tf":return QTxtTf(qnode._data,answer,comment,score);
-        case "ks1/qa":return QTxtQa(qnode._data,answer,comment,score);
-        case "ks1/revise":return QTxtRevise(qnode._data,answer,comment,score);
-    }
-    return "";
-}
-
-function QTxtChoice(qdata,answer,comment,score) {
-  const data=qdata.data;
-  var contents=[];
-  contents.push("[选择题] "+data.question);
-  var correctAnswer="";
-  for (var idx = 0; idx < data.answers.length; idx++) {
-    var ans=data.answers[idx];
-    console.log(ans.answer)
-    var line="ABCDEFGHI"[idx]+". "+ans.answer + ((idx===answer)?" (✓)":"");
-    contents.push(line);
-    if(ans.ok){
-      correctAnswer=correctAnswer+"ABCDEFGHI"[idx];
-    }
-  }
-  contents.push('正确答案：'+correctAnswer);
-  return contents.join("\r\n");
-}
-
-function QTxtTf(qdata,answer,comment,score) {
-  const data=qdata.data;
-  var contents=[];
-  contents.push("[判断题] "+data.question+(answer?" ( ✓ )":" ( ✗ )"));
-  contents.push('正确答案：'+(data.ok?" ( ✓ )":" ( ✗ )"));
-  return contents.join("\r\n");
-}
-
-function QTxtQa(qdata,answer,comment,score) {
-  const data=qdata.data;
-  var contents=[];
-  contents.push("[问答题] "+data.question);
-  contents.push(answer);
-  contents.push('参考答案：'+data.answer);
-  return contents;
-}
-
-function QTxtRevise(qdata,answer,comment,score) {
-  return "";
-}
-
-function convert2json(exam,questions,scores,comments,answers,totalScore){
-  var paper={};
-  paper.name=exam.name;
-  paper.totalScore=totalScore;
-  const group_questions=_.groupBy(nodes,function(obj){return obj._data.type});
-  _.keys(group_questions).map(qtype=>{
-    console.log('convert2json',qtype)
-    paper[qtype.replace('/','_')]=group_questions[qtype].map(qnode=>QJson(qnode,questions,scores,comments,answers))
-  })//模板中不能出现/所以替换成_
-  return paper;
-}
-
-function QJson(qnode,questions,scores,comments,answers){
-  var qid=qnode._id;
-  var score=scores[qid]||0;
-  var comment=comments[qid]||"";
-  var answer=answers[qid];
-  const {type}=qnode._data;
-  var qjson={};
-  switch(type){
-      case "ks1/choice":{qjson= QJsonChoice(qnode._data,answer,comment,score);break;}
-      case "ks1/tf":{qjson=  QJsonTf(qnode._data,answer,comment,score);break;}
-      case "ks1/qa":{qjson=  QJsonQa(qnode._data,answer,comment,score);break;}
-      case "ks1/revise":{qjson=  QJsonRevise(qnode._data,answer,comment,score);break;}
-  }
-  if(qnode._link.children && qnode._link.children.length>0){
-    qjson.imgs=qnode._link.children.map(gid=>({image:gid}))
-  }
-  return qjson;
-}
-
-function QJsonChoice(qdata,answer,comment,score) {
-  const data=qdata.data;
-  var contents={};
-  contents.question="[选择题] "+data.question;
-  contents.answers=[];
-  var correctAnswer="",studentAnswer="";
-  data.answers=data.answers||[]
-  for (var idx = 0; idx < data.answers.length; idx++) {
-    var ans=data.answers[idx];
-    var line="ABCDEFGHI"[idx]+". "+ans.answer;
-    contents.answers[idx]={"choice":line};
-    if(idx===answer){
-      studentAnswer=studentAnswer+"ABCDEFGHI"[idx];
-    }
-    if(ans.ok){
-      correctAnswer=correctAnswer+"ABCDEFGHI"[idx];
-    }
-  }
-  contents.studentAnswer=studentAnswer;
-  contents.correctAnswer=correctAnswer;
-  contents.comment=comment;
-  contents.score=score;
-
-  return contents;
-}
-
-function QJsonTf(qdata,answer,comment,score) {
-  const data=qdata.data;
-  var contents={};
-  contents.question="[判断题] "+data.question;
-  contents.studentAnswer=(answer?" ( ✓ )":" ( ✗ )");
-  contents.correctAnswer=(data.ok?" ( ✓ )":" ( ✗ )");
-  contents.comment=comment;
-  contents.score=score;
-  return contents;
-}
-
-function QJsonQa(qdata,answer,comment,score) {
-  const data=qdata.data;
-  var contents={};
-  contents.question="[问答题] "+data.question;
-  contents.studentAnswer=answer;
-  contents.correctAnswer=data.answer;
-  contents.comment=comment;
-  contents.score=score;
-  return contents;
-}
-
-function QJsonRevise(qdata,answer,comment,score) {
-  const data=qdata.data;
-  var contents={};
-  contents.question="[改错题] "+data.question;
-  contents.studentAnswer=answer;
-  contents.correctAnswer=data.answer;
-  contents.comment=comment;
-  contents.score=score;
-  return contents;
-}
-
 class AnswersheetForm extends React.Component {
 
     constructor(props) {
@@ -318,15 +127,11 @@ class AnswersheetForm extends React.Component {
     }
     //收集图片放到this.imgs中
     collectImage(questions){
-      // var children=questions.map(qnode=> qnode._link.children )
-      // var img_gids=_.flatten(children);
-      // console.log("img_gids",img_gids);//imageviewer中图片的id与对应节点的gid相同，以便采集图片
-      // img_gids.map(imgID=>getImgBlob(imgID))
       function mysubscriber(msg,obj){
-        console.log(msg,obj) 
-        getImgBlob(obj);
+        // console.log(msg,obj) 
+        imgUtil.getImgBlob(obj);
       }
-      console.log('subscribe:img-load')
+      // console.log('subscribe:img-load')
       PubSub.subscribe('img-load',mysubscriber);
     } 
 
@@ -336,9 +141,6 @@ class AnswersheetForm extends React.Component {
         const answersheet=this.props.data;
         const {answers}=answersheet;
         const {scores,totalScore,comments}=this.state;
-        //id="printButton" 导出按钮
-        //id='forPrint' 要导出的内容
-        //导出功能 参考 https://github.com/evidenceprime/html-docx-js/blob/master/test/sample.html
         if(exam&&student&&questions){   
             this.collectImage(questions); 
             return (
@@ -366,28 +168,17 @@ class AnswersheetForm extends React.Component {
         }
     }
 
-    saveDoc(){
-      var contentDocument =  document.getElementById('forPrint');
-      var content = '<!DOCTYPE html>' + contentDocument.outerHTML;
-      var converted = htmlDocx.asBlob(content, {orientation: "portrait"});
-      saveAs(converted, 'exam.docx');
-    }
-
     saveJson(){
       const {exam,student,questions}=this.state;
       const answersheet=this.props.data;
       const {answers}=answersheet;
       const {scores,totalScore,comments}=this.state;
       var name=exam._id+"_"+student.name+".txt";
-      // console.log('saveTxt',exam);
-      // console.log('saveTxt',name);
-      // var content=convert2txt(exam,questions,scores,comments,answers,totalScore);
-      // var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
-      var jcontent=convert2json(exam,questions,scores,comments,answers,totalScore);
+      var jcontent=qjsonUtil.convert2json(exam,questions,scores,comments,answers,totalScore);
       var content=JSON.stringify(jcontent,null,2);
       var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
       saveAs(blob, name);
-
+      //saveAs来自FileSaver
     }
 
     saveDocx(){
@@ -395,17 +186,10 @@ class AnswersheetForm extends React.Component {
       const answersheet=this.props.data;
       const {answers}=answersheet;
       const {scores,totalScore,comments}=this.state;
-      // var name=exam._id+"_"+student.name+".txt";
-      // console.log('saveTxt',exam);
-      // console.log('saveTxt',name);
-      // var content=convert2txt(exam,questions,scores,comments,answers,totalScore);
-      // var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
       var jcontent=convert2json(exam,questions,scores,comments,answers,totalScore);
-      // var content=JSON.stringify(jcontent,null,2);
-      // var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
-      // saveAs(blob, name);
       var name=student.id+"_"+student.name+".docx";
       saveAsDocx(jcontent,name);
+      //saveAsDocx定义在manage.html中
     }
 
     update(){
@@ -420,9 +204,6 @@ class AnswersheetForm extends React.Component {
       var sure=confirm("确定要删除吗?");
               if(!sure){return}
         this.props.remove();
-    }
-
-    componentWillMount() {
     }
 
     componentDidMount() {
@@ -454,20 +235,6 @@ class AnswersheetForm extends React.Component {
         tree.read_nodes(questions).then(nodes=>{
             this.setState({questions:nodes});
         })
-
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
     }
 
     componentWillUnmount() {

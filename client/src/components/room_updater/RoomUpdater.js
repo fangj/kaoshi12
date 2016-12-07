@@ -42,6 +42,9 @@ const RoomForm=(props)=>(
     </div>
   </div>);
 
+/**
+ * 用roomForm修改考场，保存到"/api/room"
+ */
 class RoomUpdater extends React.Component {
 
     constructor(props) {

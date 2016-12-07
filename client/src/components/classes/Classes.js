@@ -7,6 +7,9 @@ import TreePathReader from '../treepathreader';
 import RestReader from '../rest_reader';
 const goto=url=>{location.href='#'+url}
 
+/**
+ * 班级主页
+ */
 class Classes extends React.Component {
 
     constructor(props) {

@@ -2,6 +2,10 @@ require('./PaperSummary.less');
 var common=require('../common');
 const goto=url=>{location.href='#'+url}
 
+/**
+ * 试卷概要，显示当前节点node下的所有子项
+ * 可以在当前节点下创建试卷集或者试卷
+ */
 class PaperSummary extends React.Component {
 
     constructor(props) {
@@ -38,28 +42,6 @@ class PaperSummary extends React.Component {
         </div>
         );
       }
-
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
-    componentWillUnmount() {
-    }
 }
 
 module.exports = PaperSummary;

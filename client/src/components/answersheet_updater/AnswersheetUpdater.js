@@ -4,6 +4,12 @@ import Nav from '../nav';
 
 import AnswersheetForm from '../answersheet_form';
 import RestWriter from '../rest_writer';
+
+/**
+ * 学生成绩批改
+ * 用AnswersheetForm修改答题卡，保存到"/api/answersheet"
+ * 在ExamFormScores学生分数表格中点击会进入到此页
+ */
 class AnswersheetUpdater extends React.Component {
 
     constructor(props) {
@@ -23,9 +29,6 @@ class AnswersheetUpdater extends React.Component {
         );
     }
 
-    componentWillMount() {
-    }
-
     componentDidMount() {
         this.tokenUpdate=PubSub.subscribe( "updated",(msg,data)=>{
             history.go(-1);
@@ -33,19 +36,6 @@ class AnswersheetUpdater extends React.Component {
         this.tokenRemove=PubSub.subscribe( "removed",(msg,data)=>{
             history.go(-1);
         });//更新数据后到父节点
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
     }
 
     componentWillUnmount() {

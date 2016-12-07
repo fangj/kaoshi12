@@ -9,6 +9,9 @@ function goto(url){
   location.href='#'+url;
 }
 
+/**
+ * 考试安排主页
+ */
 class Exams extends React.Component {
 
     constructor(props) {
@@ -32,28 +35,6 @@ class Exams extends React.Component {
                     type="ks1/exam" route="exams"/>
             </div>
         );
-    }
-
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
-    componentWillUnmount() {
     }
 }
 

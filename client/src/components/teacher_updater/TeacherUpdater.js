@@ -38,6 +38,10 @@ const teacherForm=(props)=>(
     </div>
   </div>);
 
+/**
+ * 与TeacherCreater类似
+ * 用于更新教师数据
+ */
 class TeacherUpdater extends React.Component {
 
     constructor(props) {

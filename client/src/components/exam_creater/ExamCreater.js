@@ -4,6 +4,9 @@ import TreePathReader from '../treepathreader';
 import ExamForm from '../exam_form';
 import RestWriter from '../rest_writer';
 
+/**
+ * 用ExamForm创建考试安排，保存到"/api/exam"
+ */
 class ExamCreater extends React.Component {
 
     constructor(props) {
@@ -20,28 +23,6 @@ class ExamCreater extends React.Component {
                 <RestWriter url="/api/exam" view={ExamForm} />
             </div>
         );
-    }
-
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
-    componentWillUnmount() {
     }
 }
 

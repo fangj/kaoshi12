@@ -5,6 +5,9 @@ import PaperSummary from '../paper_summary';
 import Reader from '../reader';
 import TreePathReader from '../treepathreader';
 
+/**
+ * 试卷主页
+ */
 class Papers extends React.Component {
 
     constructor(props) {

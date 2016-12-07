@@ -2798,6 +2798,11 @@ webpackJsonp([0],[
 	var tree = __webpack_require__(71)('_api');
 	var treetool = __webpack_require__(193)(tree);
 
+	/**
+	 * 如果node的子节点中有'tn/nfile/url'类型节点，则作为图片显示
+	 * 图片load成功时会发送'img-load'，通知AnswersheetForm去收集图片，以便进一步导出为docx
+	 */
+
 	var Imageviewer = function (_React$Component) {
 	    _inherits(Imageviewer, _React$Component);
 
@@ -2838,7 +2843,7 @@ webpackJsonp([0],[
 	                            var img = e.target;
 	                            var obj = { gid: url.gid, w: img.width, h: img.height };
 	                            PubSub.publish('img-load', obj);
-	                            console.log('publish,img-load', obj);
+	                            // console.log('publish,img-load',obj)
 	                        } });
 	                })
 	            )
@@ -2852,29 +2857,6 @@ webpackJsonp([0],[
 	                PubSub.publish('img.removed', node);
 	            });
 	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
 	    }]);
 
 	    return Imageviewer;
@@ -3254,6 +3236,9 @@ webpackJsonp([0],[
 	var tree = __webpack_require__(71)('_api');
 	var tool = __webpack_require__(193)(tree);
 
+	/**
+	 * 试卷主页
+	 */
 	var Papers = function (_React$Component) {
 	    _inherits(Papers, _React$Component);
 
@@ -3310,6 +3295,11 @@ webpackJsonp([0],[
 	var goto = function goto(url) {
 	  location.href = '#' + url;
 	};
+
+	/**
+	 * 试卷概要，显示当前节点node下的所有子项
+	 * 可以在当前节点下创建试卷集或者试卷
+	 */
 
 	var PaperSummary = function (_React$Component) {
 	  _inherits(PaperSummary, _React$Component);
@@ -3381,29 +3371,6 @@ webpackJsonp([0],[
 	        )
 	      );
 	    }
-	  }, {
-	    key: 'componentWillMount',
-	    value: function componentWillMount() {}
-	  }, {
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {}
-	  }, {
-	    key: 'componentWillReceiveProps',
-	    value: function componentWillReceiveProps(nextProps) {}
-	  }, {
-	    key: 'shouldComponentUpdate',
-	    value: function shouldComponentUpdate(nextProps, nextState) {
-	      return true;
-	    }
-	  }, {
-	    key: 'componentWillUpdate',
-	    value: function componentWillUpdate(nextProps, nextState) {}
-	  }, {
-	    key: 'componentDidUpdate',
-	    value: function componentDidUpdate(prevProps, prevState) {}
-	  }, {
-	    key: 'componentWillUnmount',
-	    value: function componentWillUnmount() {}
 	  }]);
 
 	  return PaperSummary;
@@ -3469,6 +3436,10 @@ webpackJsonp([0],[
 	    location.href = '#' + url;
 	}
 
+	/**
+	 * 考试安排主页
+	 */
+
 	var Exams = function (_React$Component) {
 	    _inherits(Exams, _React$Component);
 
@@ -3507,29 +3478,6 @@ webpackJsonp([0],[
 	                    type: 'ks1/exam', route: 'exams' })
 	            );
 	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
 	    }]);
 
 	    return Exams;
@@ -3943,6 +3891,10 @@ webpackJsonp([0],[
 	    location.href = '#' + url;
 	};
 
+	/**
+	 * 班级主页
+	 */
+
 	var Classes = function (_React$Component) {
 	    _inherits(Classes, _React$Component);
 
@@ -4062,6 +4014,10 @@ webpackJsonp([0],[
 	    location.href = '#' + url;
 	}
 
+	/**
+	 * 考场主页
+	 */
+
 	var Rooms = function (_React$Component) {
 	    _inherits(Rooms, _React$Component);
 
@@ -4100,29 +4056,6 @@ webpackJsonp([0],[
 	                    type: 'ks1/room', route: 'rooms' })
 	            );
 	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
 	    }]);
 
 	    return Rooms;
@@ -8366,6 +8299,10 @@ webpackJsonp([0],[
 	    );
 	};
 
+	/**
+	 * 用roomForm创建考场，保存到"/api/room"
+	 */
+
 	var RoomCreater = function (_React$Component) {
 	    _inherits(RoomCreater, _React$Component);
 
@@ -8389,29 +8326,6 @@ webpackJsonp([0],[
 	                React.createElement(_rest_writer2.default, { url: '/api/room', view: roomForm })
 	            );
 	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
 	    }]);
 
 	    return RoomCreater;
@@ -8741,6 +8655,10 @@ webpackJsonp([0],[
 	    );
 	};
 
+	/**
+	 * 用classForm创建班级，保存到"/api/class"
+	 */
+
 	var ClassCreater = function (_React$Component) {
 	    _inherits(ClassCreater, _React$Component);
 
@@ -8764,29 +8682,6 @@ webpackJsonp([0],[
 	                React.createElement(_rest_writer2.default, { url: '/api/class', view: classForm })
 	            );
 	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
 	    }]);
 
 	    return ClassCreater;
@@ -8843,6 +8738,9 @@ webpackJsonp([0],[
 
 	__webpack_require__(740);
 
+	/**
+	 * 用ExamForm创建考试安排，保存到"/api/exam"
+	 */
 	var ExamCreater = function (_React$Component) {
 	    _inherits(ExamCreater, _React$Component);
 
@@ -8866,29 +8764,6 @@ webpackJsonp([0],[
 	                React.createElement(_rest_writer2.default, { url: '/api/exam', view: _exam_form2.default })
 	            );
 	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
 	    }]);
 
 	    return ExamCreater;
@@ -10492,124 +10367,105 @@ webpackJsonp([0],[
 	__webpack_require__(748);
 
 	var schema = {
-	    title: "班级",
-	    type: "object",
-	    required: ["name"],
-	    properties: {
-	        name: { type: "string", title: "班级名称" },
-	        students: {
-	            title: "学生",
-	            type: "array",
-	            items: {
-	                type: "object",
-	                required: ["name", "id", "card"],
-	                properties: {
-	                    name: { type: "string", title: "姓名" },
-	                    id: { type: "string", title: "学号" },
-	                    card: { type: "string", title: "卡号" }
-	                }
-	            }
+	  title: "班级",
+	  type: "object",
+	  required: ["name"],
+	  properties: {
+	    name: { type: "string", title: "班级名称" },
+	    students: {
+	      title: "学生",
+	      type: "array",
+	      items: {
+	        type: "object",
+	        required: ["name", "id", "card"],
+	        properties: {
+	          name: { type: "string", title: "姓名" },
+	          id: { type: "string", title: "学号" },
+	          card: { type: "string", title: "卡号" }
 	        }
+	      }
 	    }
+	  }
 	};
 	var goto = function goto(url) {
-	    location.href = '#' + url;
+	  location.href = '#' + url;
 	};
 	var ClassForm = function ClassForm(props) {
-	    return React.createElement(
-	        'div',
-	        null,
-	        React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: '0/menu/classes' }),
+	  return React.createElement(
+	    'div',
+	    null,
+	    React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: '0/menu/classes' }),
+	    React.createElement(
+	      'div',
+	      { className: 'pad' },
+	      React.createElement(
+	        _reactJsonschemaForm2.default,
+	        { schema: schema,
+	          formData: props.data,
+	          onSubmit: function onSubmit(obj) {
+	            return props.update(obj.formData).then(function (_) {
+	              return goto('/classes');
+	            });
+	          } },
 	        React.createElement(
-	            'div',
-	            { className: 'pad' },
-	            React.createElement(
-	                _reactJsonschemaForm2.default,
-	                { schema: schema,
-	                    formData: props.data,
-	                    onSubmit: function onSubmit(obj) {
-	                        return props.update(obj.formData).then(function (_) {
-	                            return goto('/classes');
-	                        });
-	                    } },
-	                React.createElement(
-	                    'div',
-	                    null,
-	                    React.createElement(
-	                        'button',
-	                        { type: 'submit', className: 'btn btn-success' },
-	                        '\u4FDD\u5B58'
-	                    ),
-	                    React.createElement(
-	                        'button',
-	                        { className: 'btn btn-danger', onClick: function onClick(e) {
-	                                e.preventDefault(); //不知为何submit会被调用，人为阻止
-	                                var sure = confirm("确定要删除吗?");
-	                                if (!sure) {
-	                                    return;
-	                                }
-	                                props.remove().then(function (_) {
-	                                    return goto('/classes');
-	                                });
-	                            } },
-	                        '\u5220\u9664'
-	                    )
-	                )
-	            )
+	          'div',
+	          null,
+	          React.createElement(
+	            'button',
+	            { type: 'submit', className: 'btn btn-success' },
+	            '\u4FDD\u5B58'
+	          ),
+	          React.createElement(
+	            'button',
+	            { className: 'btn btn-danger', onClick: function onClick(e) {
+	                e.preventDefault(); //不知为何submit会被调用，人为阻止
+	                var sure = confirm("确定要删除吗?");
+	                if (!sure) {
+	                  return;
+	                }
+	                props.remove().then(function (_) {
+	                  return goto('/classes');
+	                });
+	              } },
+	            '\u5220\u9664'
+	          )
 	        )
-	    );
+	      )
+	    )
+	  );
 	};
 
+	/**
+	 * 用classForm修改班级，保存到"/api/class"
+	 */
+
 	var ClassUpdater = function (_React$Component) {
-	    _inherits(ClassUpdater, _React$Component);
+	  _inherits(ClassUpdater, _React$Component);
 
-	    function ClassUpdater(props) {
-	        _classCallCheck(this, ClassUpdater);
+	  function ClassUpdater(props) {
+	    _classCallCheck(this, ClassUpdater);
 
-	        var _this = _possibleConstructorReturn(this, (ClassUpdater.__proto__ || Object.getPrototypeOf(ClassUpdater)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (ClassUpdater.__proto__ || Object.getPrototypeOf(ClassUpdater)).call(this, props));
 
-	        _this.state = {};
-	        return _this;
+	    _this.state = {};
+	    return _this;
+	  }
+
+	  _createClass(ClassUpdater, [{
+	    key: 'render',
+	    value: function render() {
+	      var me = this;
+	      var id = this.props.params.id;
+	      // console.log('id',id);
+	      return React.createElement(
+	        'div',
+	        { className: 'class_updater' },
+	        React.createElement(_rest_writer2.default, { url: '/api/class', id: id, view: ClassForm })
+	      );
 	    }
+	  }]);
 
-	    _createClass(ClassUpdater, [{
-	        key: 'render',
-	        value: function render() {
-	            var me = this;
-	            var id = this.props.params.id;
-	            console.log('id', id);
-	            return React.createElement(
-	                'div',
-	                { className: 'class_updater' },
-	                React.createElement(_rest_writer2.default, { url: '/api/class', id: id, view: ClassForm })
-	            );
-	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
-	    }]);
-
-	    return ClassUpdater;
+	  return ClassUpdater;
 	}(React.Component);
 
 	module.exports = ClassUpdater;
@@ -10731,6 +10587,10 @@ webpackJsonp([0],[
 	    );
 	};
 
+	/**
+	 * 用roomForm修改考场，保存到"/api/room"
+	 */
+
 	var RoomUpdater = function (_React$Component) {
 	    _inherits(RoomUpdater, _React$Component);
 
@@ -10834,6 +10694,10 @@ webpackJsonp([0],[
 
 	__webpack_require__(756);
 
+	/**
+	 * 用ExamForm更新考试安排
+	 * 数据保存到"/api/exam"
+	 */
 	var ExamUpdater = function (_React$Component) {
 	    _inherits(ExamUpdater, _React$Component);
 
@@ -10859,9 +10723,6 @@ webpackJsonp([0],[
 	            );
 	        }
 	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
 	            this.tokenUpdate = PubSub.subscribe("updated", function (msg, data) {
@@ -10871,20 +10732,6 @@ webpackJsonp([0],[
 	                location.href = "#/exams";
 	            }); //删除数据后到父节点
 	        }
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
 	    }, {
 	        key: 'componentWillUnmount',
 	        value: function componentWillUnmount() {
@@ -11009,6 +10856,11 @@ webpackJsonp([0],[
 	    );
 	};
 
+	/**
+	 * 与TeacherCreater类似
+	 * 用于更新教师数据
+	 */
+
 	var TeacherUpdater = function (_React$Component) {
 	    _inherits(TeacherUpdater, _React$Component);
 
@@ -11095,6 +10947,11 @@ webpackJsonp([0],[
 
 	__webpack_require__(768);
 
+	/**
+	 * 学生成绩批改
+	 * 用AnswersheetForm修改答题卡，保存到"/api/answersheet"
+	 * 在ExamFormScores学生分数表格中点击会进入到此页
+	 */
 	var AnswersheetUpdater = function (_React$Component) {
 	    _inherits(AnswersheetUpdater, _React$Component);
 
@@ -11120,9 +10977,6 @@ webpackJsonp([0],[
 	            );
 	        }
 	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
 	            this.tokenUpdate = PubSub.subscribe("updated", function (msg, data) {
@@ -11132,20 +10986,6 @@ webpackJsonp([0],[
 	                history.go(-1);
 	            }); //更新数据后到父节点
 	        }
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
 	    }, {
 	        key: 'componentWillUnmount',
 	        value: function componentWillUnmount() {
@@ -11193,292 +11033,512 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	/**
+	 * 学生成绩批改以及试卷导出
+	 */
 	__webpack_require__(766);
 	var agent = __webpack_require__(517)(__webpack_require__(518), Promise);
 	var tree = __webpack_require__(71)('_api');
 
 	var _ = __webpack_require__(79);
 
+	var imgUtil = __webpack_require__(772);
+	var qjsonUtil = __webpack_require__(773);
 
-	function dataURItoBlob(dataURI) {
-	  // convert base64/URLEncoded data component to raw binary data held in a string
-	  var byteString;
-	  if (dataURI.split(',')[0].indexOf('base64') >= 0) byteString = atob(dataURI.split(',')[1]);else byteString = unescape(dataURI.split(',')[1]);
-
-	  // separate out the mime component
-	  var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
-
-	  // write the bytes of the string to a typed array
-	  var ia = new Uint8Array(byteString.length);
-	  for (var i = 0; i < byteString.length; i++) {
-	    ia[i] = byteString.charCodeAt(i);
-	  }
-
-	  // return new Blob([ia], {type:mimeString});
-	  return ia;
-	}
-
-	window.imgs = {}; //暴露给全局
-	window.imgsSize = {}; //暴露给全局
-	function getImgBlob(obj) {
-	  //收集图片到imgs中
-	  var imgID = obj.gid;
-	  var img = document.getElementById(imgID),
-	      canvas = document.createElement('canvas'),
-	      ctx = canvas.getContext('2d');
-	  var imgBlob;
-
-	  canvas.width = img.width;
-	  canvas.height = img.height;
-	  ctx.drawImage(img, 0, 0, img.width, img.height);
-	  var dataURL = canvas.toDataURL();
-	  imgBlob = dataURItoBlob(dataURL);
-	  imgs[imgID] = imgBlob;
-	  imgsSize[imgID] = [obj.w, obj.h];
-	  canvas = null;
-	  console.log(imgs, imgsSize);
-	}
-
+	/**
+	 * 显示每道题目，包括问题Q,批注,得分
+	 * 得分改变时发送'score.change'消息
+	 * 批注改变时发送'comment.change'消息
+	 * AnswersheetForm负责接收改变消息，并更新状态
+	 */
 	var QS = function QS(props) {
-	  return React.createElement(
-	    'div',
-	    { style: { paddingTop: "20px" } },
-	    React.createElement(
-	      _reactBootstrap.Col,
-	      { xs: 11 },
-	      React.createElement(Q, props),
-	      React.createElement('textarea', { className: 'form-control', rows: '3', placeholder: '\u6279\u6CE8',
-	        defaultValue: props.comment || '',
-	        onChange: function onChange(e) {
-	          PubSub.publish('comment.change', { gid: props.node._id, comment: e.target.value });
-	        }
-	      })
-	    ),
-	    React.createElement(
-	      _reactBootstrap.Col,
-	      { xs: 1 },
-	      React.createElement('input', { type: 'number', min: '0', max: '100', step: '1',
-	        placeholder: '\u5F97\u5206', value: props.score,
-	        onChange: function onChange(e) {
-	          PubSub.publish('score.change', { gid: props.node._id, score: Number(e.target.value) });
-	        },
-	        style: { padding: "8px", width: "50px" } })
-	    )
-	  );
+	    return React.createElement(
+	        'div',
+	        { style: { paddingTop: "20px" } },
+	        React.createElement(
+	            _reactBootstrap.Col,
+	            { xs: 11 },
+	            React.createElement(Q, props),
+	            React.createElement('textarea', { className: 'form-control', rows: '3', placeholder: '\u6279\u6CE8',
+	                defaultValue: props.comment || '',
+	                onChange: function onChange(e) {
+	                    PubSub.publish('comment.change', { gid: props.node._id, comment: e.target.value });
+	                }
+	            })
+	        ),
+	        React.createElement(
+	            _reactBootstrap.Col,
+	            { xs: 1 },
+	            React.createElement('input', { type: 'number', min: '0', max: '100', step: '1',
+	                placeholder: '\u5F97\u5206', value: props.score,
+	                onChange: function onChange(e) {
+	                    PubSub.publish('score.change', { gid: props.node._id, score: Number(e.target.value) });
+	                },
+	                style: { padding: "8px", width: "50px" } })
+	        )
+	    );
 	};
 
 	var Q = function Q(props) {
-	  var node = props.node;
-	  var type = node._data.type;
+	    var node = props.node;
+	    var type = node._data.type;
 
-	  switch (type) {
-	    case "ks1/choice":
-	      return React.createElement(Qchoice, props);
-	    case "ks1/tf":
-	      return React.createElement(Qtf, props);
-	    case "ks1/qa":
-	      return React.createElement(Qqa, props);
-	    case "ks1/revise":
-	      return React.createElement(Qrevise, props);
-	  }
-	  return null;
+	    switch (type) {
+	        case "ks1/choice":
+	            return React.createElement(Qchoice, props);
+	        case "ks1/tf":
+	            return React.createElement(Qtf, props);
+	        case "ks1/qa":
+	            return React.createElement(Qqa, props);
+	        case "ks1/revise":
+	            return React.createElement(Qrevise, props);
+	    }
+	    return null;
 	};
 	//阅卷
 	var Qchoice = function Qchoice(_ref) {
-	  var node = _ref.node,
-	      answer = _ref.answer;
+	    var node = _ref.node,
+	        answer = _ref.answer;
 
-	  var data = node._data.data;
-	  var correct = isCorrectChoice(data, answer);
-	  return React.createElement(
-	    _reactBootstrap.Panel,
-	    { header: "[选择题] " + data.question, collapsible: true, defaultExpanded: true,
-	      bsStyle: correct ? "success" : "danger" },
-	    React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._id, level: 1 }),
-	    React.createElement(
-	      _reactBootstrap.ListGroup,
-	      { fill: true },
-	      data.answers.map(function (ans, idx) {
-	        return React.createElement(
-	          _reactBootstrap.ListGroupItem,
-	          { key: idx },
-	          React.createElement(
-	            'div',
-	            null,
-	            "ABCDEFGHI"[idx] + ". " + ans.answer + "  " + (ans.ok ? " ✓ " : " "),
-	            answer === idx ? React.createElement(CheckSign, null) : null
-	          )
-	        );
-	      })
-	    )
-	  );
+	    var data = node._data.data;
+	    var correct = isCorrectChoice(data, answer);
+	    return React.createElement(
+	        _reactBootstrap.Panel,
+	        { header: "[选择题] " + data.question, collapsible: true, defaultExpanded: true,
+	            bsStyle: correct ? "success" : "danger" },
+	        React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._id, level: 1 }),
+	        React.createElement(
+	            _reactBootstrap.ListGroup,
+	            { fill: true },
+	            data.answers.map(function (ans, idx) {
+	                return React.createElement(
+	                    _reactBootstrap.ListGroupItem,
+	                    { key: idx },
+	                    React.createElement(
+	                        'div',
+	                        null,
+	                        "ABCDEFGHI"[idx] + ". " + ans.answer + "  " + (ans.ok ? " ✓ " : " "),
+	                        answer === idx ? React.createElement(CheckSign, null) : null
+	                    )
+	                );
+	            })
+	        )
+	    );
 	};
 	var CheckSign = function CheckSign(props) {
-	  return React.createElement(
-	    'span',
-	    { style: { fontSize: "1.4em", color: "SteelBlue" } },
-	    '\u2713'
-	  );
+	    return React.createElement(
+	        'span',
+	        { style: { fontSize: "1.4em", color: "SteelBlue" } },
+	        '\u2713'
+	    );
 	};
 	var CrossSign = function CrossSign(props) {
-	  return React.createElement(
-	    'span',
-	    { style: { fontSize: "1.4em", color: "SteelBlue" } },
-	    '\u2717'
-	  );
+	    return React.createElement(
+	        'span',
+	        { style: { fontSize: "1.4em", color: "SteelBlue" } },
+	        '\u2717'
+	    );
 	};
 	//阅卷
 	var Qqa = function Qqa(_ref2) {
-	  var node = _ref2.node,
-	      answer = _ref2.answer;
+	    var node = _ref2.node,
+	        answer = _ref2.answer;
 
-	  var data = node._data.data;
-	  var ans = answer || "";
-	  return React.createElement(
-	    _reactBootstrap.Panel,
-	    { header: "[问答题] " + data.question, collapsible: true, defaultExpanded: true },
-	    React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._id, level: 1 }),
-	    React.createElement(
-	      'div',
-	      { style: { fontSize: "1.4em", color: "SteelBlue" } },
-	      ans
-	    )
-	  );
+	    var data = node._data.data;
+	    var ans = answer || "";
+	    return React.createElement(
+	        _reactBootstrap.Panel,
+	        { header: "[问答题] " + data.question, collapsible: true, defaultExpanded: true },
+	        React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._id, level: 1 }),
+	        React.createElement(
+	            'div',
+	            { style: { fontSize: "1.4em", color: "SteelBlue" } },
+	            ans
+	        )
+	    );
 	};
 
 	//阅卷
 	var Qtf = function Qtf(_ref3) {
-	  var node = _ref3.node,
-	      answer = _ref3.answer;
+	    var node = _ref3.node,
+	        answer = _ref3.answer;
 
-	  var data = node._data.data;
-	  var correct = isCorrectTf(data, answer);
-	  return React.createElement(
-	    _reactBootstrap.Panel,
-	    { collapsible: true, defaultExpanded: true,
-	      header: "[判断题] " + data.question + " " + (data.ok ? " ( ✓ )" : " ( ✗ )"), bsStyle: correct ? "success" : "danger" },
-	    React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._id, level: 1 }),
-	    answer === undefined ? null : answer ? React.createElement(CheckSign, null) : React.createElement(CrossSign, null)
-	  );
+	    var data = node._data.data;
+	    var correct = isCorrectTf(data, answer);
+	    return React.createElement(
+	        _reactBootstrap.Panel,
+	        { collapsible: true, defaultExpanded: true,
+	            header: "[判断题] " + data.question + " " + (data.ok ? " ( ✓ )" : " ( ✗ )"), bsStyle: correct ? "success" : "danger" },
+	        React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._id, level: 1 }),
+	        answer === undefined ? null : answer ? React.createElement(CheckSign, null) : React.createElement(CrossSign, null)
+	    );
 	};
 
 	//阅卷
 	var Qrevise = function Qrevise(_ref4) {
-	  var node = _ref4.node,
-	      answer = _ref4.answer;
+	    var node = _ref4.node,
+	        answer = _ref4.answer;
 
-	  var data = node._data.data;
-	  var ans = answer || "";
-	  return React.createElement(
-	    _reactBootstrap.Panel,
-	    { header: "[问答题] " + data.question, collapsible: true, defaultExpanded: true },
-	    React.createElement(
-	      'h4',
-	      null,
-	      '\u6539\u9519\u5185\u5BB9'
-	    ),
-	    React.createElement(
-	      'pre',
-	      { style: { color: "SteelBlue" } },
-	      ans
-	    ),
-	    React.createElement(
-	      'h4',
-	      null,
-	      '\u53C2\u8003\u7B54\u6848'
-	    ),
-	    React.createElement(
-	      'pre',
-	      null,
-	      data.answer
-	    )
-	  );
+	    var data = node._data.data;
+	    var ans = answer || "";
+	    return React.createElement(
+	        _reactBootstrap.Panel,
+	        { header: "[问答题] " + data.question, collapsible: true, defaultExpanded: true },
+	        React.createElement(
+	            'h4',
+	            null,
+	            '\u6539\u9519\u5185\u5BB9'
+	        ),
+	        React.createElement(
+	            'pre',
+	            { style: { color: "SteelBlue" } },
+	            ans
+	        ),
+	        React.createElement(
+	            'h4',
+	            null,
+	            '\u53C2\u8003\u7B54\u6848'
+	        ),
+	        React.createElement(
+	            'pre',
+	            null,
+	            data.answer
+	        )
+	    );
 	};
 
 	function isCorrectChoice(data, answer) {
-	  data.answers = data.answers || [];
-	  for (var idx = 0; idx < data.answers.length; idx++) {
-	    var ans = data.answers[idx];
-	    if (ans.ok && idx !== answer || !ans.ok && idx === answer) return false;
-	  }
-	  return true;
+	    data.answers = data.answers || [];
+	    for (var idx = 0; idx < data.answers.length; idx++) {
+	        var ans = data.answers[idx];
+	        if (ans.ok && idx !== answer || !ans.ok && idx === answer) return false;
+	    }
+	    return true;
 	}
 
 	function isCorrectTf(data, answer) {
-	  return data.ok == answer;
+	    return data.ok == answer;
 	}
 
-	function convert2txt(exam, questions, scores, comments, answers, totalScore) {
-	  var contents = [];
-	  contents.push(exam.name);
-	  contents.push("总分：" + totalScore);
-	  questions.map(function (question) {
-	    var qid = question._id;
-	    var score = scores[qid] || 0;
-	    var comment = comments[qid] || "";
-	    var answer = answers[qid];
-	    var qtxt = QTxt(question, answer, comment, score);
-	    contents.push(qtxt + '\r\n得分：' + score + '\r\n批注：' + comment);
-	  });
-	  return contents.join("\r\n\r\n");
-	}
+	var AnswersheetForm = function (_React$Component) {
+	    _inherits(AnswersheetForm, _React$Component);
 
-	function QTxt(qnode, answer, comment, score) {
-	  // console.log('QTxt',qnode);
+	    function AnswersheetForm(props) {
+	        _classCallCheck(this, AnswersheetForm);
 
-	  var type = qnode._data.type;
+	        var _this = _possibleConstructorReturn(this, (AnswersheetForm.__proto__ || Object.getPrototypeOf(AnswersheetForm)).call(this, props));
 
-	  switch (type) {
-	    case "ks1/choice":
-	      return QTxtChoice(qnode._data, answer, comment, score);
-	    case "ks1/tf":
-	      return QTxtTf(qnode._data, answer, comment, score);
-	    case "ks1/qa":
-	      return QTxtQa(qnode._data, answer, comment, score);
-	    case "ks1/revise":
-	      return QTxtRevise(qnode._data, answer, comment, score);
-	  }
-	  return "";
-	}
-
-	function QTxtChoice(qdata, answer, comment, score) {
-	  var data = qdata.data;
-	  var contents = [];
-	  contents.push("[选择题] " + data.question);
-	  var correctAnswer = "";
-	  for (var idx = 0; idx < data.answers.length; idx++) {
-	    var ans = data.answers[idx];
-	    console.log(ans.answer);
-	    var line = "ABCDEFGHI"[idx] + ". " + ans.answer + (idx === answer ? " (✓)" : "");
-	    contents.push(line);
-	    if (ans.ok) {
-	      correctAnswer = correctAnswer + "ABCDEFGHI"[idx];
+	        var answersheet = props.data;
+	        _this.state = {
+	            scores: answersheet.scores || {},
+	            totalScore: answersheet.totalScore || 0,
+	            comments: answersheet.comments || {}
+	        };
+	        return _this;
 	    }
-	  }
-	  contents.push('正确答案：' + correctAnswer);
-	  return contents.join("\r\n");
+	    //收集图片放到this.imgs中
+
+
+	    _createClass(AnswersheetForm, [{
+	        key: 'collectImage',
+	        value: function collectImage(questions) {
+	            function mysubscriber(msg, obj) {
+	                // console.log(msg,obj) 
+	                imgUtil.getImgBlob(obj);
+	            }
+	            // console.log('subscribe:img-load')
+	            PubSub.subscribe('img-load', mysubscriber);
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var me = this;
+	            var _state = this.state,
+	                exam = _state.exam,
+	                student = _state.student,
+	                questions = _state.questions;
+
+	            var answersheet = this.props.data;
+	            var answers = answersheet.answers;
+	            var _state2 = this.state,
+	                scores = _state2.scores,
+	                totalScore = _state2.totalScore,
+	                comments = _state2.comments;
+
+	            if (exam && student && questions) {
+	                this.collectImage(questions);
+	                return React.createElement(
+	                    'div',
+	                    { className: 'pad' },
+	                    React.createElement(
+	                        _reactBootstrap.ButtonToolbar,
+	                        { style: { textAlign: 'right' } },
+	                        React.createElement(
+	                            _reactBootstrap.Button,
+	                            { bsStyle: 'success', onClick: this.update.bind(this) },
+	                            '\u4FDD\u5B58'
+	                        ),
+	                        React.createElement(
+	                            _reactBootstrap.Button,
+	                            { bsStyle: 'danger', onClick: this.remove.bind(this) },
+	                            '\u5220\u9664'
+	                        ),
+	                        React.createElement(
+	                            _reactBootstrap.Button,
+	                            { bsStyle: 'info', id: 'printButton', onClick: this.saveDocx.bind(this) },
+	                            '\u5BFC\u51FA'
+	                        )
+	                    ),
+	                    React.createElement('div', { style: { clear: "both", paddingTop: "15px" } }),
+	                    React.createElement(
+	                        'div',
+	                        { id: 'forPrint' },
+	                        React.createElement(
+	                            _reactBootstrap.Panel,
+	                            null,
+	                            exam.name + '  ' + student.name + ' ' + student.id,
+	                            React.createElement(
+	                                'div',
+	                                { style: { float: "right" } },
+	                                '\u603B\u5206 ',
+	                                totalScore
+	                            )
+	                        ),
+	                        React.createElement(
+	                            _reactBootstrap.Grid,
+	                            { fluid: true },
+	                            _.map(questions, function (node) {
+	                                return React.createElement(
+	                                    _reactBootstrap.Row,
+	                                    { key: node._id, className: 'no-gutter' },
+	                                    React.createElement(QS, { node: node, score: scores[node._id] || 0, comment: comments[node._id] || '', answer: answers[node._id] })
+	                                );
+	                            })
+	                        )
+	                    )
+	                );
+	            } else {
+	                return null;
+	            }
+	        }
+	    }, {
+	        key: 'saveJson',
+	        value: function saveJson() {
+	            var _state3 = this.state,
+	                exam = _state3.exam,
+	                student = _state3.student,
+	                questions = _state3.questions;
+
+	            var answersheet = this.props.data;
+	            var answers = answersheet.answers;
+	            var _state4 = this.state,
+	                scores = _state4.scores,
+	                totalScore = _state4.totalScore,
+	                comments = _state4.comments;
+
+	            var name = exam._id + "_" + student.name + ".txt";
+	            var jcontent = qjsonUtil.convert2json(exam, questions, scores, comments, answers, totalScore);
+	            var content = JSON.stringify(jcontent, null, 2);
+	            var blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+	            saveAs(blob, name);
+	            //saveAs来自FileSaver
+	        }
+	    }, {
+	        key: 'saveDocx',
+	        value: function saveDocx() {
+	            var _state5 = this.state,
+	                exam = _state5.exam,
+	                student = _state5.student,
+	                questions = _state5.questions;
+
+	            var answersheet = this.props.data;
+	            var answers = answersheet.answers;
+	            var _state6 = this.state,
+	                scores = _state6.scores,
+	                totalScore = _state6.totalScore,
+	                comments = _state6.comments;
+
+	            var jcontent = convert2json(exam, questions, scores, comments, answers, totalScore);
+	            var name = student.id + "_" + student.name + ".docx";
+	            saveAsDocx(jcontent, name);
+	            //saveAsDocx定义在manage.html中
+	        }
+	    }, {
+	        key: 'update',
+	        value: function update() {
+	            var _state7 = this.state,
+	                scores = _state7.scores,
+	                totalScore = _state7.totalScore,
+	                comments = _state7.comments;
+
+	            var answersheet = this.props.data;
+	            answersheet.scores = scores;
+	            answersheet.totalScore = totalScore;
+	            answersheet.comments = comments;
+	            this.props.update(answersheet);
+	        }
+	    }, {
+	        key: 'remove',
+	        value: function remove() {
+	            var sure = confirm("确定要删除吗?");
+	            if (!sure) {
+	                return;
+	            }
+	            this.props.remove();
+	        }
+	    }, {
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            var _this2 = this;
+
+	            this.fetchData();
+	            this.tokenUpdate = PubSub.subscribe("score.change", function (msg, data) {
+	                return _this2.changeScore(data);
+	            });
+	            this.tokenUpdateComment = PubSub.subscribe("comment.change", function (msg, data) {
+	                return _this2.changeComment(data);
+	            });
+	        }
+	    }, {
+	        key: 'changeScore',
+	        value: function changeScore(_ref5) {
+	            var gid = _ref5.gid,
+	                score = _ref5.score;
+	            var _state8 = this.state,
+	                scores = _state8.scores,
+	                totalScore = _state8.totalScore;
+
+	            scores[gid] = score;
+	            totalScore = _.sum(_.values(scores));
+	            this.setState({ scores: scores, totalScore: totalScore });
+	        }
+	    }, {
+	        key: 'changeComment',
+	        value: function changeComment(_ref6) {
+	            var gid = _ref6.gid,
+	                comment = _ref6.comment;
+	            var comments = this.state.comments;
+
+	            comments[gid] = comment;
+	            this.setState({ comments: comments });
+	        }
+	    }, {
+	        key: 'fetchData',
+	        value: function fetchData() {
+	            var _this3 = this;
+
+	            var answersheet = this.props.data; //answersheet
+	            var examID = answersheet.examID,
+	                studentID = answersheet.studentID,
+	                questions = answersheet.questions;
+
+	            agent.get("/exam/" + examID).then(function (resp) {
+	                _this3.setState({ exam: resp.body });
+	            });
+	            agent.get("/student/" + studentID).then(function (resp) {
+	                _this3.setState({ student: resp.body });
+	            });
+	            tree.read_nodes(questions).then(function (nodes) {
+	                _this3.setState({ questions: nodes });
+	            });
+	        }
+	    }, {
+	        key: 'componentWillUnmount',
+	        value: function componentWillUnmount() {
+	            PubSub.unsubscribe(this.tokenUpdate);
+	            PubSub.unsubscribe(this.tokenUpdateComment);
+	        }
+	    }]);
+
+	    return AnswersheetForm;
+	}(React.Component);
+
+	module.exports = AnswersheetForm;
+
+/***/ },
+/* 766 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 767 */,
+/* 768 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 769 */,
+/* 770 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 771 */,
+/* 772 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * 用于导出试卷的工具函数
+	 */
+
+	function dataURItoBlob(dataURI) {
+	    // convert base64/URLEncoded data component to raw binary data held in a string
+	    var byteString;
+	    if (dataURI.split(',')[0].indexOf('base64') >= 0) byteString = atob(dataURI.split(',')[1]);else byteString = unescape(dataURI.split(',')[1]);
+	    // separate out the mime component
+	    var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+
+	    // write the bytes of the string to a typed array
+	    var ia = new Uint8Array(byteString.length);
+	    for (var i = 0; i < byteString.length; i++) {
+	        ia[i] = byteString.charCodeAt(i);
+	    }
+	    return ia;
 	}
 
-	function QTxtTf(qdata, answer, comment, score) {
-	  var data = qdata.data;
-	  var contents = [];
-	  contents.push("[判断题] " + data.question + (answer ? " ( ✓ )" : " ( ✗ )"));
-	  contents.push('正确答案：' + (data.ok ? " ( ✓ )" : " ( ✗ )"));
-	  return contents.join("\r\n");
+	/**
+	 * 取得图片内容
+	 * obj:{gid,w,h}
+	 * gid为图片节点id,也是img dom元素id
+	 * w,h分别为宽与高
+	 * 图片内容和尺寸会记录到全局变量imgs和imgsSize中
+	 * 供Docxgen的imageModule使用
+	 * 详见manage.html中的saveAsDocx相关代码
+	 */
+	window.imgs = {}; //暴露给全局
+	window.imgsSize = {}; //暴露给全局
+	function getImgBlob(obj) {
+	    //收集图片到imgs中
+	    var imgID = obj.gid;
+	    var img = document.getElementById(imgID),
+	        canvas = document.createElement('canvas'),
+	        ctx = canvas.getContext('2d');
+	    var imgBlob;
+	    canvas.width = img.width;
+	    canvas.height = img.height;
+	    ctx.drawImage(img, 0, 0, img.width, img.height);
+	    var dataURL = canvas.toDataURL();
+	    imgBlob = dataURItoBlob(dataURL);
+	    imgs[imgID] = imgBlob;
+	    imgsSize[imgID] = [obj.w, obj.h];
+	    canvas = null;
+	    console.log(imgs, imgsSize);
 	}
 
-	function QTxtQa(qdata, answer, comment, score) {
-	  var data = qdata.data;
-	  var contents = [];
-	  contents.push("[问答题] " + data.question);
-	  contents.push(answer);
-	  contents.push('参考答案：' + data.answer);
-	  return contents;
-	}
+	module.exports = {
+	    getImgBlob: getImgBlob
+	};
 
-	function QTxtRevise(qdata, answer, comment, score) {
-	  return "";
-	}
+/***/ },
+/* 773 */
+/***/ function(module, exports) {
+
+	'use strict';
 
 	function convert2json(exam, questions, scores, comments, answers, totalScore) {
 	  var paper = {};
@@ -11590,302 +11650,9 @@ webpackJsonp([0],[
 	  return contents;
 	}
 
-	var AnswersheetForm = function (_React$Component) {
-	  _inherits(AnswersheetForm, _React$Component);
-
-	  function AnswersheetForm(props) {
-	    _classCallCheck(this, AnswersheetForm);
-
-	    var _this = _possibleConstructorReturn(this, (AnswersheetForm.__proto__ || Object.getPrototypeOf(AnswersheetForm)).call(this, props));
-
-	    var answersheet = props.data;
-	    _this.state = {
-	      scores: answersheet.scores || {},
-	      totalScore: answersheet.totalScore || 0,
-	      comments: answersheet.comments || {}
-	    };
-	    return _this;
-	  }
-	  //收集图片放到this.imgs中
-
-
-	  _createClass(AnswersheetForm, [{
-	    key: 'collectImage',
-	    value: function collectImage(questions) {
-	      // var children=questions.map(qnode=> qnode._link.children )
-	      // var img_gids=_.flatten(children);
-	      // console.log("img_gids",img_gids);//imageviewer中图片的id与对应节点的gid相同，以便采集图片
-	      // img_gids.map(imgID=>getImgBlob(imgID))
-	      function mysubscriber(msg, obj) {
-	        console.log(msg, obj);
-	        getImgBlob(obj);
-	      }
-	      console.log('subscribe:img-load');
-	      PubSub.subscribe('img-load', mysubscriber);
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var me = this;
-	      var _state = this.state,
-	          exam = _state.exam,
-	          student = _state.student,
-	          questions = _state.questions;
-
-	      var answersheet = this.props.data;
-	      var answers = answersheet.answers;
-	      var _state2 = this.state,
-	          scores = _state2.scores,
-	          totalScore = _state2.totalScore,
-	          comments = _state2.comments;
-	      //id="printButton" 导出按钮
-	      //id='forPrint' 要导出的内容
-	      //导出功能 参考 https://github.com/evidenceprime/html-docx-js/blob/master/test/sample.html
-
-	      if (exam && student && questions) {
-	        this.collectImage(questions);
-	        return React.createElement(
-	          'div',
-	          { className: 'pad' },
-	          React.createElement(
-	            _reactBootstrap.ButtonToolbar,
-	            { style: { textAlign: 'right' } },
-	            React.createElement(
-	              _reactBootstrap.Button,
-	              { bsStyle: 'success', onClick: this.update.bind(this) },
-	              '\u4FDD\u5B58'
-	            ),
-	            React.createElement(
-	              _reactBootstrap.Button,
-	              { bsStyle: 'danger', onClick: this.remove.bind(this) },
-	              '\u5220\u9664'
-	            ),
-	            React.createElement(
-	              _reactBootstrap.Button,
-	              { bsStyle: 'info', id: 'printButton', onClick: this.saveDocx.bind(this) },
-	              '\u5BFC\u51FA'
-	            )
-	          ),
-	          React.createElement('div', { style: { clear: "both", paddingTop: "15px" } }),
-	          React.createElement(
-	            'div',
-	            { id: 'forPrint' },
-	            React.createElement(
-	              _reactBootstrap.Panel,
-	              null,
-	              exam.name + '  ' + student.name + ' ' + student.id,
-	              React.createElement(
-	                'div',
-	                { style: { float: "right" } },
-	                '\u603B\u5206 ',
-	                totalScore
-	              )
-	            ),
-	            React.createElement(
-	              _reactBootstrap.Grid,
-	              { fluid: true },
-	              _.map(questions, function (node) {
-	                return React.createElement(
-	                  _reactBootstrap.Row,
-	                  { key: node._id, className: 'no-gutter' },
-	                  React.createElement(QS, { node: node, score: scores[node._id] || 0, comment: comments[node._id] || '', answer: answers[node._id] })
-	                );
-	              })
-	            )
-	          )
-	        );
-	      } else {
-	        return null;
-	      }
-	    }
-	  }, {
-	    key: 'saveDoc',
-	    value: function saveDoc() {
-	      var contentDocument = document.getElementById('forPrint');
-	      var content = '<!DOCTYPE html>' + contentDocument.outerHTML;
-	      var converted = htmlDocx.asBlob(content, { orientation: "portrait" });
-	      saveAs(converted, 'exam.docx');
-	    }
-	  }, {
-	    key: 'saveJson',
-	    value: function saveJson() {
-	      var _state3 = this.state,
-	          exam = _state3.exam,
-	          student = _state3.student,
-	          questions = _state3.questions;
-
-	      var answersheet = this.props.data;
-	      var answers = answersheet.answers;
-	      var _state4 = this.state,
-	          scores = _state4.scores,
-	          totalScore = _state4.totalScore,
-	          comments = _state4.comments;
-
-	      var name = exam._id + "_" + student.name + ".txt";
-	      // console.log('saveTxt',exam);
-	      // console.log('saveTxt',name);
-	      // var content=convert2txt(exam,questions,scores,comments,answers,totalScore);
-	      // var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
-	      var jcontent = convert2json(exam, questions, scores, comments, answers, totalScore);
-	      var content = JSON.stringify(jcontent, null, 2);
-	      var blob = new Blob([content], { type: "text/plain;charset=utf-8" });
-	      saveAs(blob, name);
-	    }
-	  }, {
-	    key: 'saveDocx',
-	    value: function saveDocx() {
-	      var _state5 = this.state,
-	          exam = _state5.exam,
-	          student = _state5.student,
-	          questions = _state5.questions;
-
-	      var answersheet = this.props.data;
-	      var answers = answersheet.answers;
-	      var _state6 = this.state,
-	          scores = _state6.scores,
-	          totalScore = _state6.totalScore,
-	          comments = _state6.comments;
-	      // var name=exam._id+"_"+student.name+".txt";
-	      // console.log('saveTxt',exam);
-	      // console.log('saveTxt',name);
-	      // var content=convert2txt(exam,questions,scores,comments,answers,totalScore);
-	      // var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
-
-	      var jcontent = convert2json(exam, questions, scores, comments, answers, totalScore);
-	      // var content=JSON.stringify(jcontent,null,2);
-	      // var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
-	      // saveAs(blob, name);
-	      var name = student.id + "_" + student.name + ".docx";
-	      saveAsDocx(jcontent, name);
-	    }
-	  }, {
-	    key: 'update',
-	    value: function update() {
-	      var _state7 = this.state,
-	          scores = _state7.scores,
-	          totalScore = _state7.totalScore,
-	          comments = _state7.comments;
-
-	      var answersheet = this.props.data;
-	      answersheet.scores = scores;
-	      answersheet.totalScore = totalScore;
-	      answersheet.comments = comments;
-	      this.props.update(answersheet);
-	    }
-	  }, {
-	    key: 'remove',
-	    value: function remove() {
-	      var sure = confirm("确定要删除吗?");
-	      if (!sure) {
-	        return;
-	      }
-	      this.props.remove();
-	    }
-	  }, {
-	    key: 'componentWillMount',
-	    value: function componentWillMount() {}
-	  }, {
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      var _this2 = this;
-
-	      this.fetchData();
-	      this.tokenUpdate = PubSub.subscribe("score.change", function (msg, data) {
-	        return _this2.changeScore(data);
-	      });
-	      this.tokenUpdateComment = PubSub.subscribe("comment.change", function (msg, data) {
-	        return _this2.changeComment(data);
-	      });
-	    }
-	  }, {
-	    key: 'changeScore',
-	    value: function changeScore(_ref5) {
-	      var gid = _ref5.gid,
-	          score = _ref5.score;
-	      var _state8 = this.state,
-	          scores = _state8.scores,
-	          totalScore = _state8.totalScore;
-
-	      scores[gid] = score;
-	      totalScore = _.sum(_.values(scores));
-	      this.setState({ scores: scores, totalScore: totalScore });
-	    }
-	  }, {
-	    key: 'changeComment',
-	    value: function changeComment(_ref6) {
-	      var gid = _ref6.gid,
-	          comment = _ref6.comment;
-	      var comments = this.state.comments;
-
-	      comments[gid] = comment;
-	      this.setState({ comments: comments });
-	    }
-	  }, {
-	    key: 'fetchData',
-	    value: function fetchData() {
-	      var _this3 = this;
-
-	      var answersheet = this.props.data; //answersheet
-	      var examID = answersheet.examID,
-	          studentID = answersheet.studentID,
-	          questions = answersheet.questions;
-
-	      agent.get("/exam/" + examID).then(function (resp) {
-	        _this3.setState({ exam: resp.body });
-	      });
-	      agent.get("/student/" + studentID).then(function (resp) {
-	        _this3.setState({ student: resp.body });
-	      });
-	      tree.read_nodes(questions).then(function (nodes) {
-	        _this3.setState({ questions: nodes });
-	      });
-	    }
-	  }, {
-	    key: 'componentWillReceiveProps',
-	    value: function componentWillReceiveProps(nextProps) {}
-	  }, {
-	    key: 'shouldComponentUpdate',
-	    value: function shouldComponentUpdate(nextProps, nextState) {
-	      return true;
-	    }
-	  }, {
-	    key: 'componentWillUpdate',
-	    value: function componentWillUpdate(nextProps, nextState) {}
-	  }, {
-	    key: 'componentDidUpdate',
-	    value: function componentDidUpdate(prevProps, prevState) {}
-	  }, {
-	    key: 'componentWillUnmount',
-	    value: function componentWillUnmount() {
-	      PubSub.unsubscribe(this.tokenUpdate);
-	      PubSub.unsubscribe(this.tokenUpdateComment);
-	    }
-	  }]);
-
-	  return AnswersheetForm;
-	}(React.Component);
-
-	module.exports = AnswersheetForm;
-
-/***/ },
-/* 766 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 767 */,
-/* 768 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 769 */,
-/* 770 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
+	module.exports = {
+	  convert2json: convert2json
+	};
 
 /***/ }
 ]);
