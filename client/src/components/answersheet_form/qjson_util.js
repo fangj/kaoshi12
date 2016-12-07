@@ -1,3 +1,6 @@
+/**
+ * 把试卷内容转化为json,为了导出为docx
+ */
 function convert2json(exam,questions,scores,comments,answers,totalScore){
   var paper={};
   paper.name=exam.name;
