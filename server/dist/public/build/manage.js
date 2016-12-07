@@ -3563,80 +3563,63 @@ webpackJsonp([0],[
 	var common = __webpack_require__(384);
 
 	function goto(url) {
-	    location.href = '#' + url;
+	  location.href = '#' + url;
 	}
 
+	/**
+	 * 通用的概要显示组件，data=[item]
+	 * 每个item显示为一个图标common.icon(type)+名称common.name(d)
+	 * 点击图标后跳转到路由/route/item._id
+	 * route为该类型数据的路由名
+	 */
+
 	var RestSummary = function (_React$Component) {
-	    _inherits(RestSummary, _React$Component);
+	  _inherits(RestSummary, _React$Component);
 
-	    function RestSummary(props) {
-	        _classCallCheck(this, RestSummary);
+	  function RestSummary(props) {
+	    _classCallCheck(this, RestSummary);
 
-	        var _this = _possibleConstructorReturn(this, (RestSummary.__proto__ || Object.getPrototypeOf(RestSummary)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (RestSummary.__proto__ || Object.getPrototypeOf(RestSummary)).call(this, props));
 
-	        _this.state = {};
-	        return _this;
-	    }
+	    _this.state = {};
+	    return _this;
+	  }
 
-	    _createClass(RestSummary, [{
-	        key: 'render',
-	        value: function render() {
-	            var _props = this.props,
-	                data = _props.data,
-	                type = _props.type,
-	                route = _props.route;
+	  _createClass(RestSummary, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props,
+	          data = _props.data,
+	          type = _props.type,
+	          route = _props.route;
+	      // console.log('render Summary',data,type)
 
-	            console.log('render Summary', data, type);
-
+	      return React.createElement(
+	        'div',
+	        { className: 'children-grid' },
+	        React.createElement(
+	          'div',
+	          { className: 'cells clearfix' },
+	          data.map(function (d) {
 	            return React.createElement(
+	              'div',
+	              { key: d._id, className: 'cell', onClick: function onClick() {
+	                  return goto('/' + route + '/' + d._id);
+	                } },
+	              common.icon(type),
+	              React.createElement(
 	                'div',
-	                { className: 'children-grid' },
-	                React.createElement(
-	                    'div',
-	                    { className: 'cells clearfix' },
-	                    data.map(function (d) {
-	                        return React.createElement(
-	                            'div',
-	                            { key: d._id, className: 'cell', onClick: function onClick() {
-	                                    return goto('/' + route + '/' + d._id);
-	                                } },
-	                            common.icon(type),
-	                            React.createElement(
-	                                'div',
-	                                null,
-	                                common.name(d)
-	                            )
-	                        );
-	                    })
-	                )
+	                null,
+	                common.name(d)
+	              )
 	            );
-	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
-	    }]);
+	          })
+	        )
+	      );
+	    }
+	  }]);
 
-	    return RestSummary;
+	  return RestSummary;
 	}(React.Component);
 
 	module.exports = RestSummary;
@@ -3680,6 +3663,13 @@ webpackJsonp([0],[
 
 	var agent = __webpack_require__(517)(__webpack_require__(518), Promise);
 
+	/**
+	 * 读取url处的数据
+	 * 注入到view中
+	 * 收到subscribe的消息会更新自己
+	 * 多余的prop会透传给view
+	 */
+
 	var RestReader = function (_React$Component) {
 	    _inherits(RestReader, _React$Component);
 
@@ -3719,12 +3709,12 @@ webpackJsonp([0],[
 
 	            var me = this;
 	            var mySubscriber = function mySubscriber(msg, data) {
-	                console.log(msg, data);
+	                // console.log( msg, data );
 	                me.fetchData();
 	            };
 	            var subscribe = this.props.subscribe || [];
 	            this.tokens = subscribe.map(function (msg) {
-	                console.log('subscribe msg', msg);
+	                // console.log('subscribe msg',msg);
 	                return PubSub.subscribe(msg, mySubscriber);
 	            });
 	        }
@@ -3846,6 +3836,9 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	/**
+	 * 教师管理主页面
+	 */
 	var tree = __webpack_require__(71)('_api');
 	var tool = __webpack_require__(193)(tree);
 
@@ -8460,6 +8453,13 @@ webpackJsonp([0],[
 
 	var agent = __webpack_require__(517)(__webpack_require__(518), Promise);
 
+	/**
+	 * RestWriter将REST url包装成api函数，注入到view中
+	 * 如果有id,可以更新或删除，显示view(data,update,remove)
+	 * 如果没有id,可以新建，显示view(save)
+	 * 更改成功后会发布publish消息
+	 */
+
 	var RestWriter = function (_React$Component) {
 	    _inherits(RestWriter, _React$Component);
 
@@ -8620,30 +8620,10 @@ webpackJsonp([0],[
 	            this.fetchData(nextProps);
 	        }
 	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
 	            this.fetchData(this.props);
 	        }
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
 	    }]);
 
 	    return RestWriter;
@@ -10418,6 +10398,13 @@ webpackJsonp([0],[
 	        )
 	    );
 	};
+
+	/**
+	 * 创建教师的组件
+	 * 数据由teacherForm编辑
+	 * 保存到"/api/teacher"
+	 * RestWriter将REST url包装成save函数，注入到teacherForm中
+	 */
 
 	var TeacherCreater = function (_React$Component) {
 	    _inherits(TeacherCreater, _React$Component);

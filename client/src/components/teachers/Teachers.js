@@ -1,3 +1,6 @@
+/**
+ * 教师管理主页面
+ */
 const tree=require('../../tree/tree-cache')('_api');
 const tool=require('../../tree/tool')(tree);
 import Nav from '../nav';

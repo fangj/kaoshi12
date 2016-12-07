@@ -3,7 +3,12 @@ var util=require('../util');
 
 var agent = require('superagent-promise')(require('superagent'),Promise);
 
-
+/**
+ * 读取url处的数据
+ * 注入到view中
+ * 收到subscribe的消息会更新自己
+ * 多余的prop会透传给view
+ */
 class RestReader extends React.Component {
 
     static propTypes  ={
@@ -39,12 +44,12 @@ class RestReader extends React.Component {
 
         const me=this;
         var mySubscriber = function( msg, data ){
-            console.log( msg, data );
+            // console.log( msg, data );
             me.fetchData();
         };
         const subscribe=this.props.subscribe||[];
         this.tokens=subscribe.map(msg=>{
-            console.log('subscribe msg',msg);
+            // console.log('subscribe msg',msg);
             return PubSub.subscribe( msg, mySubscriber );
         });
     }

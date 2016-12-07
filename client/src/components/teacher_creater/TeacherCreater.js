@@ -29,6 +29,12 @@ const teacherForm=(props)=><div className="pad">
                     </Form>
                 </div>
 
+/**
+ * 创建教师的组件
+ * 数据由teacherForm编辑
+ * 保存到"/api/teacher"
+ * RestWriter将REST url包装成save函数，注入到teacherForm中
+ */
 class TeacherCreater extends React.Component {
 
     constructor(props) {

@@ -5,6 +5,12 @@ function goto(url){
   location.href='#'+url;
 }
 
+/**
+ * 通用的概要显示组件，data=[item]
+ * 每个item显示为一个图标common.icon(type)+名称common.name(d)
+ * 点击图标后跳转到路由/route/item._id
+ * route为该类型数据的路由名
+ */
 class RestSummary extends React.Component {
 
     constructor(props) {
@@ -15,7 +21,7 @@ class RestSummary extends React.Component {
 
     render() {
         const {data,type,route}=this.props;
-        console.log('render Summary',data,type)
+        // console.log('render Summary',data,type)
 
         return (
           <div className='children-grid'>
@@ -32,27 +38,6 @@ class RestSummary extends React.Component {
         );
     }
 
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
-    componentWillUnmount() {
-    }
 }
 
 module.exports = RestSummary;

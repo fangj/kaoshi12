@@ -4,6 +4,12 @@ var util=require('../util');
 
 var agent = require('superagent-promise')(require('superagent'),Promise);
 
+/**
+ * RestWriter将REST url包装成api函数，注入到view中
+ * 如果有id,可以更新或删除，显示view(data,update,remove)
+ * 如果没有id,可以新建，显示view(save)
+ * 更改成功后会发布publish消息
+ */
 class RestWriter extends React.Component {
 
     static propTypes = {
@@ -121,29 +127,10 @@ class RestWriter extends React.Component {
         this.fetchData(nextProps);
     }
 
-
-    componentWillMount() {
-    }
-
     componentDidMount() {
         this.fetchData(this.props);
     }
 
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
-    componentWillUnmount() {
-    }
 }
 
 module.exports = RestWriter;
