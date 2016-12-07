@@ -938,7 +938,7 @@ webpackJsonp([0],[
 
 	function update(gid, data) {
 	  return _api.update(gid, data).then(function (node) {
-	    return cache.set(node._id, node);
+	    cache.set(node._id, node);return node;
 	  });
 	}
 
@@ -6293,6 +6293,7 @@ webpackJsonp([0],[
 	    }, {
 	        key: 'update',
 	        value: function update() {
+	            // debugger;
 	            return this.props.update({ type: "ks1/paper", data: this.state });
 	        }
 	    }, {
@@ -6807,6 +6808,10 @@ webpackJsonp([0],[
 
 	__webpack_require__(648);
 
+	var hasSlash = function hasSlash(str) {
+	    return str.indexOf('/') > -1;
+	};
+
 	var PaperTopicChooser = function (_React$Component) {
 	    _inherits(PaperTopicChooser, _React$Component);
 
@@ -6832,7 +6837,7 @@ webpackJsonp([0],[
 	                'div',
 	                { className: 'paper_topic_chooser' },
 	                React.createElement(_treepathreader2.default, { view: _paper_topic_chooser_nav2.default, from: '0/menu/banks', to: to }),
-	                typeof to === 'number' ? React.createElement(_reader2.default, { view: _paper_topic_chooser_browser2.default, gid: to, level: 1, selected_questions: selected_questions }) : React.createElement(_reader2.default, { view: _paper_topic_chooser_browser2.default, path: to, level: 1, selected_questions: selected_questions })
+	                hasSlash(to) ? React.createElement(_reader2.default, { view: _paper_topic_chooser_browser2.default, path: to, level: 1, selected_questions: selected_questions }) : React.createElement(_reader2.default, { view: _paper_topic_chooser_browser2.default, gid: to, level: 1, selected_questions: selected_questions })
 	            );
 	        }
 	    }, {

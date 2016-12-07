@@ -62,6 +62,7 @@ class PaperForm extends React.Component {
         return this.props.save({type:"ks1/paper",data:this.state});
     }
     update(){
+        // debugger;
         return this.props.update({type:"ks1/paper",data:this.state});
     }
     onChangeName(e){

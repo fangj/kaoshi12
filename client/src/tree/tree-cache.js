@@ -127,7 +127,7 @@ function _remove_all_children(gids) {
 }
 
 function update(gid, data) {
- return _api.update(gid, data).then(node => cache.set(node._id, node));
+ return _api.update(gid, data).then(node => {cache.set(node._id, node);return node;});
 }
 
 function  mv_as_son(sgid,dgid){

@@ -4,6 +4,7 @@ import Nav from '../paper_topic_chooser_nav';
 
 import PaperTopicChooserBrowser from '../paper_topic_chooser_browser';
 import Reader from '../reader';
+const hasSlash=(str)=>str.indexOf('/')>-1;
 
 class PaperTopicChooser extends React.Component {
 
@@ -21,8 +22,8 @@ class PaperTopicChooser extends React.Component {
         return (
             <div className="paper_topic_chooser">
                 <TreePathReader view={Nav} from="0/menu/banks" to={to}/>
-               { typeof to==='number'?<Reader view={PaperTopicChooserBrowser} gid={to} level={1} selected_questions={selected_questions}/>:
-                <Reader view={PaperTopicChooserBrowser} path={to} level={1} selected_questions={selected_questions}/>}
+               { hasSlash(to)?<Reader view={PaperTopicChooserBrowser} path={to} level={1} selected_questions={selected_questions}/>:
+                <Reader view={PaperTopicChooserBrowser} gid={to} level={1} selected_questions={selected_questions}/>}
             </div>
         );
     }
