@@ -5,6 +5,9 @@ import Nav from '../nav';
 
 import PaperForm from '../paper_form';
 
+/**
+ * 试卷修改与删除
+ */
 class PaperUpdater extends React.Component {
 
     constructor(props) {
@@ -24,9 +27,6 @@ class PaperUpdater extends React.Component {
         );
     }
 
-    componentWillMount() {
-    }
-
     componentDidMount() {
         this.tokenUpdate=PubSub.subscribe( "updated",(msg,new_node)=>{
             location.href="#/manage/"+new_node._link.p;
@@ -34,19 +34,6 @@ class PaperUpdater extends React.Component {
         this.tokenRemove=PubSub.subscribe( "removed",(msg,new_node)=>{
             location.href="#/manage/"+new_node._link.p;
         });//删除数据后到父节点
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
     }
 
     componentWillUnmount() {

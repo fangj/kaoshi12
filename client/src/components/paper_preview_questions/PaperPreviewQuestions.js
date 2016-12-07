@@ -2,7 +2,10 @@ require('./PaperPreviewQuestions.less');
 import {Well,Button,Glyphicon,Grid,Row,Col}from 'react-bootstrap';
 import {m} from '../common';
 
-
+/**
+ * 预览题目，
+ * 可以改变分值，发送'topic.score'到PaperForm
+ */
 class PaperPreviewQuestions extends React.Component {
 
     constructor(props) {
@@ -38,29 +41,6 @@ class PaperPreviewQuestions extends React.Component {
     changeScore(node,score){
         console.log('changeScore',node._id,score);
         PubSub.publish('topic.score',{gid:node._id,score:score});
-    }
-
-
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
-    componentWillUnmount() {
     }
 }
 

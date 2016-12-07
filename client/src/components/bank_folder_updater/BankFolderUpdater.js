@@ -33,6 +33,9 @@ const FolderForm=(props)=>(
         </Form>
     </div>);
 
+/**
+ * 习题集名称修改
+ */
 class FolderUpdater extends React.Component {
     constructor(props) {
         super(props);

@@ -68,9 +68,9 @@ function vByType(type,node){
 /**
  * 在Manage中，路由表现为一个节点id
  * Manage组件负责取出id的节点内容，根据其类型以及vtype决定路由
- * 优先看来自路由的vtype,
- * 然后查看node._data.type,调用对应的更新组件
- * 最后查看node._name
+ * 优先看来自路由的vtype,通常是创建子节点
+ * 然后查看node._data.type,通常是更新节点
+ * 最后查看node._name,通常是主菜单项节点
  */
 class Manage extends React.Component {
 

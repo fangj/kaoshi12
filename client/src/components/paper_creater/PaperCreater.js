@@ -5,6 +5,10 @@ import Nav from '../nav';
 
 import PaperForm from '../paper_form';
 
+/**
+ * 使用 PaperForm 新建子节点并保存，保存后发送saved消息
+ * PaperCreater 收到saved消息后跳转到父节点 #/manage/{new_node._link.p}
+ */
 class PaperCreater extends React.Component {
 
     constructor(props) {
@@ -26,9 +30,6 @@ class PaperCreater extends React.Component {
         );
     }
 
-    componentWillMount() {
-    }
-
     componentDidMount() {
         this.token=PubSub.subscribe( "saved",(msg,new_node)=>{
             location.href="#/manage/"+new_node._link.p;
@@ -41,12 +42,6 @@ class PaperCreater extends React.Component {
 
     shouldComponentUpdate(nextProps, nextState) {
         return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
     }
 
     componentWillUnmount() {

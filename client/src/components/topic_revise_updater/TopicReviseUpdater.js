@@ -46,6 +46,10 @@ const ReviseForm=(props)=>{
         </div>
         </Form>
     </div>)};
+
+/**
+ * 改错题修改与删除
+ */
 class TopicReviseUpdater extends React.Component {
 
     constructor(props) {

@@ -33,6 +33,11 @@ const QaForm=(props)=>(
         </Form>
     </div>);
 
+/**
+ * 原先是问答题的创建组件
+ * 因为要加入图片，而图片作为子节点，必须要有父节点
+ * 所以 TopicQaCreater 直接创建空节点，然后通过路由跳转进入TopicQaUpdater
+ */
 class TopicQaCreater extends React.Component {
 
     constructor(props) {

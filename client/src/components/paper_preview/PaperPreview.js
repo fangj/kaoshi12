@@ -3,7 +3,9 @@ import {Grid,Row,Col,Well}from 'react-bootstrap';
 import PaperPreviewQuestions from '../paper_preview_questions';
 import TreeNodesReader from '../tree_nodes_reader';
 
-
+/**
+ * 用PaperPreviewQuestions预览题目
+ */
 class PaperPreview extends React.Component {
 
     constructor(props) {
@@ -22,27 +24,6 @@ class PaperPreview extends React.Component {
         );
     }
 
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
-    componentWillUnmount() {
-    }
 }
 
 module.exports = PaperPreview;

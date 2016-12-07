@@ -33,6 +33,12 @@ const TfForm=(props)=>(
         </Form>
     </div>);
 
+
+/**
+ * 原先是判断题的创建组件
+ * 因为要加入图片，而图片作为子节点，必须要有父节点
+ * 所以 TopicTfCreater 直接创建空节点，然后通过路由跳转进入 TopicTfUpdater
+ */
 class TopicTfCreater extends React.Component {
 
     constructor(props) {

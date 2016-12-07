@@ -6,6 +6,10 @@ import PaperTopicChooserBrowser from '../paper_topic_chooser_browser';
 import Reader from '../reader';
 const hasSlash=(str)=>str.indexOf('/')>-1;
 
+/**
+ * 展示题库面包菜单，接受'topic.goto'消息来切换面包菜单的最后节点
+ * 使用PaperTopicChooserBrowser展示最后节点的子节点题目供选择
+ */
 class PaperTopicChooser extends React.Component {
 
     constructor(props) {
@@ -33,22 +37,6 @@ class PaperTopicChooser extends React.Component {
             console.log('topic.goto',gid);
             this.setState({to:gid});
         });//保存数据后到新节点
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
     }
 
     componentWillUnmount() {

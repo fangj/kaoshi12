@@ -27,6 +27,10 @@ const FolderForm=(props)=>(
         </Form>
     </div>);
 
+/**
+ * 使用FolderForm新建子节点并保存，保存后发送saved消息
+ * FolderCreater收到saved消息后跳转到#/manage/{new_node._id}
+ */
 class FolderCreater extends React.Component {
 
     constructor(props) {
@@ -49,9 +53,6 @@ class FolderCreater extends React.Component {
         );
     }
 
-    componentWillMount() {
-    }
-
     componentDidMount() {
         const {node}=this.props;
         this.token=PubSub.subscribe( "saved",(msg,new_node)=>{
@@ -60,16 +61,6 @@ class FolderCreater extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         this.setState({node:nextProps.node})
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
     }
 
     componentWillUnmount() {

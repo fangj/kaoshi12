@@ -55,6 +55,9 @@ const ChoiceForm=(props)=>{
         </Form>
     </div>)};
 
+/**
+ * 选择题修改与删除
+ */
 class TopicChoiceUpdater extends React.Component {
 
     constructor(props) {

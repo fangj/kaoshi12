@@ -10,6 +10,11 @@ function isFolderOrTopic(node){
   (type=='ks1/choice')||
   (type=='ks1/revise');
 }
+/**
+ * 展示题目供选择
+ * 如果节点为题目，发送'topic.toggle'给PaperForm进出试卷
+ * 如果节点为试卷集，发送'topic.goto'给PaperTopicChooser切换浏览试卷集
+ */
 class PaperTopicChooserBrowser extends React.Component {
 
     constructor(props) {
@@ -50,35 +55,12 @@ class PaperTopicChooserBrowser extends React.Component {
       }
 
     questionStyle(node){
-        // console.log("questionStyle",this.props.selected_questions,node._id,this.props.selected_questions.indexOf(node._id))
         if(this.props.selected_questions.indexOf(node._id)>-1){
           return 'success';
         }else{
           return 'default';
         }
       }
-
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
-    componentWillUnmount() {
-    }
 }
 
 module.exports = PaperTopicChooserBrowser;

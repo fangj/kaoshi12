@@ -4,7 +4,13 @@ const tree=require('../../tree/tree-cache')('_api');
 const treetool=require('../../tree/tool')(tree);
 
 
-
+/**
+ * Writer将tree api注入到view中
+ * 如果有gid或path或node,可以更新或删除，显示view(node,update,remove)
+ * 如果没有表示node的元素,可以新建，显示view(save)
+ * 更改成功后会发布publish消息
+ * 其他属性会透传给view
+ */
 class Writer extends React.Component {
 
    static propTypes = {
@@ -133,10 +139,6 @@ class Writer extends React.Component {
             return tree.mk_son_by_data(pgid,data,lid);
         }); 
     }
-                
-
-    componentWillMount() {
-    }
 
     componentDidMount() {
         const {gid,path}=this.props;
@@ -149,22 +151,6 @@ class Writer extends React.Component {
                 this.setState({node});
             }) 
         }
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
-    componentWillUnmount() {
     }
 }
 

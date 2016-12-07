@@ -44,6 +44,10 @@ const TfForm=(props)=>{
         </Form>
     </div>)
 };
+
+/**
+ * 判断题修改与删除
+ */
 class TopicTfUpdater extends React.Component {
 
      constructor(props) {

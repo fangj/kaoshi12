@@ -43,6 +43,10 @@ const QaForm=(props)=>{
         </div>
         </Form>
     </div>)};
+
+/**
+ * 问答题修改与删除
+ */
 class TopicQaUpdater extends React.Component {
 
     constructor(props) {

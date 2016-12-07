@@ -6,6 +6,9 @@ import Nav from '../nav';
 import PaperSummary from '../paper_summary';
 import PaperFolderUpdater from '../paper_folder_updater';
 
+/**
+ * 试卷集修改与试卷概要
+ */
 class PaperFolder extends React.Component {
 
     constructor(props) {
@@ -25,28 +28,6 @@ class PaperFolder extends React.Component {
                 <Reader view={PaperSummary} gid={node._id} level={1}/>
             </div>
         );
-    }
-
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
-    componentWillUnmount() {
     }
 }
 

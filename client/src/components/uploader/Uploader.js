@@ -3,6 +3,7 @@ import { PropTypes } from "react";
 const tree=require('../../tree/tree-cache')('_api');
 const treetool=require('../../tree/tool')(tree);
 
+//给出pgid,可以上传文件作为pgid子节点
 class Uploader extends React.Component {
 
 

@@ -43,6 +43,11 @@ const ChoiceForm=(props)=>(
         </Form>
     </div>);
 
+/**
+ * 原先是选择题的创建组件
+ * 因为要加入图片，而图片作为子节点，必须要有父节点
+ * 所以TopicChoiceCreater直接创建空节点，然后通过路由跳转进入TopicChoiceUpdater
+ */
 class TopicChoiceCreater extends React.Component {
 
     constructor(props) {
@@ -67,19 +72,6 @@ class TopicChoiceCreater extends React.Component {
         tree.mk_son_by_data(node._id,data).then(new_node=>{
                 location.href="#/manage/"+new_node._id
             });
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
     }
 
     componentWillUnmount() {

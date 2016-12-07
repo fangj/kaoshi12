@@ -6,6 +6,13 @@ import TreePathReader from '../treepathreader';
 import Nav from '../nav';
 
 var _=require('lodash');
+/**
+ * 预览题库并选择题目到试卷中
+ * PaperPreview预览已选中的题目
+ * PaperTopicChooser选择题目
+ * 题目的"选择/取消"通过接受消息"topic.toggle"来切换
+ * 分值通过接受消息"topic.score"来改变
+ */
 class PaperForm extends React.Component {
 
     constructor(props) {

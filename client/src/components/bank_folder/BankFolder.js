@@ -5,6 +5,9 @@ import Nav from '../nav';
 import BankSummary from '../bank_summary';
 import BankFolderUpdater from '../bank_folder_updater';
 
+/**
+ * 习题集名称修改，习题集子节点概要
+ */
 class BankFolder extends React.Component {
 
     constructor(props) {
@@ -24,28 +27,6 @@ class BankFolder extends React.Component {
                 <Reader view={BankSummary} gid={node._id} level={1}/>
             </div>
         );
-    }
-
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
-    componentWillUnmount() {
     }
 }
 

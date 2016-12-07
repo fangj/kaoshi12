@@ -1672,9 +1672,9 @@ webpackJsonp([0],[
 	/**
 	 * 在Manage中，路由表现为一个节点id
 	 * Manage组件负责取出id的节点内容，根据其类型以及vtype决定路由
-	 * 优先看来自路由的vtype,
-	 * 然后查看node._data.type,调用对应的更新组件
-	 * 最后查看node._name
+	 * 优先看来自路由的vtype,通常是创建子节点
+	 * 然后查看node._data.type,通常是更新节点
+	 * 最后查看node._name,通常是主菜单项节点
 	 */
 
 	var Manage = function (_React$Component) {
@@ -4244,6 +4244,12 @@ webpackJsonp([0],[
 	    );
 	};
 
+	/**
+	 * 原先是选择题的创建组件
+	 * 因为要加入图片，而图片作为子节点，必须要有父节点
+	 * 所以TopicChoiceCreater直接创建空节点，然后通过路由跳转进入TopicChoiceUpdater
+	 */
+
 	var TopicChoiceCreater = function (_React$Component) {
 	    _inherits(TopicChoiceCreater, _React$Component);
 
@@ -4277,20 +4283,6 @@ webpackJsonp([0],[
 	                location.href = "#/manage/" + new_node._id;
 	            });
 	        }
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
 	    }, {
 	        key: 'componentWillUnmount',
 	        value: function componentWillUnmount() {
@@ -4335,6 +4327,14 @@ webpackJsonp([0],[
 
 	var tree = __webpack_require__(71)('_api');
 	var treetool = __webpack_require__(193)(tree);
+
+	/**
+	 * Writer将tree api注入到view中
+	 * 如果有gid或path或node,可以更新或删除，显示view(node,update,remove)
+	 * 如果没有表示node的元素,可以新建，显示view(save)
+	 * 更改成功后会发布publish消息
+	 * 其他属性会透传给view
+	 */
 
 	var Writer = function (_React$Component) {
 	    _inherits(Writer, _React$Component);
@@ -4496,9 +4496,6 @@ webpackJsonp([0],[
 	            });
 	        }
 	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
 	            var _this5 = this;
@@ -4517,23 +4514,6 @@ webpackJsonp([0],[
 	                });
 	            }
 	        }
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
 	    }]);
 
 	    return Writer;
@@ -4694,6 +4674,12 @@ webpackJsonp([0],[
 	    );
 	};
 
+	/**
+	 * 原先是问答题的创建组件
+	 * 因为要加入图片，而图片作为子节点，必须要有父节点
+	 * 所以 TopicQaCreater 直接创建空节点，然后通过路由跳转进入TopicQaUpdater
+	 */
+
 	var TopicQaCreater = function (_React$Component) {
 	    _inherits(TopicQaCreater, _React$Component);
 
@@ -4839,6 +4825,12 @@ webpackJsonp([0],[
 	    );
 	};
 
+	/**
+	 * 原先是判断题的创建组件
+	 * 因为要加入图片，而图片作为子节点，必须要有父节点
+	 * 所以 TopicTfCreater 直接创建空节点，然后通过路由跳转进入 TopicTfUpdater
+	 */
+
 	var TopicTfCreater = function (_React$Component) {
 	    _inherits(TopicTfCreater, _React$Component);
 
@@ -4932,6 +4924,12 @@ webpackJsonp([0],[
 	var tree = __webpack_require__(71)('_api');
 	var node_type = 'ks1/revise';
 
+	/**
+	 * 原先是改错题的创建组件
+	 * 因为要加入图片，而图片作为子节点，必须要有父节点
+	 * 所以 TopicReviseCreater 直接创建空节点，然后通过路由跳转进入 TopicReviseUpdater
+	 */
+
 	var TopicReviseCreater = function (_React$Component) {
 	    _inherits(TopicReviseCreater, _React$Component);
 
@@ -5019,6 +5017,9 @@ webpackJsonp([0],[
 
 	__webpack_require__(606);
 
+	/**
+	 * 习题集名称修改，习题集子节点概要
+	 */
 	var BankFolder = function (_React$Component) {
 	    _inherits(BankFolder, _React$Component);
 
@@ -5046,29 +5047,6 @@ webpackJsonp([0],[
 	                React.createElement(_reader2.default, { view: _bank_summary2.default, gid: node._id, level: 1 })
 	            );
 	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
 	    }]);
 
 	    return BankFolder;
@@ -5167,6 +5145,10 @@ webpackJsonp([0],[
 	        )
 	    );
 	};
+
+	/**
+	 * 习题集名称修改
+	 */
 
 	var FolderUpdater = function (_React$Component) {
 	    _inherits(FolderUpdater, _React$Component);
@@ -5329,6 +5311,11 @@ webpackJsonp([0],[
 	    );
 	};
 
+	/**
+	 * 使用FolderForm新建子节点并保存，保存后发送saved消息
+	 * FolderCreater收到saved消息后跳转到#/manage/{new_node._id}
+	 */
+
 	var FolderCreater = function (_React$Component) {
 	    _inherits(FolderCreater, _React$Component);
 
@@ -5346,7 +5333,6 @@ webpackJsonp([0],[
 	    _createClass(FolderCreater, [{
 	        key: 'render',
 	        value: function render() {
-
 	            var me = this;
 	            var node = this.state.node;
 
@@ -5358,9 +5344,6 @@ webpackJsonp([0],[
 	                React.createElement(_writer2.default, { pgid: node._id, view: FolderForm, publish: 'saved' })
 	            );
 	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
 	    }, {
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
@@ -5375,17 +5358,6 @@ webpackJsonp([0],[
 	        value: function componentWillReceiveProps(nextProps) {
 	            this.setState({ node: nextProps.node });
 	        }
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
 	    }, {
 	        key: 'componentWillUnmount',
 	        value: function componentWillUnmount() {
@@ -5451,6 +5423,9 @@ webpackJsonp([0],[
 
 	__webpack_require__(618);
 
+	/**
+	 * 试卷集修改与试卷概要
+	 */
 	var PaperFolder = function (_React$Component) {
 	    _inherits(PaperFolder, _React$Component);
 
@@ -5478,29 +5453,6 @@ webpackJsonp([0],[
 	                React.createElement(_reader2.default, { view: _paper_summary2.default, gid: node._id, level: 1 })
 	            );
 	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
 	    }]);
 
 	    return PaperFolder;
@@ -5760,6 +5712,11 @@ webpackJsonp([0],[
 	    );
 	};
 
+	/**
+	 * 使用FolderForm新建子节点并保存，保存后发送saved消息
+	 * FolderCreater收到saved消息后跳转到#/manage/{new_node._id}
+	 */
+
 	var FolderCreater = function (_React$Component) {
 	    _inherits(FolderCreater, _React$Component);
 
@@ -5790,9 +5747,6 @@ webpackJsonp([0],[
 	            );
 	        }
 	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
 	            var node = this.props.node;
@@ -5806,17 +5760,6 @@ webpackJsonp([0],[
 	        value: function componentWillReceiveProps(nextProps) {
 	            this.setState({ node: nextProps.node });
 	        }
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
 	    }, {
 	        key: 'componentWillUnmount',
 	        value: function componentWillUnmount() {
@@ -5878,6 +5821,10 @@ webpackJsonp([0],[
 
 	__webpack_require__(652);
 
+	/**
+	 * 使用 PaperForm 新建子节点并保存，保存后发送saved消息
+	 * PaperCreater 收到saved消息后跳转到父节点 #/manage/{new_node._link.p}
+	 */
 	var PaperCreater = function (_React$Component) {
 	    _inherits(PaperCreater, _React$Component);
 
@@ -5906,9 +5853,6 @@ webpackJsonp([0],[
 	            );
 	        }
 	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
 	            this.token = PubSub.subscribe("saved", function (msg, new_node) {
@@ -5925,12 +5869,6 @@ webpackJsonp([0],[
 	        value: function shouldComponentUpdate(nextProps, nextState) {
 	            return true;
 	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
 	    }, {
 	        key: 'componentWillUnmount',
 	        value: function componentWillUnmount() {
@@ -5989,6 +5927,13 @@ webpackJsonp([0],[
 
 
 	var _ = __webpack_require__(79);
+	/**
+	 * 预览题库并选择题目到试卷中
+	 * PaperPreview预览已选中的题目
+	 * PaperTopicChooser选择题目
+	 * 题目的"选择/取消"通过接受消息"topic.toggle"来切换
+	 * 分值通过接受消息"topic.score"来改变
+	 */
 
 	var PaperForm = function (_React$Component) {
 	    _inherits(PaperForm, _React$Component);
@@ -6223,6 +6168,9 @@ webpackJsonp([0],[
 
 	__webpack_require__(636);
 
+	/**
+	 * 用PaperPreviewQuestions预览题目
+	 */
 	var PaperPreview = function (_React$Component) {
 	    _inherits(PaperPreview, _React$Component);
 
@@ -6251,29 +6199,6 @@ webpackJsonp([0],[
 	            }
 	            return React.createElement(_tree_nodes_reader2.default, { view: _paper_preview_questions2.default, gids: selected_questions, scores: scores });
 	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
 	    }]);
 
 	    return PaperPreview;
@@ -6309,6 +6234,10 @@ webpackJsonp([0],[
 
 	__webpack_require__(632);
 
+	/**
+	 * 预览题目，
+	 * 可以改变分值，发送'topic.score'到PaperForm
+	 */
 	var PaperPreviewQuestions = function (_React$Component) {
 	    _inherits(PaperPreviewQuestions, _React$Component);
 
@@ -6384,29 +6313,6 @@ webpackJsonp([0],[
 	            console.log('changeScore', node._id, score);
 	            PubSub.publish('topic.score', { gid: node._id, score: score });
 	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
 	    }]);
 
 	    return PaperPreviewQuestions;
@@ -6618,6 +6524,11 @@ webpackJsonp([0],[
 	    return str.indexOf('/') > -1;
 	};
 
+	/**
+	 * 展示题库面包菜单，接受'topic.goto'消息来切换面包菜单的最后节点
+	 * 使用PaperTopicChooserBrowser展示最后节点的子节点题目供选择
+	 */
+
 	var PaperTopicChooser = function (_React$Component) {
 	    _inherits(PaperTopicChooser, _React$Component);
 
@@ -6656,23 +6567,6 @@ webpackJsonp([0],[
 	                _this2.setState({ to: gid });
 	            }); //保存数据后到新节点
 	        }
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
 	    }, {
 	        key: 'componentWillUnmount',
 	        value: function componentWillUnmount() {
@@ -6831,136 +6725,117 @@ webpackJsonp([0],[
 
 
 	function isFolderOrTopic(node) {
-	    var type = node._data.type;
-	    return type == 'ks1/bank/folder' || type == 'ks1/qa' || type == 'ks1/tf' || type == 'ks1/choice' || type == 'ks1/revise';
+	  var type = node._data.type;
+	  return type == 'ks1/bank/folder' || type == 'ks1/qa' || type == 'ks1/tf' || type == 'ks1/choice' || type == 'ks1/revise';
 	}
+	/**
+	 * 展示题目供选择
+	 * 如果节点为题目，发送'topic.toggle'给PaperForm进出试卷
+	 * 如果节点为试卷集，发送'topic.goto'给PaperTopicChooser切换浏览试卷集
+	 */
 
 	var PaperTopicChooserBrowser = function (_React$Component) {
-	    _inherits(PaperTopicChooserBrowser, _React$Component);
+	  _inherits(PaperTopicChooserBrowser, _React$Component);
 
-	    function PaperTopicChooserBrowser(props) {
-	        _classCallCheck(this, PaperTopicChooserBrowser);
+	  function PaperTopicChooserBrowser(props) {
+	    _classCallCheck(this, PaperTopicChooserBrowser);
 
-	        var _this = _possibleConstructorReturn(this, (PaperTopicChooserBrowser.__proto__ || Object.getPrototypeOf(PaperTopicChooserBrowser)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (PaperTopicChooserBrowser.__proto__ || Object.getPrototypeOf(PaperTopicChooserBrowser)).call(this, props));
 
-	        _this.state = {};
-	        return _this;
+	    _this.state = {};
+	    return _this;
+	  }
+
+	  _createClass(PaperTopicChooserBrowser, [{
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+
+	      var me = this;
+	      var node = this.props.node;
+
+	      var nodes = node._children;
+	      // console.log(nodes);
+	      return React.createElement(
+	        'div',
+	        { className: 'paper-questions' },
+	        nodes.filter(isFolderOrTopic).map(function (node) {
+	          return React.createElement(
+	            _reactBootstrap.Row,
+	            { key: node._id, className: 'no-gutter' },
+	            _this2.wrapNode(node)
+	          );
+	        })
+	      );
 	    }
+	  }, {
+	    key: 'wrapNode',
+	    value: function wrapNode(node) {
+	      // console.log(node);
+	      if (node._data.type == 'ks1/bank/folder') {
+	        return React.createElement(
+	          'div',
+	          null,
+	          React.createElement(
+	            _reactBootstrap.Col,
+	            { xs: 1 },
+	            React.createElement(
+	              _reactBootstrap.Button,
+	              { bsStyle: 'default', onClick: function onClick() {
+	                  PubSub.publish('topic.goto', node._id);
+	                } },
+	              React.createElement(_reactBootstrap.Glyphicon, { glyph: 'folder-open' })
+	            )
+	          ),
+	          React.createElement(
+	            _reactBootstrap.Col,
+	            { xs: 11 },
+	            React.createElement(
+	              _reactBootstrap.Well,
+	              { onClick: function onClick() {
+	                  PubSub.publish('topic.goto', node._id);
+	                } },
+	              (0, _common.name)(node)
+	            )
+	          ),
+	          ';'
+	        );
+	      } else {
+	        // console.log(node,v);
+	        return React.createElement(
+	          'div',
+	          null,
+	          React.createElement(
+	            _reactBootstrap.Col,
+	            { xs: 1 },
+	            React.createElement(
+	              _reactBootstrap.Button,
+	              { bsStyle: this.questionStyle(node), onClick: function onClick() {
+	                  PubSub.publish('topic.toggle', node._id);
+	                } },
+	              this.props.selected_questions.indexOf(node._id) > -1 ? React.createElement(_reactBootstrap.Glyphicon, { glyph: 'ok' }) : "__"
+	            )
+	          ),
+	          React.createElement(
+	            _reactBootstrap.Col,
+	            { xs: 11 },
+	            (0, _common.m)(node)
+	          )
+	        );
+	      }
+	    }
+	  }, {
+	    key: 'questionStyle',
+	    value: function questionStyle(node) {
+	      if (this.props.selected_questions.indexOf(node._id) > -1) {
+	        return 'success';
+	      } else {
+	        return 'default';
+	      }
+	    }
+	  }]);
 
-	    _createClass(PaperTopicChooserBrowser, [{
-	        key: 'render',
-	        value: function render() {
-	            var _this2 = this;
-
-	            var me = this;
-	            var node = this.props.node;
-
-	            var nodes = node._children;
-	            // console.log(nodes);
-	            return React.createElement(
-	                'div',
-	                { className: 'paper-questions' },
-	                nodes.filter(isFolderOrTopic).map(function (node) {
-	                    return React.createElement(
-	                        _reactBootstrap.Row,
-	                        { key: node._id, className: 'no-gutter' },
-	                        _this2.wrapNode(node)
-	                    );
-	                })
-	            );
-	        }
-	    }, {
-	        key: 'wrapNode',
-	        value: function wrapNode(node) {
-	            // console.log(node);
-	            if (node._data.type == 'ks1/bank/folder') {
-	                return React.createElement(
-	                    'div',
-	                    null,
-	                    React.createElement(
-	                        _reactBootstrap.Col,
-	                        { xs: 1 },
-	                        React.createElement(
-	                            _reactBootstrap.Button,
-	                            { bsStyle: 'default', onClick: function onClick() {
-	                                    PubSub.publish('topic.goto', node._id);
-	                                } },
-	                            React.createElement(_reactBootstrap.Glyphicon, { glyph: 'folder-open' })
-	                        )
-	                    ),
-	                    React.createElement(
-	                        _reactBootstrap.Col,
-	                        { xs: 11 },
-	                        React.createElement(
-	                            _reactBootstrap.Well,
-	                            { onClick: function onClick() {
-	                                    PubSub.publish('topic.goto', node._id);
-	                                } },
-	                            (0, _common.name)(node)
-	                        )
-	                    ),
-	                    ';'
-	                );
-	            } else {
-	                // console.log(node,v);
-	                return React.createElement(
-	                    'div',
-	                    null,
-	                    React.createElement(
-	                        _reactBootstrap.Col,
-	                        { xs: 1 },
-	                        React.createElement(
-	                            _reactBootstrap.Button,
-	                            { bsStyle: this.questionStyle(node), onClick: function onClick() {
-	                                    PubSub.publish('topic.toggle', node._id);
-	                                } },
-	                            this.props.selected_questions.indexOf(node._id) > -1 ? React.createElement(_reactBootstrap.Glyphicon, { glyph: 'ok' }) : "__"
-	                        )
-	                    ),
-	                    React.createElement(
-	                        _reactBootstrap.Col,
-	                        { xs: 11 },
-	                        (0, _common.m)(node)
-	                    )
-	                );
-	            }
-	        }
-	    }, {
-	        key: 'questionStyle',
-	        value: function questionStyle(node) {
-	            // console.log("questionStyle",this.props.selected_questions,node._id,this.props.selected_questions.indexOf(node._id))
-	            if (this.props.selected_questions.indexOf(node._id) > -1) {
-	                return 'success';
-	            } else {
-	                return 'default';
-	            }
-	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
-	    }]);
-
-	    return PaperTopicChooserBrowser;
+	  return PaperTopicChooserBrowser;
 	}(React.Component);
 
 	module.exports = PaperTopicChooserBrowser;
@@ -7035,6 +6910,9 @@ webpackJsonp([0],[
 
 	__webpack_require__(656);
 
+	/**
+	 * 试卷修改与删除
+	 */
 	var PaperUpdater = function (_React$Component) {
 	    _inherits(PaperUpdater, _React$Component);
 
@@ -7061,9 +6939,6 @@ webpackJsonp([0],[
 	            );
 	        }
 	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
 	            this.tokenUpdate = PubSub.subscribe("updated", function (msg, new_node) {
@@ -7073,20 +6948,6 @@ webpackJsonp([0],[
 	                location.href = "#/manage/" + new_node._link.p;
 	            }); //删除数据后到父节点
 	        }
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
 	    }, {
 	        key: 'componentWillUnmount',
 	        value: function componentWillUnmount() {
@@ -7221,6 +7082,10 @@ webpackJsonp([0],[
 	        )
 	    );
 	};
+
+	/**
+	 * 选择题修改与删除
+	 */
 
 	var TopicChoiceUpdater = function (_React$Component) {
 	    _inherits(TopicChoiceUpdater, _React$Component);
@@ -7429,6 +7294,8 @@ webpackJsonp([0],[
 
 	var tree = __webpack_require__(71)('_api');
 	var treetool = __webpack_require__(193)(tree);
+
+	//给出pgid,可以上传文件作为pgid子节点
 
 	var Uploader = function (_React$Component) {
 	    _inherits(Uploader, _React$Component);
@@ -7751,6 +7618,10 @@ webpackJsonp([0],[
 	    );
 	};
 
+	/**
+	 * 问答题修改与删除
+	 */
+
 	var TopicQaUpdater = function (_React$Component) {
 	    _inherits(TopicQaUpdater, _React$Component);
 
@@ -7927,6 +7798,10 @@ webpackJsonp([0],[
 	        )
 	    );
 	};
+
+	/**
+	 * 判断题修改与删除
+	 */
 
 	var TopicTfUpdater = function (_React$Component) {
 	    _inherits(TopicTfUpdater, _React$Component);
@@ -8107,6 +7982,10 @@ webpackJsonp([0],[
 	        )
 	    );
 	};
+
+	/**
+	 * 改错题修改与删除
+	 */
 
 	var TopicReviseUpdater = function (_React$Component) {
 	    _inherits(TopicReviseUpdater, _React$Component);
