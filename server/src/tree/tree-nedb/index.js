@@ -12,6 +12,7 @@ function tree_nedb(_db,cb){
     read_nodes,
     mk_son_by_data,
     mk_son_by_name,
+    namepath2node,
     mk_brother_by_data,
     update_data,
     remove,
@@ -44,12 +45,16 @@ function buildRootIfNotExist(cb){
   })();
 }
 
+// function read_node(gid) {
+//   return (async ()=>{
+//     // console.log('read_node',gid);
+//     var node=await db.findOneAsync({_id:gid, _rm: { $exists: false }}); //rm标记表示节点已经被删除
+//     return node;
+//   })();
+// }
+
 function read_node(gid) {
-  return (async ()=>{
-    // console.log('read_node',gid);
-    var node=await db.findOneAsync({_id:gid, _rm: { $exists: false }}); //rm标记表示节点已经被删除
-    return node;
-  })();
+    return db.findOneAsync({_id:gid, _rm: { $exists: false }}); //rm标记表示节点已经被删除
 }
 
 function read_nodes(gids) {
@@ -128,6 +133,24 @@ function mk_son_by_name(pgid, name) {
     return _mk_son_by_name(pNode,name);
   })();
 }
+
+function namepath2node(gid,namepath){
+  var names=namepath.split('/');
+  const f=(P,name)=>P.then(pnode=>{
+    // console.log(pnode,name);
+    if(pnode){
+      return _getChildByName(pnode._id,name);
+    }else{
+      throw ("not found");
+    }
+  });
+  return names.reduce(f,read_node(gid));
+}
+
+function _getChildByName(pgid,name){
+  return db.findOneAsync({"_name":name,"_link.p":pgid});
+}
+
 
 function mk_brother_by_data(bgid,data) {
   return (async ()=>{

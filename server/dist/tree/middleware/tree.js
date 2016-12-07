@@ -85,6 +85,22 @@ function factory(config) {
     });
   });
 
+  router.get(/namepath\/(.+?)\/(.+)/, function (req, res, next) {
+    //match /gid/name/name/...
+    var p = req.params;
+    var gid = p[0];
+    var namepath = p[1];
+    tree.namepath2node(gid, namepath).then(function (node) {
+      if (node) {
+        res.send(node);
+      } else {
+        res.status(404).end();
+      }
+    }).catch(function (e) {
+      res.status(404).json(e);
+    });
+  });
+
   function clone(obj) {
     return JSON.parse(JSON.stringify(obj));
   }

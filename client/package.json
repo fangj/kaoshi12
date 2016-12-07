@@ -21,7 +21,6 @@
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "frisbee": "^1.1.6",
-    "history": "^4.4.1",
     "install": "^0.8.2",
     "isomorphic-fetch": "^2.2.1",
     "less": "^2.7.1",
