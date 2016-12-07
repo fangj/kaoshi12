@@ -1,3 +1,7 @@
+/**
+ * 主菜单
+ * 显示主菜单并且创建默认的基本树结构
+ */
 import React from 'react';
 require('./main.less');
 import {Link } from 'react-router';

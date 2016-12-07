@@ -1,3 +1,8 @@
+/**
+ * 题库管理
+ * 面包导航 TreePathReader（Nav)
+ * 题库概要 Reader(BankSummary)
+ */
 const tree=require('../../tree/tree-cache')('_api');
 const tool=require('../../tree/tool')(tree);
 import Nav from '../nav';
@@ -9,9 +14,7 @@ class Banks extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-
-        };
+        this.state = {};
     }
 
     render() {

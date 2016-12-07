@@ -1,3 +1,7 @@
+/**
+ * 后台管理主页面
+ * 主要任务是完成路由映射
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -6,7 +10,6 @@ require('./PageManage.less');
 import { Router, Route ,hashHistory} from 'react-router';
 // import appHistory from '../../components/history';
 
-import Login from '../../components/login';
 import Main from '../../components/main';
 import Manage from '../../components/manage';
 
@@ -46,7 +49,6 @@ class PageManage extends React.Component {
         return (
             <div className="exam">
                    <Router history={hashHistory}>
-                      <Route path="/login" component={Login}/>
                       <Route path="/" component={Main}/>
                       <Route path="/main" component={Main}/>
                       <Route path="/banks" component={Banks}/>

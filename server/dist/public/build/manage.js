@@ -24,10 +24,6 @@ webpackJsonp([0],[
 
 	var _reactRouter = __webpack_require__(4);
 
-	var _login = __webpack_require__(61);
-
-	var _login2 = _interopRequireDefault(_login);
-
 	var _main = __webpack_require__(67);
 
 	var _main2 = _interopRequireDefault(_main);
@@ -110,7 +106,11 @@ webpackJsonp([0],[
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 后台管理主页面
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 主要任务是完成路由映射
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
 
 	__webpack_require__(770);
 	// import appHistory from '../../components/history';
@@ -138,7 +138,6 @@ webpackJsonp([0],[
 	                _react2.default.createElement(
 	                    _reactRouter.Router,
 	                    { history: _reactRouter.hashHistory },
-	                    _react2.default.createElement(_reactRouter.Route, { path: '/login', component: _login2.default }),
 	                    _react2.default.createElement(_reactRouter.Route, { path: '/', component: _main2.default }),
 	                    _react2.default.createElement(_reactRouter.Route, { path: '/main', component: _main2.default }),
 	                    _react2.default.createElement(_reactRouter.Route, { path: '/banks', component: _banks2.default }),
@@ -240,88 +239,9 @@ webpackJsonp([0],[
 /* 58 */,
 /* 59 */,
 /* 60 */,
-/* 61 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	module.exports = __webpack_require__(62);
-
-/***/ },
-/* 62 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	__webpack_require__(63);
-
-	var Login = function (_React$Component) {
-	    _inherits(Login, _React$Component);
-
-	    function Login(props) {
-	        _classCallCheck(this, Login);
-
-	        var _this = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
-
-	        _this.state = {};
-	        return _this;
-	    }
-
-	    _createClass(Login, [{
-	        key: "render",
-	        value: function render() {
-	            var me = this;
-	            return React.createElement(
-	                "div",
-	                { className: "login" },
-	                "component login"
-	            );
-	        }
-	    }, {
-	        key: "componentWillMount",
-	        value: function componentWillMount() {}
-	    }, {
-	        key: "componentDidMount",
-	        value: function componentDidMount() {}
-	    }, {
-	        key: "componentWillReceiveProps",
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: "shouldComponentUpdate",
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: "componentWillUpdate",
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: "componentDidUpdate",
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: "componentWillUnmount",
-	        value: function componentWillUnmount() {}
-	    }]);
-
-	    return Login;
-	}(React.Component);
-
-	module.exports = Login;
-
-/***/ },
-/* 63 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
+/* 61 */,
+/* 62 */,
+/* 63 */,
 /* 64 */,
 /* 65 */,
 /* 66 */,
@@ -357,7 +277,11 @@ webpackJsonp([0],[
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 主菜单
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 显示主菜单并且创建默认的基本树结构
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
 
 	__webpack_require__(69);
 
@@ -1872,6 +1796,11 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	/**
+	 * 题库管理
+	 * 面包导航 TreePathReader（Nav)
+	 * 题库概要 Reader(BankSummary)
+	 */
 	var tree = __webpack_require__(71)('_api');
 	var tool = __webpack_require__(193)(tree);
 
@@ -2684,6 +2613,13 @@ webpackJsonp([0],[
 
 	var util = __webpack_require__(379);
 
+	/**
+	 * Reader用于读取gid或者path节点，交由view显示
+	 * 可以读取节点的子孙节点内容，深度由level决定
+	 * 读取的节点作为node注入view
+	 * subscribe订阅更新信号，收到信号时会更新自己
+	 */
+
 	var Reader = function (_React$Component) {
 	    _inherits(Reader, _React$Component);
 
@@ -3092,16 +3028,30 @@ webpackJsonp([0],[
 	var treetool = __webpack_require__(193)(tree);
 	var util = __webpack_require__(379);
 
+	//有没有斜杠是区分gid和namepath
+	//gid和namepath是表达一个节点的2种等价方式
+	//gid为一个id，早期版本中为一个数字，现在版本中可能是数字也可能是字符串
+	//namepath::=gid/name/name 是从某个gid节点开始，依次向下的命名节点
 	var hasSlash = function hasSlash(str) {
 	    return str.indexOf('/') > -1;
 	};
 
+	//将namepath转为gid,这里使用了createNodeByPath,如果不存在会创建，但不会重复创建
 	function path2gid(treetool, gidOrPath) {
 	    return hasSlash(gidOrPath) ? treetool.createNodeByPath(gidOrPath).then(function (node) {
 	        return node._id;
 	    }) : Promise.resolve(gidOrPath); //有斜杠的视为路径，没有的视为gid直接返回
 	}
+
+	//上面函数的单参数版本
 	var _path2gid = _.curry(path2gid)(treetool); //单参数函数fn(gidOrPath)
+
+	/**
+	 * TreePathReader用于显示一个view,为之注入nodes
+	 * nodes是从祖先节点from到子孙节点to之间的节点，包含两端
+	 * from和to可以表达为gid或namepath
+	 * subscribe是一个字符串数组，收到数组中的字符串会刷新自己
+	 */
 
 	var TreePathReader = function (_React$Component) {
 	    _inherits(TreePathReader, _React$Component);
@@ -3138,13 +3088,13 @@ webpackJsonp([0],[
 	            this.fetchData(this.props);
 	            var me = this;
 	            var mySubscriber = function mySubscriber(msg, data) {
-	                console.log(msg, data);
+	                // console.log( msg, data );
 	                // me.forceUpdate();
 	                me.fetchData(me.props);
 	            };
 	            var subscribe = this.props.subscribe || [];
 	            this.tokens = subscribe.map(function (msg) {
-	                console.log('subscribe msg', msg);
+	                // console.log('subscribe msg',msg);
 	                return PubSub.subscribe(msg, mySubscriber);
 	            });
 	        }
@@ -3166,53 +3116,6 @@ webpackJsonp([0],[
 	                }
 	            });
 	        }
-
-	        // _fetchData(props){
-	        //     // debugger;
-	        //     const me=this;
-	        //     var {from,to}=props;
-	        //     if(to===undefined){
-	        //         to=from;
-	        //     }
-	        //     return me.prepare(from,"from")
-	        //     .then(()=>{
-	        //         // console.log("from",me.from);
-	        //         return me.prepare(to,"to")
-	        //     })
-	        //     .then(()=>{
-	        //         // console.log("to",me.to);
-	        //         if(me.from===me.to){
-	        //             return [me.to];
-	        //         }else{  
-	        //             return treetool.expandToRoot([me.to],me.from)
-	        //         }
-	        //     })
-	        //     .then(gids=>{
-	        //         // console.log("gids",gids);
-	        //         return tree.read_nodes(gids);
-	        //     }).then(nodes=>{
-	        //         // console.log('nodes',nodes)
-	        //         return nodes;
-	        //     })
-
-	        // }
-
-	        // prepare(gidOrPath,name){
-	        //     // debugger;
-	        //     const me=this;
-	        //     if(typeof gidOrPath==='number'){
-	        //         me[name]=gidOrPath;
-	        //         return Promise.resolve();
-	        //     }else if(typeof gidOrPath==='string'){
-	        //         return tree.lidpath2gid(gidOrPath).then(gid=>{
-	        //             return me[name]=gid;
-	        //         })
-	        //     }else{
-	        //         throw name+"should be number or string"
-	        //     }
-	        // }
-	        // 
-
 	    }, {
 	        key: '_fetchData',
 	        value: function _fetchData(props) {

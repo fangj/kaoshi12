@@ -4,7 +4,12 @@ const treetool=require('../../tree/tool')(tree);
 
 var util=require('../util');
 
-
+/**
+ * Reader用于读取gid或者path节点，交由view显示
+ * 可以读取节点的子孙节点内容，深度由level决定
+ * 读取的节点作为node注入view
+ * subscribe订阅更新信号，收到信号时会更新自己
+ */
 class Reader extends React.Component {
 
     static propTypes = {
