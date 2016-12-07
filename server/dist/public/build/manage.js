@@ -2895,7 +2895,7 @@ webpackJsonp([0],[
 	                'div',
 	                { className: 'imageviewer' },
 	                urls.map(function (url) {
-	                    return React.createElement('img', { id: url.gid, src: url.url, onClick: function onClick() {
+	                    return React.createElement('img', { key: url.gid, id: url.gid, src: url.url, onClick: function onClick() {
 	                            return _this2.remove(url.gid);
 	                        },
 	                        onLoad: function onLoad(e) {

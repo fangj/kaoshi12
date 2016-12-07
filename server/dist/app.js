@@ -23,6 +23,7 @@ auth(app);
 
 //静态文件
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/upload', express.static(path.join(__dirname, '..', 'upload')));
 
 //树数据库
 var treeDb = require('./db/tree');

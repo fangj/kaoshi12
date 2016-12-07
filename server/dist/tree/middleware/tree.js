@@ -22,7 +22,9 @@ function factory(config) {
 
   router.post('/nodes', function (req, res, next) {
     tree.read_nodes(req.body).then(function (nodes) {
-      res.json(nodes);
+      // res.json(nodes);
+      var _nodes = nodes.map(tnfile2tnurl);
+      res.json(_nodes);
     }).catch(function (e) {
       logger.error(e);
       res.status(500).end();
@@ -139,6 +141,7 @@ function factory(config) {
   /* GET api . */
   router.get('/:gid', function (req, res, next) {
     tree.read_node(req.params.gid).then(function (node) {
+      node = tnfile2tnurl(node);
       return res.json(node);
     }).catch(function (e) {
       logger.error(e);
@@ -180,9 +183,26 @@ function factory(config) {
     // logger.debug("uploaded file",req.file);
     var fpath = req.file.path + path.extname(req.file.originalname); //加上扩展名
     fs.move(req.file.path, fpath, function () {
-      res.end();
+      tree.mk_son_by_data(req.params.gid, {
+        type: "tn/nfile",
+        data: req.file.filename + path.extname(req.file.originalname)
+      }).then(function (node) {
+        // logger.debug(node);
+        res.json(node);
+      }).catch(function (e) {
+        logger.error(e);
+        res.status(500).end();
+      });
     });
   });
+
+  function tnfile2tnurl(node) {
+    if (node && node._data && node._data.type === 'tn/nfile') {
+      node._data.type = 'tn/nfile/url';
+      node._data.data = '/upload/' + node._data.data;
+    }
+    return node;
+  }
 
   return router;
 }

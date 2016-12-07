@@ -23,7 +23,7 @@ class Imageviewer extends React.Component {
         }
         return (
             <div className="imageviewer">
-                {urls.map(url=><img id={url.gid} src={url.url} onClick={()=>this.remove(url.gid)}
+                {urls.map(url=><img key={url.gid} id={url.gid} src={url.url} onClick={()=>this.remove(url.gid)}
                     onLoad={(e)=>{
                         var img=e.target;
                         var obj={gid:url.gid,w:img.width,h:img.height}
