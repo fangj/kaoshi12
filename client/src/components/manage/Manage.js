@@ -84,7 +84,6 @@ class Manage extends React.Component {
         const {node,vtype}=this.state;
         // console.log('manage render ',node,vtype)
         switch(vtype){//优先看vtype
-            case "son_editor":return <SonEditor node={node}/>;
             case "son_editor_bank_folder":return <BankFolderCreater node={node}/>;
             case "son_editor_choice":return <TopicChoiceCreater node={node}/>;
             case "son_editor_qa":return <TopicQaCreater node={node}/>;

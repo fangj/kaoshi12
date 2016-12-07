@@ -1698,8 +1698,6 @@ webpackJsonp([0],[
 	            // console.log('manage render ',node,vtype)
 
 	            switch (vtype) {//优先看vtype
-	                case "son_editor":
-	                    return React.createElement(_soneditor2.default, { node: node });
 	                case "son_editor_bank_folder":
 	                    return React.createElement(_bank_folder_creater2.default, { node: node });
 	                case "son_editor_choice":
@@ -4094,6 +4092,14 @@ webpackJsonp([0],[
 	var tree = __webpack_require__(71)('_api');
 	var tool = __webpack_require__(193)(tree);
 
+	/**
+	 * 给主菜单节点创建子节点
+	 * 因为面包菜单中，点击主菜单项会在路由上体现为节点id
+	 * 所以banks会2种路由表达
+	 * 命名表达：#/exams
+	 * 节点表达：#manage/mlp0GsTeeb2Tew7q
+	 * 当采用节点表达时，SonEditor发挥作用
+	 */
 	var SonEditor = function (_React$Component) {
 	    _inherits(SonEditor, _React$Component);
 
@@ -4129,30 +4135,10 @@ webpackJsonp([0],[
 	            );
 	        }
 	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
 	        key: 'componentWillReceiveProps',
 	        value: function componentWillReceiveProps(nextProps) {
 	            this.setState({ node: nextProps.node });
 	        }
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
 	    }]);
 
 	    return SonEditor;
