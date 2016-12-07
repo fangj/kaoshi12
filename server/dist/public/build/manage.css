@@ -76,14 +76,7 @@
 .navview {
   background-color: #f60;
 }
-.imageviewer img {
-  max-width: 800px;
-  margin: 5px;
-}
 .rest_summary {
-  background-color: #f60;
-}
-.soneditor {
   background-color: #f60;
 }
 .writer {
@@ -151,12 +144,6 @@
   background-color: #f60;
 }
 .exam_form_paper_chooser_browser {
-  background-color: #f60;
-}
-.exam_form_room_chooser_browser {
-  background-color: #f60;
-}
-.exam_form_room_chooser {
   background-color: #f60;
 }
 .exam_form_time_chooser {

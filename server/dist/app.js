@@ -4,6 +4,7 @@ require("babel-polyfill");
 
 var express = require('express');
 var app = express();
+var logger = require('morgan');
 
 var fs = require('bluebird').promisifyAll(require('fs-extra'));
 var path = require('path');
@@ -12,6 +13,7 @@ var bodyParser = require('body-parser');
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(logger('dev'));
 
 //权限管理
 var session = require('express-session');
@@ -63,11 +65,16 @@ app.use('/answersheet', require('./routes/answersheet'));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+  res.status(404).end();
 });
 
-app.listen(3000, function () {
+//socket.io
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
+app.io = io;
+require('./socket_handle')(app);
+
+//start
+server.listen(3000, function () {
   console.log('Kaoshi app listening on port 3000!');
 });

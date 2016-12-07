@@ -9,7 +9,6 @@ import Exams from '../exams';
 import Teachers from '../teachers';
 import Classes from '../classes';
 import Rooms from '../rooms';
-import SonEditor from '../soneditor';
 import TopicChoiceCreater from '../topic_choice_creater';
 import TopicQaCreater from '../topic_qa_creater';
 import TopicTfCreater from '../topic_tf_creater';

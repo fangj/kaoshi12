@@ -1,6 +1,5 @@
 require('./KsNoexam.less');
 import { Button,Jumbotron,Table } from 'react-bootstrap';
-import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 var agent = require('superagent-promise')(require('superagent'),Promise);
 
 class KsNoexam extends React.Component {

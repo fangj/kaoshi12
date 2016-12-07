@@ -1,0 +1,33 @@
+.ks_bind_reader {
+  background-color: #eee;
+  height: 100%;
+}
+.class_chooser {
+  background-color: #f60;
+}
+.ks_bind_student {
+  background-color: #eee;
+  height: 100%;
+}
+.ks_noexam {
+  background-color: #eee;
+  height: 100%;
+}
+.queryscore {
+  background-color: #fff;
+  width: 80%;
+  margin: 50px auto;
+}
+.ks_examing {
+  background-color: #f60;
+}
+.ks_exam {
+  background-color: #eee;
+  height: 100%;
+}
+.ks_prompt {
+  height: 100%;
+}
+.kaoshi {
+  background-color: #fff;
+}

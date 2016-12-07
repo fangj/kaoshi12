@@ -5,6 +5,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports={
   entry:{
     manage:'./src/pages/manage/index.js',
+    kaoshi:'./src/pages/kaoshi/index.js',
     vendor:['frisbee','superagent','superagent-promise','react-router','react-jsonschema-form','react-dropzone','react-bootstrap','moment','lodash','classnames','lru-cache','ramda']
   },
   output:{

@@ -1,58 +1,542 @@
-webpackJsonp([0],[
+webpackJsonp([1],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(1);
+	module.exports = __webpack_require__(485);
 
 /***/ },
-/* 1 */
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */,
+/* 22 */,
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */,
+/* 27 */,
+/* 28 */,
+/* 29 */,
+/* 30 */,
+/* 31 */,
+/* 32 */,
+/* 33 */,
+/* 34 */,
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */,
+/* 39 */,
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */,
+/* 133 */,
+/* 134 */,
+/* 135 */,
+/* 136 */,
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */,
+/* 141 */,
+/* 142 */,
+/* 143 */,
+/* 144 */,
+/* 145 */,
+/* 146 */,
+/* 147 */,
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */,
+/* 167 */,
+/* 168 */,
+/* 169 */,
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */,
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */,
+/* 184 */,
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */,
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */,
+/* 197 */,
+/* 198 */,
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */,
+/* 204 */,
+/* 205 */,
+/* 206 */,
+/* 207 */,
+/* 208 */,
+/* 209 */,
+/* 210 */,
+/* 211 */,
+/* 212 */,
+/* 213 */,
+/* 214 */,
+/* 215 */,
+/* 216 */,
+/* 217 */,
+/* 218 */,
+/* 219 */,
+/* 220 */,
+/* 221 */,
+/* 222 */,
+/* 223 */,
+/* 224 */,
+/* 225 */,
+/* 226 */,
+/* 227 */,
+/* 228 */,
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */,
+/* 244 */,
+/* 245 */,
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */,
+/* 267 */,
+/* 268 */,
+/* 269 */,
+/* 270 */,
+/* 271 */,
+/* 272 */,
+/* 273 */,
+/* 274 */,
+/* 275 */,
+/* 276 */,
+/* 277 */,
+/* 278 */,
+/* 279 */,
+/* 280 */,
+/* 281 */,
+/* 282 */,
+/* 283 */,
+/* 284 */,
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */,
+/* 290 */,
+/* 291 */,
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */,
+/* 297 */,
+/* 298 */,
+/* 299 */,
+/* 300 */,
+/* 301 */,
+/* 302 */,
+/* 303 */,
+/* 304 */,
+/* 305 */,
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */,
+/* 311 */,
+/* 312 */,
+/* 313 */,
+/* 314 */,
+/* 315 */,
+/* 316 */,
+/* 317 */,
+/* 318 */,
+/* 319 */,
+/* 320 */,
+/* 321 */,
+/* 322 */,
+/* 323 */,
+/* 324 */,
+/* 325 */,
+/* 326 */,
+/* 327 */,
+/* 328 */,
+/* 329 */,
+/* 330 */,
+/* 331 */,
+/* 332 */,
+/* 333 */,
+/* 334 */,
+/* 335 */,
+/* 336 */,
+/* 337 */,
+/* 338 */,
+/* 339 */,
+/* 340 */,
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */,
+/* 364 */,
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */,
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
+/* 378 */,
+/* 379 */,
+/* 380 */,
+/* 381 */,
+/* 382 */,
+/* 383 */,
+/* 384 */,
+/* 385 */,
+/* 386 */,
+/* 387 */,
+/* 388 */,
+/* 389 */,
+/* 390 */,
+/* 391 */,
+/* 392 */,
+/* 393 */,
+/* 394 */,
+/* 395 */,
+/* 396 */,
+/* 397 */,
+/* 398 */,
+/* 399 */,
+/* 400 */,
+/* 401 */,
+/* 402 */,
+/* 403 */,
+/* 404 */,
+/* 405 */,
+/* 406 */,
+/* 407 */,
+/* 408 */,
+/* 409 */,
+/* 410 */,
+/* 411 */,
+/* 412 */,
+/* 413 */,
+/* 414 */,
+/* 415 */,
+/* 416 */,
+/* 417 */,
+/* 418 */,
+/* 419 */,
+/* 420 */,
+/* 421 */,
+/* 422 */,
+/* 423 */,
+/* 424 */,
+/* 425 */,
+/* 426 */,
+/* 427 */,
+/* 428 */,
+/* 429 */,
+/* 430 */,
+/* 431 */,
+/* 432 */,
+/* 433 */,
+/* 434 */,
+/* 435 */,
+/* 436 */,
+/* 437 */,
+/* 438 */,
+/* 439 */,
+/* 440 */,
+/* 441 */,
+/* 442 */,
+/* 443 */,
+/* 444 */,
+/* 445 */,
+/* 446 */,
+/* 447 */,
+/* 448 */,
+/* 449 */,
+/* 450 */,
+/* 451 */,
+/* 452 */,
+/* 453 */,
+/* 454 */,
+/* 455 */,
+/* 456 */,
+/* 457 */,
+/* 458 */,
+/* 459 */,
+/* 460 */,
+/* 461 */,
+/* 462 */,
+/* 463 */,
+/* 464 */,
+/* 465 */,
+/* 466 */,
+/* 467 */,
+/* 468 */,
+/* 469 */,
+/* 470 */,
+/* 471 */,
+/* 472 */,
+/* 473 */,
+/* 474 */,
+/* 475 */,
+/* 476 */,
+/* 477 */,
+/* 478 */,
+/* 479 */,
+/* 480 */,
+/* 481 */,
+/* 482 */,
+/* 483 */,
+/* 484 */,
+/* 485 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _react = __webpack_require__(2);
+	var _react = __webpack_require__(89);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(3);
+	var _reactDom = __webpack_require__(120);
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _reactRouter = __webpack_require__(4);
+	var _reactRouter = __webpack_require__(486);
 
-	var _main = __webpack_require__(67);
+	var _main = __webpack_require__(540);
 
 	var _main2 = _interopRequireDefault(_main);
 
-	var _manage = __webpack_require__(196);
+	var _manage = __webpack_require__(544);
 
 	var _manage2 = _interopRequireDefault(_manage);
 
-	var _banks = __webpack_require__(198);
+	var _banks = __webpack_require__(546);
 
 	var _banks2 = _interopRequireDefault(_banks);
 
-	var _papers = __webpack_require__(503);
+	var _papers = __webpack_require__(562);
 
 	var _papers2 = _interopRequireDefault(_papers);
 
-	var _exams = __webpack_require__(509);
+	var _exams = __webpack_require__(568);
 
 	var _exams2 = _interopRequireDefault(_exams);
 
-	var _teachers = __webpack_require__(523);
+	var _teachers = __webpack_require__(574);
 
 	var _teachers2 = _interopRequireDefault(_teachers);
 
-	var _classes = __webpack_require__(525);
+	var _classes = __webpack_require__(576);
 
 	var _classes2 = _interopRequireDefault(_classes);
 
-	var _rooms = __webpack_require__(527);
+	var _rooms = __webpack_require__(578);
 
 	var _rooms2 = _interopRequireDefault(_rooms);
 
@@ -72,19 +556,19 @@ webpackJsonp([0],[
 
 	var _exam_creater2 = _interopRequireDefault(_exam_creater);
 
-	var _teacher_creater = __webpack_require__(742);
+	var _teacher_creater = __webpack_require__(734);
 
 	var _teacher_creater2 = _interopRequireDefault(_teacher_creater);
 
-	var _class_updater = __webpack_require__(746);
+	var _class_updater = __webpack_require__(738);
 
 	var _class_updater2 = _interopRequireDefault(_class_updater);
 
-	var _room_updater = __webpack_require__(750);
+	var _room_updater = __webpack_require__(742);
 
 	var _room_updater2 = _interopRequireDefault(_room_updater);
 
-	var _exam_updater = __webpack_require__(754);
+	var _exam_updater = __webpack_require__(746);
 
 	var _exam_updater2 = _interopRequireDefault(_exam_updater);
 
@@ -92,11 +576,11 @@ webpackJsonp([0],[
 
 	var _paper_updater2 = _interopRequireDefault(_paper_updater);
 
-	var _teacher_updater = __webpack_require__(758);
+	var _teacher_updater = __webpack_require__(750);
 
 	var _teacher_updater2 = _interopRequireDefault(_teacher_updater);
 
-	var _answersheet_updater = __webpack_require__(762);
+	var _answersheet_updater = __webpack_require__(754);
 
 	var _answersheet_updater2 = _interopRequireDefault(_answersheet_updater);
 
@@ -112,7 +596,7 @@ webpackJsonp([0],[
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
 
-	__webpack_require__(770);
+	__webpack_require__(764);
 	// import appHistory from '../../components/history';
 
 	var userManager = __webpack_require__(675);
@@ -180,80 +664,69 @@ webpackJsonp([0],[
 	module.exports = PageManage;
 
 /***/ },
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */,
-/* 27 */,
-/* 28 */,
-/* 29 */,
-/* 30 */,
-/* 31 */,
-/* 32 */,
-/* 33 */,
-/* 34 */,
-/* 35 */,
-/* 36 */,
-/* 37 */,
-/* 38 */,
-/* 39 */,
-/* 40 */,
-/* 41 */,
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */,
-/* 52 */,
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */
+/* 486 */,
+/* 487 */,
+/* 488 */,
+/* 489 */,
+/* 490 */,
+/* 491 */,
+/* 492 */,
+/* 493 */,
+/* 494 */,
+/* 495 */,
+/* 496 */,
+/* 497 */,
+/* 498 */,
+/* 499 */,
+/* 500 */,
+/* 501 */,
+/* 502 */,
+/* 503 */,
+/* 504 */,
+/* 505 */,
+/* 506 */,
+/* 507 */,
+/* 508 */,
+/* 509 */,
+/* 510 */,
+/* 511 */,
+/* 512 */,
+/* 513 */,
+/* 514 */,
+/* 515 */,
+/* 516 */,
+/* 517 */,
+/* 518 */,
+/* 519 */,
+/* 520 */,
+/* 521 */,
+/* 522 */,
+/* 523 */,
+/* 524 */,
+/* 525 */,
+/* 526 */,
+/* 527 */,
+/* 528 */,
+/* 529 */,
+/* 530 */,
+/* 531 */,
+/* 532 */,
+/* 533 */,
+/* 534 */,
+/* 535 */,
+/* 536 */,
+/* 537 */,
+/* 538 */,
+/* 539 */,
+/* 540 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(68);
+	module.exports = __webpack_require__(541);
 
 /***/ },
-/* 68 */
+/* 541 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -265,11 +738,11 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _react = __webpack_require__(2);
+	var _react = __webpack_require__(89);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRouter = __webpack_require__(4);
+	var _reactRouter = __webpack_require__(486);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -283,10 +756,10 @@ webpackJsonp([0],[
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
 
-	__webpack_require__(69);
+	__webpack_require__(542);
 
-	var tree = __webpack_require__(71)('_api');
-	var tool = __webpack_require__(193)(tree);
+	var tree = __webpack_require__(270)('_api');
+	var tool = __webpack_require__(287)(tree);
 
 	var Main = function (_React$Component) {
 	    _inherits(Main, _React$Component);
@@ -698,871 +1171,57 @@ webpackJsonp([0],[
 	exports.default = Main;
 
 /***/ },
-/* 69 */
+/* 542 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 70 */,
-/* 71 */
+/* 543 */,
+/* 544 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var LRU = __webpack_require__(72),
-	    cache = LRU(5000);
-	var _ = __webpack_require__(79);
-	// var cache=require('./cache');//LRU cache没有问题，是删除sgid父节点后又误读取了父节点（dgid）
-	var _api;
-	var api = {
-	  read: read,
-	  read_nodes: read_nodes,
-	  mk_son_by_data: mk_son_by_data,
-	  mk_son_by_name: mk_son_by_name,
-	  namepath2node: namepath2node,
-	  mk_brother_by_data: mk_brother_by_data,
-	  remove: remove,
-	  update: update,
-	  mv_as_son: mv_as_son,
-	  mv_as_brother: mv_as_brother,
-	  read_big_node: read_big_node,
-	  mk_son_by_file: mk_son_by_file
-	};
-	function factory(_prefix) {
-	  _api = __webpack_require__(81)(_prefix);
-	  return api;
-	}
-	module.exports = factory;
-
-	function clone(obj) {
-	  if (!obj) {
-	    return null;
-	  }
-	  return JSON.parse(JSON.stringify(obj));
-	}
-
-	function read(gid) {
-	  var force = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-
-	  if (!gid) {
-	    console.warn('read:invalid param', gid);
-	    return Promise.resolve(null);
-	  }
-	  if (!force && cache.has(gid)) {
-	    return Promise.resolve(cache.get(gid));
-	  }
-	  return _api.read(gid).then(function (node) {
-	    cache.set(node._id, node);
-	    return node;
-	  });
-	}
-
-	function read_nodes(gids) {
-	  if (!gids || gids.length === 0) {
-	    return Promise.resolve([]);
-	  }
-	  var cachedNodes = [];
-	  var unCachedGids = [];
-	  gids.map(function (gid) {
-	    if (cache.has(gid)) {
-	      cachedNodes.push(cache.get(gid));
-	    } else {
-	      unCachedGids.push(gid);
-	    }
-	  });
-	  console.log('read_nodes', gids, 'unCachedGids', unCachedGids);
-	  if (unCachedGids.length === 0) {
-	    return Promise.resolve(cachedNodes.map(clone)); //全在cache中直接返回 //返回克隆避免缓存被修改
-	  }
-	  //否则合并返回
-	  return _api.read_nodes(unCachedGids).then(function (new_nodes) {
-	    new_nodes.map(function (node) {
-	      return cache.set(node._id, node);
-	    }); //更新nodes cache
-	    // 调整顺序
-	    var tmp = {};
-	    cachedNodes.map(function (node) {
-	      return tmp[node._id] = node;
-	    });
-	    new_nodes.map(function (node) {
-	      return tmp[node._id] = node;
-	    });
-	    var nodes = gids.map(function (gid) {
-	      return clone(tmp[gid]);
-	    }); //返回克隆避免缓存被修改
-	    return _.compact(nodes);
-	  });
-	}
-
-	function mk_son_by_data(pgid, data) {
-	  return _api.mk_son_by_data(pgid, data).then(function (node) {
-	    cache.set(node._id, node); //更新子节点
-	    cache.del(pgid); //删除旧的父节点
-	    return node; //返回新的子节点
-	  });
-	}
-
-	function mk_son_by_name(pgid, name) {
-	  return _api.mk_son_by_name(pgid, name).then(function (node) {
-	    cache.set(node._id, node); //更新子节点
-	    cache.del(pgid); //删除旧的父节点
-	    return node; //返回新的子节点
-	  });
-	}
-
-	function _remove_parent_from_cache(gid) {
-	  return api.read(gid).then(function (node) {
-	    console.log("_remove_parent_from_cache", node._link.p);
-	    cache.del(node._link.p);
-	  });
-	}
-
-	function mk_brother_by_data(bgid, data) {
-	  return _remove_parent_from_cache(bgid).then(function (_) {
-	    return _api.mk_brother_by_data(bgid, data);
-	  });
-	}
-
-	/**
-	 * 删除节点，并刷新父节点和删除子节点，返回被删除的节点
-	 * 注意，返回值与api.remove不一致
-	 */
-	function remove(gid) {
-	  //删除某节点后，缓存中该节点的父节点要更新，后续子节点都要删除
-	  return read(gid).then(function (node) {
-	    return (//删除前先取出。待会儿还有用。
-	      //删除节点
-	      _api.remove(gid).then(function (res) {
-	        if (node) {
-	          //如果删除前没有取到当前节点，父节点将无法刷新。
-	          //递归删除cache中所有子节点
-	          _remove_all_children(node._link.children);
-	          cache.del(node._link.p); //刷新父节点
-	          return node; //返回被删除的节点
-	        }
-	        return null;
-	      })
-	    );
-	  });
-	}
-
-	//递归删除cache中所有子节点
-	function _remove_all_children(gids) {
-	  if (!gids) {
-	    return;
-	  }
-	  gids.map(function (gid) {
-	    if (cache.has(gid)) {
-	      _remove_all_children(cache.get(gid)._link.chilren);
-	      cache.del(gid);
-	    }
-	  });
-	}
-
-	function update(gid, data) {
-	  return _api.update(gid, data).then(function (node) {
-	    cache.set(node._id, node);return node;
-	  });
-	}
-
-	function mv_as_son(sgid, dgid) {
-	  cache.del(dgid);
-	  return _remove_parent_from_cache(sgid).then(function (_) {
-	    return _api.mv_as_son(sgid, dgid).then(function (node) {
-	      cache.set(node._id, node);
-	      return node;
-	    });
-	  });
-	}
-
-	function mv_as_brother(sgid, dgid) {
-	  return _remove_parent_from_cache(dgid) //顺序重要！要先删除目标节点dgid的父节点，因为目标节点dgid可能是sgid的父节点
-	  .then(function (_) {
-	    return _remove_parent_from_cache(sgid);
-	  }).then(function (_) {
-	    return _api.mv_as_brother(sgid, dgid).then(function (node) {
-	      cache.set(node._id, node);
-	      return node;
-	    });
-	  });
-	}
-
-	//not cached
-	function read_big_node(gid) {
-	  var level = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-
-	  return _api.read_big_node(gid, level);
-	}
-
-	function namepath2node(namepath) {
-	  return _api.namepath2node(namepath);
-	}
-
-	function mk_son_by_file(pgid, file, filename, onProgress) {
-	  cache.del(pgid);
-	  return _api.mk_son_by_file(pgid, file, filename, onProgress);
-	}
+	module.exports = __webpack_require__(545);
 
 /***/ },
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-	var agent = __webpack_require__(517)(__webpack_require__(518), Promise);
-
-	var prefix;
-	var api = {
-	  read: read,
-	  read_nodes: read_nodes,
-	  mk_son_by_data: mk_son_by_data,
-	  mk_son_by_name: mk_son_by_name,
-	  namepath2node: namepath2node,
-	  mk_brother_by_data: mk_brother_by_data,
-	  remove: remove,
-	  update: update,
-	  mv_as_son: mv_as_son,
-	  mv_as_brother: mv_as_brother,
-	  read_big_node: read_big_node,
-	  mk_son_by_file: mk_son_by_file
-	};
-	function factory(_prefix) {
-	  prefix = _prefix;
-	  return api;
-	}
-	module.exports = factory;
-
-	function read(gid) {
-	  return agent.get(prefix + '/' + gid).then(function (res) {
-	    return res.body;
-	  });
-	}
-
-	function read_nodes(gids) {
-	  return agent.post(prefix + '/nodes/', gids).then(function (res) {
-	    return res.body;
-	  });
-	}
-
-	function mk_son_by_data(pgid, data) {
-	  if (data === null) {
-	    data = {};
-	  } else if ((typeof data === 'undefined' ? 'undefined' : _typeof(data)) !== "object") {
-	    data = { data: data };
-	  }
-	  return agent.post(prefix + '/mk/son/' + pgid, data).then(function (res) {
-	    return res.body;
-	  });
-	}
-
-	function mk_son_by_name(pgid, name) {
-	  return agent.post(prefix + '/mk/son_name/' + pgid, { name: name }).then(function (res) {
-	    return res.body;
-	  });
-	}
-
-	function namepath2node(namepath) {
-	  return agent.get(prefix + '/namepath/' + namepath).then(function (res) {
-	    return res.body;
-	  });
-	}
-
-	function mk_brother_by_data(bgid, data) {
-	  return agent.post(prefix + '/mk/brother/' + bgid, data).then(function (res) {
-	    return res.body;
-	  });
-	}
-
-	function remove(gid) {
-	  return agent.del(prefix + '/' + gid).then(function (res) {
-	    return res.body;
-	  });
-	}
-
-	function update(gid, data) {
-	  if (data === null) {
-	    data = {};
-	  } else if ((typeof data === 'undefined' ? 'undefined' : _typeof(data)) !== "object") {
-	    data = { data: data };
-	  }
-	  return agent.put(prefix + '/' + gid, data).then(function (res) {
-	    return res.body;
-	  });
-	}
-
-	function mv_as_son(sgid, dgid) {
-	  return agent.post(prefix + '/mv/' + sgid + '/son/' + dgid).then(function (res) {
-	    return res.body;
-	  });
-	}
-
-	function mv_as_brother(sgid, dgid) {
-	  return agent.post(prefix + '/mv/' + sgid + '/brother/' + dgid).then(function (res) {
-	    return res.body;
-	  });
-	}
-
-	function read_big_node(gid) {
-	  var level = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-
-	  return agent.get(prefix + '/bignode/' + gid + '/' + level).then(function (res) {
-	    return res.body;
-	  });
-	}
-	function mk_son_by_file(pgid, file, filename, onProgress) {
-	  // console.log('mk_son_by_file',file);
-	  if (!filename) {
-	    filename = file.name;
-	  }
-	  return agent.post(prefix + '/mk/son/file/' + pgid).attach('file', file, filename).on('progress', function (e) {
-	    // console.log('Percentage done: ', e.percent);
-	    if (typeof onProgress === 'function') {
-	      onProgress(e);
-	    }
-	  }).then(function (res) {
-	    return res.body;
-	  });
-	}
-
-/***/ },
-/* 82 */,
-/* 83 */,
-/* 84 */,
-/* 85 */,
-/* 86 */,
-/* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */,
-/* 105 */,
-/* 106 */,
-/* 107 */,
-/* 108 */,
-/* 109 */,
-/* 110 */,
-/* 111 */,
-/* 112 */,
-/* 113 */,
-/* 114 */,
-/* 115 */,
-/* 116 */,
-/* 117 */,
-/* 118 */,
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */,
-/* 123 */,
-/* 124 */,
-/* 125 */,
-/* 126 */,
-/* 127 */,
-/* 128 */,
-/* 129 */,
-/* 130 */,
-/* 131 */,
-/* 132 */,
-/* 133 */,
-/* 134 */,
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */,
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */,
-/* 167 */,
-/* 168 */,
-/* 169 */,
-/* 170 */,
-/* 171 */,
-/* 172 */,
-/* 173 */,
-/* 174 */,
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */,
-/* 181 */,
-/* 182 */,
-/* 183 */,
-/* 184 */,
-/* 185 */,
-/* 186 */,
-/* 187 */,
-/* 188 */,
-/* 189 */,
-/* 190 */,
-/* 191 */,
-/* 192 */,
-/* 193 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var R = __webpack_require__(194);
-	// const tree=require('treenote/lib/client/tree-cache')('_api');
-	var tree;
-	var path = __webpack_require__(195);
-	var cache = {}; //walkaround,由于连续两个相同的tree.lidpath2gid(ppath)调用会导致第二个不执行。所以放到缓存中。
-
-	function clone(obj) {
-	    return JSON.parse(JSON.stringify(obj));
-	}
-
-	var children_length = R.pathOr(0, ['_link', 'children', 'length']);
-
-	function expand(node, level) {
-	    //level用于控制展开的层级
-	    if (children_length(node) == 0 || level <= 0) {
-	        //不做展开的2种情况。1.没有子节点。2，展开层级小于0
-	        var cloneNode = clone(node);
-	        cloneNode._children = [];
-	        return Promise.resolve(cloneNode);
-	    } else {
-	        return tree.read_nodes(node._link.children).then(function (nodes) {
-	            var fnodes = nodes.map(function (node) {
-	                return expand(node, level - 1);
-	            });
-	            return Promise.all(fnodes).then(function (nodes) {
-	                var cloneNode = clone(node);
-	                cloneNode._children = nodes || []; //展开的节点放到_children中
-	                return cloneNode;
-	            });
-	        });
-	    }
-	}
-
-	function includes(arr, obj) {
-	    return arr.indexOf(obj) > -1;
-	}
-
-	function expand2(node) {
-	    var expands = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-	    //expands用于控制展开的节点列表
-	    if (node._link.children.length == 0 || !includes(expands, node._id)) {
-	        //不做展开的2种情况。1.没有子节点。2，expands数组中没有此项
-	        var cloneNode = clone(node);
-	        cloneNode._children = [];
-	        return Promise.resolve(cloneNode);
-	    } else {
-	        return tree.read_nodes(node._link.children).then(function (nodes) {
-	            var fnodes = nodes.map(function (node) {
-	                return expand2(node, expands);
-	            });
-	            return Promise.all(fnodes).then(function (nodes) {
-	                var cloneNode = clone(node);
-	                cloneNode._children = nodes || []; //展开的节点放到_children中
-	                return cloneNode;
-	            });
-	        });
-	    }
-	}
-
-	//填充父节点直到根节点,包含根节点 
-	//[19]==>[0,1,17,19]
-	function expandToRoot(gids) {
-	    var _this = this;
-
-	    var root = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '0';
-
-	    var gid = gids[0];
-	    return tree.read(gid).then(function (node) {
-	        var p = node._link.p;
-	        gids.unshift(p);
-	        if (p === root || p === '0' || p === 0) {
-	            return gids;
-	        } else {
-	            return _this.expandToRoot(gids, root);
-	        }
-	    });
-	}
-
-	function createChildByName(pgid, name) {
-	    // console.log('createChildByName',pgid,name);
-	    return tree.mk_son_by_name(pgid, name);
-	}
-
-	//根据路径创建节点
-	/**
-	 * @param  {String}
-	 * @param  {Array}
-	 * @return {Promise<String>}
-	 */
-	function createNodeByPath(path) {
-	    //path="0/abc/def" gid加上路径的形式表达
-	    var paths = path.split('/');
-	    var gid = paths.shift(); //移出第一个gid，剩下部分为路径
-	    var f = function f(P, name) {
-	        return P.then(function (pnode) {
-	            return createChildByName(pnode._id, name);
-	        });
-	    };
-	    return paths.reduce(f, tree.read(gid));
-	}
-
-	//node为展开的节点，拥有_children
-	//gid为展开节点中的一个，求gid的展开层级
-	//level为node所在层级
-	function findLevel(node, gid) {
-	    var level = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
-
-	    if (node._id === gid) {
-	        return level; //当前节点就是，返回当前层级
-	    } else if (node._children.length > 0) {
-	        return _.compact(node._children.map(function (node) {
-	            return findLevel(node, gid, level + 1);
-	        }))[0];
-	    } else {
-	        return null; //当前节点不是，又没有子节点，返回null
-	    }
-	}
-
-	module.exports = function (_tree) {
-	    tree = _tree;
-	    return {
-	        expand: expand,
-	        expand2: expand2,
-	        expandToRoot: expandToRoot,
-	        createNodeByPath: createNodeByPath,
-	        findLevel: findLevel
-	    };
-	};
-
-/***/ },
-/* 194 */,
-/* 195 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {// Copyright Joyent, Inc. and other Node contributors.
-	//
-	// Permission is hereby granted, free of charge, to any person obtaining a
-	// copy of this software and associated documentation files (the
-	// "Software"), to deal in the Software without restriction, including
-	// without limitation the rights to use, copy, modify, merge, publish,
-	// distribute, sublicense, and/or sell copies of the Software, and to permit
-	// persons to whom the Software is furnished to do so, subject to the
-	// following conditions:
-	//
-	// The above copyright notice and this permission notice shall be included
-	// in all copies or substantial portions of the Software.
-	//
-	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-	// USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-	// resolves . and .. elements in a path array with directory names there
-	// must be no slashes, empty elements, or device names (c:\) in the array
-	// (so also no leading and trailing slashes - it does not distinguish
-	// relative and absolute paths)
-	function normalizeArray(parts, allowAboveRoot) {
-	  // if the path tries to go above the root, `up` ends up > 0
-	  var up = 0;
-	  for (var i = parts.length - 1; i >= 0; i--) {
-	    var last = parts[i];
-	    if (last === '.') {
-	      parts.splice(i, 1);
-	    } else if (last === '..') {
-	      parts.splice(i, 1);
-	      up++;
-	    } else if (up) {
-	      parts.splice(i, 1);
-	      up--;
-	    }
-	  }
-
-	  // if the path is allowed to go above the root, restore leading ..s
-	  if (allowAboveRoot) {
-	    for (; up--; up) {
-	      parts.unshift('..');
-	    }
-	  }
-
-	  return parts;
-	}
-
-	// Split a filename into [root, dir, basename, ext], unix version
-	// 'root' is just a slash, or nothing.
-	var splitPathRe =
-	    /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/;
-	var splitPath = function(filename) {
-	  return splitPathRe.exec(filename).slice(1);
-	};
-
-	// path.resolve([from ...], to)
-	// posix version
-	exports.resolve = function() {
-	  var resolvedPath = '',
-	      resolvedAbsolute = false;
-
-	  for (var i = arguments.length - 1; i >= -1 && !resolvedAbsolute; i--) {
-	    var path = (i >= 0) ? arguments[i] : process.cwd();
-
-	    // Skip empty and invalid entries
-	    if (typeof path !== 'string') {
-	      throw new TypeError('Arguments to path.resolve must be strings');
-	    } else if (!path) {
-	      continue;
-	    }
-
-	    resolvedPath = path + '/' + resolvedPath;
-	    resolvedAbsolute = path.charAt(0) === '/';
-	  }
-
-	  // At this point the path should be resolved to a full absolute path, but
-	  // handle relative paths to be safe (might happen when process.cwd() fails)
-
-	  // Normalize the path
-	  resolvedPath = normalizeArray(filter(resolvedPath.split('/'), function(p) {
-	    return !!p;
-	  }), !resolvedAbsolute).join('/');
-
-	  return ((resolvedAbsolute ? '/' : '') + resolvedPath) || '.';
-	};
-
-	// path.normalize(path)
-	// posix version
-	exports.normalize = function(path) {
-	  var isAbsolute = exports.isAbsolute(path),
-	      trailingSlash = substr(path, -1) === '/';
-
-	  // Normalize the path
-	  path = normalizeArray(filter(path.split('/'), function(p) {
-	    return !!p;
-	  }), !isAbsolute).join('/');
-
-	  if (!path && !isAbsolute) {
-	    path = '.';
-	  }
-	  if (path && trailingSlash) {
-	    path += '/';
-	  }
-
-	  return (isAbsolute ? '/' : '') + path;
-	};
-
-	// posix version
-	exports.isAbsolute = function(path) {
-	  return path.charAt(0) === '/';
-	};
-
-	// posix version
-	exports.join = function() {
-	  var paths = Array.prototype.slice.call(arguments, 0);
-	  return exports.normalize(filter(paths, function(p, index) {
-	    if (typeof p !== 'string') {
-	      throw new TypeError('Arguments to path.join must be strings');
-	    }
-	    return p;
-	  }).join('/'));
-	};
-
-
-	// path.relative(from, to)
-	// posix version
-	exports.relative = function(from, to) {
-	  from = exports.resolve(from).substr(1);
-	  to = exports.resolve(to).substr(1);
-
-	  function trim(arr) {
-	    var start = 0;
-	    for (; start < arr.length; start++) {
-	      if (arr[start] !== '') break;
-	    }
-
-	    var end = arr.length - 1;
-	    for (; end >= 0; end--) {
-	      if (arr[end] !== '') break;
-	    }
-
-	    if (start > end) return [];
-	    return arr.slice(start, end - start + 1);
-	  }
-
-	  var fromParts = trim(from.split('/'));
-	  var toParts = trim(to.split('/'));
-
-	  var length = Math.min(fromParts.length, toParts.length);
-	  var samePartsLength = length;
-	  for (var i = 0; i < length; i++) {
-	    if (fromParts[i] !== toParts[i]) {
-	      samePartsLength = i;
-	      break;
-	    }
-	  }
-
-	  var outputParts = [];
-	  for (var i = samePartsLength; i < fromParts.length; i++) {
-	    outputParts.push('..');
-	  }
-
-	  outputParts = outputParts.concat(toParts.slice(samePartsLength));
-
-	  return outputParts.join('/');
-	};
-
-	exports.sep = '/';
-	exports.delimiter = ':';
-
-	exports.dirname = function(path) {
-	  var result = splitPath(path),
-	      root = result[0],
-	      dir = result[1];
-
-	  if (!root && !dir) {
-	    // No dirname whatsoever
-	    return '.';
-	  }
-
-	  if (dir) {
-	    // It has a dirname, strip trailing slash
-	    dir = dir.substr(0, dir.length - 1);
-	  }
-
-	  return root + dir;
-	};
-
-
-	exports.basename = function(path, ext) {
-	  var f = splitPath(path)[2];
-	  // TODO: make this comparison case-insensitive on windows?
-	  if (ext && f.substr(-1 * ext.length) === ext) {
-	    f = f.substr(0, f.length - ext.length);
-	  }
-	  return f;
-	};
-
-
-	exports.extname = function(path) {
-	  return splitPath(path)[3];
-	};
-
-	function filter (xs, f) {
-	    if (xs.filter) return xs.filter(f);
-	    var res = [];
-	    for (var i = 0; i < xs.length; i++) {
-	        if (f(xs[i], i, xs)) res.push(xs[i]);
-	    }
-	    return res;
-	}
-
-	// String.prototype.substr - negative index don't work in IE8
-	var substr = 'ab'.substr(-1) === 'b'
-	    ? function (str, start, len) { return str.substr(start, len) }
-	    : function (str, start, len) {
-	        if (start < 0) start = str.length + start;
-	        return str.substr(start, len);
-	    }
-	;
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
-
-/***/ },
-/* 196 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	module.exports = __webpack_require__(197);
-
-/***/ },
-/* 197 */
+/* 545 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _main = __webpack_require__(67);
+	var _main = __webpack_require__(540);
 
 	var _main2 = _interopRequireDefault(_main);
 
-	var _banks = __webpack_require__(198);
+	var _banks = __webpack_require__(546);
 
 	var _banks2 = _interopRequireDefault(_banks);
 
-	var _papers = __webpack_require__(503);
+	var _papers = __webpack_require__(562);
 
 	var _papers2 = _interopRequireDefault(_papers);
 
-	var _exams = __webpack_require__(509);
+	var _exams = __webpack_require__(568);
 
 	var _exams2 = _interopRequireDefault(_exams);
 
-	var _teachers = __webpack_require__(523);
+	var _teachers = __webpack_require__(574);
 
 	var _teachers2 = _interopRequireDefault(_teachers);
 
-	var _classes = __webpack_require__(525);
+	var _classes = __webpack_require__(576);
 
 	var _classes2 = _interopRequireDefault(_classes);
 
-	var _rooms = __webpack_require__(527);
+	var _rooms = __webpack_require__(578);
 
 	var _rooms2 = _interopRequireDefault(_rooms);
 
-	var _soneditor = __webpack_require__(529);
-
-	var _soneditor2 = _interopRequireDefault(_soneditor);
-
-	var _topic_choice_creater = __webpack_require__(533);
+	var _topic_choice_creater = __webpack_require__(580);
 
 	var _topic_choice_creater2 = _interopRequireDefault(_topic_choice_creater);
 
@@ -1627,8 +1286,8 @@ webpackJsonp([0],[
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	__webpack_require__(688);
-	var tree = __webpack_require__(71)('_api');
-	var tool = __webpack_require__(193)(tree);
+	var tree = __webpack_require__(270)('_api');
+	var tool = __webpack_require__(287)(tree);
 
 	function v(node) {
 	    if (!node) {
@@ -1746,34 +1405,34 @@ webpackJsonp([0],[
 	module.exports = Manage;
 
 /***/ },
-/* 198 */
+/* 546 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(199);
+	module.exports = __webpack_require__(547);
 
 /***/ },
-/* 199 */
+/* 547 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
-	var _bank_summary = __webpack_require__(380);
+	var _bank_summary = __webpack_require__(556);
 
 	var _bank_summary2 = _interopRequireDefault(_bank_summary);
 
-	var _reader = __webpack_require__(385);
+	var _reader = __webpack_require__(268);
 
 	var _reader2 = _interopRequireDefault(_reader);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
@@ -1790,8 +1449,8 @@ webpackJsonp([0],[
 	 * 面包导航 TreePathReader（Nav)
 	 * 题库概要 Reader(BankSummary)
 	 */
-	var tree = __webpack_require__(71)('_api');
-	var tool = __webpack_require__(193)(tree);
+	var tree = __webpack_require__(270)('_api');
+	var tool = __webpack_require__(287)(tree);
 
 	var Banks = function (_React$Component) {
 	    _inherits(Banks, _React$Component);
@@ -1823,22 +1482,22 @@ webpackJsonp([0],[
 	module.exports = Banks;
 
 /***/ },
-/* 200 */
+/* 548 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(201);
+	module.exports = __webpack_require__(549);
 
 /***/ },
-/* 201 */
+/* 549 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _navview = __webpack_require__(202);
+	var _navview = __webpack_require__(550);
 
 	var _navview2 = _interopRequireDefault(_navview);
 
@@ -1850,11 +1509,11 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(377);
+	__webpack_require__(554);
 
-	var tree = __webpack_require__(71)('_api');
-	var tool = __webpack_require__(193)(tree);
-	var util = __webpack_require__(379);
+	var tree = __webpack_require__(270)('_api');
+	var tool = __webpack_require__(287)(tree);
+	var util = __webpack_require__(290);
 
 
 	function name(node) {
@@ -1922,22 +1581,22 @@ webpackJsonp([0],[
 	module.exports = Nav;
 
 /***/ },
-/* 202 */
+/* 550 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(203);
+	module.exports = __webpack_require__(551);
 
 /***/ },
-/* 203 */
+/* 551 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _reactBootstrap = __webpack_require__(204);
+	var _reactBootstrap = __webpack_require__(4);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -1945,7 +1604,7 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(375);
+	__webpack_require__(552);
 
 	var NavView = function (_React$Component) {
 	    _inherits(NavView, _React$Component);
@@ -2012,229 +1671,29 @@ webpackJsonp([0],[
 	module.exports = NavView;
 
 /***/ },
-/* 204 */,
-/* 205 */,
-/* 206 */,
-/* 207 */,
-/* 208 */,
-/* 209 */,
-/* 210 */,
-/* 211 */,
-/* 212 */,
-/* 213 */,
-/* 214 */,
-/* 215 */,
-/* 216 */,
-/* 217 */,
-/* 218 */,
-/* 219 */,
-/* 220 */,
-/* 221 */,
-/* 222 */,
-/* 223 */,
-/* 224 */,
-/* 225 */,
-/* 226 */,
-/* 227 */,
-/* 228 */,
-/* 229 */,
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */,
-/* 244 */,
-/* 245 */,
-/* 246 */,
-/* 247 */,
-/* 248 */,
-/* 249 */,
-/* 250 */,
-/* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */,
-/* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */,
-/* 265 */,
-/* 266 */,
-/* 267 */,
-/* 268 */,
-/* 269 */,
-/* 270 */,
-/* 271 */,
-/* 272 */,
-/* 273 */,
-/* 274 */,
-/* 275 */,
-/* 276 */,
-/* 277 */,
-/* 278 */,
-/* 279 */,
-/* 280 */,
-/* 281 */,
-/* 282 */,
-/* 283 */,
-/* 284 */,
-/* 285 */,
-/* 286 */,
-/* 287 */,
-/* 288 */,
-/* 289 */,
-/* 290 */,
-/* 291 */,
-/* 292 */,
-/* 293 */,
-/* 294 */,
-/* 295 */,
-/* 296 */,
-/* 297 */,
-/* 298 */,
-/* 299 */,
-/* 300 */,
-/* 301 */,
-/* 302 */,
-/* 303 */,
-/* 304 */,
-/* 305 */,
-/* 306 */,
-/* 307 */,
-/* 308 */,
-/* 309 */,
-/* 310 */,
-/* 311 */,
-/* 312 */,
-/* 313 */,
-/* 314 */,
-/* 315 */,
-/* 316 */,
-/* 317 */,
-/* 318 */,
-/* 319 */,
-/* 320 */,
-/* 321 */,
-/* 322 */,
-/* 323 */,
-/* 324 */,
-/* 325 */,
-/* 326 */,
-/* 327 */,
-/* 328 */,
-/* 329 */,
-/* 330 */,
-/* 331 */,
-/* 332 */,
-/* 333 */,
-/* 334 */,
-/* 335 */,
-/* 336 */,
-/* 337 */,
-/* 338 */,
-/* 339 */,
-/* 340 */,
-/* 341 */,
-/* 342 */,
-/* 343 */,
-/* 344 */,
-/* 345 */,
-/* 346 */,
-/* 347 */,
-/* 348 */,
-/* 349 */,
-/* 350 */,
-/* 351 */,
-/* 352 */,
-/* 353 */,
-/* 354 */,
-/* 355 */,
-/* 356 */,
-/* 357 */,
-/* 358 */,
-/* 359 */,
-/* 360 */,
-/* 361 */,
-/* 362 */,
-/* 363 */,
-/* 364 */,
-/* 365 */,
-/* 366 */,
-/* 367 */,
-/* 368 */,
-/* 369 */,
-/* 370 */,
-/* 371 */,
-/* 372 */,
-/* 373 */,
-/* 374 */,
-/* 375 */
+/* 552 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 376 */,
-/* 377 */
+/* 553 */,
+/* 554 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 378 */,
-/* 379 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var makeCancelable = exports.makeCancelable = function makeCancelable(promise) {
-	  var hasCanceled_ = false;
-
-	  var wrappedPromise = new Promise(function (resolve, reject) {
-	    promise.then(function (val) {
-	      return hasCanceled_ ? reject({ isCanceled: true }) : resolve(val);
-	    });
-	    promise.catch(function (error) {
-	      return hasCanceled_ ? reject({ isCanceled: true }) : reject(error);
-	    });
-	  });
-
-	  return {
-	    promise: wrappedPromise,
-	    cancel: function cancel() {
-	      hasCanceled_ = true;
-	    }
-	  };
-	};
-
-/***/ },
-/* 380 */
+/* 555 */,
+/* 556 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(381);
+	module.exports = __webpack_require__(557);
 
 /***/ },
-/* 381 */
+/* 557 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2247,8 +1706,8 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(382);
-	var common = __webpack_require__(384);
+	__webpack_require__(558);
+	var common = __webpack_require__(267);
 	var goto = function goto(url) {
 	   location.href = '#' + url;
 	};
@@ -2391,205 +1850,29 @@ webpackJsonp([0],[
 	module.exports = BankSummary;
 
 /***/ },
-/* 382 */
+/* 558 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 383 */,
-/* 384 */
+/* 559 */,
+/* 560 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.m = exports.icon = exports.icons = exports.name = undefined;
-
-	var _reactBootstrap = __webpack_require__(204);
-
-	var _reader = __webpack_require__(385);
-
-	var _reader2 = _interopRequireDefault(_reader);
-
-	var _imageviewer = __webpack_require__(387);
-
-	var _imageviewer2 = _interopRequireDefault(_imageviewer);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var _ = __webpack_require__(79);
-
-	var moment = __webpack_require__(391);
-	var cx = __webpack_require__(217);
-
-
-	var show_exam_name = function show_exam_name(data) {
-	  // const room_name=_.get(data,'room_name','');
-	  // const paper_name=_.get(data,'paper_name','');
-	  // var node_name=room_name+" "+paper_name; //examname=roomname+papername
-	  var node_name = data.name;
-	  var now = moment();
-	  var start = moment(data.start);
-	  var end = moment(data.end);
-	  var status;
-	  if (now.isAfter(end)) {
-	    status = "over";
-	  } else if (now.isBefore(start)) {
-	    status = "prepare";
-	  } else {
-	    status = "doing";
-	  }
-	  return React.createElement(
-	    'span',
-	    { className: cx('exam', status) },
-	    node_name
-	  );
-	};
-	var name = exports.name = function name(node) {
-	  var node_name = _.get(node, 'name') || _.get(node, '_data.data.name');
-	  if (node.room_name || node.paper_name) {
-	    node_name = show_exam_name(node);
-	  }
-	  if (node_name) {
-	    return node_name;
-	  }
-	  var node_type = _.get(node, '_data.type');
-	  switch (node_type) {
-	    case "ks1/choice":
-	      return _.get(node, '_data.data.question');
-	    case "ks1/tf":
-	      return _.get(node, '_data.data.question');
-	    case "ks1/qa":
-	      return _.get(node, '_data.data.question');
-	    case "ks1/revise":
-	      return _.get(node, '_data.data.question');
-	  }
-	  return "noname";
-	};
-	var icons = exports.icons = {
-	  "unknow": React.createElement('i', { className: 'fa fa-tripadvisor fa-3x' }),
-	  "ks1/teacher": React.createElement('i', { className: 'fa fa-user fa-3x' }),
-	  "ks1/bank": React.createElement('i', { className: 'fa fa-book fa-3x' }),
-	  "ks1/qa": React.createElement('i', { className: 'fa fa-question-circle fa-3x' }),
-	  "ks1/choice": React.createElement('i', { className: 'fa fa-list fa-3x' }),
-	  "ks1/tf": React.createElement('i', { className: 'fa fa-check-square fa-3x' }),
-	  "ks1/revise": React.createElement('i', { className: 'fa fa-eraser fa-3x' }),
-	  "ks1/bank/folder": React.createElement('i', { className: 'fa fa-folder fa-3x' }),
-	  "ks1/paper/folder": React.createElement('i', { className: 'fa fa-folder fa-3x' }),
-	  "ks1/class": React.createElement('i', { className: 'fa fa-users fa-3x' }),
-	  "ks1/paper": React.createElement('i', { className: 'fa fa-file fa-3x' }),
-	  "ks1/exam": React.createElement('i', { className: 'fa fa-edit fa-3x' }),
-	  "ks1/room": React.createElement('i', { className: 'fa fa-desktop fa-3x' })
-	};
-	var icon = exports.icon = function icon(node) {
-	  return typeof node === "string" ? icons[node] : icons[_.get(node, '_data.type', 'unknow')];
-	};
-
-	//题型显示，用于组卷
-	var vm_qa = function vm_qa(data, gid) {
-	  return React.createElement(
-	    _reactBootstrap.Panel,
-	    { collapsible: true, defaultExpanded: true, header: "[问答题] " + data.question, key: gid },
-	    data.answer,
-	    React.createElement(_reader2.default, { view: _imageviewer2.default, gid: gid, level: 1 })
-	  );
-	};
-	var vm_tf = function vm_tf(data, gid) {
-	  return React.createElement(
-	    _reactBootstrap.Panel,
-	    { collapsible: true, defaultExpanded: true, header: "[判断题] " + data.question, key: gid },
-	    data.ok ? "正确" : "错误",
-	    React.createElement(_reader2.default, { view: _imageviewer2.default, gid: gid, level: 1 })
-	  );
-	};
-
-	var vm_choice = function vm_choice(data, gid) {
-	  return React.createElement(
-	    _reactBootstrap.Panel,
-	    { collapsible: true, defaultExpanded: true, header: "[选择题] " + data.question, key: gid },
-	    React.createElement(
-	      _reactBootstrap.ListGroup,
-	      { fill: true },
-	      data.answers && data.answers.map(function (ans, idx) {
-	        return React.createElement(
-	          _reactBootstrap.ListGroupItem,
-	          {
-	            key: idx,
-	            bsStyle: ans.ok ? "success" : null },
-	          "ABCDEFGHI"[idx] + ". " + ans.answer
-	        );
-	      })
-	    ),
-	    React.createElement(_reader2.default, { view: _imageviewer2.default, gid: gid, level: 1 })
-	  );
-	};
-	var vm_revise = function vm_revise(data, gid) {
-	  return React.createElement(
-	    _reactBootstrap.Panel,
-	    { collapsible: true, defaultExpanded: true, header: "[改错题] " + data.question, key: gid },
-	    React.createElement(
-	      'h4',
-	      null,
-	      '\u6539\u9519\u5185\u5BB9'
-	    ),
-	    React.createElement(
-	      'pre',
-	      null,
-	      data.content
-	    ),
-	    React.createElement(_reader2.default, { view: _imageviewer2.default, gid: gid, level: 1 }),
-	    React.createElement(
-	      'h4',
-	      null,
-	      '\u53C2\u8003\u7B54\u6848'
-	    ),
-	    React.createElement(
-	      'pre',
-	      null,
-	      data.answer
-	    )
-	  );
-	};
-
-	var m = exports.m = function m(node) {
-	  var node_type = _.get(node, '_data.type');
-	  // console.log(node,node_type)
-	  var vm = {
-	    "ks1/choice": vm_choice,
-	    "ks1/tf": vm_tf,
-	    "ks1/qa": vm_qa,
-	    "ks1/revise": vm_revise
-	  };
-	  var fn = vm[node_type] || function () {
-	    return null;
-	  };
-	  return fn(node._data.data, node._id);
-	};
+	module.exports = __webpack_require__(561);
 
 /***/ },
-/* 385 */
+/* 561 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	module.exports = __webpack_require__(386);
-
-/***/ },
-/* 386 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _react = __webpack_require__(2);
-
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+	var _react = __webpack_require__(89);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -2597,407 +1880,10 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var tree = __webpack_require__(71)('_api');
-	var treetool = __webpack_require__(193)(tree);
-
-	var util = __webpack_require__(379);
-
-	/**
-	 * Reader用于读取gid或者path节点，交由view显示
-	 * 可以读取节点的子孙节点内容，深度由level决定
-	 * 读取的节点作为node注入view
-	 * subscribe订阅更新信号，收到信号时会更新自己
-	 */
-
-	var Reader = function (_React$Component) {
-	    _inherits(Reader, _React$Component);
-
-	    function Reader(props) {
-	        _classCallCheck(this, Reader);
-
-	        var _this = _possibleConstructorReturn(this, (Reader.__proto__ || Object.getPrototypeOf(Reader)).call(this, props));
-
-	        _this.state = {};
-	        return _this;
-	    }
-
-	    _createClass(Reader, [{
-	        key: 'render',
-	        value: function render() {
-	            // console.log('render reader')
-	            var me = this;
-	            var node = this.state.node;
-
-	            if (!node) {
-	                return null;
-	            } else {
-	                var _props = this.props,
-	                    view = _props.view,
-	                    others = _objectWithoutProperties(_props, ['view']);
-
-	                var View = view;
-	                return React.createElement(View, _extends({ node: node }, others));
-	            }
-	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {
-	            this.fetchData(this.props);
-	            var me = this;
-	            var mySubscriber = function mySubscriber(msg, data) {
-	                console.log(msg, data);
-	                // me.forceUpdate();
-	                me.fetchData();
-	            };
-	            var subscribe = this.props.subscribe || [];
-	            this.tokens = subscribe.map(function (msg) {
-	                console.log('subscribe msg', msg);
-	                return PubSub.subscribe(msg, mySubscriber);
-	            });
-	        }
-	    }, {
-	        key: 'fetchData',
-	        value: function fetchData(props) {
-	            var _this2 = this;
-
-	            if (this.cancelablePromise) {
-	                this.cancelablePromise.cancel();
-	            }
-	            this.cancelablePromise = util.makeCancelable(this._fetchData(props));
-	            this.cancelablePromise.promise.then(function (node) {
-	                _this2.setState({ node: node });
-	            }).catch(function (reason) {
-	                //console.log('isCanceled', reason.isCanceled)
-	                if (!reason.isCanceled) {
-	                    Promise.reject(reason);
-	                }
-	            });
-	        }
-	    }, {
-	        key: '_fetchData',
-	        value: function _fetchData(props) {
-	            var _this3 = this;
-
-	            var gid = props.gid,
-	                level = props.level,
-	                path = props.path;
-
-	            if (gid !== undefined) {
-	                return this.fetchDataByGid(gid, level);
-	            } else if (path) {
-	                return tree.namepath2node(path).then(function (node) {
-	                    return _this3.fetchDataByNode(node, level);
-	                });
-	            }
-	        }
-	    }, {
-	        key: '_fetchDataByGid',
-	        value: function _fetchDataByGid(gid, level) {
-	            //服务器端展开，没有缓存。未来可以拆解到缓存中
-	            return tree.read_big_node(gid, level);
-	        }
-	    }, {
-	        key: 'fetchDataByGid',
-	        value: function fetchDataByGid(gid, level) {
-	            var _this4 = this;
-
-	            //客户端展开，可利用缓存
-	            // debugger;
-	            return tree.read(gid).then(function (node) {
-	                return _this4.fetchDataByNode(node, level);
-	            });
-	        }
-	    }, {
-	        key: 'fetchDataByNode',
-	        value: function fetchDataByNode(node, level) {
-	            //客户端展开，可利用缓存
-	            if (!level) {
-	                return node;
-	            } else {
-	                return treetool.expand(node, level);
-	            }
-	        }
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {
-	            this.fetchData(nextProps);
-	        }
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {
-	            this.cancelablePromise.cancel();
-	            this.tokens.map(function (token) {
-	                PubSub.unsubscribe(token);
-	                console.log('unsubscribe', token);
-	            });
-	        }
-	    }]);
-
-	    return Reader;
-	}(React.Component);
-
-	Reader.propTypes = {
-	    view: _react.PropTypes.func.isRequired,
-	    gid: _react.PropTypes.string,
-	    path: _react.PropTypes.string,
-	    level: _react.PropTypes.number, //展开的层次，0为不展开
-	    subscribe: _react.PropTypes.array
-	};
-
-
-	module.exports = Reader;
-
-/***/ },
-/* 387 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	module.exports = __webpack_require__(388);
-
-/***/ },
-/* 388 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	__webpack_require__(389);
-	var tree = __webpack_require__(71)('_api');
-	var treetool = __webpack_require__(193)(tree);
-
-	/**
-	 * 如果node的子节点中有'tn/nfile/url'类型节点，则作为图片显示
-	 * 图片load成功时会发送'img-load'，通知AnswersheetForm去收集图片，以便进一步导出为docx
-	 */
-
-	var Imageviewer = function (_React$Component) {
-	    _inherits(Imageviewer, _React$Component);
-
-	    function Imageviewer(props) {
-	        _classCallCheck(this, Imageviewer);
-
-	        var _this = _possibleConstructorReturn(this, (Imageviewer.__proto__ || Object.getPrototypeOf(Imageviewer)).call(this, props));
-
-	        _this.state = {
-	            urls: []
-	        };
-	        return _this;
-	    }
-
-	    _createClass(Imageviewer, [{
-	        key: 'render',
-	        value: function render() {
-	            var _this2 = this;
-
-	            var me = this;
-	            var node = this.props.node;
-
-	            var urls = [];
-	            for (var i = node._children.length - 1; i >= 0; i--) {
-	                var child = node._children[i];
-	                if (child._data.type == 'tn/nfile/url') {
-	                    urls.push({ gid: child._id, url: child._data.data });
-	                }
-	            }
-	            return React.createElement(
-	                'div',
-	                { className: 'imageviewer' },
-	                urls.map(function (url) {
-	                    return React.createElement('img', { key: url.gid, id: url.gid, src: url.url, onClick: function onClick() {
-	                            return _this2.remove(url.gid);
-	                        },
-	                        onLoad: function onLoad(e) {
-	                            var img = e.target;
-	                            var obj = { gid: url.gid, w: img.width, h: img.height };
-	                            PubSub.publish('img-load', obj);
-	                            // console.log('publish,img-load',obj)
-	                        } });
-	                })
-	            )
-	            //img-load：通知AnswersheetForm去收集图片
-	            ;
-	        }
-	    }, {
-	        key: 'remove',
-	        value: function remove(gid) {
-	            treetool.remove(gid).then(function (node) {
-	                PubSub.publish('img.removed', node);
-	            });
-	        }
-	    }]);
-
-	    return Imageviewer;
-	}(React.Component);
-
-	module.exports = Imageviewer;
-
-/***/ },
-/* 389 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 390 */,
-/* 391 */,
-/* 392 */,
-/* 393 */,
-/* 394 */,
-/* 395 */,
-/* 396 */,
-/* 397 */,
-/* 398 */,
-/* 399 */,
-/* 400 */,
-/* 401 */,
-/* 402 */,
-/* 403 */,
-/* 404 */,
-/* 405 */,
-/* 406 */,
-/* 407 */,
-/* 408 */,
-/* 409 */,
-/* 410 */,
-/* 411 */,
-/* 412 */,
-/* 413 */,
-/* 414 */,
-/* 415 */,
-/* 416 */,
-/* 417 */,
-/* 418 */,
-/* 419 */,
-/* 420 */,
-/* 421 */,
-/* 422 */,
-/* 423 */,
-/* 424 */,
-/* 425 */,
-/* 426 */,
-/* 427 */,
-/* 428 */,
-/* 429 */,
-/* 430 */,
-/* 431 */,
-/* 432 */,
-/* 433 */,
-/* 434 */,
-/* 435 */,
-/* 436 */,
-/* 437 */,
-/* 438 */,
-/* 439 */,
-/* 440 */,
-/* 441 */,
-/* 442 */,
-/* 443 */,
-/* 444 */,
-/* 445 */,
-/* 446 */,
-/* 447 */,
-/* 448 */,
-/* 449 */,
-/* 450 */,
-/* 451 */,
-/* 452 */,
-/* 453 */,
-/* 454 */,
-/* 455 */,
-/* 456 */,
-/* 457 */,
-/* 458 */,
-/* 459 */,
-/* 460 */,
-/* 461 */,
-/* 462 */,
-/* 463 */,
-/* 464 */,
-/* 465 */,
-/* 466 */,
-/* 467 */,
-/* 468 */,
-/* 469 */,
-/* 470 */,
-/* 471 */,
-/* 472 */,
-/* 473 */,
-/* 474 */,
-/* 475 */,
-/* 476 */,
-/* 477 */,
-/* 478 */,
-/* 479 */,
-/* 480 */,
-/* 481 */,
-/* 482 */,
-/* 483 */,
-/* 484 */,
-/* 485 */,
-/* 486 */,
-/* 487 */,
-/* 488 */,
-/* 489 */,
-/* 490 */,
-/* 491 */,
-/* 492 */,
-/* 493 */,
-/* 494 */,
-/* 495 */,
-/* 496 */,
-/* 497 */,
-/* 498 */,
-/* 499 */,
-/* 500 */,
-/* 501 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	module.exports = __webpack_require__(502);
-
-/***/ },
-/* 502 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(2);
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var _ = __webpack_require__(79);
-	var tree = __webpack_require__(71)('_api');
-	var treetool = __webpack_require__(193)(tree);
-	var util = __webpack_require__(379);
+	var _ = __webpack_require__(278);
+	var tree = __webpack_require__(270)('_api');
+	var treetool = __webpack_require__(287)(tree);
+	var util = __webpack_require__(290);
 
 	//有没有斜杠是区分gid和namepath
 	//gid和namepath是表达一个节点的2种等价方式
@@ -3183,34 +2069,34 @@ webpackJsonp([0],[
 	module.exports = TreePathReader;
 
 /***/ },
-/* 503 */
+/* 562 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(504);
+	module.exports = __webpack_require__(563);
 
 /***/ },
-/* 504 */
+/* 563 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
-	var _paper_summary = __webpack_require__(505);
+	var _paper_summary = __webpack_require__(564);
 
 	var _paper_summary2 = _interopRequireDefault(_paper_summary);
 
-	var _reader = __webpack_require__(385);
+	var _reader = __webpack_require__(268);
 
 	var _reader2 = _interopRequireDefault(_reader);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
@@ -3222,8 +2108,8 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var tree = __webpack_require__(71)('_api');
-	var tool = __webpack_require__(193)(tree);
+	var tree = __webpack_require__(270)('_api');
+	var tool = __webpack_require__(287)(tree);
 
 	/**
 	 * 试卷主页
@@ -3258,15 +2144,15 @@ webpackJsonp([0],[
 	module.exports = Papers;
 
 /***/ },
-/* 505 */
+/* 564 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(506);
+	module.exports = __webpack_require__(565);
 
 /***/ },
-/* 506 */
+/* 565 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3279,8 +2165,8 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(507);
-	var common = __webpack_require__(384);
+	__webpack_require__(566);
+	var common = __webpack_require__(267);
 	var goto = function goto(url) {
 	  location.href = '#' + url;
 	};
@@ -3368,45 +2254,45 @@ webpackJsonp([0],[
 	module.exports = PaperSummary;
 
 /***/ },
-/* 507 */
+/* 566 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 508 */,
-/* 509 */
+/* 567 */,
+/* 568 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(510);
+	module.exports = __webpack_require__(569);
 
 /***/ },
-/* 510 */
+/* 569 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
-	var _rest_summary = __webpack_require__(511);
+	var _rest_summary = __webpack_require__(570);
 
 	var _rest_summary2 = _interopRequireDefault(_rest_summary);
 
-	var _reader = __webpack_require__(385);
+	var _reader = __webpack_require__(268);
 
 	var _reader2 = _interopRequireDefault(_reader);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _rest_reader = __webpack_require__(515);
+	var _rest_reader = __webpack_require__(405);
 
 	var _rest_reader2 = _interopRequireDefault(_rest_reader);
 
@@ -3418,8 +2304,8 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var tree = __webpack_require__(71)('_api');
-	var tool = __webpack_require__(193)(tree);
+	var tree = __webpack_require__(270)('_api');
+	var tool = __webpack_require__(287)(tree);
 
 	function goto(url) {
 	    location.href = '#' + url;
@@ -3475,15 +2361,15 @@ webpackJsonp([0],[
 	module.exports = Exams;
 
 /***/ },
-/* 511 */
+/* 570 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(512);
+	module.exports = __webpack_require__(571);
 
 /***/ },
-/* 512 */
+/* 571 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3496,8 +2382,8 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(513);
-	var common = __webpack_require__(384);
+	__webpack_require__(572);
+	var common = __webpack_require__(267);
 
 	function goto(url) {
 	  location.href = '#' + url;
@@ -3562,206 +2448,45 @@ webpackJsonp([0],[
 	module.exports = RestSummary;
 
 /***/ },
-/* 513 */
+/* 572 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 514 */,
-/* 515 */
+/* 573 */,
+/* 574 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(516);
+	module.exports = __webpack_require__(575);
 
 /***/ },
-/* 516 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(2);
-
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var util = __webpack_require__(379);
-
-	var agent = __webpack_require__(517)(__webpack_require__(518), Promise);
-
-	/**
-	 * 读取url处的数据
-	 * 注入到view中
-	 * 收到subscribe的消息会更新自己
-	 * 多余的prop会透传给view
-	 */
-
-	var RestReader = function (_React$Component) {
-	    _inherits(RestReader, _React$Component);
-
-	    function RestReader(props) {
-	        _classCallCheck(this, RestReader);
-
-	        var _this = _possibleConstructorReturn(this, (RestReader.__proto__ || Object.getPrototypeOf(RestReader)).call(this, props));
-
-	        _this.state = {};
-	        return _this;
-	    }
-
-	    _createClass(RestReader, [{
-	        key: 'render',
-	        value: function render() {
-	            var me = this;
-	            var data = this.state.data;
-
-	            if (!data) {
-	                return null;
-	            } else {
-	                var _props = this.props,
-	                    view = _props.view,
-	                    others = _objectWithoutProperties(_props, ['view']);
-
-	                var View = view;
-	                return React.createElement(View, _extends({ data: data }, others));
-	            }
-	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {
-	            this.fetchData(this.props);
-
-	            var me = this;
-	            var mySubscriber = function mySubscriber(msg, data) {
-	                // console.log( msg, data );
-	                me.fetchData();
-	            };
-	            var subscribe = this.props.subscribe || [];
-	            this.tokens = subscribe.map(function (msg) {
-	                // console.log('subscribe msg',msg);
-	                return PubSub.subscribe(msg, mySubscriber);
-	            });
-	        }
-	    }, {
-	        key: 'fetchData',
-	        value: function fetchData(props) {
-	            var _this2 = this;
-
-	            if (this.cancelablePromise) {
-	                this.cancelablePromise.cancel();
-	            }
-	            this.cancelablePromise = util.makeCancelable(this._fetchData(props));
-	            this.cancelablePromise.promise.then(function (data) {
-	                _this2.setState({ data: data });
-	            }).catch(function (reason) {
-	                //console.log('isCanceled', reason.isCanceled);
-	                if (!reason.isCanceled) {
-	                    console.log('catch', reason);
-	                    // Promise.reject(reason);
-	                }
-	            });
-	        }
-	    }, {
-	        key: '_fetchData',
-	        value: function _fetchData(props) {
-	            var url = props.url;
-	            // console.log('restreader _fetchData',url);
-
-	            return agent.get(url).then(function (resp) {
-	                return resp.body;
-	            });
-	        }
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {
-	            this.fetchData(nextProps);
-	        }
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {
-	            this.cancelablePromise.cancel();
-	            this.tokens.map(function (token) {
-	                PubSub.unsubscribe(token);
-	                console.log('unsubscribe', token);
-	            });
-	        }
-	    }]);
-
-	    return RestReader;
-	}(React.Component);
-
-	RestReader.propTypes = {
-	    view: _react.PropTypes.func.isRequired,
-	    url: _react.PropTypes.string.isRequired,
-	    subscribe: React.PropTypes.array
-	};
-
-
-	module.exports = RestReader;
-
-/***/ },
-/* 517 */,
-/* 518 */,
-/* 519 */,
-/* 520 */,
-/* 521 */,
-/* 522 */,
-/* 523 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	module.exports = __webpack_require__(524);
-
-/***/ },
-/* 524 */
+/* 575 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
-	var _rest_summary = __webpack_require__(511);
+	var _rest_summary = __webpack_require__(570);
 
 	var _rest_summary2 = _interopRequireDefault(_rest_summary);
 
-	var _reader = __webpack_require__(385);
+	var _reader = __webpack_require__(268);
 
 	var _reader2 = _interopRequireDefault(_reader);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _rest_reader = __webpack_require__(515);
+	var _rest_reader = __webpack_require__(405);
 
 	var _rest_reader2 = _interopRequireDefault(_rest_reader);
 
@@ -3776,8 +2501,8 @@ webpackJsonp([0],[
 	/**
 	 * 教师管理主页面
 	 */
-	var tree = __webpack_require__(71)('_api');
-	var tool = __webpack_require__(193)(tree);
+	var tree = __webpack_require__(270)('_api');
+	var tool = __webpack_require__(287)(tree);
 
 	var goto = function goto(url) {
 	    location.href = '#' + url;
@@ -3830,38 +2555,38 @@ webpackJsonp([0],[
 	module.exports = Teachers;
 
 /***/ },
-/* 525 */
+/* 576 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(526);
+	module.exports = __webpack_require__(577);
 
 /***/ },
-/* 526 */
+/* 577 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
-	var _rest_summary = __webpack_require__(511);
+	var _rest_summary = __webpack_require__(570);
 
 	var _rest_summary2 = _interopRequireDefault(_rest_summary);
 
-	var _reader = __webpack_require__(385);
+	var _reader = __webpack_require__(268);
 
 	var _reader2 = _interopRequireDefault(_reader);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _rest_reader = __webpack_require__(515);
+	var _rest_reader = __webpack_require__(405);
 
 	var _rest_reader2 = _interopRequireDefault(_rest_reader);
 
@@ -3873,8 +2598,8 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var tree = __webpack_require__(71)('_api');
-	var tool = __webpack_require__(193)(tree);
+	var tree = __webpack_require__(270)('_api');
+	var tool = __webpack_require__(287)(tree);
 
 	var goto = function goto(url) {
 	    location.href = '#' + url;
@@ -3953,38 +2678,38 @@ webpackJsonp([0],[
 	module.exports = Classes;
 
 /***/ },
-/* 527 */
+/* 578 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(528);
+	module.exports = __webpack_require__(579);
 
 /***/ },
-/* 528 */
+/* 579 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
-	var _rest_summary = __webpack_require__(511);
+	var _rest_summary = __webpack_require__(570);
 
 	var _rest_summary2 = _interopRequireDefault(_rest_summary);
 
-	var _reader = __webpack_require__(385);
+	var _reader = __webpack_require__(268);
 
 	var _reader2 = _interopRequireDefault(_reader);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _rest_reader = __webpack_require__(515);
+	var _rest_reader = __webpack_require__(405);
 
 	var _rest_reader2 = _interopRequireDefault(_rest_reader);
 
@@ -3996,8 +2721,8 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var tree = __webpack_require__(71)('_api');
-	var tool = __webpack_require__(193)(tree);
+	var tree = __webpack_require__(270)('_api');
+	var tool = __webpack_require__(287)(tree);
 
 	function goto(url) {
 	    location.href = '#' + url;
@@ -4053,135 +2778,34 @@ webpackJsonp([0],[
 	module.exports = Rooms;
 
 /***/ },
-/* 529 */
+/* 580 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(530);
+	module.exports = __webpack_require__(581);
 
 /***/ },
-/* 530 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _nav = __webpack_require__(200);
-
-	var _nav2 = _interopRequireDefault(_nav);
-
-	var _reader = __webpack_require__(385);
-
-	var _reader2 = _interopRequireDefault(_reader);
-
-	var _treepathreader = __webpack_require__(501);
-
-	var _treepathreader2 = _interopRequireDefault(_treepathreader);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	__webpack_require__(531);
-	var tree = __webpack_require__(71)('_api');
-	var tool = __webpack_require__(193)(tree);
-
-	/**
-	 * 给主菜单节点创建子节点
-	 * 因为面包菜单中，点击主菜单项会在路由上体现为节点id
-	 * 所以banks会2种路由表达
-	 * 命名表达：#/exams
-	 * 节点表达：#manage/mlp0GsTeeb2Tew7q
-	 * 当采用节点表达时，SonEditor发挥作用
-	 */
-	var SonEditor = function (_React$Component) {
-	    _inherits(SonEditor, _React$Component);
-
-	    function SonEditor(props) {
-	        _classCallCheck(this, SonEditor);
-
-	        var _this = _possibleConstructorReturn(this, (SonEditor.__proto__ || Object.getPrototypeOf(SonEditor)).call(this, props));
-
-	        _this.state = {
-	            node: props.node
-	        };
-	        return _this;
-	    }
-
-	    _createClass(SonEditor, [{
-	        key: 'render',
-	        value: function render() {
-	            var me = this;
-	            var node = this.state.node;
-
-	            var components = {
-	                papers: React.createElement(PaperEditor, { node: node }),
-	                exams: React.createElement(ExamEditor, { node: node }),
-	                teachers: React.createElement(TeacherEditor, { node: node }),
-	                classes: React.createElement(ClassEditor, { node: node }),
-	                rooms: React.createElement(RoomEditor, { node: node })
-	            };
-	            return React.createElement(
-	                'div',
-	                { className: 'soneditor' },
-	                React.createElement(_treepathreader2.default, { view: _nav2.default, from: '0/menu', to: node._id }),
-	                components[node._name]
-	            );
-	        }
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {
-	            this.setState({ node: nextProps.node });
-	        }
-	    }]);
-
-	    return SonEditor;
-	}(React.Component);
-
-	module.exports = SonEditor;
-
-/***/ },
-/* 531 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 532 */,
-/* 533 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	module.exports = __webpack_require__(534);
-
-/***/ },
-/* 534 */
+/* 581 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _writer = __webpack_require__(535);
+	var _writer = __webpack_require__(582);
 
 	var _writer2 = _interopRequireDefault(_writer);
 
-	var _reactJsonschemaForm = __webpack_require__(539);
+	var _reactJsonschemaForm = __webpack_require__(413);
 
 	var _reactJsonschemaForm2 = _interopRequireDefault(_reactJsonschemaForm);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
@@ -4195,7 +2819,7 @@ webpackJsonp([0],[
 
 	__webpack_require__(586);
 
-	var tree = __webpack_require__(71)('_api');
+	var tree = __webpack_require__(270)('_api');
 
 	var schema = {
 	    title: "选择题",
@@ -4296,15 +2920,15 @@ webpackJsonp([0],[
 	module.exports = TopicChoiceCreater;
 
 /***/ },
-/* 535 */
+/* 582 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(536);
+	module.exports = __webpack_require__(583);
 
 /***/ },
-/* 536 */
+/* 583 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4313,7 +2937,7 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _react = __webpack_require__(2);
+	var _react = __webpack_require__(89);
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
@@ -4323,10 +2947,10 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(537);
+	__webpack_require__(584);
 
-	var tree = __webpack_require__(71)('_api');
-	var treetool = __webpack_require__(193)(tree);
+	var tree = __webpack_require__(270)('_api');
+	var treetool = __webpack_require__(287)(tree);
 
 	/**
 	 * Writer将tree api注入到view中
@@ -4534,59 +3158,12 @@ webpackJsonp([0],[
 	module.exports = Writer;
 
 /***/ },
-/* 537 */
+/* 584 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 538 */,
-/* 539 */,
-/* 540 */,
-/* 541 */,
-/* 542 */,
-/* 543 */,
-/* 544 */,
-/* 545 */,
-/* 546 */,
-/* 547 */,
-/* 548 */,
-/* 549 */,
-/* 550 */,
-/* 551 */,
-/* 552 */,
-/* 553 */,
-/* 554 */,
-/* 555 */,
-/* 556 */,
-/* 557 */,
-/* 558 */,
-/* 559 */,
-/* 560 */,
-/* 561 */,
-/* 562 */,
-/* 563 */,
-/* 564 */,
-/* 565 */,
-/* 566 */,
-/* 567 */,
-/* 568 */,
-/* 569 */,
-/* 570 */,
-/* 571 */,
-/* 572 */,
-/* 573 */,
-/* 574 */,
-/* 575 */,
-/* 576 */,
-/* 577 */,
-/* 578 */,
-/* 579 */,
-/* 580 */,
-/* 581 */,
-/* 582 */,
-/* 583 */,
-/* 584 */,
 /* 585 */,
 /* 586 */
 /***/ function(module, exports) {
@@ -4610,19 +3187,19 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _writer = __webpack_require__(535);
+	var _writer = __webpack_require__(582);
 
 	var _writer2 = _interopRequireDefault(_writer);
 
-	var _reactJsonschemaForm = __webpack_require__(539);
+	var _reactJsonschemaForm = __webpack_require__(413);
 
 	var _reactJsonschemaForm2 = _interopRequireDefault(_reactJsonschemaForm);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
@@ -4636,7 +3213,7 @@ webpackJsonp([0],[
 
 	__webpack_require__(590);
 
-	var tree = __webpack_require__(71)('_api');
+	var tree = __webpack_require__(270)('_api');
 
 	var schema = {
 	    title: "问答题",
@@ -4762,19 +3339,19 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _writer = __webpack_require__(535);
+	var _writer = __webpack_require__(582);
 
 	var _writer2 = _interopRequireDefault(_writer);
 
-	var _reactJsonschemaForm = __webpack_require__(539);
+	var _reactJsonschemaForm = __webpack_require__(413);
 
 	var _reactJsonschemaForm2 = _interopRequireDefault(_reactJsonschemaForm);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
@@ -4788,7 +3365,7 @@ webpackJsonp([0],[
 
 	__webpack_require__(594);
 
-	var tree = __webpack_require__(71)('_api');
+	var tree = __webpack_require__(270)('_api');
 
 	var schema = {
 	    title: "判断题",
@@ -4921,7 +3498,7 @@ webpackJsonp([0],[
 
 	__webpack_require__(598);
 
-	var tree = __webpack_require__(71)('_api');
+	var tree = __webpack_require__(270)('_api');
 	var node_type = 'ks1/revise';
 
 	/**
@@ -4987,19 +3564,19 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _reader = __webpack_require__(385);
+	var _reader = __webpack_require__(268);
 
 	var _reader2 = _interopRequireDefault(_reader);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
-	var _bank_summary = __webpack_require__(380);
+	var _bank_summary = __webpack_require__(556);
 
 	var _bank_summary2 = _interopRequireDefault(_bank_summary);
 
@@ -5070,19 +3647,19 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _writer = __webpack_require__(535);
+	var _writer = __webpack_require__(582);
 
 	var _writer2 = _interopRequireDefault(_writer);
 
-	var _reactJsonschemaForm = __webpack_require__(539);
+	var _reactJsonschemaForm = __webpack_require__(413);
 
 	var _reactJsonschemaForm2 = _interopRequireDefault(_reactJsonschemaForm);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
@@ -5252,19 +3829,19 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _writer = __webpack_require__(535);
+	var _writer = __webpack_require__(582);
 
 	var _writer2 = _interopRequireDefault(_writer);
 
-	var _reactJsonschemaForm = __webpack_require__(539);
+	var _reactJsonschemaForm = __webpack_require__(413);
 
 	var _reactJsonschemaForm2 = _interopRequireDefault(_reactJsonschemaForm);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
@@ -5393,19 +3970,19 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _reader = __webpack_require__(385);
+	var _reader = __webpack_require__(268);
 
 	var _reader2 = _interopRequireDefault(_reader);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
-	var _paper_summary = __webpack_require__(505);
+	var _paper_summary = __webpack_require__(564);
 
 	var _paper_summary2 = _interopRequireDefault(_paper_summary);
 
@@ -5476,19 +4053,19 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _writer = __webpack_require__(535);
+	var _writer = __webpack_require__(582);
 
 	var _writer2 = _interopRequireDefault(_writer);
 
-	var _reactJsonschemaForm = __webpack_require__(539);
+	var _reactJsonschemaForm = __webpack_require__(413);
 
 	var _reactJsonschemaForm2 = _interopRequireDefault(_reactJsonschemaForm);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
@@ -5653,19 +4230,19 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _writer = __webpack_require__(535);
+	var _writer = __webpack_require__(582);
 
 	var _writer2 = _interopRequireDefault(_writer);
 
-	var _reactJsonschemaForm = __webpack_require__(539);
+	var _reactJsonschemaForm = __webpack_require__(413);
 
 	var _reactJsonschemaForm2 = _interopRequireDefault(_reactJsonschemaForm);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
@@ -5795,15 +4372,15 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _writer = __webpack_require__(535);
+	var _writer = __webpack_require__(582);
 
 	var _writer2 = _interopRequireDefault(_writer);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
@@ -5897,7 +4474,7 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _reactBootstrap = __webpack_require__(204);
+	var _reactBootstrap = __webpack_require__(4);
 
 	var _paper_preview = __webpack_require__(628);
 
@@ -5907,11 +4484,11 @@ webpackJsonp([0],[
 
 	var _paper_topic_chooser2 = _interopRequireDefault(_paper_topic_chooser);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
@@ -5926,7 +4503,7 @@ webpackJsonp([0],[
 	__webpack_require__(650);
 
 
-	var _ = __webpack_require__(79);
+	var _ = __webpack_require__(278);
 	/**
 	 * 预览题库并选择题目到试卷中
 	 * PaperPreview预览已选中的题目
@@ -6148,7 +4725,7 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _reactBootstrap = __webpack_require__(204);
+	var _reactBootstrap = __webpack_require__(4);
 
 	var _paper_preview_questions = __webpack_require__(630);
 
@@ -6222,9 +4799,9 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _reactBootstrap = __webpack_require__(204);
+	var _reactBootstrap = __webpack_require__(4);
 
-	var _common = __webpack_require__(384);
+	var _common = __webpack_require__(267);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -6345,7 +4922,7 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _react = __webpack_require__(2);
+	var _react = __webpack_require__(89);
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
@@ -6355,9 +4932,9 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var tree = __webpack_require__(71)('_api');
+	var tree = __webpack_require__(270)('_api');
 
-	var util = __webpack_require__(379);
+	var util = __webpack_require__(290);
 
 	var TreeNodesReader = function (_React$Component) {
 	    _inherits(TreeNodesReader, _React$Component);
@@ -6494,7 +5071,7 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
@@ -6506,7 +5083,7 @@ webpackJsonp([0],[
 
 	var _paper_topic_chooser_browser2 = _interopRequireDefault(_paper_topic_chooser_browser);
 
-	var _reader = __webpack_require__(385);
+	var _reader = __webpack_require__(268);
 
 	var _reader2 = _interopRequireDefault(_reader);
 
@@ -6595,7 +5172,7 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _navview = __webpack_require__(202);
+	var _navview = __webpack_require__(550);
 
 	var _navview2 = _interopRequireDefault(_navview);
 
@@ -6609,9 +5186,9 @@ webpackJsonp([0],[
 
 	__webpack_require__(642);
 
-	var tree = __webpack_require__(71)('_api');
-	var tool = __webpack_require__(193)(tree);
-	var util = __webpack_require__(379);
+	var tree = __webpack_require__(270)('_api');
+	var tool = __webpack_require__(287)(tree);
+	var util = __webpack_require__(290);
 
 
 	function name(node) {
@@ -6691,9 +5268,9 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _reactBootstrap = __webpack_require__(204);
+	var _reactBootstrap = __webpack_require__(4);
 
-	var _common = __webpack_require__(384);
+	var _common = __webpack_require__(267);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -6864,15 +5441,15 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _writer = __webpack_require__(535);
+	var _writer = __webpack_require__(582);
 
 	var _writer2 = _interopRequireDefault(_writer);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
@@ -6964,19 +5541,19 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _writer = __webpack_require__(535);
+	var _writer = __webpack_require__(582);
 
 	var _writer2 = _interopRequireDefault(_writer);
 
-	var _reactJsonschemaForm = __webpack_require__(539);
+	var _reactJsonschemaForm = __webpack_require__(413);
 
 	var _reactJsonschemaForm2 = _interopRequireDefault(_reactJsonschemaForm);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
@@ -7154,7 +5731,7 @@ webpackJsonp([0],[
 
 	var _uploader2 = _interopRequireDefault(_uploader);
 
-	var _reader = __webpack_require__(385);
+	var _reader = __webpack_require__(268);
 
 	var _reader2 = _interopRequireDefault(_reader);
 
@@ -7162,7 +5739,7 @@ webpackJsonp([0],[
 
 	var _dropbox2 = _interopRequireDefault(_dropbox);
 
-	var _imageviewer = __webpack_require__(387);
+	var _imageviewer = __webpack_require__(291);
 
 	var _imageviewer2 = _interopRequireDefault(_imageviewer);
 
@@ -7260,7 +5837,7 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _react = __webpack_require__(2);
+	var _react = __webpack_require__(89);
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
@@ -7272,8 +5849,8 @@ webpackJsonp([0],[
 
 	__webpack_require__(664);
 
-	var tree = __webpack_require__(71)('_api');
-	var treetool = __webpack_require__(193)(tree);
+	var tree = __webpack_require__(270)('_api');
+	var treetool = __webpack_require__(287)(tree);
 
 	//给出pgid,可以上传文件作为pgid子节点
 
@@ -7475,7 +6052,7 @@ webpackJsonp([0],[
 
 	'use strict';
 
-	var agent = __webpack_require__(517)(__webpack_require__(518), Promise);
+	var agent = __webpack_require__(281)(__webpack_require__(282), Promise);
 
 	var user = {};
 
@@ -7510,19 +6087,19 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _writer = __webpack_require__(535);
+	var _writer = __webpack_require__(582);
 
 	var _writer2 = _interopRequireDefault(_writer);
 
-	var _reactJsonschemaForm = __webpack_require__(539);
+	var _reactJsonschemaForm = __webpack_require__(413);
 
 	var _reactJsonschemaForm2 = _interopRequireDefault(_reactJsonschemaForm);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
@@ -7692,19 +6269,19 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _writer = __webpack_require__(535);
+	var _writer = __webpack_require__(582);
 
 	var _writer2 = _interopRequireDefault(_writer);
 
-	var _reactJsonschemaForm = __webpack_require__(539);
+	var _reactJsonschemaForm = __webpack_require__(413);
 
 	var _reactJsonschemaForm2 = _interopRequireDefault(_reactJsonschemaForm);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
@@ -7873,19 +6450,19 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _writer = __webpack_require__(535);
+	var _writer = __webpack_require__(582);
 
 	var _writer2 = _interopRequireDefault(_writer);
 
-	var _reactJsonschemaForm = __webpack_require__(539);
+	var _reactJsonschemaForm = __webpack_require__(413);
 
 	var _reactJsonschemaForm2 = _interopRequireDefault(_reactJsonschemaForm);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
@@ -8064,15 +6641,15 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _reactJsonschemaForm = __webpack_require__(539);
+	var _reactJsonschemaForm = __webpack_require__(413);
 
 	var _reactJsonschemaForm2 = _interopRequireDefault(_reactJsonschemaForm);
 
@@ -8187,7 +6764,7 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _react = __webpack_require__(2);
+	var _react = __webpack_require__(89);
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
@@ -8199,9 +6776,9 @@ webpackJsonp([0],[
 
 	__webpack_require__(694);
 
-	var util = __webpack_require__(379);
+	var util = __webpack_require__(290);
 
-	var agent = __webpack_require__(517)(__webpack_require__(518), Promise);
+	var agent = __webpack_require__(281)(__webpack_require__(282), Promise);
 
 	/**
 	 * RestWriter将REST url包装成api函数，注入到view中
@@ -8419,15 +6996,15 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _reactJsonschemaForm = __webpack_require__(539);
+	var _reactJsonschemaForm = __webpack_require__(413);
 
 	var _reactJsonschemaForm2 = _interopRequireDefault(_reactJsonschemaForm);
 
@@ -8548,11 +7125,11 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
@@ -8572,7 +7149,7 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(740);
+	__webpack_require__(732);
 
 	/**
 	 * 用ExamForm创建考试安排，保存到"/api/exam"
@@ -8625,7 +7202,7 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _reactBootstrap = __webpack_require__(204);
+	var _reactBootstrap = __webpack_require__(4);
 
 	var _exam_form_summary = __webpack_require__(706);
 
@@ -8635,15 +7212,15 @@ webpackJsonp([0],[
 
 	var _exam_form_paper_chooser2 = _interopRequireDefault(_exam_form_paper_chooser);
 
-	var _exam_form_room_chooser = __webpack_require__(722);
+	var _exam_form_room_chooser = __webpack_require__(259);
 
 	var _exam_form_room_chooser2 = _interopRequireDefault(_exam_form_room_chooser);
 
-	var _exam_form_time_chooser = __webpack_require__(730);
+	var _exam_form_time_chooser = __webpack_require__(722);
 
 	var _exam_form_time_chooser2 = _interopRequireDefault(_exam_form_time_chooser);
 
-	var _exam_form_scores = __webpack_require__(734);
+	var _exam_form_scores = __webpack_require__(726);
 
 	var _exam_form_scores2 = _interopRequireDefault(_exam_form_scores);
 
@@ -8655,7 +7232,7 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(738);
+	__webpack_require__(730);
 
 	var ExamForm = function (_React$Component) {
 	    _inherits(ExamForm, _React$Component);
@@ -8865,9 +7442,9 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _reactBootstrap = __webpack_require__(204);
+	var _reactBootstrap = __webpack_require__(4);
 
-	var _moment = __webpack_require__(391);
+	var _moment = __webpack_require__(295);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
@@ -9057,7 +7634,7 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
@@ -9069,7 +7646,7 @@ webpackJsonp([0],[
 
 	var _exam_form_paper_chooser_browser2 = _interopRequireDefault(_exam_form_paper_chooser_browser);
 
-	var _reader = __webpack_require__(385);
+	var _reader = __webpack_require__(268);
 
 	var _reader2 = _interopRequireDefault(_reader);
 
@@ -9178,7 +7755,7 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _navview = __webpack_require__(202);
+	var _navview = __webpack_require__(550);
 
 	var _navview2 = _interopRequireDefault(_navview);
 
@@ -9192,9 +7769,9 @@ webpackJsonp([0],[
 
 	__webpack_require__(714);
 
-	var tree = __webpack_require__(71)('_api');
-	var tool = __webpack_require__(193)(tree);
-	var util = __webpack_require__(379);
+	var tree = __webpack_require__(270)('_api');
+	var tool = __webpack_require__(287)(tree);
+	var util = __webpack_require__(290);
 
 
 	function name(node) {
@@ -9296,11 +7873,11 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _common = __webpack_require__(384);
+	var _common = __webpack_require__(267);
 
-	var _reactBootstrap = __webpack_require__(204);
+	var _reactBootstrap = __webpack_require__(4);
 
-	var _classnames = __webpack_require__(217);
+	var _classnames = __webpack_require__(92);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -9461,240 +8038,9 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _exam_form_room_chooser_browser = __webpack_require__(724);
+	var _reactBootstrap = __webpack_require__(4);
 
-	var _exam_form_room_chooser_browser2 = _interopRequireDefault(_exam_form_room_chooser_browser);
-
-	var _rest_reader = __webpack_require__(515);
-
-	var _rest_reader2 = _interopRequireDefault(_rest_reader);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	__webpack_require__(728);
-
-	var ExamFormRoomChooser = function (_React$Component) {
-	    _inherits(ExamFormRoomChooser, _React$Component);
-
-	    function ExamFormRoomChooser(props) {
-	        _classCallCheck(this, ExamFormRoomChooser);
-
-	        var _this = _possibleConstructorReturn(this, (ExamFormRoomChooser.__proto__ || Object.getPrototypeOf(ExamFormRoomChooser)).call(this, props));
-
-	        _this.state = _extends({}, props);
-	        return _this;
-	    }
-
-	    _createClass(ExamFormRoomChooser, [{
-	        key: 'render',
-	        value: function render() {
-	            var me = this;
-	            var choosen = this.state.choosen;
-
-	            return React.createElement(_rest_reader2.default, { view: _exam_form_room_chooser_browser2.default, url: '/api/room',
-	                choosen: choosen });
-	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {
-	            this.setState(nextProps);
-	        }
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
-	    }]);
-
-	    return ExamFormRoomChooser;
-	}(React.Component);
-
-	ExamFormRoomChooser.propTypes = {
-	    choosen: React.PropTypes.string
-	};
-
-
-	module.exports = ExamFormRoomChooser;
-
-/***/ },
-/* 724 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	module.exports = __webpack_require__(725);
-
-/***/ },
-/* 725 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _classnames = __webpack_require__(217);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
-	var _reactBootstrap = __webpack_require__(204);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	__webpack_require__(726);
-	var common = __webpack_require__(384);
-
-	var ExamFormRoomChooserBrowser = function (_React$Component) {
-	    _inherits(ExamFormRoomChooserBrowser, _React$Component);
-
-	    function ExamFormRoomChooserBrowser(props) {
-	        _classCallCheck(this, ExamFormRoomChooserBrowser);
-
-	        var _this = _possibleConstructorReturn(this, (ExamFormRoomChooserBrowser.__proto__ || Object.getPrototypeOf(ExamFormRoomChooserBrowser)).call(this, props));
-
-	        _this.state = _extends({}, props);
-	        return _this;
-	    }
-
-	    _createClass(ExamFormRoomChooserBrowser, [{
-	        key: 'render',
-	        value: function render() {
-	            var _this2 = this;
-
-	            var data = this.props.data;
-
-	            return React.createElement(
-	                'div',
-	                { className: 'children-grid' },
-	                React.createElement(
-	                    'div',
-	                    { className: 'cells clearfix' },
-	                    data.map(function (d) {
-	                        return React.createElement(
-	                            'div',
-	                            { className: (0, _classnames2.default)('cell', { selected: _this2.isChoosen(d) }), key: d._id, onClick: function onClick() {
-	                                    return _this2.chooseRoom(d);
-	                                } },
-	                            common.icon("ks1/room"),
-	                            _this2.isChoosen(d) ? React.createElement(_reactBootstrap.Glyphicon, { glyph: 'ok', style: { float: "right" } }) : "",
-	                            React.createElement(
-	                                'div',
-	                                null,
-	                                common.name(d)
-	                            )
-	                        );
-	                    })
-	                )
-	            );
-	        }
-	    }, {
-	        key: 'isChoosen',
-	        value: function isChoosen(data) {
-	            var choosen = this.state.choosen;
-
-	            return choosen === data._id;
-	        }
-	    }, {
-	        key: 'chooseRoom',
-	        value: function chooseRoom(data) {
-	            PubSub.publish('room.choose', data);
-	            console.log('room.choose', data);
-	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {
-	            this.setState(nextProps);
-	        }
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
-	    }]);
-
-	    return ExamFormRoomChooserBrowser;
-	}(React.Component);
-
-	module.exports = ExamFormRoomChooserBrowser;
-
-/***/ },
-/* 726 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 727 */,
-/* 728 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 729 */,
-/* 730 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	module.exports = __webpack_require__(731);
-
-/***/ },
-/* 731 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _reactBootstrap = __webpack_require__(204);
-
-	var _moment = __webpack_require__(391);
+	var _moment = __webpack_require__(295);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
@@ -9706,7 +8052,7 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(732);
+	__webpack_require__(724);
 
 	var ExamFormTimeChooser = function (_React$Component) {
 	    _inherits(ExamFormTimeChooser, _React$Component);
@@ -9833,33 +8179,33 @@ webpackJsonp([0],[
 	module.exports = ExamFormTimeChooser;
 
 /***/ },
-/* 732 */
+/* 724 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 733 */,
-/* 734 */
+/* 725 */,
+/* 726 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(735);
+	module.exports = __webpack_require__(727);
 
 /***/ },
-/* 735 */
+/* 727 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _rest_reader = __webpack_require__(515);
+	var _rest_reader = __webpack_require__(405);
 
 	var _rest_reader2 = _interopRequireDefault(_rest_reader);
 
-	var _reactBootstrap = __webpack_require__(204);
+	var _reactBootstrap = __webpack_require__(4);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -9869,7 +8215,7 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(736);
+	__webpack_require__(728);
 
 
 	var goto = function goto(url) {
@@ -10012,51 +8358,51 @@ webpackJsonp([0],[
 	module.exports = ExamFormScores;
 
 /***/ },
-/* 736 */
+/* 728 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 737 */,
-/* 738 */
+/* 729 */,
+/* 730 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 739 */,
-/* 740 */
+/* 731 */,
+/* 732 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 741 */,
-/* 742 */
+/* 733 */,
+/* 734 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(743);
+	module.exports = __webpack_require__(735);
 
 /***/ },
-/* 743 */
+/* 735 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _reactJsonschemaForm = __webpack_require__(539);
+	var _reactJsonschemaForm = __webpack_require__(413);
 
 	var _reactJsonschemaForm2 = _interopRequireDefault(_reactJsonschemaForm);
 
@@ -10072,7 +8418,7 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(744);
+	__webpack_require__(736);
 
 	var userManager = __webpack_require__(675);
 
@@ -10160,37 +8506,37 @@ webpackJsonp([0],[
 	module.exports = TeacherCreater;
 
 /***/ },
-/* 744 */
+/* 736 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 745 */,
-/* 746 */
+/* 737 */,
+/* 738 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(747);
+	module.exports = __webpack_require__(739);
 
 /***/ },
-/* 747 */
+/* 739 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _reactJsonschemaForm = __webpack_require__(539);
+	var _reactJsonschemaForm = __webpack_require__(413);
 
 	var _reactJsonschemaForm2 = _interopRequireDefault(_reactJsonschemaForm);
 
@@ -10206,7 +8552,7 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(748);
+	__webpack_require__(740);
 
 	var schema = {
 	  title: "班级",
@@ -10313,37 +8659,37 @@ webpackJsonp([0],[
 	module.exports = ClassUpdater;
 
 /***/ },
-/* 748 */
+/* 740 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 749 */,
-/* 750 */
+/* 741 */,
+/* 742 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(751);
+	module.exports = __webpack_require__(743);
 
 /***/ },
-/* 751 */
+/* 743 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _reactJsonschemaForm = __webpack_require__(539);
+	var _reactJsonschemaForm = __webpack_require__(413);
 
 	var _reactJsonschemaForm2 = _interopRequireDefault(_reactJsonschemaForm);
 
@@ -10359,7 +8705,7 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(752);
+	__webpack_require__(744);
 
 	var schema = {
 	    title: "考场",
@@ -10488,33 +8834,33 @@ webpackJsonp([0],[
 	module.exports = RoomUpdater;
 
 /***/ },
-/* 752 */
+/* 744 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 753 */,
-/* 754 */
+/* 745 */,
+/* 746 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(755);
+	module.exports = __webpack_require__(747);
 
 /***/ },
-/* 755 */
+/* 747 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
@@ -10534,7 +8880,7 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(756);
+	__webpack_require__(748);
 
 	/**
 	 * 用ExamForm更新考试安排
@@ -10588,37 +8934,37 @@ webpackJsonp([0],[
 	module.exports = ExamUpdater;
 
 /***/ },
-/* 756 */
+/* 748 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 757 */,
-/* 758 */
+/* 749 */,
+/* 750 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(759);
+	module.exports = __webpack_require__(751);
 
 /***/ },
-/* 759 */
+/* 751 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _reactJsonschemaForm = __webpack_require__(539);
+	var _reactJsonschemaForm = __webpack_require__(413);
 
 	var _reactJsonschemaForm2 = _interopRequireDefault(_reactJsonschemaForm);
 
@@ -10634,7 +8980,7 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(760);
+	__webpack_require__(752);
 
 	var userManager = __webpack_require__(675);
 
@@ -10741,37 +9087,37 @@ webpackJsonp([0],[
 	module.exports = TeacherUpdater;
 
 /***/ },
-/* 760 */
+/* 752 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 761 */,
-/* 762 */
+/* 753 */,
+/* 754 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(763);
+	module.exports = __webpack_require__(755);
 
 /***/ },
-/* 763 */
+/* 755 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _treepathreader = __webpack_require__(501);
+	var _treepathreader = __webpack_require__(560);
 
 	var _treepathreader2 = _interopRequireDefault(_treepathreader);
 
-	var _nav = __webpack_require__(200);
+	var _nav = __webpack_require__(548);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
-	var _answersheet_form = __webpack_require__(764);
+	var _answersheet_form = __webpack_require__(756);
 
 	var _answersheet_form2 = _interopRequireDefault(_answersheet_form);
 
@@ -10787,7 +9133,7 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(768);
+	__webpack_require__(762);
 
 	/**
 	 * 学生成绩批改
@@ -10842,28 +9188,28 @@ webpackJsonp([0],[
 	module.exports = AnswersheetUpdater;
 
 /***/ },
-/* 764 */
+/* 756 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	module.exports = __webpack_require__(765);
+	module.exports = __webpack_require__(757);
 
 /***/ },
-/* 765 */
+/* 757 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _reactBootstrap = __webpack_require__(204);
+	var _reactBootstrap = __webpack_require__(4);
 
-	var _reader = __webpack_require__(385);
+	var _reader = __webpack_require__(268);
 
 	var _reader2 = _interopRequireDefault(_reader);
 
-	var _imageviewer = __webpack_require__(387);
+	var _imageviewer = __webpack_require__(291);
 
 	var _imageviewer2 = _interopRequireDefault(_imageviewer);
 
@@ -10878,14 +9224,14 @@ webpackJsonp([0],[
 	/**
 	 * 学生成绩批改以及试卷导出
 	 */
-	__webpack_require__(766);
-	var agent = __webpack_require__(517)(__webpack_require__(518), Promise);
-	var tree = __webpack_require__(71)('_api');
+	__webpack_require__(758);
+	var agent = __webpack_require__(281)(__webpack_require__(282), Promise);
+	var tree = __webpack_require__(270)('_api');
 
-	var _ = __webpack_require__(79);
+	var _ = __webpack_require__(278);
 
-	var imgUtil = __webpack_require__(772);
-	var qjsonUtil = __webpack_require__(773);
+	var imgUtil = __webpack_require__(760);
+	var qjsonUtil = __webpack_require__(761);
 
 	/**
 	 * 显示每道题目，包括问题Q,批注,得分
@@ -11298,28 +9644,14 @@ webpackJsonp([0],[
 	module.exports = AnswersheetForm;
 
 /***/ },
-/* 766 */
+/* 758 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 767 */,
-/* 768 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 769 */,
-/* 770 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 771 */,
-/* 772 */
+/* 759 */,
+/* 760 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11377,7 +9709,7 @@ webpackJsonp([0],[
 	};
 
 /***/ },
-/* 773 */
+/* 761 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11498,6 +9830,19 @@ webpackJsonp([0],[
 	module.exports = {
 	  convert2json: convert2json
 	};
+
+/***/ },
+/* 762 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 763 */,
+/* 764 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 ]);
