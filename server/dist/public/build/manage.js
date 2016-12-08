@@ -7179,6 +7179,8 @@ webpackJsonp([1],[
 
 	__webpack_require__(733);
 
+	var agent = __webpack_require__(281)(__webpack_require__(282), Promise);
+
 	var ExamForm = function (_React$Component) {
 	    _inherits(ExamForm, _React$Component);
 
@@ -7282,6 +7284,8 @@ webpackJsonp([1],[
 	    }, {
 	        key: 'save',
 	        value: function save() {
+	            var _this2 = this;
+
 	            var _state2 = this.state,
 	                room_id = _state2.room_id,
 	                paper_gid = _state2.paper_gid,
@@ -7292,7 +7296,15 @@ webpackJsonp([1],[
 	                end = _state2.end;
 
 	            var name = paper_name + "@" + room_name;
-	            return this.props.save({ name: name, room_id: room_id, paper_gid: paper_gid, room_name: room_name, paper_name: paper_name, duration: duration, start: start, end: end });
+	            var exam = { name: name, room_id: room_id, paper_gid: paper_gid, room_name: room_name, paper_name: paper_name, duration: duration, start: start, end: end };
+	            agent.post('/exam/check', exam).then(function (resp) {
+	                var chongtu = resp.body; //返回冲突的考试
+	                if (chongtu) {
+	                    alert("考试安排冲突，请检查" + chongtu.name);
+	                } else {
+	                    return _this2.props.save(exam);
+	                }
+	            });
 	        }
 	    }, {
 	        key: 'update',
@@ -7331,15 +7343,15 @@ webpackJsonp([1],[
 	    }, {
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
-	            var _this2 = this;
+	            var _this3 = this;
 
 	            this.token_choose_paper = PubSub.subscribe("paper.choose", function (msg, node) {
 	                console.log('paper.choose', node);
-	                _this2.setState({ paper_gid: node._id, paper_name: node._data.data.name });
+	                _this3.setState({ paper_gid: node._id, paper_name: node._data.data.name });
 	            });
 	            this.token_choose_room = PubSub.subscribe("room.choose", function (msg, data) {
 	                console.log('room.choose', data);
-	                _this2.setState({ room_id: data._id, room_name: data.name });
+	                _this3.setState({ room_id: data._id, room_name: data.name });
 	            });
 	        }
 	    }, {

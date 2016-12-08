@@ -5,6 +5,7 @@ import PaperChooser from '../exam_form_paper_chooser';
 import RoomChooser from '../exam_form_room_chooser';
 import TimeChooser from '../exam_form_time_chooser';
 import Scores from '../exam_form_scores';
+var agent = require('superagent-promise')(require('superagent'),Promise);
 
 
 class ExamForm extends React.Component {
@@ -63,7 +64,15 @@ class ExamForm extends React.Component {
     save(){
         const {room_id,paper_gid,room_name,paper_name,duration,start,end}=this.state;
         const name=paper_name+"@"+room_name;
-        return this.props.save({name,room_id,paper_gid,room_name,paper_name,duration,start,end});
+        const exam={name,room_id,paper_gid,room_name,paper_name,duration,start,end};
+        agent.post('/exam/check',exam).then(resp=>{
+            var chongtu=resp.body;//返回冲突的考试
+            if(chongtu){
+                alert("考试安排冲突，请检查"+chongtu.name)
+            }else{
+                return this.props.save(exam);
+            }
+        })
     }
     update(){
         const {_id,room_id,paper_gid,room_name,paper_name,duration,start,end}=this.state;

@@ -94,4 +94,13 @@ router.get("/:id", function (req, res, next) {
 	});
 });
 
+//检查时间是否冲突,返回冲突的考试
+//冲突判别算法，开始时间早于当前结束点，且结束时间迟于当前开始点。
+router.post("/check", function (req, res, next) {
+	var exam = req.body;
+	examDb.findOne({ _id: { $ne: exam._id }, room_id: exam.room_id, start: { $lt: exam.end }, end: { $gt: exam.start } }, function (err, docs) {
+		res.json(docs);
+	});
+});
+
 module.exports = router;
