@@ -43,12 +43,14 @@ var roomDb = require('./db/room');
 var examDb = require('./db/exam');
 var teacherDb = require('./db/teacher');
 var answersheetDb = require('./db/answersheet');
+var imgDb = require('./db/img');
 
 app.use('/api/exam', expressRestResource({ db: examDb }));
 app.use('/api/teacher', expressRestResource({ db: teacherDb }));
 app.use('/api/class', expressRestResource({ db: classDb }));
 app.use('/api/room', expressRestResource({ db: roomDb }));
 app.use('/api/answersheet', expressRestResource({ db: answersheetDb }));
+app.use('/api/img', expressRestResource({ db: imgDb }));
 
 //考试信息
 app.use('/exam', require('./routes/exam'));
@@ -62,6 +64,8 @@ app.use('/student', require('./routes/student'));
 app.use('/score', require('./routes/score'));
 //查分
 app.use('/queryscore', require('./routes/query_score'));
+//文件上传服务
+app.use('/up', require('./routes/up'));
 
 //socket.io
 var server = require('http').Server(app);

@@ -1,0 +1,9 @@
+如何上传图片，
+做个一个通用的上传服务
+理想情况：
+
+上传图片并绑定到gid
+<RestUploader gid=""/> 
+
+显示绑定到gid的图片
+<RestImageView gid=""/>

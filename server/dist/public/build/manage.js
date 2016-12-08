@@ -5787,9 +5787,6 @@ webpackJsonp([1],[
 	            );
 	        }
 	    }, {
-	        key: "componentWillMount",
-	        value: function componentWillMount() {}
-	    }, {
 	        key: "componentDidMount",
 	        value: function componentDidMount() {
 	            var me = this;
@@ -5800,20 +5797,6 @@ webpackJsonp([1],[
 	            this.token = PubSub.subscribe('img.saved', mySubscriber);
 	            this.token2 = PubSub.subscribe('img.removed', mySubscriber);
 	        }
-	    }, {
-	        key: "componentWillReceiveProps",
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: "shouldComponentUpdate",
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: "componentWillUpdate",
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: "componentDidUpdate",
-	        value: function componentDidUpdate(prevProps, prevState) {}
 	    }, {
 	        key: "componentWillUnmount",
 	        value: function componentWillUnmount() {
@@ -5902,29 +5885,6 @@ webpackJsonp([1],[
 	                });
 	            }
 	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
 	    }]);
 
 	    return Uploader;
@@ -5947,98 +5907,9 @@ webpackJsonp([1],[
 
 /***/ },
 /* 668 */,
-/* 669 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	module.exports = __webpack_require__(670);
-
-/***/ },
-/* 670 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	__webpack_require__(671);
-	var Dropzone = __webpack_require__(673);
-
-	var Dropbox = function (_React$Component) {
-	    _inherits(Dropbox, _React$Component);
-
-	    function Dropbox(props) {
-	        _classCallCheck(this, Dropbox);
-
-	        var _this = _possibleConstructorReturn(this, (Dropbox.__proto__ || Object.getPrototypeOf(Dropbox)).call(this, props));
-
-	        _this.state = {};
-	        return _this;
-	    }
-
-	    _createClass(Dropbox, [{
-	        key: 'render',
-	        value: function render() {
-	            return React.createElement(
-	                Dropzone,
-	                { className: 'my-dropzone', accept: 'image/*', onDrop: this.upload.bind(this) },
-	                '\u865A\u7EBF\u6846\u5185\u70B9\u51FB\u4E0A\u4F20\u56FE\u7247'
-	            );
-	        }
-	    }, {
-	        key: 'upload',
-	        value: function upload(files) {
-	            this.props.upload(files).then(function (node) {
-	                PubSub.publish('img.saved', node);
-	                // alert("ok");
-	            }).catch(function (e) {
-	                return alert("fail");
-	            });
-	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
-	    }]);
-
-	    return Dropbox;
-	}(React.Component);
-
-	module.exports = Dropbox;
-
-/***/ },
-/* 671 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
+/* 669 */,
+/* 670 */,
+/* 671 */,
 /* 672 */,
 /* 673 */,
 /* 674 */

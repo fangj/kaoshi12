@@ -9,7 +9,6 @@ class Dropbox extends React.Component {
         };
     }
 
-
     render () {
       return <Dropzone className="my-dropzone" accept="image/*" onDrop={this.upload.bind(this)} >虚线框内点击上传图片</Dropzone>;
     }
@@ -19,28 +18,6 @@ class Dropbox extends React.Component {
             PubSub.publish('img.saved',node);
             // alert("ok");
         }).catch(e=>alert("fail"));
-    }
-
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
-    componentWillUnmount() {
     }
 }
 

@@ -22,9 +22,6 @@ class Upload extends React.Component {
         );
     }
 
-    componentWillMount() {
-    }
-
     componentDidMount() {
         const me=this;
         var mySubscriber = function( msg, data ){
@@ -33,19 +30,6 @@ class Upload extends React.Component {
         };
         this.token = PubSub.subscribe( 'img.saved', mySubscriber );
         this.token2 = PubSub.subscribe( 'img.removed', mySubscriber );
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
     }
 
     componentWillUnmount() {

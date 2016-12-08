@@ -36,28 +36,6 @@ class Uploader extends React.Component {
             return treetool.fetchOrCreatePath(ppath).then(pgid=>tree.mk_son_by_file(pgid,files[0],filename,onProgress));
         }
     }
-
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
-    componentWillUnmount() {
-    }
 }
 
 module.exports = Uploader;

@@ -1017,6 +1017,18 @@ webpackJsonp([0],{
 
 	var _imageviewer2 = _interopRequireDefault(_imageviewer);
 
+	var _rest_uploader = __webpack_require__(769);
+
+	var _rest_uploader2 = _interopRequireDefault(_rest_uploader);
+
+	var _rest_image_viewer = __webpack_require__(770);
+
+	var _rest_image_viewer2 = _interopRequireDefault(_rest_image_viewer);
+
+	var _rest_reader = __webpack_require__(405);
+
+	var _rest_reader2 = _interopRequireDefault(_rest_reader);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1028,6 +1040,7 @@ webpackJsonp([0],{
 	__webpack_require__(478);
 
 	var agent = __webpack_require__(281)(__webpack_require__(282), Promise);
+
 
 	//倒计时组件
 	var Timer = function Timer(props) {
@@ -1305,6 +1318,9 @@ webpackJsonp([0],{
 	    _reactBootstrap.Panel,
 	    { header: prefix + "[" + price + "分]" + "[问答题] " + question },
 	    React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._id, level: 1 }),
+	    React.createElement(_rest_uploader2.default, { gid: node._id }),
+	    React.createElement(_rest_reader2.default, { view: _rest_image_viewer2.default, url: "/api/img/" + node._id,
+	      subscribe: ["img.removed", "img.uploaded"], gid: node._id }),
 	    React.createElement('textarea', { className: 'form-control answer', style: { width: "100%" },
 	      rows: '5', placeholder: '\u7B54\u6848\u5199\u5728\u8FD9\u91CC', onChange: onChange, defaultValue: answer })
 	  );
@@ -1661,6 +1677,164 @@ webpackJsonp([0],{
 /***/ },
 
 /***/ 486:
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+
+/***/ 769:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(89);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _dropbox = __webpack_require__(669);
+
+	var _dropbox2 = _interopRequireDefault(_dropbox);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var agent = __webpack_require__(281)(__webpack_require__(282), Promise);
+
+	var RestUploader = function (_React$Component) {
+	  _inherits(RestUploader, _React$Component);
+
+	  function RestUploader(props) {
+	    _classCallCheck(this, RestUploader);
+
+	    return _possibleConstructorReturn(this, (RestUploader.__proto__ || Object.getPrototypeOf(RestUploader)).call(this, props));
+	  }
+
+	  _createClass(RestUploader, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(_dropbox2.default, { upload: this.upload.bind(this) });
+	    }
+	  }, {
+	    key: 'upload',
+	    value: function upload(files, filename, onProgress) {
+	      var gid = this.props.gid;
+
+	      var file = files[0];
+	      return agent.post('/up/' + gid).attach('file', file, filename).on('progress', function (e) {
+	        if (typeof onProgress === 'function') {
+	          onProgress(e);
+	        }
+	      }).then(function (res) {
+	        console.log(res.body);
+	        PubSub.publish("img.uploaded");
+	      });
+	    }
+	  }]);
+
+	  return RestUploader;
+	}(_react2.default.Component);
+
+	RestUploader.propTypes = {
+	  gid: _react2.default.PropTypes.string
+	};
+	exports.default = RestUploader;
+
+/***/ },
+
+/***/ 770:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	__webpack_require__(771);
+	var agent = __webpack_require__(281)(__webpack_require__(282), Promise);
+
+	/**
+	 * 访问/api/img/_id,取得img数据
+	 * 格式
+	 * {
+	    "_id": "JUidbV0ls0X2hy6g",
+	    "imgs": [
+	    "188be907f05a8039dda9888828f3a60d.png",
+	    "be613d24d86345b392d75bcc07a39b7f.png"
+	    ]
+	  }
+	  点击图片删除图片
+	*/
+
+	var Imageviewer = function (_React$Component) {
+	    _inherits(Imageviewer, _React$Component);
+
+	    function Imageviewer(props) {
+	        _classCallCheck(this, Imageviewer);
+
+	        var _this = _possibleConstructorReturn(this, (Imageviewer.__proto__ || Object.getPrototypeOf(Imageviewer)).call(this, props));
+
+	        _this.state = {};
+	        return _this;
+	    }
+
+	    _createClass(Imageviewer, [{
+	        key: 'render',
+	        value: function render() {
+	            var _this2 = this;
+
+	            var data = this.props.data;
+
+	            var names = data.imgs;
+	            if (!names) {
+	                return null;
+	            }
+	            return React.createElement(
+	                'div',
+	                { className: 'imageviewer' },
+	                names.map(function (name) {
+	                    return React.createElement('img', { key: name, src: "/upload/" + name, onClick: function onClick() {
+	                            return _this2.remove(name);
+	                        } });
+	                })
+	            );
+	        }
+	    }, {
+	        key: 'remove',
+	        value: function remove(name) {
+	            var gid = this.props.gid;
+
+	            agent.del('/up/' + gid + "/" + name).then(function (node) {
+	                PubSub.publish('img.removed', node);
+	            });
+	        }
+	    }]);
+
+	    return Imageviewer;
+	}(React.Component);
+
+	module.exports = Imageviewer;
+
+/***/ },
+
+/***/ 771:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
