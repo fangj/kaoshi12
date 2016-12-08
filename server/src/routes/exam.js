@@ -32,6 +32,10 @@ function findExam(exams){
 function findStudent(students,cardID){
 	return _.find(students,{card:cardID});
 }
+//查找学号对应的学生
+function findStudentByID(students,id){
+	return _.find(students,{id:id});
+}
 
 //根据输入的(cardID,browserID)查找当前存在的考试，如果找到考试，则返回考试信息，
 //否则给出合理的提示信息帮助配置
@@ -97,6 +101,40 @@ router.post("/check", function(req, res, next) {
 	examDb.findOne({_id:{$ne:exam._id},room_id:exam.room_id,start: { $lt: exam.end },end: { $gt: exam.start }}, function (err, docs) {
 		res.json(docs);
 	})
+});
+
+//根据学号查找考试。临时方案
+router.post('/studentID/:studentID', function (req, res, next) {
+	var studentID=req.params.studentID;
+	var obj={};
+		banjiDb.findOne({ "students.id": studentID }, function (err, banji) {
+			if (!banji) {
+				//如果没有找到班级，说明学生卡未绑定，
+				return res.status(400).end('没有找到该学生');
+			} //否则，找到班级
+			//查找学生信息
+			var student = findStudentByID(banji.students, studentID);
+			//查看当前是否有考试
+			// var now=Date.now();
+			var now=moment().format('YYYY-MM-DDTHH:mm:ss');
+			examDb.findOne({start: { $lt: now }, end: { $gt: now }}, function (err, exam) {
+				if (!exam) {
+					//如果没有找到考试，提示没有考试
+					obj.msg = 'noexam';
+					obj.studentID = student.id;
+					res.json(obj);
+					return;
+				} //否则，找到考试
+				//返回考试信息
+				obj.msg = "exam";
+				obj.exam = exam;
+				obj.studentID = student.id;
+				obj.studentName = student.name;
+				obj.className = banji.name;
+				res.json(obj);
+				return;
+			});
+		});
 });
 
 module.exports = router;

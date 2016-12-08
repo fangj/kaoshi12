@@ -1,0 +1,46 @@
+.ks_bind_reader {
+  background-color: #eee;
+  height: 100%;
+}
+.class_chooser {
+  background-color: #f60;
+}
+.ks_bind_student {
+  height: 100%;
+  background: url('/img/bg_gf2.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+  background-color: #eee;
+}
+.queryscore {
+  background-color: #fff;
+  width: 80%;
+  margin: 50px auto;
+}
+.ks_noexam {
+  background-color: #eee;
+  height: 100%;
+}
+.dropbox {
+  background-color: #f60;
+}
+.ks_examing {
+  background-color: #f60;
+}
+.ks_exam {
+  background-color: #eee;
+  height: 100%;
+}
+.ks_prompt {
+  height: 100%;
+}
+.kaoshi {
+  background-color: #fff;
+}

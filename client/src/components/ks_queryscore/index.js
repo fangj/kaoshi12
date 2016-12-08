@@ -1,6 +1,7 @@
 import React from 'react';
 require('./queryscore.less');
 import {Table } from 'react-bootstrap';
+var agent = require('superagent-promise')(require('superagent'), Promise);
 
 export default class QueryScore extends React.Component {
   static propTypes = {

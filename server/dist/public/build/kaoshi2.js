@@ -1,15 +1,6 @@
-webpackJsonp([0],{
+webpackJsonp([1],{
 
 /***/ 0:
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	module.exports = __webpack_require__(1);
-
-/***/ },
-
-/***/ 1:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -44,6 +35,9 @@ webpackJsonp([0],{
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	/**
+	 * 与PageKaoshi.js类似。不同的在于使用学号登录
+	 */
 	__webpack_require__(496);
 	var agent = __webpack_require__(281)(__webpack_require__(282), Promise);
 
@@ -97,13 +91,17 @@ webpackJsonp([0],{
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
 	            var me = this;
-	            var mySubscriber = function mySubscriber(msg, card) {
-	                console.log(msg, card);
-	                agent.post('/exam', card).then(function (resp) {
-	                    me.setState({ exam: resp.body });
-	                });
-	            };
-	            this.token = PubSub.subscribe('card', mySubscriber);
+	            // var mySubscriber = function( msg, card ){
+	            //     console.log( msg, card );
+	            //     agent.post('/exam',card).then(resp=>{
+	            //         me.setState({exam:resp.body});
+	            //     })
+	            // };
+	            // this.token = PubSub.subscribe( 'studentID', mySubscriber );
+	            var studentID = sessionStorage.getItem("studentID");
+	            agent.post('/exam/studentID/' + studentID).then(function (resp) {
+	                me.setState({ exam: resp.body });
+	            });
 	            var refresher = function refresher(msg, data) {
 	                me.setState({ exam: null });
 	            };

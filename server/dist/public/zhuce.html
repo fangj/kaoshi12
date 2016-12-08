@@ -11,16 +11,22 @@
         <div class="container">
             <h1 style="color:black;font-size:3em;text-align:center;margin-bottom:80px;">实验考试管理系统</h1>
             <section id="content">
-                <form action="/login" method="post">
-                    <h1>管理员登录</h1>
+                <form action="/student/signup" method="post">
+                    <h1>学生注册</h1>
                     <div>
-                        <input type="text" placeholder="用户名" required autofocus name="username" id="username" />
+                        <input type="text" placeholder="班级名称" required autofocus name="banjiName" id="banjiName" />
+                    </div>
+                    <div>
+                        <input type="text" placeholder="学生姓名" required name="studentName" id="studentName" />
+                    </div>
+                    <div>
+                        <input type="text" placeholder="学号" required name="studentID" id="studentID" />
                     </div>
                     <div>
                         <input type="password" placeholder="密码" required name="password" id="password" />
                     </div>
                     <div>
-                        <input type="submit" value="管理员登录" />
+                        <input type="submit" value="学生注册" />
                     </div>
                 </form>
                 <!-- form -->

@@ -6,6 +6,7 @@ module.exports={
   entry:{
     manage:'./src/pages/manage/index.js',
     kaoshi:'./src/pages/kaoshi/index.js',
+    kaoshi2:'./src/pages/kaoshi/PageKaoshi2.js',
     vendor:['superagent','superagent-promise','react-router','react-jsonschema-form','react-dropzone','react-bootstrap','moment','lodash','classnames','lru-cache','ramda']
   },
   output:{

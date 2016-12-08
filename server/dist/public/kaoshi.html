@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>考试</title>
+
+<link href="/css/clean-blog.css" rel="stylesheet">
+
+
+<!-- 项目样式资源加载 -->
+<link rel="stylesheet" href="build/vendor.css">
+<link rel="stylesheet" href="build/kaoshi.css">
+
+
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="css/tnviewer.css">
+
+<script src="js/react-with-addons.min.js"></script>
+<script src="js/react-dom.min.js"></script>
+<script src="js/pubsub.min.js"></script>
+<script src="js/socket.io.min.js"></script>
+
+<script type="text/javascript">
+  // var socket = io(":3000");
+  var socket = io();
+  socket.on('card', function (data) {
+    // console.log(data);
+    PubSub.publish( 'card', data);
+  });
+  //接收socket.io的card消息，以PubSub发出
+</script>
+
+</head>
+<body>
+<div id="App"></div>
+
+<!-- 项目脚本资源加载 -->
+<script src="/build/vendor.bundle.js"></script>
+<script src="build/kaoshi2.js"></script>
+</body>
+</html>

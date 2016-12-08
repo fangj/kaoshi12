@@ -35,7 +35,7 @@ router.get('/:examID/:studentID', function (req, res, next) {
 			//找到exam，根据paper_id找到paper数据
 			tree.read_node(exam.paper_gid).then(function (paper) {
 				var questions = paper._data.data.questions;
-				var prices=paper._data.data.scores;//题目的分值，为了与学生得分区别，用price表示
+				var prices = paper._data.data.scores; //题目的分值，为了与学生得分区别，用price表示
 				var shuffled_questions = _.shuffle(questions); //乱序
 				console.log('group_questions', shuffled_questions);
 				tree.read_nodes(shuffled_questions).then(function (nodes) {
@@ -54,7 +54,7 @@ router.get('/:examID/:studentID', function (req, res, next) {
 							return;
 						}
 						var student = findStudent(banji.students, studentID);
-						var answersheet = { examID: examID, examName: exam.name, studentName: student.name, studentID: studentID, questions: ordered_questions_id,prices:prices, answers: {}, begin: new Date().getTime() };
+						var answersheet = { examID: examID, examName: exam.name, studentName: student.name, studentID: studentID, questions: ordered_questions_id, answers: {}, prices: prices, begin: new Date().getTime() };
 						answersheetDb.insert(answersheet, function (err, newAnswersheet) {
 							res.json(newAnswersheet);
 						});
