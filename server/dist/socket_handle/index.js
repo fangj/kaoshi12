@@ -7,10 +7,21 @@ module.exports = function (app) {
   var kaochangDb = require('../db/room');
   var _ = require('lodash');
 
+  /**
+   * 根据浏览器IP查找对于的读卡器ID
+   * @param  {object} kaochang  考场
+   * @param  {string} browserIP 浏览器IP
+   * @return {desk}   readerID 读卡器ID
+   */
   function getReaderID(kaochang, browserIP) {
     return _.find(kaochang.desks, { browserIP: browserIP }).readerID;
   }
 
+  /**
+   * 把ip转为IPV4格式
+   * @param  {String} ip 可能是IPV6的IP
+   * @return {string}    IPV4
+   */
   function getIPV4(ip) {
     var addr = ipaddr.parse(ip);
     try {
@@ -20,11 +31,8 @@ module.exports = function (app) {
     }
   }
 
+  //当考试页面连接时
   io.on('connection', function (socket) {
-    socket.emit('news', { hello: 'world' });
-    socket.on('my other event', function (data) {
-      console.log(data);
-    });
     //取得浏览器端的IP
     var ip = socket.request.connection.remoteAddress;
     var browserIP = getIPV4(ip);
@@ -35,38 +43,20 @@ module.exports = function (app) {
         //浏览器已经绑定到考场，将该浏览器加入room({readerid})
         var readerID = getReaderID(kaochang, browserIP);
         console.log('readerID', readerID);
-        socket.join(readerID);
+        socket.join(readerID); //如果找到已登记的读卡器，则以加入读卡器ID房间
       } else {
-        //浏览器没有绑定考场,将该浏览器加入room('unbind')
-        socket.join('unbind');
-      }
+          //浏览器没有绑定考场,将该浏览器加入room('unbind')
+          socket.join('unbind'); //如果没找到已登记的读卡器,则加入'unbind'房间
+        }
     });
     console.log('New connection from ' + browserIP);
-    socket.emit('news', { hello: browserIP }); //用于测试客户端连接
 
-    //绑定浏览器到readerID
+    //绑定浏览器到readerID,
+    //浏览器端知道自己对应的readerID后，可以发生bind事件来绑定到读卡器对应房间
+    //但是目前浏览器端没有相应实现代码，目前重绑定需要通过刷新页面完成
     socket.on('bind', function (readerID) {
       socket.leave('unbind');
       socket.join(readerID);
     });
   }); //end connection
-
-  app.post('/card', function (req, res) {
-    // io.emit('news', { hello: "test" });//用于测试客户端连接
-    var obj = req.body; //{readerID,cardID}
-    console.log(obj);
-    //检查readerid是否绑定，如果绑定，推送到room(readerid),如果没有绑定，推送到room('unbind')
-    kaochangDb.findOne({ "desks.readerID": obj.readerID }, function (err, kaochang) {
-      if (kaochang) {
-        //如果绑定，推送到room(readerid)
-        io.to(obj.readerID).emit('card', obj);
-        res.end(obj.readerID); //test
-      } else {
-          //如果没有绑定，推送到room('unbind')
-          io.to('unbind').emit('card', obj);
-          res.end('unbind'); //test
-        }
-    });
-    // res.end();
-  });
 }; //module end

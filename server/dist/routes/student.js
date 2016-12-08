@@ -11,6 +11,7 @@ function findStudent(students, id) {
 	return _.find(students, { id: id });
 }
 
+//给出学号，返回学生信息
 router.get('/:id', function (req, res, next) {
 	var studentID = req.params.id;
 	banjiDb.findOne({ "students.id": studentID }, function (err, banji) {

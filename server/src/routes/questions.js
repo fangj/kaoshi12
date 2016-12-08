@@ -23,7 +23,10 @@ function remove_answer(node){
 		}
 	}
 }
-/* GET home page. */
+/**
+ * 根据问题数组qids取得问题列表
+ * 问题列表会移除正确答案
+ */
 router.post('/', function(req, res, next) {
 	var qids=req.body;
 	// console.log(qids);

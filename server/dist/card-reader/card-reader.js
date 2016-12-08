@@ -1,5 +1,12 @@
 'use strict';
 
+/**
+ * 读卡器服务
+ * 读卡器开启UDP服务
+ * 收到读卡信息时会发射card事件
+ * card数据格式：{"cardID": "84757077", "readerID": "192.168.3.206"}
+ * 接收者应用cardReader.on('card',function (msg){})来接收card事件数据
+ */
 var util = require('util');
 var EventEmitter = require('events').EventEmitter;
 var parse = require('./parser').parse;

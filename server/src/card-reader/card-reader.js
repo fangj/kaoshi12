@@ -1,10 +1,16 @@
+/**
+ * 读卡器服务
+ * 读卡器开启UDP服务
+ * 收到读卡信息时会发射card事件
+ * card数据格式：{"cardID": "84757077", "readerID": "192.168.3.206"}
+ * 接收者应用cardReader.on('card',function (msg){})来接收card事件数据
+ */
 var util=require('util');
 var EventEmitter=require('events').EventEmitter;
 var parse=require('./parser').parse;
 var M=require('./message');
 var dgram = require('dgram');
 var server;//是server也是client
-
 
 var Server=function(){
   var that=this;
@@ -15,8 +21,6 @@ var Server=function(){
   server.on('listening', function () {
       var address = server.address();
       console.log('Card-Reader Server listening on ' + address.address + ":" + address.port);
-        
-      
   });
   server.on('message', function (message, remote) {
       var jmessage=message.toJSON();
@@ -40,8 +44,6 @@ function send(message,host){
   });
 }
 
-
 util.inherits(Server,EventEmitter);
 var s=new Server();
 module.exports=s;
-

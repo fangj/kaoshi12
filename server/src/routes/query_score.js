@@ -6,6 +6,7 @@ var examDb = require('../db/exam');
 var _=require('lodash');
 
 /* 查询考试成绩 */
+//给出学号，返回学生所有考试成绩
 router.get('/:studentID', function(req, res, next) {
   var studentID=req.params.studentID;
   answersheetDb.find({studentID:studentID},function(err,docs){

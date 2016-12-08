@@ -54,20 +54,12 @@ app.use('/exam',require('./routes/exam'));
 app.use('/answersheet',require('./routes/answersheet'));
 //过滤了答案的问题
 app.use('/questions',require('./routes/questions'));
-// //根据学号查找学生
+//根据学号查找学生
 app.use('/student',require('./routes/student'));
-// //自动评分
+//自动评分
 app.use('/score',require('./routes/score'));
-// //查分
+//查分
 app.use('/queryscore',require('./routes/query_score'));
-
-
-
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  res.status(404).end();
-});
 
 //socket.io
 var server = require('http').Server(app);
@@ -76,16 +68,24 @@ app.io=io;
 require('./socket_handle')(app);
 
 //读卡器
+//接收读卡信息的HTTP接口
+app.use('/card',require('./routes/card')(io));
+//接收读卡信息的UDP接口
 var cardReader=require('./card-reader/card-reader');
-cardReader.on('card',function (msg){
-  console.log('received card',msg);
-  const rooms=io.sockets.adapter.rooms;
-  if(rooms && rooms[msg.readerID]){
+cardReader.on('card',function (msg){ //接受读卡器发出的card事件
+  console.log('received card(udp)',msg);
+  var rooms=io.sockets.adapter.rooms;//socketio的所有房间。不是考场
+  if(rooms && rooms[msg.readerID]){ //每个读卡器绑定到一个房间，该绑定在socket_handle中完成
     io.to(msg.readerID).emit('card',msg); //定向发送到读卡器绑定的电脑
   }else{
     io.to('unbind').emit('card',msg); //广播到所有未绑定的电脑
   }
 })
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  res.status(404).end();
+});
 
 //start
 server.listen(3000, function () {

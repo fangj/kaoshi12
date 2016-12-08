@@ -78,6 +78,7 @@ router.post('/', function(req, res, next) {
   });
 });
 
+//给出考试id，返回考试信息
 router.get("/:id", function(req, res, next) {
 	var examID=req.params.id;
     examDb.findOne({"_id":examID},function(err,exam){

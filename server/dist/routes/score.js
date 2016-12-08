@@ -8,7 +8,7 @@ var answersheetDb = require('../db/answersheet');
 var examDb = require('../db/exam');
 var _ = require('lodash');
 
-/* GET home page. */
+//对答题卡进行判分并返回结果
 router.get('/:answersheetID', function (req, res, next) {
 	var answersheetID = req.params.answersheetID;
 	score(answersheetID, function (err, theScore) {
@@ -20,6 +20,11 @@ router.get('/:answersheetID', function (req, res, next) {
 	});
 });
 
+/**
+ * 给出答题卡id，对答题卡进行判分
+ * @param  {string}   answersheetID 答题卡id
+ * @param  {Function} cb(null,answersheetScores) 回调得分
+ */
 function score(answersheetID, cb) {
 	answersheetDb.findOne({ _id: answersheetID }, function (err, answersheet) {
 		if (err || !answersheet) {
@@ -42,11 +47,19 @@ function score(answersheetID, cb) {
 	});
 }
 
+//更新答题卡的各题得分和总分
 function updateAnswerScores(query, answersheetScores) {
 	var totalScore = _.sum(_.values(answersheetScores));
 	answersheetDb.update(query, { $set: { scores: answersheetScores, totalScore: totalScore } }, {});
 }
 
+/**
+ * 对答题卡进行评分
+ * @param  {[object]} questions 题目
+ * @param  {[object]} answers   学生答案
+ * @param  {[number]} scores    题目分值
+ * @return {object}   answersheetScores {qid:score}得分
+ */
 function scoreAnswersheet(questions, answers, scores) {
 	var answersheetScores = {};
 	for (var i = questions.length - 1; i >= 0; i--) {
@@ -58,10 +71,12 @@ function scoreAnswersheet(questions, answers, scores) {
 	return answersheetScores;
 }
 
+//取得答题分散，错误为0分，正确为题目分值
 function getNodeScore(qnode, answer, score) {
 	return isCorrect(qnode, answer) ? score : 0;
 }
 
+//判断题目是否答对
 function isCorrect(qnode, answer) {
 	var data = qnode._data.data;
 	switch (qnode._data.type) {
@@ -74,6 +89,7 @@ function isCorrect(qnode, answer) {
 	}
 }
 
+//选择题是否答对
 function isCorrectChoice(data, answer) {
 	console.log('isCorrectChoice', data, answer);
 	for (var idx = 0; idx < data.answers.length; idx++) {
@@ -85,7 +101,7 @@ function isCorrectChoice(data, answer) {
 	}
 	return true;
 }
-
+//判断题是否答对
 function isCorrectTf(data, answer) {
 	return data.ok == answer;
 }
