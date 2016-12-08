@@ -4505,6 +4505,9 @@ webpackJsonp([1],[
 
 	__webpack_require__(653);
 
+	var clone = function clone(obj) {
+	    return JSON.parse(JSON.stringify(obj));
+	};
 
 	var _ = __webpack_require__(278);
 	/**
@@ -4526,7 +4529,7 @@ webpackJsonp([1],[
 	        var node = props.node;
 
 	        if (node) {
-	            _this.state = node._data.data; //更新
+	            _this.state = clone(node._data.data); //更新
 	        } else {
 	            _this.state = {
 	                name: "未命名试卷 " + new Date().toLocaleString(),

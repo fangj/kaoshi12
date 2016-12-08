@@ -4,6 +4,7 @@ import PaperPreview from '../paper_preview';
 import PaperTopicChooser from '../paper_topic_chooser';
 import TreePathReader from '../treepathreader';
 import Nav from '../nav';
+const clone=obj=>JSON.parse(JSON.stringify(obj));
 
 var _=require('lodash');
 /**
@@ -19,7 +20,7 @@ class PaperForm extends React.Component {
         super(props);
         const {node}=props;
         if(node){
-            this.state = node._data.data;//更新
+            this.state = clone(node._data.data);//更新
         }else{
             this.state = {
                 name:"未命名试卷 "+new Date().toLocaleString(),
