@@ -10,7 +10,7 @@ import Reader from "../reader";
 import Imageviewer from "../imageviewer";
 var imgUtil=require('./img_util');
 var qjsonUtil=require('./qjson_util');
-import RestImageViewer from '../rest_image_viewer';
+import RestImageViewer from '../rest_image_viewer/readonly';
 import RestReader from '../rest_reader';
 const StudentImageViewer=({gid})=><RestReader view={RestImageViewer} url={"/api/img/"+gid} gid={gid}/>
 /**

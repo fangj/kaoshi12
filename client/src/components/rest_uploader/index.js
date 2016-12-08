@@ -1,5 +1,5 @@
 import React from 'react';
-import Dropbox from "../../components/dropbox";
+import Dropbox from "../../components/dropbox2";
 var agent = require('superagent-promise')(require('superagent'), Promise);
 
 export default class RestUploader extends React.Component {

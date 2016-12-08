@@ -1692,7 +1692,7 @@ webpackJsonp([0],{
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _dropbox = __webpack_require__(669);
+	var _dropbox = __webpack_require__(774);
 
 	var _dropbox2 = _interopRequireDefault(_dropbox);
 
@@ -1747,6 +1747,97 @@ webpackJsonp([0],{
 
 /***/ },
 
+/***/ 770:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	__webpack_require__(771);
+	var agent = __webpack_require__(281)(__webpack_require__(282), Promise);
+
+	/**
+	 * 访问/api/img/_id,取得img数据
+	 * 格式
+	 * {
+	    "_id": "JUidbV0ls0X2hy6g",
+	    "imgs": [
+	    "188be907f05a8039dda9888828f3a60d.png",
+	    "be613d24d86345b392d75bcc07a39b7f.png"
+	    ]
+	  }
+	  点击图片删除图片
+	*/
+
+	var Imageviewer = function (_React$Component) {
+	    _inherits(Imageviewer, _React$Component);
+
+	    function Imageviewer(props) {
+	        _classCallCheck(this, Imageviewer);
+
+	        var _this = _possibleConstructorReturn(this, (Imageviewer.__proto__ || Object.getPrototypeOf(Imageviewer)).call(this, props));
+
+	        _this.state = {};
+	        return _this;
+	    }
+
+	    _createClass(Imageviewer, [{
+	        key: 'render',
+	        value: function render() {
+	            var _this2 = this;
+
+	            var data = this.props.data;
+
+	            var names = data.imgs;
+	            if (!names) {
+	                return null;
+	            }
+	            return React.createElement(
+	                'div',
+	                { className: 'imageviewer' },
+	                names.map(function (name) {
+	                    if (name.endsWith("jpg") || name.endsWith("jpeg") || name.endsWith("png") || name.endsWith("bmp")) {
+	                        return React.createElement('img', { key: name, src: "/upload/" + name, onClick: function onClick() {
+	                                return _this2.remove(name);
+	                            } });
+	                    } else {
+	                        return React.createElement(
+	                            'a',
+	                            { href: "/upload/" + name, onClick: function onClick(e) {
+	                                    e.preventDefault();
+	                                    _this2.remove(name);
+	                                } },
+	                            name
+	                        );
+	                    }
+	                })
+	            );
+	        }
+	    }, {
+	        key: 'remove',
+	        value: function remove(name) {
+	            var gid = this.props.gid;
+
+	            agent.del('/up/' + gid + "/" + name).then(function (node) {
+	                PubSub.publish('img.removed', node);
+	            });
+	        }
+	    }]);
+
+	    return Imageviewer;
+	}(React.Component);
+
+	module.exports = Imageviewer;
+
+/***/ },
+
 /***/ 773:
 /***/ function(module, exports, __webpack_require__) {
 
@@ -1777,6 +1868,82 @@ webpackJsonp([0],{
 	        );
 	};
 	module.exports = RestUploaderViewer;
+
+/***/ },
+
+/***/ 774:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	module.exports = __webpack_require__(775);
+
+/***/ },
+
+/***/ 775:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	__webpack_require__(776);
+	var Dropzone = __webpack_require__(673);
+
+	var Dropbox = function (_React$Component) {
+	    _inherits(Dropbox, _React$Component);
+
+	    function Dropbox(props) {
+	        _classCallCheck(this, Dropbox);
+
+	        var _this = _possibleConstructorReturn(this, (Dropbox.__proto__ || Object.getPrototypeOf(Dropbox)).call(this, props));
+
+	        _this.state = {};
+	        return _this;
+	    }
+
+	    _createClass(Dropbox, [{
+	        key: 'render',
+	        value: function render() {
+	            return React.createElement(
+	                Dropzone,
+	                { className: 'my-dropzone2', onDrop: this.upload.bind(this) },
+	                React.createElement(
+	                    'button',
+	                    null,
+	                    '\u4E0A\u4F20\u56FE\u7247\u6216\u9644\u4EF6'
+	                )
+	            );
+	        }
+	    }, {
+	        key: 'upload',
+	        value: function upload(files) {
+	            this.props.upload(files).then(function (node) {
+	                PubSub.publish('img.saved', node);
+	                // alert("ok");
+	            }).catch(function (e) {
+	                return alert("fail");
+	            });
+	        }
+	    }]);
+
+	    return Dropbox;
+	}(React.Component);
+
+	module.exports = Dropbox;
+
+/***/ },
+
+/***/ 776:
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 

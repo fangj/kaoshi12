@@ -34,11 +34,9 @@ class Imageviewer extends React.Component {
             <div className="imageviewer">
                 {names.map(name=>{
                     if(name.endsWith("jpg")||name.endsWith("jpeg")||name.endsWith("png")||name.endsWith("bmp")){
-                        return <img key={name} src={"/upload/"+name} onClick={()=>this.remove(name)} />
+                        return <img key={name} src={"/upload/"+name} />
                     }else{
-                        return <a href={"/upload/"+name} onClick={(e)=>{
-                            e.preventDefault();
-                            this.remove(name);}}>{name}</a>
+                        return <a href={"/upload/"+name} target="_blank"> {name}</a>
                     }
                     
             })}
@@ -46,12 +44,6 @@ class Imageviewer extends React.Component {
         );
     }
 
-    remove(name){
-      const {gid}=this.props;
-      agent.del('/up/'+gid+"/"+name).then(node=>{
-            PubSub.publish('img.removed',node);
-        })
-    }
 }
 
 module.exports = Imageviewer;
