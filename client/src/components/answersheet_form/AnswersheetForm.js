@@ -10,7 +10,9 @@ import Reader from "../reader";
 import Imageviewer from "../imageviewer";
 var imgUtil=require('./img_util');
 var qjsonUtil=require('./qjson_util');
-
+import RestImageViewer from '../rest_image_viewer';
+import RestReader from '../rest_reader';
+const StudentImageViewer=({gid})=><RestReader view={RestImageViewer} url={"/api/img/"+gid} gid={gid}/>
 /**
  * 显示每道题目，包括问题Q,批注,得分
  * 得分改变时发送'score.change'消息
@@ -43,7 +45,7 @@ const Q=(props)=>{
     return null;
 }
 //阅卷
-const Qchoice=({node,answer,price})=>{
+const Qchoice=({node,answer,price,studentID})=>{
     const data=node._data.data;
     const correct=isCorrectChoice(data,answer);
     return <Panel header={"["+price+"分]"+"[选择题] "+data.question}  collapsible  defaultExpanded
@@ -66,17 +68,18 @@ const CrossSign=(props)=>{
   return <span style={{fontSize:"1.4em",color:"SteelBlue"}}>✗</span>;
 }
 //阅卷
-const Qqa=({node,answer,price})=>{
+const Qqa=({node,answer,price,studentID})=>{
   const data=node._data.data;
   var ans=answer||"";
   return <Panel header={"["+price+"分]"+"[问答题] "+data.question}  collapsible  defaultExpanded>
           <Reader view={Imageviewer} gid={node._id} level={1}/>
+          <StudentImageViewer gid={node._id+"_"+studentID}/>
               <div style={{fontSize:"1.4em",color:"SteelBlue"}}>{ans}</div>
       </Panel>
 }
 
 //阅卷
-const Qtf=({node,answer,price})=>{
+const Qtf=({node,answer,price,studentID})=>{
   const data=node._data.data;
   const correct=isCorrectTf(data,answer);
   return <Panel collapsible  defaultExpanded
@@ -87,11 +90,12 @@ const Qtf=({node,answer,price})=>{
 };
 
 //阅卷
-const Qrevise=({node,answer,price})=>{
+const Qrevise=({node,answer,price,studentID})=>{
   const data=node._data.data;
-  var ans=answer||"";
-  return <Panel header={"["+price+"分]"+"[问答题] "+data.question}  collapsible  defaultExpanded>
+  var ans=answer||""; 
+  return <Panel header={"["+price+"分]"+"[改错题] "+data.question}  collapsible  defaultExpanded>
               <h4>改错内容</h4>
+              <StudentImageViewer gid={node._id+"_"+studentID}/>
               <pre style={{color:"SteelBlue"}}>{ans}</pre>
               <h4>参考答案</h4>
               <pre>{data.answer}</pre>
@@ -139,7 +143,7 @@ class AnswersheetForm extends React.Component {
         let me = this;
         const {exam,student,questions}=this.state;
         const answersheet=this.props.data;
-        const {answers,prices}=answersheet;
+        const {answers,prices,studentID}=answersheet;
         const {scores,totalScore,comments}=this.state;
         if(exam&&student&&questions){   
             this.collectImage(questions); 
@@ -157,7 +161,8 @@ class AnswersheetForm extends React.Component {
                     </Panel>
                     <Grid fluid>{_.map(questions,(node=>
                       <Row key={node._id} className='no-gutter'>
-                        <QS node={node} score={scores[node._id]||0} price={prices[node._id]||0} comment={comments[node._id]||''} answer={answers[node._id]}/>
+                        <QS node={node} score={scores[node._id]||0} price={prices[node._id]||0} comment={comments[node._id]||''} answer={answers[node._id]}
+                        studentID={studentID}/>
                       </Row>))}
                     </Grid>
                   </div>

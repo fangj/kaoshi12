@@ -18,10 +18,6 @@
   background-color: #eee;
   height: 100%;
 }
-.imageviewer img {
-  max-width: 800px;
-  margin: 5px;
-}
 .ks_examing {
   background-color: #f60;
 }

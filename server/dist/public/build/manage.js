@@ -9096,6 +9096,14 @@ webpackJsonp([1],[
 
 	var _imageviewer2 = _interopRequireDefault(_imageviewer);
 
+	var _rest_image_viewer = __webpack_require__(770);
+
+	var _rest_image_viewer2 = _interopRequireDefault(_rest_image_viewer);
+
+	var _rest_reader = __webpack_require__(405);
+
+	var _rest_reader2 = _interopRequireDefault(_rest_reader);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -9116,6 +9124,10 @@ webpackJsonp([1],[
 	var imgUtil = __webpack_require__(763);
 	var qjsonUtil = __webpack_require__(764);
 
+	var StudentImageViewer = function StudentImageViewer(_ref) {
+	    var gid = _ref.gid;
+	    return React.createElement(_rest_reader2.default, { view: _rest_image_viewer2.default, url: "/api/img/" + gid, gid: gid });
+	};
 	/**
 	 * 显示每道题目，包括问题Q,批注,得分
 	 * 得分改变时发送'score.change'消息
@@ -9167,10 +9179,11 @@ webpackJsonp([1],[
 	    return null;
 	};
 	//阅卷
-	var Qchoice = function Qchoice(_ref) {
-	    var node = _ref.node,
-	        answer = _ref.answer,
-	        price = _ref.price;
+	var Qchoice = function Qchoice(_ref2) {
+	    var node = _ref2.node,
+	        answer = _ref2.answer,
+	        price = _ref2.price,
+	        studentID = _ref2.studentID;
 
 	    var data = node._data.data;
 	    var correct = isCorrectChoice(data, answer);
@@ -9212,10 +9225,11 @@ webpackJsonp([1],[
 	    );
 	};
 	//阅卷
-	var Qqa = function Qqa(_ref2) {
-	    var node = _ref2.node,
-	        answer = _ref2.answer,
-	        price = _ref2.price;
+	var Qqa = function Qqa(_ref3) {
+	    var node = _ref3.node,
+	        answer = _ref3.answer,
+	        price = _ref3.price,
+	        studentID = _ref3.studentID;
 
 	    var data = node._data.data;
 	    var ans = answer || "";
@@ -9223,6 +9237,7 @@ webpackJsonp([1],[
 	        _reactBootstrap.Panel,
 	        { header: "[" + price + "分]" + "[问答题] " + data.question, collapsible: true, defaultExpanded: true },
 	        React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._id, level: 1 }),
+	        React.createElement(StudentImageViewer, { gid: node._id + "_" + studentID }),
 	        React.createElement(
 	            'div',
 	            { style: { fontSize: "1.4em", color: "SteelBlue" } },
@@ -9232,10 +9247,11 @@ webpackJsonp([1],[
 	};
 
 	//阅卷
-	var Qtf = function Qtf(_ref3) {
-	    var node = _ref3.node,
-	        answer = _ref3.answer,
-	        price = _ref3.price;
+	var Qtf = function Qtf(_ref4) {
+	    var node = _ref4.node,
+	        answer = _ref4.answer,
+	        price = _ref4.price,
+	        studentID = _ref4.studentID;
 
 	    var data = node._data.data;
 	    var correct = isCorrectTf(data, answer);
@@ -9249,21 +9265,23 @@ webpackJsonp([1],[
 	};
 
 	//阅卷
-	var Qrevise = function Qrevise(_ref4) {
-	    var node = _ref4.node,
-	        answer = _ref4.answer,
-	        price = _ref4.price;
+	var Qrevise = function Qrevise(_ref5) {
+	    var node = _ref5.node,
+	        answer = _ref5.answer,
+	        price = _ref5.price,
+	        studentID = _ref5.studentID;
 
 	    var data = node._data.data;
 	    var ans = answer || "";
 	    return React.createElement(
 	        _reactBootstrap.Panel,
-	        { header: "[" + price + "分]" + "[问答题] " + data.question, collapsible: true, defaultExpanded: true },
+	        { header: "[" + price + "分]" + "[改错题] " + data.question, collapsible: true, defaultExpanded: true },
 	        React.createElement(
 	            'h4',
 	            null,
 	            '\u6539\u9519\u5185\u5BB9'
 	        ),
+	        React.createElement(StudentImageViewer, { gid: node._id + "_" + studentID }),
 	        React.createElement(
 	            'pre',
 	            { style: { color: "SteelBlue" } },
@@ -9335,7 +9353,8 @@ webpackJsonp([1],[
 
 	            var answersheet = this.props.data;
 	            var answers = answersheet.answers,
-	                prices = answersheet.prices;
+	                prices = answersheet.prices,
+	                studentID = answersheet.studentID;
 	            var _state2 = this.state,
 	                scores = _state2.scores,
 	                totalScore = _state2.totalScore,
@@ -9387,7 +9406,8 @@ webpackJsonp([1],[
 	                                return React.createElement(
 	                                    _reactBootstrap.Row,
 	                                    { key: node._id, className: 'no-gutter' },
-	                                    React.createElement(QS, { node: node, score: scores[node._id] || 0, price: prices[node._id] || 0, comment: comments[node._id] || '', answer: answers[node._id] })
+	                                    React.createElement(QS, { node: node, score: scores[node._id] || 0, price: prices[node._id] || 0, comment: comments[node._id] || '', answer: answers[node._id],
+	                                        studentID: studentID })
 	                                );
 	                            })
 	                        )
@@ -9477,9 +9497,9 @@ webpackJsonp([1],[
 	        }
 	    }, {
 	        key: 'changeScore',
-	        value: function changeScore(_ref5) {
-	            var gid = _ref5.gid,
-	                score = _ref5.score;
+	        value: function changeScore(_ref6) {
+	            var gid = _ref6.gid,
+	                score = _ref6.score;
 	            var _state8 = this.state,
 	                scores = _state8.scores,
 	                totalScore = _state8.totalScore;
@@ -9490,9 +9510,9 @@ webpackJsonp([1],[
 	        }
 	    }, {
 	        key: 'changeComment',
-	        value: function changeComment(_ref6) {
-	            var gid = _ref6.gid,
-	                comment = _ref6.comment;
+	        value: function changeComment(_ref7) {
+	            var gid = _ref7.gid,
+	                comment = _ref7.comment;
 	            var comments = this.state.comments;
 
 	            comments[gid] = comment;

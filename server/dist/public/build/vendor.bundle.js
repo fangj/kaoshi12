@@ -78616,5 +78616,186 @@
 	;
 	//# sourceMappingURL=index.js.map
 
+/***/ },
+/* 674 */,
+/* 675 */,
+/* 676 */,
+/* 677 */,
+/* 678 */,
+/* 679 */,
+/* 680 */,
+/* 681 */,
+/* 682 */,
+/* 683 */,
+/* 684 */,
+/* 685 */,
+/* 686 */,
+/* 687 */,
+/* 688 */,
+/* 689 */,
+/* 690 */,
+/* 691 */,
+/* 692 */,
+/* 693 */,
+/* 694 */,
+/* 695 */,
+/* 696 */,
+/* 697 */,
+/* 698 */,
+/* 699 */,
+/* 700 */,
+/* 701 */,
+/* 702 */,
+/* 703 */,
+/* 704 */,
+/* 705 */,
+/* 706 */,
+/* 707 */,
+/* 708 */,
+/* 709 */,
+/* 710 */,
+/* 711 */,
+/* 712 */,
+/* 713 */,
+/* 714 */,
+/* 715 */,
+/* 716 */,
+/* 717 */,
+/* 718 */,
+/* 719 */,
+/* 720 */,
+/* 721 */,
+/* 722 */,
+/* 723 */,
+/* 724 */,
+/* 725 */,
+/* 726 */,
+/* 727 */,
+/* 728 */,
+/* 729 */,
+/* 730 */,
+/* 731 */,
+/* 732 */,
+/* 733 */,
+/* 734 */,
+/* 735 */,
+/* 736 */,
+/* 737 */,
+/* 738 */,
+/* 739 */,
+/* 740 */,
+/* 741 */,
+/* 742 */,
+/* 743 */,
+/* 744 */,
+/* 745 */,
+/* 746 */,
+/* 747 */,
+/* 748 */,
+/* 749 */,
+/* 750 */,
+/* 751 */,
+/* 752 */,
+/* 753 */,
+/* 754 */,
+/* 755 */,
+/* 756 */,
+/* 757 */,
+/* 758 */,
+/* 759 */,
+/* 760 */,
+/* 761 */,
+/* 762 */,
+/* 763 */,
+/* 764 */,
+/* 765 */,
+/* 766 */,
+/* 767 */,
+/* 768 */,
+/* 769 */,
+/* 770 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	__webpack_require__(771);
+	var agent = __webpack_require__(281)(__webpack_require__(282), Promise);
+
+	/**
+	 * 访问/api/img/_id,取得img数据
+	 * 格式
+	 * {
+	    "_id": "JUidbV0ls0X2hy6g",
+	    "imgs": [
+	    "188be907f05a8039dda9888828f3a60d.png",
+	    "be613d24d86345b392d75bcc07a39b7f.png"
+	    ]
+	  }
+	  点击图片删除图片
+	*/
+
+	var Imageviewer = function (_React$Component) {
+	    _inherits(Imageviewer, _React$Component);
+
+	    function Imageviewer(props) {
+	        _classCallCheck(this, Imageviewer);
+
+	        var _this = _possibleConstructorReturn(this, (Imageviewer.__proto__ || Object.getPrototypeOf(Imageviewer)).call(this, props));
+
+	        _this.state = {};
+	        return _this;
+	    }
+
+	    _createClass(Imageviewer, [{
+	        key: 'render',
+	        value: function render() {
+	            var _this2 = this;
+
+	            var data = this.props.data;
+
+	            var names = data.imgs;
+	            if (!names) {
+	                return null;
+	            }
+	            return React.createElement(
+	                'div',
+	                { className: 'imageviewer' },
+	                names.map(function (name) {
+	                    return React.createElement('img', { key: name, src: "/upload/" + name, onClick: function onClick() {
+	                            return _this2.remove(name);
+	                        } });
+	                })
+	            );
+	        }
+	    }, {
+	        key: 'remove',
+	        value: function remove(name) {
+	            var gid = this.props.gid;
+
+	            agent.del('/up/' + gid + "/" + name).then(function (node) {
+	                PubSub.publish('img.removed', node);
+	            });
+	        }
+	    }]);
+
+	    return Imageviewer;
+	}(React.Component);
+
+	module.exports = Imageviewer;
+
+/***/ },
+/* 771 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
 /***/ }
 /******/ ]);
