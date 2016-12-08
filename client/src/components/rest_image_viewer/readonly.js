@@ -13,7 +13,7 @@ var agent = require('superagent-promise')(require('superagent'), Promise);
     "be613d24d86345b392d75bcc07a39b7f.png"
     ]
   }
-  点击图片删除图片
+  可以显示图片之外的附件
 */
 class Imageviewer extends React.Component {
 
