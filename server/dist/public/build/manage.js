@@ -4592,6 +4592,14 @@ webpackJsonp([1],[
 	                        '\u603B\u5206: ',
 	                        this.totalScore(),
 	                        '\u5206'
+	                    ),
+	                    React.createElement(
+	                        'div',
+	                        null,
+	                        '\u6279\u91CF\u8BBE\u7F6E\u6BCF\u9898\u5206\u503C:',
+	                        React.createElement('input', { type: 'number', min: '1',
+	                            onChange: this.onChangeBatchScore.bind(this),
+	                            defaultValue: 1 })
 	                    )
 	                ),
 	                React.createElement(
@@ -4644,6 +4652,17 @@ webpackJsonp([1],[
 	            this.forceUpdate(); //更新总分
 	        }
 	    }, {
+	        key: 'onChangeBatchScore',
+	        value: function onChangeBatchScore(e) {
+	            var score = Number(e.target.value) || 0;
+	            var scores = this.state.scores;
+
+	            _.keys(scores).map(function (gid) {
+	                return scores[gid] = score;
+	            });
+	            this.forceUpdate(); //更新总分
+	        }
+	    }, {
 	        key: 'totalScore',
 	        value: function totalScore() {
 	            var _state2 = this.state,
@@ -4674,9 +4693,6 @@ webpackJsonp([1],[
 	            this.setState({ questions: qs, scores: scores });
 	        }
 	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
 	            var _this2 = this;
@@ -4688,20 +4704,6 @@ webpackJsonp([1],[
 	                return _this2.changeScore(obj.gid, obj.score);
 	            });
 	        }
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {}
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillUpdate',
-	        value: function componentWillUpdate(nextProps, nextState) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {}
 	    }, {
 	        key: 'componentWillUnmount',
 	        value: function componentWillUnmount() {
@@ -9315,7 +9317,7 @@ webpackJsonp([1],[
 	                    React.createElement(
 	                        'div',
 	                        null,
-	                        "ABCDEFGHI"[idx] + ". " + ans.answer + "  " + (ans.ok ? " ✓ " : " "),
+	                        "ABCDEFGHI"[idx] + ". " + ans.answer + "  " + (ans.ok ? " [标准答案] " : " "),
 	                        answer === idx ? React.createElement(CheckSign, null) : null
 	                    )
 	                );

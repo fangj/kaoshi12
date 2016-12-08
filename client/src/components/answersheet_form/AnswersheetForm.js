@@ -52,7 +52,7 @@ const Qchoice=({node,answer})=>{
       <ListGroup fill>
       {data.answers.map((ans,idx)=><ListGroupItem key={idx} >
         <div>{"ABCDEFGHI"[idx]+". "+ans.answer+"  "+
-        (ans.ok?" ✓ ":" ")}
+        (ans.ok?" [标准答案] ":" ")}
        {(answer===idx?<CheckSign/>:null)}
       </div>
         </ListGroupItem>)}

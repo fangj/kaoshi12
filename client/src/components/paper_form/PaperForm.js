@@ -48,6 +48,10 @@ class PaperForm extends React.Component {
                      value={name} />
                      </legend>
                     <div style={{float:"right"}}>总分: {this.totalScore()}分</div>
+                    <div>批量设置每题分值:<input type="number" min="1"
+                     onChange={this.onChangeBatchScore.bind(this)}
+                     defaultValue={1} /></div>
+
                 </div>
                 <Tabs defaultActiveKey={1} id="questions">
                  <Tab eventKey={1} title="预览" >
@@ -81,6 +85,12 @@ class PaperForm extends React.Component {
         scores[gid]=Number(score)||0;
         this.forceUpdate();//更新总分
     }
+    onChangeBatchScore(e){
+        var score=Number(e.target.value)||0;
+        const {scores}=this.state;
+        _.keys(scores).map(gid=>scores[gid]=score);
+        this.forceUpdate();//更新总分
+    }
     totalScore(){
         const {scores,questions}=this.state;
         return _.sum(_.values(_.pick(scores,questions)));
@@ -100,28 +110,11 @@ class PaperForm extends React.Component {
         this.setState({questions:qs,scores});
     }
 
-    componentWillMount() {
-    }
-
     componentDidMount() {
         this.tokenToggle=PubSub.subscribe( "topic.toggle",(msg,gid)=>this.toggleQuestion(gid)  );
         this.tokenScore=PubSub.subscribe( "topic.score",(msg,obj)=>this.changeScore(obj.gid,obj.score)  );
 
     }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
     componentWillUnmount() {
         PubSub.unsubscribe(this.tokenToggle);
         PubSub.unsubscribe(this.tokenScore);
