@@ -7,6 +7,11 @@ var fs = require('fs-extra');
 var path = require('path');
 var upload = multer({ dest: path.join(__dirname, "..", "..", "upload") });
 var imgDb = require('../db/img');
+
+//上传图片用的数据库
+//文件保存到/upload
+//这里存放文件名
+//一个gid下可以放多个文件
 router.post('/:gid', upload.single('file'), function (req, res, next) {
   // logger.debug("uploaded file",req.file);
   var fpath = req.file.path + path.extname(req.file.originalname); //加上扩展名

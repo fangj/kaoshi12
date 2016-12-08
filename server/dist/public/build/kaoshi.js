@@ -1017,17 +1017,9 @@ webpackJsonp([0],{
 
 	var _imageviewer2 = _interopRequireDefault(_imageviewer);
 
-	var _rest_uploader = __webpack_require__(769);
+	var _rest_uploader_viewer = __webpack_require__(773);
 
-	var _rest_uploader2 = _interopRequireDefault(_rest_uploader);
-
-	var _rest_image_viewer = __webpack_require__(770);
-
-	var _rest_image_viewer2 = _interopRequireDefault(_rest_image_viewer);
-
-	var _rest_reader = __webpack_require__(405);
-
-	var _rest_reader2 = _interopRequireDefault(_rest_reader);
+	var _rest_uploader_viewer2 = _interopRequireDefault(_rest_uploader_viewer);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1040,8 +1032,7 @@ webpackJsonp([0],{
 	__webpack_require__(478);
 
 	var agent = __webpack_require__(281)(__webpack_require__(282), Promise);
-
-
+	//用于学生上传图片
 	//倒计时组件
 	var Timer = function Timer(props) {
 	  var begin = props.begin,
@@ -1318,9 +1309,7 @@ webpackJsonp([0],{
 	    _reactBootstrap.Panel,
 	    { header: prefix + "[" + price + "分]" + "[问答题] " + question },
 	    React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._id, level: 1 }),
-	    React.createElement(_rest_uploader2.default, { gid: node._id }),
-	    React.createElement(_rest_reader2.default, { view: _rest_image_viewer2.default, url: "/api/img/" + node._id,
-	      subscribe: ["img.removed", "img.uploaded"], gid: node._id }),
+	    React.createElement(_rest_uploader_viewer2.default, { gid: node._id }),
 	    React.createElement('textarea', { className: 'form-control answer', style: { width: "100%" },
 	      rows: '5', placeholder: '\u7B54\u6848\u5199\u5728\u8FD9\u91CC', onChange: onChange, defaultValue: answer })
 	  );
@@ -1371,6 +1360,7 @@ webpackJsonp([0],{
 	    _reactBootstrap.Panel,
 	    { header: prefix + "[" + price + "分]" + "[改错题] " + question },
 	    React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._id, level: 1 }),
+	    React.createElement(_rest_uploader_viewer2.default, { gid: node._id }),
 	    React.createElement('textarea', { className: 'form-control answer', style: { width: "100%" }, defaultValue: answer || content,
 	      rows: '5', placeholder: '\u7B54\u6848\u5199\u5728\u8FD9\u91CC', onChange: onChange, value: answer })
 	  );
@@ -1838,6 +1828,39 @@ webpackJsonp([0],{
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
+
+/***/ },
+
+/***/ 773:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _rest_uploader = __webpack_require__(769);
+
+	var _rest_uploader2 = _interopRequireDefault(_rest_uploader);
+
+	var _rest_image_viewer = __webpack_require__(770);
+
+	var _rest_image_viewer2 = _interopRequireDefault(_rest_image_viewer);
+
+	var _rest_reader = __webpack_require__(405);
+
+	var _rest_reader2 = _interopRequireDefault(_rest_reader);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var RestUploaderViewer = function RestUploaderViewer(_ref) {
+	        var gid = _ref.gid;
+	        return React.createElement(
+	                'div',
+	                null,
+	                React.createElement(_rest_uploader2.default, { gid: gid }),
+	                React.createElement(_rest_reader2.default, { view: _rest_image_viewer2.default, url: "/api/img/" + gid,
+	                        subscribe: ["img.removed", "img.uploaded"], gid: gid })
+	        );
+	};
+	module.exports = RestUploaderViewer;
 
 /***/ }
 

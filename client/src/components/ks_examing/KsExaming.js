@@ -5,10 +5,7 @@ import CountdownTimer from './CountdownTimer';
 import Reader from "../reader";
 import Imageviewer from "../imageviewer";
 var agent = require('superagent-promise')(require('superagent'),Promise);
-import RestUploader from '../rest_uploader';
-import RestImageViewer from '../rest_image_viewer';
-import RestReader from '../rest_reader';
-
+import RestUploaderViewer from '../rest_uploader_viewer';//用于学生上传图片
 //倒计时组件
 const Timer=(props)=>{
     const {begin,duration}=props;
@@ -169,9 +166,7 @@ const Qqa=({node,prefix,answer,price})=>{
     const onChange=(e)=>PubSub.publish('answer',{gid:node._id,answer:e.target.value});
     return <Panel header={prefix+"["+price+"分]"+"[问答题] "+question} >
         <Reader view={Imageviewer} gid={node._id} level={1}/>
-        <RestUploader gid={node._id}/>
-        <RestReader view={RestImageViewer} url={"/api/img/"+node._id}
-        subscribe={["img.removed","img.uploaded"]} gid={node._id}/>
+        <RestUploaderViewer gid={node._id}/>
         <textarea className="form-control answer" style={{width:"100%"}}
          rows="5" placeholder="答案写在这里" onChange={onChange} defaultValue={answer} />
       </Panel>
@@ -196,6 +191,7 @@ const Qrevise=({node,prefix,answer,price})=>{
     const onChange=(e)=>PubSub.publish('answer',{gid:node._id,answer:e.target.value});
     return <Panel header={prefix+"["+price+"分]"+"[改错题] "+question} >
         <Reader view={Imageviewer} gid={node._id} level={1}/>
+        <RestUploaderViewer gid={node._id}/>
         <textarea className="form-control answer" style={{width:"100%"}} defaultValue={answer||content}
          rows="5" placeholder="答案写在这里" onChange={onChange} value={answer} />
       </Panel>
