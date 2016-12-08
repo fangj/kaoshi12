@@ -31,15 +31,19 @@ class KsBindStudent extends React.Component {
         const {choosen}=this.state;
         return (
             <div className="ks_bind_student" style={{padding:"20px"}}>
-                <Jumbotron>
-                <h2>您的个人信息尚未登记,请选择班级进行登记</h2>
+                <h2 style={{textAlign:"center"}}>登记学生信息</h2>
+                <div className="form-signin" >
+                <div>班级</div>
                 <ClassChooser choosen={choosen}/>
-                <div style={{width:"200px"}}>
+                <div >
                 <Form schema={schema}
                   onSubmit={this.save.bind(this)}
-                />
+                >
+                <button type="submit" className="btn btn-success">保存</button>
+                </Form>
                 </div>
-              </Jumbotron>
+                </div>
+              
             </div>
         );
     }

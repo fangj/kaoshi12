@@ -1,0 +1,8 @@
+cd client
+webpack -w
+
+cd server 
+./watch.sh
+
+cd server/dist
+node app.js
