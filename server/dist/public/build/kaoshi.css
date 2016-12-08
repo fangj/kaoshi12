@@ -6,13 +6,18 @@
   background-color: #f60;
 }
 .ks_bind_student {
-  background-color: #eee;
   height: 100%;
+  background: url('/img/bg_gf2.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 .form-signin {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
+  background-color: #eee;
 }
 .queryscore {
   background-color: #fff;
