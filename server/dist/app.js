@@ -96,6 +96,6 @@ app.use(function (req, res, next) {
 });
 
 //start
-server.listen(3000, function () {
-  console.log('Kaoshi app listening on port 3000!');
+server.listen(80, function () {
+  console.log('Kaoshi app listening on port 80!');
 });
