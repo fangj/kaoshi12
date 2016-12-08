@@ -4556,7 +4556,14 @@ webpackJsonp([1],[
 
 	            return React.createElement(
 	                'div',
-	                { className: 'pad' },
+	                { className: 'paper_form' },
+	                React.createElement(
+	                    'div',
+	                    { className: 'totalScore' },
+	                    '\u603B\u5206: ',
+	                    this.totalScore(),
+	                    '\u5206'
+	                ),
 	                React.createElement(
 	                    _reactBootstrap.ButtonToolbar,
 	                    { style: { textAlign: 'right', paddingBottom: "15px" } },
@@ -4585,13 +4592,6 @@ webpackJsonp([1],[
 	                        '\u8BD5\u5377\u540D\u79F0:',
 	                        React.createElement('input', { onChange: this.onChangeName.bind(this),
 	                            value: name })
-	                    ),
-	                    React.createElement(
-	                        'div',
-	                        { style: { float: "right" } },
-	                        '\u603B\u5206: ',
-	                        this.totalScore(),
-	                        '\u5206'
 	                    ),
 	                    React.createElement(
 	                        'div',

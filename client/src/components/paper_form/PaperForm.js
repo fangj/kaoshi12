@@ -36,7 +36,8 @@ class PaperForm extends React.Component {
         const {save,update,remove}=this.props;
         const {name,questions,scores}=this.state;
         return (
-            <div className='pad'>
+            <div className='paper_form'>
+                <div className="totalScore">总分: {this.totalScore()}分</div>
                 <ButtonToolbar  style={{textAlign:'right',paddingBottom:"15px"}}>
                   {save?<Button  bsStyle="success" onClick={this.save.bind(this)}>保存</Button>:null}
                   {update?<Button  bsStyle="success" onClick={this.update.bind(this)}>保存</Button>:null}
@@ -47,7 +48,6 @@ class PaperForm extends React.Component {
                     <input onChange={this.onChangeName.bind(this)}
                      value={name} />
                      </legend>
-                    <div style={{float:"right"}}>总分: {this.totalScore()}分</div>
                     <div>批量设置每题分值:<input type="number" min="1"
                      onChange={this.onChangeBatchScore.bind(this)}
                      defaultValue={1} /></div>
