@@ -25,12 +25,16 @@ const ScoreView=(props)=>{
 }
 
 function saveScores(answersheets){
+    if(!answersheets || answersheets.length<=0){
+        return;
+    }
     var title="姓名,学号,成绩\r\n";
     var scores=answersheets.map(a=>
         a.studentName+","+a.studentID+","+a.totalScore);
     var content=title+scores.join("\r\n");
-    console.log(scores,content);
-    const name="成绩.csv";
+    // console.log(answersheets,scores,content);
+    var examName=answersheets[0].examName;
+    const name=examName+Date.now()+".csv";
     var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
     saveAs(blob, name);
 }
