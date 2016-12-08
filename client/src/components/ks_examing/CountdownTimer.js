@@ -1,6 +1,7 @@
 import React from 'react';
 // var moment=require('moment');
 
+//倒计时组件，每秒更新一次，倒计时结束时发布'timer.over'
 var CountdownTimer = React.createClass({
   getInitialState: function() {
     return {

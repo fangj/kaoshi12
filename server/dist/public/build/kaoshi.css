@@ -9,14 +9,14 @@
   background-color: #eee;
   height: 100%;
 }
-.ks_noexam {
-  background-color: #eee;
-  height: 100%;
-}
 .queryscore {
   background-color: #fff;
   width: 80%;
   margin: 50px auto;
+}
+.ks_noexam {
+  background-color: #eee;
+  height: 100%;
 }
 .ks_examing {
   background-color: #f60;

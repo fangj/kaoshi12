@@ -6,6 +6,7 @@ import Reader from "../reader";
 import Imageviewer from "../imageviewer";
 var agent = require('superagent-promise')(require('superagent'),Promise);
 
+//倒计时组件
 const Timer=(props)=>{
     const {begin,duration}=props;
     var now=new Date().getTime()/1000;
@@ -13,17 +14,16 @@ const Timer=(props)=>{
     return <Panel style={{textAlign:"center"}}><CountdownTimer secondsRemaining={secondsRemaining} /></Panel>
 }
 
-
-
+//题目缩略指示区，接受'thumbs.refresh'刷新内容
+//根据题目是否完成显示不同样式
+//点击题号可以跳转到题目
 class Thumbs extends React.Component {
   static propTypes = {
     answersheet: React.PropTypes.object,
   };
-
   constructor(props) {
     super(props);
   }
-
   render() {
     const {answersheet}=this.props;
     const {questions,answers}=answersheet;
@@ -35,7 +35,6 @@ class Thumbs extends React.Component {
         </Panel>
     );
   }
-
   componentDidMount() {
       this.token=PubSub.subscribe('thumbs.refresh',()=>this.forceUpdate());
   }
@@ -44,14 +43,18 @@ class Thumbs extends React.Component {
   }
 }
 
-
+//题目缩略指示
 const Thumb=props=>{
     const {gid,idx,done}=props;
     return <div className={cx("thumb",{done})}><a href={"#q-"+gid}>{idx+1}</a></div>;
 }
 
-
-
+/**
+ * 根据答题卡answersheet，从'/questions'取得题目
+ * 接受'answer'消息，更新答案
+ * 发布'thumbs.refresh'消息，更新题目缩略
+ * 用QuestionsView显示题目
+ */
 class Questions extends React.Component {
   static propTypes = {
     answersheet: React.PropTypes.object,
@@ -98,6 +101,7 @@ class Questions extends React.Component {
   }
 }
 
+//负责显示具体题目
 class QuestionsView extends React.Component {
   static propTypes = {
     questions: React.PropTypes.array,
@@ -123,6 +127,7 @@ class QuestionsView extends React.Component {
   }
 }
 
+//具体到每一题的显示组件
 const Q=(props)=>{
     const {node}=props;
     const {type}=node._data;
@@ -137,6 +142,7 @@ const Q=(props)=>{
 
 
 //单选题，answer是答案的序号,answers是选支
+//发布'answer'信息更新答案
 const Qchoice=({node,prefix,answer})=>{
     var {question,answers}=node._data.data;
     answers=answers||[];
@@ -153,6 +159,7 @@ const Qchoice=({node,prefix,answer})=>{
 }
 
 //问答题
+//发布'answer'信息更新答案
 const Qqa=({node,prefix,answer})=>{
     const {question}=node._data.data;
     const onChange=(e)=>PubSub.publish('answer',{gid:node._id,answer:e.target.value});
@@ -164,6 +171,7 @@ const Qqa=({node,prefix,answer})=>{
 }
 
 //判断题
+//发布'answer'信息更新答案
 const Qtf=({node,prefix,answer})=>{
     const {question}=node._data.data;
     const onClick=(e)=>{PubSub.publish('answer',{gid:node._id,answer:!answer})};
@@ -175,6 +183,7 @@ const Qtf=({node,prefix,answer})=>{
 }
 
 //改错题
+//发布'answer'信息更新答案
 const Qrevise=({node,prefix,answer})=>{
     const {question,content}=node._data.data;
     const onChange=(e)=>PubSub.publish('answer',{gid:node._id,answer:e.target.value});
@@ -185,7 +194,10 @@ const Qrevise=({node,prefix,answer})=>{
       </Panel>
 }
 
-
+//进行考试组件
+//点击交卷按钮或者时间到收到'timer.over'会导致交卷
+//交卷时将答题卡提交"/api/answersheet/answersheet_id"
+//然后交由"/score/answersheet_id"评分，完成后发布'exam.over'事件进入结束界面
 class KsExaming extends React.Component {
 
     constructor(props) {
@@ -226,18 +238,12 @@ class KsExaming extends React.Component {
         const {answersheet}=this.state;
         answersheet.end=new Date().getTime();
         agent.put("/api/answersheet/"+answersheet._id,answersheet).then(resp=>{
-            // PubSub.publish('exam.over');
-            // agent.get("/score/"+answersheet._id).end();//评分
-
             agent.get("/score/"+answersheet._id)//评分
             .then(resp=>{
               const scores=resp.body;
               PubSub.publish('exam.over',scores);
             })
         })
-    }
-
-    componentWillMount() {
     }
 
     componentDidMount() {
@@ -251,19 +257,6 @@ class KsExaming extends React.Component {
         agent.get("/answersheet/"+data.examID+"/"+data.studentID).then(resp=>{
             this.setState({answersheet:resp.body});
         })
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
     }
 
     componentWillUnmount() {

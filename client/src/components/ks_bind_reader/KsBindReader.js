@@ -4,6 +4,11 @@ var agent = require('superagent-promise')(require('superagent'),Promise);
 
 require('./KsBindReader.less');
 
+/**
+ * 使用 RoomChooser 选择考场
+ * 接收"room.choose"信息得到选中的考场
+ * 绑定考场后发送到/api/room/room_id更新考场信息
+ */
 class KsBindReader extends React.Component {
 
     constructor(props) {
@@ -27,9 +32,6 @@ class KsBindReader extends React.Component {
         );
     }
 
-    componentWillMount() {
-    }
-
     componentDidMount() {
         const {msg}=this.props;
         this.token_choose_room=PubSub.subscribe( "room.choose",(pubsubmsg,room)=>{
@@ -46,22 +48,8 @@ class KsBindReader extends React.Component {
         });
     }
 
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
     componentWillUnmount() {
         PubSub.unsubscribe( this.token_choose_room );
-
     }
 }
 

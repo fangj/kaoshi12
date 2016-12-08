@@ -2,6 +2,7 @@ require('./KsExam.less');
 import {Panel, Button,Jumbotron } from 'react-bootstrap';
 import Examing from '../ks_examing';
 
+//开始考试前的提示界面
 const Start=(props)=>{
     const {msg,go}=props;
     return <div className="ks_exam"><Jumbotron className="text-center">
@@ -13,10 +14,11 @@ const Start=(props)=>{
             </Jumbotron></div>;
 }
 
+//考试结束时提示界面
 const Over=(props)=>{
     const {msg,scores}=props;
-    var totalScore=_.sum(_.values(scores));
-    console.log(totalScore)
+    // var totalScore=_.sum(_.values(scores));
+    // console.log(totalScore)
     return <div className="ks_exam"><Jumbotron className="text-center">
                 <h1>考试结束</h1>
                 {
@@ -28,8 +30,12 @@ const Over=(props)=>{
                 <h2>{msg.studentID}</h2>
            </Jumbotron></div>;
 }
-class KsExam extends React.Component {
 
+/**
+ * 考试界面
+ * 接受'exam.over'消息，显示结束界面
+ */
+class KsExam extends React.Component {
   //三种状态：开始start，答题go，已结束over
   //开始 start:获取考题和中断的答题卡(如果有)
   //答题 go:考试进行中
@@ -53,26 +59,8 @@ class KsExam extends React.Component {
         return null;
     }
 
-
-
-    componentWillMount() {
-    }
-
     componentDidMount() {
         this.token=PubSub.subscribe('exam.over',(msg,scores)=>this.setState({s:"over",scores}));
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
     }
 
     componentWillUnmount() {

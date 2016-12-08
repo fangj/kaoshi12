@@ -13,6 +13,11 @@ const schema = {
   }
 };
 
+/**
+ * 使用ClassChooser选择班级
+ * 通过"class.choose"消息接收选中的班级
+ * 绑定班级后发送到'/api/class/{classid}'更新班级信息
+ */
 class KsBindStudent extends React.Component {
 
     constructor(props) {
@@ -55,9 +60,6 @@ class KsBindStudent extends React.Component {
         })
     }
 
-    componentWillMount() {
-    }
-
     componentDidMount() {
         const me=this;
         this.token_choose_class=PubSub.subscribe( "class.choose",(pubsubmsg,klass)=>{
@@ -66,22 +68,8 @@ class KsBindStudent extends React.Component {
         });
     }
 
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
     componentWillUnmount() {
         PubSub.unsubscribe( this.token_choose_class );
-
     }
 }
 
