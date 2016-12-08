@@ -1211,7 +1211,7 @@ webpackJsonp([0],{
 	      var answers = answersheet.answers,
 	          prices = answersheet.prices;
 
-	      console.log('QuestionsView', questions);
+	      console.log('QuestionsView', questions, answersheet);
 	      return React.createElement(
 	        'div',
 	        null,
@@ -1220,7 +1220,8 @@ webpackJsonp([0],{
 	            'div',
 	            { id: "q-" + node._id, key: node._id },
 	            React.createElement(Q, { node: node, prefix: idx + 1 + ". ", answer: answers[node._id],
-	              price: prices[node._id] })
+	              price: prices[node._id],
+	              studentID: answersheet.studentID })
 	          );
 	        })
 	      );
@@ -1299,7 +1300,8 @@ webpackJsonp([0],{
 	  var node = _ref2.node,
 	      prefix = _ref2.prefix,
 	      answer = _ref2.answer,
-	      price = _ref2.price;
+	      price = _ref2.price,
+	      studentID = _ref2.studentID;
 	  var question = node._data.data.question;
 
 	  var onChange = function onChange(e) {
@@ -1309,7 +1311,7 @@ webpackJsonp([0],{
 	    _reactBootstrap.Panel,
 	    { header: prefix + "[" + price + "分]" + "[问答题] " + question },
 	    React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._id, level: 1 }),
-	    React.createElement(_rest_uploader_viewer2.default, { gid: node._id }),
+	    React.createElement(_rest_uploader_viewer2.default, { gid: node._id + "_" + studentID }),
 	    React.createElement('textarea', { className: 'form-control answer', style: { width: "100%" },
 	      rows: '5', placeholder: '\u7B54\u6848\u5199\u5728\u8FD9\u91CC', onChange: onChange, defaultValue: answer })
 	  );
@@ -1348,7 +1350,8 @@ webpackJsonp([0],{
 	  var node = _ref4.node,
 	      prefix = _ref4.prefix,
 	      answer = _ref4.answer,
-	      price = _ref4.price;
+	      price = _ref4.price,
+	      studentID = _ref4.studentID;
 	  var _node$_data$data2 = node._data.data,
 	      question = _node$_data$data2.question,
 	      content = _node$_data$data2.content;
@@ -1360,7 +1363,7 @@ webpackJsonp([0],{
 	    _reactBootstrap.Panel,
 	    { header: prefix + "[" + price + "分]" + "[改错题] " + question },
 	    React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._id, level: 1 }),
-	    React.createElement(_rest_uploader_viewer2.default, { gid: node._id }),
+	    React.createElement(_rest_uploader_viewer2.default, { gid: node._id + "_" + studentID }),
 	    React.createElement('textarea', { className: 'form-control answer', style: { width: "100%" }, defaultValue: answer || content,
 	      rows: '5', placeholder: '\u7B54\u6848\u5199\u5728\u8FD9\u91CC', onChange: onChange, value: answer })
 	  );

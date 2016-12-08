@@ -115,13 +115,14 @@ class QuestionsView extends React.Component {
   render() {
     const {questions,answersheet}=this.props;
     const {answers,prices}=answersheet;
-    console.log('QuestionsView',questions);
+    console.log('QuestionsView',questions,answersheet);
     return (
       <div>
           {questions.map((node,idx)=>
             <div id={"q-"+node._id} key={node._id} >
                 <Q node={node} prefix={idx+1+". "} answer={answers[node._id]}
-                price={prices[node._id]}/>
+                price={prices[node._id]}
+                studentID={answersheet.studentID}/>
             </div>)}
       </div>
     );
@@ -161,12 +162,12 @@ const Qchoice=({node,prefix,answer,price})=>{
 
 //问答题
 //发布'answer'信息更新答案
-const Qqa=({node,prefix,answer,price})=>{
+const Qqa=({node,prefix,answer,price,studentID})=>{
     const {question}=node._data.data;
     const onChange=(e)=>PubSub.publish('answer',{gid:node._id,answer:e.target.value});
     return <Panel header={prefix+"["+price+"分]"+"[问答题] "+question} >
         <Reader view={Imageviewer} gid={node._id} level={1}/>
-        <RestUploaderViewer gid={node._id}/>
+        <RestUploaderViewer gid={node._id+"_"+studentID}/>
         <textarea className="form-control answer" style={{width:"100%"}}
          rows="5" placeholder="答案写在这里" onChange={onChange} defaultValue={answer} />
       </Panel>
@@ -186,12 +187,12 @@ const Qtf=({node,prefix,answer,price})=>{
 
 //改错题
 //发布'answer'信息更新答案
-const Qrevise=({node,prefix,answer,price})=>{
+const Qrevise=({node,prefix,answer,price,studentID})=>{
     const {question,content}=node._data.data;
     const onChange=(e)=>PubSub.publish('answer',{gid:node._id,answer:e.target.value});
     return <Panel header={prefix+"["+price+"分]"+"[改错题] "+question} >
         <Reader view={Imageviewer} gid={node._id} level={1}/>
-        <RestUploaderViewer gid={node._id}/>
+        <RestUploaderViewer gid={node._id+"_"+studentID}/>
         <textarea className="form-control answer" style={{width:"100%"}} defaultValue={answer||content}
          rows="5" placeholder="答案写在这里" onChange={onChange} value={answer} />
       </Panel>
