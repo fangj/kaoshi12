@@ -114,13 +114,14 @@ class QuestionsView extends React.Component {
 
   render() {
     const {questions,answersheet}=this.props;
-    const {answers}=answersheet;
+    const {answers,prices}=answersheet;
     console.log('QuestionsView',questions);
     return (
       <div>
           {questions.map((node,idx)=>
             <div id={"q-"+node._id} key={node._id} >
-                <Q node={node} prefix={idx+1+". "} answer={answers[node._id]}/>
+                <Q node={node} prefix={idx+1+". "} answer={answers[node._id]}
+                price={prices[node._id]}/>
             </div>)}
       </div>
     );
@@ -143,10 +144,10 @@ const Q=(props)=>{
 
 //单选题，answer是答案的序号,answers是选支
 //发布'answer'信息更新答案
-const Qchoice=({node,prefix,answer})=>{
+const Qchoice=({node,prefix,answer,price})=>{
     var {question,answers}=node._data.data;
     answers=answers||[];
-    return <Panel header={prefix+"[选择题] "+question}>
+    return <Panel header={prefix+"["+price+"分]"+"[选择题] "+question}>
         <Reader view={Imageviewer} gid={node._id} level={1}/>
       <ListGroup fill>
       {answers.map((ans,idx)=><ListGroupItem 
@@ -160,10 +161,10 @@ const Qchoice=({node,prefix,answer})=>{
 
 //问答题
 //发布'answer'信息更新答案
-const Qqa=({node,prefix,answer})=>{
+const Qqa=({node,prefix,answer,price})=>{
     const {question}=node._data.data;
     const onChange=(e)=>PubSub.publish('answer',{gid:node._id,answer:e.target.value});
-    return <Panel header={prefix+"[问答题] "+question} >
+    return <Panel header={prefix+"["+price+"分]"+"[问答题] "+question} >
         <Reader view={Imageviewer} gid={node._id} level={1}/>
         <textarea className="form-control answer" style={{width:"100%"}}
          rows="5" placeholder="答案写在这里" onChange={onChange} defaultValue={answer} />
@@ -172,11 +173,11 @@ const Qqa=({node,prefix,answer})=>{
 
 //判断题
 //发布'answer'信息更新答案
-const Qtf=({node,prefix,answer})=>{
+const Qtf=({node,prefix,answer,price})=>{
     const {question}=node._data.data;
     const onClick=(e)=>{PubSub.publish('answer',{gid:node._id,answer:!answer})};
     return <Panel onClick={onClick}>
-      {prefix+"[判断题] "+question+"   "} 
+      {prefix+"["+price+"分]"+"[判断题] "+question+"   "} 
       (<span className="answer">{answer===undefined?" ":(answer?"✓":"✗")}</span>)
         <Reader view={Imageviewer} gid={node._id} level={1}/>
       </Panel>
@@ -184,10 +185,10 @@ const Qtf=({node,prefix,answer})=>{
 
 //改错题
 //发布'answer'信息更新答案
-const Qrevise=({node,prefix,answer})=>{
+const Qrevise=({node,prefix,answer,price})=>{
     const {question,content}=node._data.data;
     const onChange=(e)=>PubSub.publish('answer',{gid:node._id,answer:e.target.value});
-    return <Panel header={prefix+"[改错题] "+question} >
+    return <Panel header={prefix+"["+price+"分]"+"[改错题] "+question} >
         <Reader view={Imageviewer} gid={node._id} level={1}/>
         <textarea className="form-control answer" style={{width:"100%"}} defaultValue={answer||content}
          rows="5" placeholder="答案写在这里" onChange={onChange} value={answer} />

@@ -1204,7 +1204,8 @@ webpackJsonp([0],{
 	      var _props = this.props,
 	          questions = _props.questions,
 	          answersheet = _props.answersheet;
-	      var answers = answersheet.answers;
+	      var answers = answersheet.answers,
+	          prices = answersheet.prices;
 
 	      console.log('QuestionsView', questions);
 	      return React.createElement(
@@ -1214,7 +1215,8 @@ webpackJsonp([0],{
 	          return React.createElement(
 	            'div',
 	            { id: "q-" + node._id, key: node._id },
-	            React.createElement(Q, { node: node, prefix: idx + 1 + ". ", answer: answers[node._id] })
+	            React.createElement(Q, { node: node, prefix: idx + 1 + ". ", answer: answers[node._id],
+	              price: prices[node._id] })
 	          );
 	        })
 	      );
@@ -1253,7 +1255,8 @@ webpackJsonp([0],{
 	var Qchoice = function Qchoice(_ref) {
 	  var node = _ref.node,
 	      prefix = _ref.prefix,
-	      answer = _ref.answer;
+	      answer = _ref.answer,
+	      price = _ref.price;
 	  var _node$_data$data = node._data.data,
 	      question = _node$_data$data.question,
 	      answers = _node$_data$data.answers;
@@ -1261,7 +1264,7 @@ webpackJsonp([0],{
 	  answers = answers || [];
 	  return React.createElement(
 	    _reactBootstrap.Panel,
-	    { header: prefix + "[选择题] " + question },
+	    { header: prefix + "[" + price + "分]" + "[选择题] " + question },
 	    React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._id, level: 1 }),
 	    React.createElement(
 	      _reactBootstrap.ListGroup,
@@ -1291,7 +1294,8 @@ webpackJsonp([0],{
 	var Qqa = function Qqa(_ref2) {
 	  var node = _ref2.node,
 	      prefix = _ref2.prefix,
-	      answer = _ref2.answer;
+	      answer = _ref2.answer,
+	      price = _ref2.price;
 	  var question = node._data.data.question;
 
 	  var onChange = function onChange(e) {
@@ -1299,7 +1303,7 @@ webpackJsonp([0],{
 	  };
 	  return React.createElement(
 	    _reactBootstrap.Panel,
-	    { header: prefix + "[问答题] " + question },
+	    { header: prefix + "[" + price + "分]" + "[问答题] " + question },
 	    React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._id, level: 1 }),
 	    React.createElement('textarea', { className: 'form-control answer', style: { width: "100%" },
 	      rows: '5', placeholder: '\u7B54\u6848\u5199\u5728\u8FD9\u91CC', onChange: onChange, defaultValue: answer })
@@ -1311,7 +1315,8 @@ webpackJsonp([0],{
 	var Qtf = function Qtf(_ref3) {
 	  var node = _ref3.node,
 	      prefix = _ref3.prefix,
-	      answer = _ref3.answer;
+	      answer = _ref3.answer,
+	      price = _ref3.price;
 	  var question = node._data.data.question;
 
 	  var onClick = function onClick(e) {
@@ -1320,7 +1325,7 @@ webpackJsonp([0],{
 	  return React.createElement(
 	    _reactBootstrap.Panel,
 	    { onClick: onClick },
-	    prefix + "[判断题] " + question + "   ",
+	    prefix + "[" + price + "分]" + "[判断题] " + question + "   ",
 	    '(',
 	    React.createElement(
 	      'span',
@@ -1337,7 +1342,8 @@ webpackJsonp([0],{
 	var Qrevise = function Qrevise(_ref4) {
 	  var node = _ref4.node,
 	      prefix = _ref4.prefix,
-	      answer = _ref4.answer;
+	      answer = _ref4.answer,
+	      price = _ref4.price;
 	  var _node$_data$data2 = node._data.data,
 	      question = _node$_data$data2.question,
 	      content = _node$_data$data2.content;
@@ -1347,7 +1353,7 @@ webpackJsonp([0],{
 	  };
 	  return React.createElement(
 	    _reactBootstrap.Panel,
-	    { header: prefix + "[改错题] " + question },
+	    { header: prefix + "[" + price + "分]" + "[改错题] " + question },
 	    React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._id, level: 1 }),
 	    React.createElement('textarea', { className: 'form-control answer', style: { width: "100%" }, defaultValue: answer || content,
 	      rows: '5', placeholder: '\u7B54\u6848\u5199\u5728\u8FD9\u91CC', onChange: onChange, value: answer })

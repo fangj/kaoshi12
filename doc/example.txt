@@ -18,4 +18,5 @@
 
 PubSub.publish('card',{"cardID": "84757077", "readerID": "192.168.3.206"})
 PubSub.publish('card',{"cardID": "84757078", "readerID": "192.168.3.206"})
+PubSub.publish('card',{"cardID": "84757079", "readerID": "192.168.3.206"})
 

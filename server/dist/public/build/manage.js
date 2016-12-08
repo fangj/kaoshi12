@@ -9298,13 +9298,14 @@ webpackJsonp([1],[
 	//阅卷
 	var Qchoice = function Qchoice(_ref) {
 	    var node = _ref.node,
-	        answer = _ref.answer;
+	        answer = _ref.answer,
+	        price = _ref.price;
 
 	    var data = node._data.data;
 	    var correct = isCorrectChoice(data, answer);
 	    return React.createElement(
 	        _reactBootstrap.Panel,
-	        { header: "[选择题] " + data.question, collapsible: true, defaultExpanded: true,
+	        { header: "[" + price + "分]" + "[选择题] " + data.question, collapsible: true, defaultExpanded: true,
 	            bsStyle: correct ? "success" : "danger" },
 	        React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._id, level: 1 }),
 	        React.createElement(
@@ -9342,13 +9343,14 @@ webpackJsonp([1],[
 	//阅卷
 	var Qqa = function Qqa(_ref2) {
 	    var node = _ref2.node,
-	        answer = _ref2.answer;
+	        answer = _ref2.answer,
+	        price = _ref2.price;
 
 	    var data = node._data.data;
 	    var ans = answer || "";
 	    return React.createElement(
 	        _reactBootstrap.Panel,
-	        { header: "[问答题] " + data.question, collapsible: true, defaultExpanded: true },
+	        { header: "[" + price + "分]" + "[问答题] " + data.question, collapsible: true, defaultExpanded: true },
 	        React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._id, level: 1 }),
 	        React.createElement(
 	            'div',
@@ -9361,14 +9363,15 @@ webpackJsonp([1],[
 	//阅卷
 	var Qtf = function Qtf(_ref3) {
 	    var node = _ref3.node,
-	        answer = _ref3.answer;
+	        answer = _ref3.answer,
+	        price = _ref3.price;
 
 	    var data = node._data.data;
 	    var correct = isCorrectTf(data, answer);
 	    return React.createElement(
 	        _reactBootstrap.Panel,
 	        { collapsible: true, defaultExpanded: true,
-	            header: "[判断题] " + data.question + " " + (data.ok ? " ( ✓ )" : " ( ✗ )"), bsStyle: correct ? "success" : "danger" },
+	            header: "[" + price + "分]" + "[判断题] " + data.question + " " + (data.ok ? " ( ✓ )" : " ( ✗ )"), bsStyle: correct ? "success" : "danger" },
 	        React.createElement(_reader2.default, { view: _imageviewer2.default, gid: node._id, level: 1 }),
 	        answer === undefined ? null : answer ? React.createElement(CheckSign, null) : React.createElement(CrossSign, null)
 	    );
@@ -9377,13 +9380,14 @@ webpackJsonp([1],[
 	//阅卷
 	var Qrevise = function Qrevise(_ref4) {
 	    var node = _ref4.node,
-	        answer = _ref4.answer;
+	        answer = _ref4.answer,
+	        price = _ref4.price;
 
 	    var data = node._data.data;
 	    var ans = answer || "";
 	    return React.createElement(
 	        _reactBootstrap.Panel,
-	        { header: "[问答题] " + data.question, collapsible: true, defaultExpanded: true },
+	        { header: "[" + price + "分]" + "[问答题] " + data.question, collapsible: true, defaultExpanded: true },
 	        React.createElement(
 	            'h4',
 	            null,
@@ -9459,7 +9463,8 @@ webpackJsonp([1],[
 	                questions = _state.questions;
 
 	            var answersheet = this.props.data;
-	            var answers = answersheet.answers;
+	            var answers = answersheet.answers,
+	                prices = answersheet.prices;
 	            var _state2 = this.state,
 	                scores = _state2.scores,
 	                totalScore = _state2.totalScore,
@@ -9511,7 +9516,7 @@ webpackJsonp([1],[
 	                                return React.createElement(
 	                                    _reactBootstrap.Row,
 	                                    { key: node._id, className: 'no-gutter' },
-	                                    React.createElement(QS, { node: node, score: scores[node._id] || 0, comment: comments[node._id] || '', answer: answers[node._id] })
+	                                    React.createElement(QS, { node: node, score: scores[node._id] || 0, price: prices[node._id] || 0, comment: comments[node._id] || '', answer: answers[node._id] })
 	                                );
 	                            })
 	                        )
