@@ -194,7 +194,7 @@ const Qrevise=({node,prefix,answer,price,studentID})=>{
         <Reader view={Imageviewer} gid={node._id} level={1}/>
         <RestUploaderViewer gid={node._id+"_"+studentID}/>
         <textarea className="form-control answer" style={{width:"100%"}} defaultValue={answer||content}
-         rows="5" placeholder="答案写在这里" onChange={onChange} value={answer} />
+         rows="5" placeholder="答案写在这里" onChange={onChange} defaultValue={answer} />
       </Panel>
 }
 
